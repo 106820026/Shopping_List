@@ -1,0 +1,10 @@
+C:\Users\ASUS\source\repos\Shopping\Shopping\bin\Debug\Shopping.exe.config
+C:\Users\ASUS\source\repos\Shopping\Shopping\bin\Debug\Shopping.exe
+C:\Users\ASUS\source\repos\Shopping\Shopping\bin\Debug\Shopping.pdb
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.Properties.Resources.resources
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.exe
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.pdb
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.ShopList.resources
