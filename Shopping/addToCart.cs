@@ -10,28 +10,19 @@ namespace ShopList
     class AddToCart
     {
         int _totalPrice;
-        Dictionary<Int32, String> _itemCode = new Dictionary<Int32, string>(); //每個物品綁一個id, 方便查詢
-        List<String> _items = new List<string> //儲存加入購物車的物品
-        { 
-            null };
+        List<String> _items = new List<string>(); //儲存加入購物車的物品
 
         public AddToCart()
         {
 
         }
 
-        // 把物品的id和名稱變成字典
-        public void MakeDictionary(Int32 hashCode, String name)
-        {
-            if (!_itemCode.ContainsKey(hashCode))
-                _itemCode.Add(hashCode, name);
-        }
-
         // 加入購物車
-        public void AddItem(Int32 hashCode, int price)
+        public void AddItem(String itemName, int price)
         {
-            _items.Add(_itemCode[hashCode]);
+            _items.Add(itemName);
             _totalPrice += price;
+            System.Diagnostics.Debug.Print(_items.Count.ToString());
         }
 
         // 取得購物車內容
@@ -44,12 +35,6 @@ namespace ShopList
         public int GetTotalPrice()
         {
             return _totalPrice;
-        }
-
-        // 取得id名稱字典
-        public Dictionary<Int32, String> GetItemCode()
-        {
-            return this._itemCode;
         }
     }
 }

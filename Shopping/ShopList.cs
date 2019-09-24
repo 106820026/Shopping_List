@@ -15,10 +15,11 @@ namespace ShopList
     {
         // ini file
         const String FILE_PATH = "../../Data Info.ini";
+        const String FORMAT = "#, 0";
         Initial _initialFile = new Initial(FILE_PATH);
         AddToCart _cart = new AddToCart();
-        Int32 _currentHashCode;
-        // current page
+        String _currentItemName;
+        /*// current page
         int _motherBoardCurrentPage = 1;
         int _centralProcessUnitCurrentPage = 1;
         int _diskCurrentPage = 1;
@@ -31,7 +32,7 @@ namespace ShopList
         int _diskTotalPage = 1;
         int _memoryTotalPage = 1;
         int _graphicsProcessUnitTotalPage = 1;
-        int _computerTotalPage = 1;
+        int _computerTotalPage = 1;*/
         // ini data
         const String MODEL_KEY = "model";
         const String DETAIL_KEY = "detail";
@@ -51,34 +52,35 @@ namespace ShopList
 
             const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
             _descriptionRichTextBox.ResetText(); // 清除目前字串
-            _currentHashCode = sender.GetHashCode(); // 取得目前Hash Code
 
             Button button; // 取得商品物件
             button = (Button)sender;
+            _currentItemName = button.Name; // 取得目前商品id
 
             _descriptionRichTextBox.AppendText(_initialFile.Read(button.Name, MODEL_KEY) + SEPARATE_LINE + _initialFile.Read(button.Name, DETAIL_KEY));
-            _priceLabel.Text = _initialFile.Read(button.Name, PRICE_KEY);
-            _cart.MakeDictionary(_currentHashCode, button.Name);
+            _priceLabel.Text = GetPrice();
         }
 
         // 按下加入購物車
         private void AddToCartButtonClick(object sender, EventArgs e)
         {
-            _cart.AddItem(_currentHashCode, int.Parse(_initialFile.Read(_cart.GetItemCode()[_currentHashCode], PRICE_KEY)));
-            _orderDataGridView.Rows.Add("", _initialFile.Read(_cart.GetItemCode()[_currentHashCode], MODEL_KEY), _initialFile.Read(_cart.GetItemCode()[_currentHashCode], TYPE_KEY), _initialFile.Read(_cart.GetItemCode()[_currentHashCode], PRICE_KEY));
-            _totalPriceLabel.Text = FormatNumber(_cart.GetTotalPrice());
+            _cart.AddItem(_currentItemName, int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)));
+            _orderDataGridView.Rows.Add("", _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), GetPrice());
+            _totalPriceLabel.Text = _cart.GetTotalPrice().ToString(FORMAT);
         }
 
         //  切換Tab時 詳細資料空白
         private void ChangeTab(object sender, EventArgs e)
         {
             _descriptionRichTextBox.ResetText(); // 清除目前字串
+            _priceLabel.ResetText(); // 清除目前字串
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
         }
 
-        private String FormatNumber(int price)
+        // 取得格式化價錢
+        private String GetPrice()
         {
-            return price.ToString("#,0");
+            return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
         }
     }
 }

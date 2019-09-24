@@ -21,7 +21,7 @@ namespace ShopList
         }
 
         // 開啟網購視窗
-        private void _orderSystemButtonClick(object sender, EventArgs e)
+        private void ClickOrderSystemButton(object sender, EventArgs e)
         {
             _shopList = new ShopList();
             _shopList.Show();
@@ -30,7 +30,7 @@ namespace ShopList
         }
 
         // 開啟資料庫
-        private void _inventorySystemButtonClick(object sender, EventArgs e)
+        private void ClickInventorySystemButton(object sender, EventArgs e)
         {
             _inventorySystem = new InventorySystem();
             _inventorySystem.Show();
@@ -39,7 +39,7 @@ namespace ShopList
         }
 
         // 關閉程式
-        private void _exitButtonClick(object sender, EventArgs e)
+        private void ClickExitButton(object sender, EventArgs e)
         {
             this.Close();
         }

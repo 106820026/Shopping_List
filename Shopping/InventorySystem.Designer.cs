@@ -28,51 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
+            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._label = new System.Windows.Forms.Label();
+            this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // _tableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(797, 451);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this._tableLayoutPanel.ColumnCount = 1;
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._tableLayoutPanel.Controls.Add(this._label, 0, 0);
+            this._tableLayoutPanel.Location = new System.Drawing.Point(1, 0);
+            this._tableLayoutPanel.Name = "_tableLayoutPanel";
+            this._tableLayoutPanel.RowCount = 1;
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._tableLayoutPanel.Size = new System.Drawing.Size(797, 451);
+            this._tableLayoutPanel.TabIndex = 0;
             // 
-            // label1
+            // _label
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("新細明體", 50F);
-            this.label1.Location = new System.Drawing.Point(163, 183);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 84);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Coming Soon";
+            this._label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._label.AutoSize = true;
+            this._label.Font = new System.Drawing.Font("新細明體", 50F);
+            this._label.Location = new System.Drawing.Point(163, 183);
+            this._label.Name = "_label";
+            this._label.Size = new System.Drawing.Size(471, 84);
+            this._label.TabIndex = 0;
+            this._label.Text = "Coming Soon";
             // 
-            // InventorySystem
+            // _inventorySystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "InventorySystem";
+            this.Controls.Add(this._tableLayoutPanel);
+            this.Name = "_inventorySystem";
             this.Text = "InventorySystem";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this._tableLayoutPanel.ResumeLayout(false);
+            this._tableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
+        private System.Windows.Forms.Label _label;
     }
 }

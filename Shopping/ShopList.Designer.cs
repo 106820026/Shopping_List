@@ -35,16 +35,20 @@
             this._totalPriceTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._totalPriceTextLabel = new System.Windows.Forms.Label();
             this._totalPriceLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this._bookButton = new System.Windows.Forms.Button();
             this._orderDataGridView = new System.Windows.Forms.DataGridView();
+            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._merchandiseGroupBox = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this._itemControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nextPageButton = new System.Windows.Forms.Button();
             this._addToCartButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this._pageControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._pageLabel = new System.Windows.Forms.Label();
             this._currentPageLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this._totalPageNumber = new System.Windows.Forms.Label();
             this._lastPageButton = new System.Windows.Forms.Button();
             this._descriptionGroupBox = new System.Windows.Forms.GroupBox();
             this._descriptionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -101,17 +105,13 @@
             this._computerPage1Item4 = new System.Windows.Forms.Button();
             this._computerPage1Item5 = new System.Windows.Forms.Button();
             this._computerPage1Item6 = new System.Windows.Forms.Button();
-            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._bottomTableLayoutPanel.SuspendLayout();
             this._myOrderTableLayoutPanel.SuspendLayout();
             this._totalPriceTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._orderDataGridView)).BeginInit();
             this._merchandiseGroupBox.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this._itemControlTableLayoutPanel.SuspendLayout();
+            this._pageControlTableLayoutPanel.SuspendLayout();
             this._descriptionGroupBox.SuspendLayout();
             this._descriptionTableLayoutPanel.SuspendLayout();
             this._priceTableLayoutPanel.SuspendLayout();
@@ -182,7 +182,7 @@
             this._totalPriceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this._totalPriceTableLayoutPanel.Controls.Add(this._totalPriceTextLabel, 0, 0);
             this._totalPriceTableLayoutPanel.Controls.Add(this._totalPriceLabel, 1, 0);
-            this._totalPriceTableLayoutPanel.Controls.Add(this.button1, 2, 0);
+            this._totalPriceTableLayoutPanel.Controls.Add(this._bookButton, 2, 0);
             this._totalPriceTableLayoutPanel.Location = new System.Drawing.Point(98, 659);
             this._totalPriceTableLayoutPanel.Name = "_totalPriceTableLayoutPanel";
             this._totalPriceTableLayoutPanel.RowCount = 1;
@@ -211,15 +211,15 @@
             this._totalPriceLabel.Size = new System.Drawing.Size(0, 19);
             this._totalPriceLabel.TabIndex = 1;
             // 
-            // button1
+            // _bookButton
             // 
-            this.button1.Font = new System.Drawing.Font("新細明體", 12F);
-            this.button1.Location = new System.Drawing.Point(267, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 47);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "訂購";
-            this.button1.UseVisualStyleBackColor = true;
+            this._bookButton.Font = new System.Drawing.Font("新細明體", 12F);
+            this._bookButton.Location = new System.Drawing.Point(267, 3);
+            this._bookButton.Name = "_bookButton";
+            this._bookButton.Size = new System.Drawing.Size(126, 47);
+            this._bookButton.TabIndex = 2;
+            this._bookButton.Text = "訂購";
+            this._bookButton.UseVisualStyleBackColor = true;
             // 
             // _orderDataGridView
             // 
@@ -238,9 +238,39 @@
             this._orderDataGridView.Size = new System.Drawing.Size(491, 566);
             this._orderDataGridView.TabIndex = 2;
             // 
+            // _delete
+            // 
+            this._delete.FillWeight = 34.73391F;
+            this._delete.HeaderText = "刪除";
+            this._delete.Name = "_delete";
+            this._delete.ReadOnly = true;
+            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // _itemName
+            // 
+            this._itemName.FillWeight = 64.4507F;
+            this._itemName.HeaderText = "商品名稱";
+            this._itemName.Name = "_itemName";
+            this._itemName.ReadOnly = true;
+            // 
+            // _itemType
+            // 
+            this._itemType.FillWeight = 64.4507F;
+            this._itemType.HeaderText = "商品分類";
+            this._itemType.Name = "_itemType";
+            this._itemType.ReadOnly = true;
+            // 
+            // _itemPrice
+            // 
+            this._itemPrice.FillWeight = 64.4507F;
+            this._itemPrice.HeaderText = "單價";
+            this._itemPrice.Name = "_itemPrice";
+            this._itemPrice.ReadOnly = true;
+            // 
             // _merchandiseGroupBox
             // 
-            this._merchandiseGroupBox.Controls.Add(this.tableLayoutPanel1);
+            this._merchandiseGroupBox.Controls.Add(this._itemControlTableLayoutPanel);
             this._merchandiseGroupBox.Controls.Add(this._descriptionGroupBox);
             this._merchandiseGroupBox.Controls.Add(this._itemTabControl);
             this._merchandiseGroupBox.Font = new System.Drawing.Font("新細明體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -251,24 +281,24 @@
             this._merchandiseGroupBox.TabStop = false;
             this._merchandiseGroupBox.Text = "商品";
             // 
-            // tableLayoutPanel1
+            // _itemControlTableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this._nextPageButton, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this._addToCartButton, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this._lastPageButton, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 662);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(490, 49);
-            this.tableLayoutPanel1.TabIndex = 3;
+            this._itemControlTableLayoutPanel.ColumnCount = 5;
+            this._itemControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this._itemControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this._itemControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this._itemControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14F));
+            this._itemControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this._itemControlTableLayoutPanel.Controls.Add(this._nextPageButton, 2, 0);
+            this._itemControlTableLayoutPanel.Controls.Add(this._addToCartButton, 4, 0);
+            this._itemControlTableLayoutPanel.Controls.Add(this._pageControlTableLayoutPanel, 0, 0);
+            this._itemControlTableLayoutPanel.Controls.Add(this._lastPageButton, 1, 0);
+            this._itemControlTableLayoutPanel.Location = new System.Drawing.Point(7, 662);
+            this._itemControlTableLayoutPanel.Name = "_itemControlTableLayoutPanel";
+            this._itemControlTableLayoutPanel.RowCount = 1;
+            this._itemControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._itemControlTableLayoutPanel.Size = new System.Drawing.Size(490, 49);
+            this._itemControlTableLayoutPanel.TabIndex = 3;
             // 
             // _nextPageButton
             // 
@@ -294,22 +324,22 @@
             this._addToCartButton.UseVisualStyleBackColor = true;
             this._addToCartButton.Click += new System.EventHandler(this.AddToCartButtonClick);
             // 
-            // tableLayoutPanel2
+            // _pageControlTableLayoutPanel
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.Controls.Add(this._pageLabel, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this._currentPageLabel, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 2, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(141, 43);
-            this.tableLayoutPanel2.TabIndex = 3;
+            this._pageControlTableLayoutPanel.ColumnCount = 3;
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this._pageControlTableLayoutPanel.Controls.Add(this._pageLabel, 0, 0);
+            this._pageControlTableLayoutPanel.Controls.Add(this._currentPageLabel, 1, 0);
+            this._pageControlTableLayoutPanel.Controls.Add(this._totalPageNumber, 2, 0);
+            this._pageControlTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._pageControlTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this._pageControlTableLayoutPanel.Name = "_pageControlTableLayoutPanel";
+            this._pageControlTableLayoutPanel.RowCount = 1;
+            this._pageControlTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._pageControlTableLayoutPanel.Size = new System.Drawing.Size(141, 43);
+            this._pageControlTableLayoutPanel.TabIndex = 3;
             // 
             // _pageLabel
             // 
@@ -332,15 +362,15 @@
             this._currentPageLabel.Size = new System.Drawing.Size(0, 19);
             this._currentPageLabel.TabIndex = 1;
             // 
-            // label1
+            // _totalPageNumber
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("新細明體", 11F);
-            this.label1.Location = new System.Drawing.Point(119, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 19);
-            this.label1.TabIndex = 2;
+            this._totalPageNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._totalPageNumber.AutoSize = true;
+            this._totalPageNumber.Font = new System.Drawing.Font("新細明體", 11F);
+            this._totalPageNumber.Location = new System.Drawing.Point(119, 12);
+            this._totalPageNumber.Name = "_totalPageNumber";
+            this._totalPageNumber.Size = new System.Drawing.Size(0, 19);
+            this._totalPageNumber.TabIndex = 2;
             // 
             // _lastPageButton
             // 
@@ -1025,43 +1055,13 @@
             this._computerPage1Item6.UseVisualStyleBackColor = true;
             this._computerPage1Item6.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // _delete
-            // 
-            this._delete.FillWeight = 34.73391F;
-            this._delete.HeaderText = "刪除";
-            this._delete.Name = "_delete";
-            this._delete.ReadOnly = true;
-            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // _itemName
-            // 
-            this._itemName.FillWeight = 64.4507F;
-            this._itemName.HeaderText = "商品名稱";
-            this._itemName.Name = "_itemName";
-            this._itemName.ReadOnly = true;
-            // 
-            // _itemType
-            // 
-            this._itemType.FillWeight = 64.4507F;
-            this._itemType.HeaderText = "商品分類";
-            this._itemType.Name = "_itemType";
-            this._itemType.ReadOnly = true;
-            // 
-            // _itemPrice
-            // 
-            this._itemPrice.FillWeight = 64.4507F;
-            this._itemPrice.HeaderText = "單價";
-            this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.ReadOnly = true;
-            // 
-            // ShopList
+            // _shopList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this._bottomTableLayoutPanel);
-            this.Name = "ShopList";
+            this.Name = "_shopList";
             this.Text = "訂購";
             this._bottomTableLayoutPanel.ResumeLayout(false);
             this._myOrderTableLayoutPanel.ResumeLayout(false);
@@ -1070,9 +1070,9 @@
             this._totalPriceTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._orderDataGridView)).EndInit();
             this._merchandiseGroupBox.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this._itemControlTableLayoutPanel.ResumeLayout(false);
+            this._pageControlTableLayoutPanel.ResumeLayout(false);
+            this._pageControlTableLayoutPanel.PerformLayout();
             this._descriptionGroupBox.ResumeLayout(false);
             this._descriptionTableLayoutPanel.ResumeLayout(false);
             this._priceTableLayoutPanel.ResumeLayout(false);
@@ -1159,14 +1159,14 @@
         private System.Windows.Forms.Button _motherBoardPage1Item5;
         private System.Windows.Forms.Button _motherBoardPage1Item6;
         internal System.Windows.Forms.Button _motherBoardPage1Item1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button _bookButton;
+        private System.Windows.Forms.TableLayoutPanel _itemControlTableLayoutPanel;
         private System.Windows.Forms.Button _addToCartButton;
         private System.Windows.Forms.Button _nextPageButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel _pageControlTableLayoutPanel;
         private System.Windows.Forms.Label _pageLabel;
         private System.Windows.Forms.Label _currentPageLabel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label _totalPageNumber;
         private System.Windows.Forms.Button _lastPageButton;
         private System.Windows.Forms.DataGridViewButtonColumn _delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemName;

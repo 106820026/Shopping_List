@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this._buttonTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._orderSystemButton = new System.Windows.Forms.Button();
             this._inventorySystemButton = new System.Windows.Forms.Button();
             this._exitButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this._buttonTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // _buttonTableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this._orderSystemButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this._inventorySystemButton, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this._exitButton, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(795, 447);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this._buttonTableLayoutPanel.ColumnCount = 1;
+            this._buttonTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._buttonTableLayoutPanel.Controls.Add(this._orderSystemButton, 0, 0);
+            this._buttonTableLayoutPanel.Controls.Add(this._inventorySystemButton, 0, 1);
+            this._buttonTableLayoutPanel.Controls.Add(this._exitButton, 0, 2);
+            this._buttonTableLayoutPanel.Location = new System.Drawing.Point(1, 2);
+            this._buttonTableLayoutPanel.Name = "_buttonTableLayoutPanel";
+            this._buttonTableLayoutPanel.RowCount = 3;
+            this._buttonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this._buttonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this._buttonTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this._buttonTableLayoutPanel.Size = new System.Drawing.Size(795, 447);
+            this._buttonTableLayoutPanel.TabIndex = 0;
             // 
             // _orderSystemButton
             // 
@@ -60,7 +60,7 @@
             this._orderSystemButton.TabIndex = 0;
             this._orderSystemButton.Text = "Order System";
             this._orderSystemButton.UseVisualStyleBackColor = true;
-            this._orderSystemButton.Click += new System.EventHandler(this._orderSystemButtonClick);
+            this._orderSystemButton.Click += new System.EventHandler(this.ClickOrderSystemButton);
             // 
             // _inventorySystemButton
             // 
@@ -71,7 +71,7 @@
             this._inventorySystemButton.TabIndex = 1;
             this._inventorySystemButton.Text = "Inventory System";
             this._inventorySystemButton.UseVisualStyleBackColor = true;
-            this._inventorySystemButton.Click += new System.EventHandler(this._inventorySystemButtonClick);
+            this._inventorySystemButton.Click += new System.EventHandler(this.ClickInventorySystemButton);
             // 
             // _exitButton
             // 
@@ -83,24 +83,24 @@
             this._exitButton.TabIndex = 2;
             this._exitButton.Text = "Exit";
             this._exitButton.UseVisualStyleBackColor = true;
-            this._exitButton.Click += new System.EventHandler(this._exitButtonClick);
+            this._exitButton.Click += new System.EventHandler(this.ClickExitButton);
             // 
-            // Menu
+            // _menuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Menu";
+            this.Controls.Add(this._buttonTableLayoutPanel);
+            this.Name = "_menuForm";
             this.Text = "Menu";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this._buttonTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel _buttonTableLayoutPanel;
         private System.Windows.Forms.Button _orderSystemButton;
         private System.Windows.Forms.Button _inventorySystemButton;
         private System.Windows.Forms.Button _exitButton;
