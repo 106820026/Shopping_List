@@ -13,14 +13,30 @@ namespace ShopList
 {
     public partial class ShopList : Form
     {
+        // ini file
         const String FILE_PATH = "../../Data Info.ini";
         Initial _initialFile = new Initial(FILE_PATH);
         AddToCart _cart = new AddToCart();
         Int32 _currentHashCode;
+        // current page
+        int _motherBoardCurrentPage = 1;
+        int _centralProcessUnitCurrentPage = 1;
+        int _diskCurrentPage = 1;
+        int _memoryCurrentPage = 1;
+        int _graphicsProcessUnitCurrentPage = 1;
+        int _computerCurrentPage = 1;
+        // total page
+        int _motherBoardTotalPage = 1;
+        int _centralProcessUnitTotalPage = 1;
+        int _diskTotalPage = 1;
+        int _memoryTotalPage = 1;
+        int _graphicsProcessUnitTotalPage = 1;
+        int _computerTotalPage = 1;
+        // ini data
         const String MODEL_KEY = "model";
         const String DETAIL_KEY = "detail";
         const String PRICE_KEY = "price";
-        const String TYPE_KEY = "genre";
+        const String TYPE_KEY = "type";
 
         public ShopList()
         {
@@ -49,8 +65,8 @@ namespace ShopList
         private void AddToCartButtonClick(object sender, EventArgs e)
         {
             _cart.AddItem(_currentHashCode, int.Parse(_initialFile.Read(_cart.GetItemCode()[_currentHashCode], PRICE_KEY)));
-            _orderDataGridView.Rows.Add(_initialFile.Read(_cart.GetItemCode()[_currentHashCode], MODEL_KEY), _initialFile.Read(_cart.GetItemCode()[_currentHashCode], TYPE_KEY), _initialFile.Read(_cart.GetItemCode()[_currentHashCode], PRICE_KEY));
-            _totalPriceLabel.Text = _cart.GetTotalPrice().ToString();
+            _orderDataGridView.Rows.Add("", _initialFile.Read(_cart.GetItemCode()[_currentHashCode], MODEL_KEY), _initialFile.Read(_cart.GetItemCode()[_currentHashCode], TYPE_KEY), _initialFile.Read(_cart.GetItemCode()[_currentHashCode], PRICE_KEY));
+            _totalPriceLabel.Text = FormatNumber(_cart.GetTotalPrice());
         }
 
         //  切換Tab時 詳細資料空白
@@ -58,6 +74,11 @@ namespace ShopList
         {
             _descriptionRichTextBox.ResetText(); // 清除目前字串
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
+        }
+
+        private String FormatNumber(int price)
+        {
+            return price.ToString("#,0");
         }
     }
 }

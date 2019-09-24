@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace ShopList
 {
-    public partial class Menu : Form
+    public partial class MenuForm : Form
     {
         ShopList _shopList;
         InventorySystem _inventorySystem;
 
-        public Menu()
+        public MenuForm()
         {
             InitializeComponent();
         }
@@ -35,7 +35,7 @@ namespace ShopList
             _inventorySystem = new InventorySystem();
             _inventorySystem.Show();
             _inventorySystemButton.Enabled = false;
-            this._inventorySystem.FormClosed += ResetInventoryButton;
+            this._inventorySystem.FormClosed += ResetInventoryButton; 
         }
 
         // 關閉程式

@@ -68,26 +68,26 @@
     <Compile Include="InventorySystem.Designer.cs">
       <DependentUpon>InventorySystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ini.cs" />
-    <Compile Include="ShoppingList.cs">
+    <Compile Include="ShopList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShoppingList.Designer.cs">
-      <DependentUpon>ShoppingList.cs</DependentUpon>
+    <Compile Include="ShopList.Designer.cs">
+      <DependentUpon>ShopList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="InventorySystem.resx">
       <DependentUpon>InventorySystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,8 +99,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShoppingList.resx">
-      <DependentUpon>ShoppingList.cs</DependentUpon>
+    <EmbeddedResource Include="ShopList.resx">
+      <DependentUpon>ShopList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -255,6 +255,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_contralProcessUnitPage1Item6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_deleteIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_lastPageIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_nextPageIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_nextPageIcon1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
