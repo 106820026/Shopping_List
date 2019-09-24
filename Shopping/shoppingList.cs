@@ -21,6 +21,7 @@ namespace ShopList
         const String DETAIL_KEY = "detail";
         const String PRICE_KEY = "price";
         const String TYPE_KEY = "genre";
+
         public ShopList()
         {
             InitializeComponent();

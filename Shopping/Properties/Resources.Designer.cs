@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shopping.Properties {
+namespace ShopList.Properties {
     using System;
     
     

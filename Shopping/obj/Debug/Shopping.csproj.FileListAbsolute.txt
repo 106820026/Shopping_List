@@ -8,3 +8,5 @@ C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.csproj.CoreCompi
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.exe
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\Shopping.pdb
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.ShopList.resources
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.Menu.resources
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.InventorySystem.resources

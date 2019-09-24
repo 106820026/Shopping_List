@@ -12,7 +12,7 @@ namespace ShopList
         int _totalPrice;
         Dictionary<Int32, String> _itemCode = new Dictionary<Int32, string>(); //每個物品綁一個id, 方便查詢
         List<String> _items = new List<string> //儲存加入購物車的物品
-        {
+        { 
             null };
 
         public AddToCart()

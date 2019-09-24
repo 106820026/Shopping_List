@@ -16,7 +16,7 @@ namespace ShopList
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ShopList());
+            Application.Run(new Menu());
         }
     }
 }

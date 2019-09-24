@@ -62,15 +62,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addToCart.cs" />
-    <Compile Include="ini.cs" />
-    <Compile Include="shoppingList.cs">
+    <Compile Include="InventorySystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="shoppingList.Designer.cs">
-      <DependentUpon>shoppingList.cs</DependentUpon>
+    <Compile Include="InventorySystem.Designer.cs">
+      <DependentUpon>InventorySystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ini.cs" />
+    <Compile Include="ShoppingList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShoppingList.Designer.cs">
+      <DependentUpon>ShoppingList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="InventorySystem.resx">
+      <DependentUpon>InventorySystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,8 +99,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="shoppingList.resx">
-      <DependentUpon>shoppingList.cs</DependentUpon>
+    <EmbeddedResource Include="ShoppingList.resx">
+      <DependentUpon>ShoppingList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
