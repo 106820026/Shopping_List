@@ -16,7 +16,7 @@ namespace ShopList
         // ini file
         const String FILE_PATH = "../../Data Info.ini";
         const String FORMAT = "#, 0";
-        Initial _initialFile = new Initial(FILE_PATH);
+        readonly Initial _initialFile = new Initial(FILE_PATH);
         AddToCart _cart = new AddToCart();
         String _currentItemName;
         /*// current page
@@ -43,6 +43,8 @@ namespace ShopList
         {
             InitializeComponent();
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
+            _orderDataGridView.CellPainting += new DataGridViewCellPaintingEventHandler(DataGridViewCellPainting);
+            _orderDataGridView.CellClick += new DataGridViewCellEventHandler(DataGridViewCellClick);
         }
 
         // 處理所有商品點擊事件
@@ -64,14 +66,13 @@ namespace ShopList
         // 按下加入購物車
         private void AddToCartButtonClick(object sender, EventArgs e)
         {
-            _orderDataGridView.CellPainting += new DataGridViewCellPaintingEventHandler(dataGridView1_CellPainting);
-            _cart.AddItem(_currentItemName, int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)));
-            _orderDataGridView.Rows.Add("", _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), GetPrice());
+            _cart.AddItem(_currentItemName);
+            _orderDataGridView.Rows.Add(String.Empty, _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), GetPrice());
             _totalPriceLabel.Text = _cart.GetTotalPrice().ToString(FORMAT);
         }
 
         // 幫button加icon
-        void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        void DataGridViewCellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
@@ -82,6 +83,20 @@ namespace ShopList
                 //DrawImage(圖片, x軸, y軸, 長, 寬)
                 e.Graphics.DrawImage(global::Shopping.Properties.Resources._deleteIcon, e.CellBounds.Left + 17, e.CellBounds.Top + 3, 20, 20);
                 e.Handled = true;//false的話 圖片不穩定
+            }
+        }
+
+        // 刪除購物車內容
+        void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == -1 || e.RowIndex == -1)
+                return;
+
+            if (_orderDataGridView.Columns[e.ColumnIndex].Name == "_delete")
+            {
+                _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
+                _cart.DeleteItem(e.RowIndex);
+                _totalPriceLabel.Text = _cart.GetTotalPrice().ToString(FORMAT);
             }
         }
 

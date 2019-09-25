@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
             this._bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._myOrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -37,6 +41,10 @@
             this._totalPriceLabel = new System.Windows.Forms.Label();
             this._bookButton = new System.Windows.Forms.Button();
             this._orderDataGridView = new System.Windows.Forms.DataGridView();
+            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._merchandiseGroupBox = new System.Windows.Forms.GroupBox();
             this._itemControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nextPageButton = new System.Windows.Forms.Button();
@@ -101,10 +109,6 @@
             this._computerPage1Item4 = new System.Windows.Forms.Button();
             this._computerPage1Item5 = new System.Windows.Forms.Button();
             this._computerPage1Item6 = new System.Windows.Forms.Button();
-            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this._bottomTableLayoutPanel.SuspendLayout();
             this._myOrderTableLayoutPanel.SuspendLayout();
             this._totalPriceTableLayoutPanel.SuspendLayout();
@@ -165,11 +169,11 @@
             // 
             this._orderTitleTextLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this._orderTitleTextLabel.AutoSize = true;
-            this._orderTitleTextLabel.Font = new System.Drawing.Font("新細明體", 20F);
-            this._orderTitleTextLabel.Location = new System.Drawing.Point(173, 27);
+            this._orderTitleTextLabel.Font = new System.Drawing.Font("微軟正黑體", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._orderTitleTextLabel.Location = new System.Drawing.Point(173, 19);
             this._orderTitleTextLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this._orderTitleTextLabel.Name = "_orderTitleTextLabel";
-            this._orderTitleTextLabel.Size = new System.Drawing.Size(151, 34);
+            this._orderTitleTextLabel.Size = new System.Drawing.Size(150, 42);
             this._orderTitleTextLabel.TabIndex = 0;
             this._orderTitleTextLabel.Text = "我的訂單";
             // 
@@ -194,10 +198,10 @@
             // 
             this._totalPriceTextLabel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this._totalPriceTextLabel.AutoSize = true;
-            this._totalPriceTextLabel.Font = new System.Drawing.Font("新細明體", 12F);
-            this._totalPriceTextLabel.Location = new System.Drawing.Point(50, 16);
+            this._totalPriceTextLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._totalPriceTextLabel.Location = new System.Drawing.Point(47, 14);
             this._totalPriceTextLabel.Name = "_totalPriceTextLabel";
-            this._totalPriceTextLabel.Size = new System.Drawing.Size(79, 20);
+            this._totalPriceTextLabel.Size = new System.Drawing.Size(82, 25);
             this._totalPriceTextLabel.TabIndex = 0;
             this._totalPriceTextLabel.Text = "總金額 :";
             // 
@@ -213,7 +217,7 @@
             // 
             // _bookButton
             // 
-            this._bookButton.Font = new System.Drawing.Font("新細明體", 12F);
+            this._bookButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._bookButton.Location = new System.Drawing.Point(267, 3);
             this._bookButton.Name = "_bookButton";
             this._bookButton.Size = new System.Drawing.Size(126, 47);
@@ -238,12 +242,51 @@
             this._orderDataGridView.Size = new System.Drawing.Size(491, 566);
             this._orderDataGridView.TabIndex = 2;
             // 
+            // _delete
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this._delete.FillWeight = 25F;
+            this._delete.HeaderText = "刪除";
+            this._delete.Name = "_delete";
+            this._delete.ReadOnly = true;
+            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // _itemName
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
+            this._itemName.FillWeight = 64.4507F;
+            this._itemName.HeaderText = "商品名稱";
+            this._itemName.Name = "_itemName";
+            this._itemName.ReadOnly = true;
+            // 
+            // _itemType
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
+            this._itemType.FillWeight = 40F;
+            this._itemType.HeaderText = "商品分類";
+            this._itemType.Name = "_itemType";
+            this._itemType.ReadOnly = true;
+            // 
+            // _itemPrice
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            this._itemPrice.FillWeight = 30F;
+            this._itemPrice.HeaderText = "單價";
+            this._itemPrice.Name = "_itemPrice";
+            this._itemPrice.ReadOnly = true;
+            // 
             // _merchandiseGroupBox
             // 
             this._merchandiseGroupBox.Controls.Add(this._itemControlTableLayoutPanel);
             this._merchandiseGroupBox.Controls.Add(this._descriptionGroupBox);
             this._merchandiseGroupBox.Controls.Add(this._itemTabControl);
-            this._merchandiseGroupBox.Font = new System.Drawing.Font("新細明體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._merchandiseGroupBox.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._merchandiseGroupBox.Location = new System.Drawing.Point(3, 3);
             this._merchandiseGroupBox.Name = "_merchandiseGroupBox";
             this._merchandiseGroupBox.Size = new System.Drawing.Size(497, 715);
@@ -315,10 +358,10 @@
             // 
             this._pageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._pageLabel.AutoSize = true;
-            this._pageLabel.Font = new System.Drawing.Font("新細明體", 11F);
-            this._pageLabel.Location = new System.Drawing.Point(4, 12);
+            this._pageLabel.Font = new System.Drawing.Font("微軟正黑體", 9F);
+            this._pageLabel.Location = new System.Drawing.Point(6, 12);
             this._pageLabel.Name = "_pageLabel";
-            this._pageLabel.Size = new System.Drawing.Size(54, 19);
+            this._pageLabel.Size = new System.Drawing.Size(51, 19);
             this._pageLabel.TabIndex = 0;
             this._pageLabel.Text = "Page :";
             // 
@@ -357,6 +400,7 @@
             // _descriptionGroupBox
             // 
             this._descriptionGroupBox.Controls.Add(this._descriptionTableLayoutPanel);
+            this._descriptionGroupBox.Font = new System.Drawing.Font("微軟正黑體", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._descriptionGroupBox.Location = new System.Drawing.Point(7, 426);
             this._descriptionGroupBox.Name = "_descriptionGroupBox";
             this._descriptionGroupBox.Size = new System.Drawing.Size(484, 223);
@@ -407,10 +451,10 @@
             // 
             this._priceTextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._priceTextLabel.AutoSize = true;
-            this._priceTextLabel.Font = new System.Drawing.Font("新細明體", 9F);
-            this._priceTextLabel.Location = new System.Drawing.Point(12, 17);
+            this._priceTextLabel.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._priceTextLabel.Location = new System.Drawing.Point(12, 15);
             this._priceTextLabel.Name = "_priceTextLabel";
-            this._priceTextLabel.Size = new System.Drawing.Size(41, 15);
+            this._priceTextLabel.Size = new System.Drawing.Size(42, 19);
             this._priceTextLabel.TabIndex = 0;
             this._priceTextLabel.Text = "單價:";
             this._priceTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -433,7 +477,7 @@
             this._itemTabControl.Controls.Add(this._disk);
             this._itemTabControl.Controls.Add(this._graphicsProcessUnit);
             this._itemTabControl.Controls.Add(this._computer);
-            this._itemTabControl.Font = new System.Drawing.Font("新細明體", 12F);
+            this._itemTabControl.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._itemTabControl.Location = new System.Drawing.Point(7, 35);
             this._itemTabControl.Name = "_itemTabControl";
             this._itemTabControl.SelectedIndex = 0;
@@ -444,10 +488,10 @@
             // _motherBoard
             // 
             this._motherBoard.Controls.Add(this._motherBoardTableLayoutPanel);
-            this._motherBoard.Location = new System.Drawing.Point(4, 30);
+            this._motherBoard.Location = new System.Drawing.Point(4, 34);
             this._motherBoard.Name = "_motherBoard";
             this._motherBoard.Padding = new System.Windows.Forms.Padding(3);
-            this._motherBoard.Size = new System.Drawing.Size(476, 350);
+            this._motherBoard.Size = new System.Drawing.Size(476, 346);
             this._motherBoard.TabIndex = 0;
             this._motherBoard.Text = "主機板";
             this._motherBoard.UseVisualStyleBackColor = true;
@@ -542,10 +586,10 @@
             // _centralProcessUnit
             // 
             this._centralProcessUnit.Controls.Add(this._centralProcessUnitTableLayoutPanel);
-            this._centralProcessUnit.Location = new System.Drawing.Point(4, 30);
+            this._centralProcessUnit.Location = new System.Drawing.Point(4, 34);
             this._centralProcessUnit.Name = "_centralProcessUnit";
             this._centralProcessUnit.Padding = new System.Windows.Forms.Padding(3);
-            this._centralProcessUnit.Size = new System.Drawing.Size(476, 350);
+            this._centralProcessUnit.Size = new System.Drawing.Size(476, 346);
             this._centralProcessUnit.TabIndex = 1;
             this._centralProcessUnit.Text = "CPU";
             this._centralProcessUnit.UseVisualStyleBackColor = true;
@@ -639,10 +683,10 @@
             // _memory
             // 
             this._memory.Controls.Add(this._memoryTableLayoutPanel);
-            this._memory.Location = new System.Drawing.Point(4, 30);
+            this._memory.Location = new System.Drawing.Point(4, 34);
             this._memory.Name = "_memory";
             this._memory.Padding = new System.Windows.Forms.Padding(3);
-            this._memory.Size = new System.Drawing.Size(476, 350);
+            this._memory.Size = new System.Drawing.Size(476, 346);
             this._memory.TabIndex = 2;
             this._memory.Text = "記憶體";
             this._memory.UseVisualStyleBackColor = true;
@@ -736,10 +780,10 @@
             // _disk
             // 
             this._disk.Controls.Add(this._diskTableLayoutPanel);
-            this._disk.Location = new System.Drawing.Point(4, 30);
+            this._disk.Location = new System.Drawing.Point(4, 34);
             this._disk.Name = "_disk";
             this._disk.Padding = new System.Windows.Forms.Padding(3);
-            this._disk.Size = new System.Drawing.Size(476, 350);
+            this._disk.Size = new System.Drawing.Size(476, 346);
             this._disk.TabIndex = 3;
             this._disk.Text = "硬碟";
             this._disk.UseVisualStyleBackColor = true;
@@ -833,10 +877,10 @@
             // _graphicsProcessUnit
             // 
             this._graphicsProcessUnit.Controls.Add(this._graphicsProcessUnitTableLayoutPanel);
-            this._graphicsProcessUnit.Location = new System.Drawing.Point(4, 30);
+            this._graphicsProcessUnit.Location = new System.Drawing.Point(4, 34);
             this._graphicsProcessUnit.Name = "_graphicsProcessUnit";
             this._graphicsProcessUnit.Padding = new System.Windows.Forms.Padding(3);
-            this._graphicsProcessUnit.Size = new System.Drawing.Size(476, 350);
+            this._graphicsProcessUnit.Size = new System.Drawing.Size(476, 346);
             this._graphicsProcessUnit.TabIndex = 4;
             this._graphicsProcessUnit.Text = "顯卡";
             this._graphicsProcessUnit.UseVisualStyleBackColor = true;
@@ -931,10 +975,10 @@
             // _computer
             // 
             this._computer.Controls.Add(this._computerTableLayoutPanel);
-            this._computer.Location = new System.Drawing.Point(4, 30);
+            this._computer.Location = new System.Drawing.Point(4, 34);
             this._computer.Name = "_computer";
             this._computer.Padding = new System.Windows.Forms.Padding(3);
-            this._computer.Size = new System.Drawing.Size(476, 350);
+            this._computer.Size = new System.Drawing.Size(476, 346);
             this._computer.TabIndex = 5;
             this._computer.Text = "套裝電腦";
             this._computer.UseVisualStyleBackColor = true;
@@ -1024,36 +1068,6 @@
             this._computerPage1Item6.TabIndex = 5;
             this._computerPage1Item6.UseVisualStyleBackColor = true;
             this._computerPage1Item6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _itemPrice
-            // 
-            this._itemPrice.FillWeight = 64.4507F;
-            this._itemPrice.HeaderText = "單價";
-            this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.ReadOnly = true;
-            // 
-            // _itemType
-            // 
-            this._itemType.FillWeight = 64.4507F;
-            this._itemType.HeaderText = "商品分類";
-            this._itemType.Name = "_itemType";
-            this._itemType.ReadOnly = true;
-            // 
-            // _itemName
-            // 
-            this._itemName.FillWeight = 64.4507F;
-            this._itemName.HeaderText = "商品名稱";
-            this._itemName.Name = "_itemName";
-            this._itemName.ReadOnly = true;
-            // 
-            // _delete
-            // 
-            this._delete.FillWeight = 34.73391F;
-            this._delete.HeaderText = "刪除";
-            this._delete.Name = "_delete";
-            this._delete.ReadOnly = true;
-            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ShopList
             // 
