@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
             this._bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._myOrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -52,7 +52,8 @@
             this._pageControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._pageLabel = new System.Windows.Forms.Label();
             this._currentPageLabel = new System.Windows.Forms.Label();
-            this._totalPageNumber = new System.Windows.Forms.Label();
+            this._totalPageLabel = new System.Windows.Forms.Label();
+            this._label = new System.Windows.Forms.Label();
             this._lastPageButton = new System.Windows.Forms.Button();
             this._descriptionGroupBox = new System.Windows.Forms.GroupBox();
             this._descriptionTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -209,10 +210,10 @@
             // 
             this._totalPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this._totalPriceLabel.AutoSize = true;
-            this._totalPriceLabel.Font = new System.Drawing.Font("新細明體", 11F);
-            this._totalPriceLabel.Location = new System.Drawing.Point(135, 17);
+            this._totalPriceLabel.Font = new System.Drawing.Font("微軟正黑體", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._totalPriceLabel.Location = new System.Drawing.Point(135, 14);
             this._totalPriceLabel.Name = "_totalPriceLabel";
-            this._totalPriceLabel.Size = new System.Drawing.Size(0, 19);
+            this._totalPriceLabel.Size = new System.Drawing.Size(0, 24);
             this._totalPriceLabel.TabIndex = 1;
             // 
             // _bookButton
@@ -244,9 +245,9 @@
             // 
             // _delete
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._delete.DefaultCellStyle = dataGridViewCellStyle5;
             this._delete.FillWeight = 25F;
             this._delete.HeaderText = "刪除";
             this._delete.Name = "_delete";
@@ -256,8 +257,8 @@
             // 
             // _itemName
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemName.DefaultCellStyle = dataGridViewCellStyle6;
             this._itemName.FillWeight = 64.4507F;
             this._itemName.HeaderText = "商品名稱";
             this._itemName.Name = "_itemName";
@@ -265,8 +266,8 @@
             // 
             // _itemType
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemType.DefaultCellStyle = dataGridViewCellStyle7;
             this._itemType.FillWeight = 40F;
             this._itemType.HeaderText = "商品分類";
             this._itemType.Name = "_itemType";
@@ -274,8 +275,8 @@
             // 
             // _itemPrice
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this._itemPrice.FillWeight = 30F;
             this._itemPrice.HeaderText = "單價";
             this._itemPrice.Name = "_itemPrice";
@@ -316,7 +317,7 @@
             // _nextPageButton
             // 
             this._nextPageButton.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this._nextPageButton.BackgroundImage = global::Shopping.Properties.Resources._nextPageIcon1;
+            this._nextPageButton.BackgroundImage = global::ShopList.Properties.Resources._nextPageIcon1;
             this._nextPageButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._nextPageButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this._nextPageButton.Location = new System.Drawing.Point(238, 3);
@@ -327,9 +328,9 @@
             // 
             // _addToCartButton
             // 
-            this._addToCartButton.BackgroundImage = global::Shopping.Properties.Resources._cartIcon;
+            this._addToCartButton.BackgroundImage = global::ShopList.Properties.Resources._cartIcon;
             this._addToCartButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this._addToCartButton.Font = new System.Drawing.Font("新細明體", 9F);
+            this._addToCartButton.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this._addToCartButton.Location = new System.Drawing.Point(394, 3);
             this._addToCartButton.Name = "_addToCartButton";
             this._addToCartButton.Size = new System.Drawing.Size(93, 43);
@@ -339,13 +340,15 @@
             // 
             // _pageControlTableLayoutPanel
             // 
-            this._pageControlTableLayoutPanel.ColumnCount = 3;
-            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this._pageControlTableLayoutPanel.ColumnCount = 4;
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._pageControlTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this._pageControlTableLayoutPanel.Controls.Add(this._pageLabel, 0, 0);
             this._pageControlTableLayoutPanel.Controls.Add(this._currentPageLabel, 1, 0);
-            this._pageControlTableLayoutPanel.Controls.Add(this._totalPageNumber, 2, 0);
+            this._pageControlTableLayoutPanel.Controls.Add(this._totalPageLabel, 3, 0);
+            this._pageControlTableLayoutPanel.Controls.Add(this._label, 2, 0);
             this._pageControlTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pageControlTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this._pageControlTableLayoutPanel.Name = "_pageControlTableLayoutPanel";
@@ -358,10 +361,10 @@
             // 
             this._pageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._pageLabel.AutoSize = true;
-            this._pageLabel.Font = new System.Drawing.Font("微軟正黑體", 9F);
-            this._pageLabel.Location = new System.Drawing.Point(6, 12);
+            this._pageLabel.Font = new System.Drawing.Font("微軟正黑體", 10F);
+            this._pageLabel.Location = new System.Drawing.Point(6, 10);
             this._pageLabel.Name = "_pageLabel";
-            this._pageLabel.Size = new System.Drawing.Size(51, 19);
+            this._pageLabel.Size = new System.Drawing.Size(58, 22);
             this._pageLabel.TabIndex = 0;
             this._pageLabel.Text = "Page :";
             // 
@@ -369,21 +372,32 @@
             // 
             this._currentPageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._currentPageLabel.AutoSize = true;
-            this._currentPageLabel.Font = new System.Drawing.Font("新細明體", 11F);
-            this._currentPageLabel.Location = new System.Drawing.Point(80, 12);
+            this._currentPageLabel.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this._currentPageLabel.Location = new System.Drawing.Point(81, 9);
             this._currentPageLabel.Name = "_currentPageLabel";
-            this._currentPageLabel.Size = new System.Drawing.Size(0, 19);
+            this._currentPageLabel.Size = new System.Drawing.Size(0, 24);
             this._currentPageLabel.TabIndex = 1;
             // 
-            // _totalPageNumber
+            // _totalPageLabel
             // 
-            this._totalPageNumber.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._totalPageNumber.AutoSize = true;
-            this._totalPageNumber.Font = new System.Drawing.Font("新細明體", 11F);
-            this._totalPageNumber.Location = new System.Drawing.Point(119, 12);
-            this._totalPageNumber.Name = "_totalPageNumber";
-            this._totalPageNumber.Size = new System.Drawing.Size(0, 19);
-            this._totalPageNumber.TabIndex = 2;
+            this._totalPageLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._totalPageLabel.AutoSize = true;
+            this._totalPageLabel.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this._totalPageLabel.Location = new System.Drawing.Point(128, 9);
+            this._totalPageLabel.Name = "_totalPageLabel";
+            this._totalPageLabel.Size = new System.Drawing.Size(0, 24);
+            this._totalPageLabel.TabIndex = 2;
+            // 
+            // _label
+            // 
+            this._label.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._label.AutoSize = true;
+            this._label.Font = new System.Drawing.Font("微軟正黑體", 11F);
+            this._label.Location = new System.Drawing.Point(96, 9);
+            this._label.Name = "_label";
+            this._label.Size = new System.Drawing.Size(17, 24);
+            this._label.TabIndex = 3;
+            this._label.Text = "/";
             // 
             // _lastPageButton
             // 
@@ -425,7 +439,7 @@
             // _descriptionRichTextBox
             // 
             this._descriptionRichTextBox.Enabled = false;
-            this._descriptionRichTextBox.Font = new System.Drawing.Font("新細明體", 12F);
+            this._descriptionRichTextBox.Font = new System.Drawing.Font("微軟正黑體", 9F);
             this._descriptionRichTextBox.Location = new System.Drawing.Point(3, 3);
             this._descriptionRichTextBox.Name = "_descriptionRichTextBox";
             this._descriptionRichTextBox.Size = new System.Drawing.Size(330, 177);
@@ -436,8 +450,8 @@
             // 
             this._priceTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._priceTableLayoutPanel.ColumnCount = 2;
-            this._priceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._priceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._priceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.18182F));
+            this._priceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.81818F));
             this._priceTableLayoutPanel.Controls.Add(this._priceTextLabel, 0, 0);
             this._priceTableLayoutPanel.Controls.Add(this._priceLabel, 1, 0);
             this._priceTableLayoutPanel.Location = new System.Drawing.Point(339, 131);
@@ -452,7 +466,7 @@
             this._priceTextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._priceTextLabel.AutoSize = true;
             this._priceTextLabel.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._priceTextLabel.Location = new System.Drawing.Point(12, 15);
+            this._priceTextLabel.Location = new System.Drawing.Point(7, 15);
             this._priceTextLabel.Name = "_priceTextLabel";
             this._priceTextLabel.Size = new System.Drawing.Size(42, 19);
             this._priceTextLabel.TabIndex = 0;
@@ -463,10 +477,10 @@
             // 
             this._priceLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._priceLabel.AutoSize = true;
-            this._priceLabel.Font = new System.Drawing.Font("新細明體", 9F);
-            this._priceLabel.Location = new System.Drawing.Point(99, 17);
+            this._priceLabel.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._priceLabel.Location = new System.Drawing.Point(94, 15);
             this._priceLabel.Name = "_priceLabel";
-            this._priceLabel.Size = new System.Drawing.Size(0, 15);
+            this._priceLabel.Size = new System.Drawing.Size(0, 19);
             this._priceLabel.TabIndex = 1;
             // 
             // _itemTabControl
@@ -483,7 +497,7 @@
             this._itemTabControl.SelectedIndex = 0;
             this._itemTabControl.Size = new System.Drawing.Size(484, 384);
             this._itemTabControl.TabIndex = 0;
-            this._itemTabControl.Click += new System.EventHandler(this.ChangeTab);
+            this._itemTabControl.SelectedIndexChanged += new System.EventHandler(this.TabIndexChange);
             // 
             // _motherBoard
             // 
@@ -518,7 +532,7 @@
             // 
             // _motherBoardPage1Item2
             // 
-            this._motherBoardPage1Item2.BackgroundImage = global::Shopping.Properties.Resources._motherBoardPage1Item2;
+            this._motherBoardPage1Item2.BackgroundImage = global::ShopList.Properties.Resources._motherBoardPage1Item2;
             this._motherBoardPage1Item2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._motherBoardPage1Item2.Location = new System.Drawing.Point(161, 3);
             this._motherBoardPage1Item2.Name = "_motherBoardPage1Item2";
@@ -529,7 +543,7 @@
             // 
             // _motherBoardPage1Item3
             // 
-            this._motherBoardPage1Item3.BackgroundImage = global::Shopping.Properties.Resources._motherBoardPage1Item3;
+            this._motherBoardPage1Item3.BackgroundImage = global::ShopList.Properties.Resources._motherBoardPage1Item3;
             this._motherBoardPage1Item3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._motherBoardPage1Item3.Location = new System.Drawing.Point(319, 3);
             this._motherBoardPage1Item3.Name = "_motherBoardPage1Item3";
@@ -541,7 +555,7 @@
             // _motherBoardPage1Item4
             // 
             this._motherBoardPage1Item4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this._motherBoardPage1Item4.BackgroundImage = global::Shopping.Properties.Resources._motherBoardPage1Item4;
+            this._motherBoardPage1Item4.BackgroundImage = global::ShopList.Properties.Resources._motherBoardPage1Item4;
             this._motherBoardPage1Item4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._motherBoardPage1Item4.Location = new System.Drawing.Point(3, 173);
             this._motherBoardPage1Item4.Name = "_motherBoardPage1Item4";
@@ -552,7 +566,7 @@
             // 
             // _motherBoardPage1Item5
             // 
-            this._motherBoardPage1Item5.BackgroundImage = global::Shopping.Properties.Resources._motherBoardPage1Item5;
+            this._motherBoardPage1Item5.BackgroundImage = global::ShopList.Properties.Resources._motherBoardPage1Item5;
             this._motherBoardPage1Item5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._motherBoardPage1Item5.Location = new System.Drawing.Point(161, 173);
             this._motherBoardPage1Item5.Name = "_motherBoardPage1Item5";
@@ -563,7 +577,7 @@
             // 
             // _motherBoardPage1Item6
             // 
-            this._motherBoardPage1Item6.BackgroundImage = global::Shopping.Properties.Resources._motherBoardPage1Item6;
+            this._motherBoardPage1Item6.BackgroundImage = global::ShopList.Properties.Resources._motherBoardPage1Item6;
             this._motherBoardPage1Item6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._motherBoardPage1Item6.Location = new System.Drawing.Point(319, 173);
             this._motherBoardPage1Item6.Name = "_motherBoardPage1Item6";
@@ -574,7 +588,7 @@
             // 
             // _motherBoardPage1Item1
             // 
-            this._motherBoardPage1Item1.BackgroundImage = global::Shopping.Properties.Resources._motherBoardPage1Item1;
+            this._motherBoardPage1Item1.BackgroundImage = global::ShopList.Properties.Resources._motherBoardPage1Item1;
             this._motherBoardPage1Item1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._motherBoardPage1Item1.Location = new System.Drawing.Point(3, 3);
             this._motherBoardPage1Item1.Name = "_motherBoardPage1Item1";
@@ -590,7 +604,7 @@
             this._centralProcessUnit.Name = "_centralProcessUnit";
             this._centralProcessUnit.Padding = new System.Windows.Forms.Padding(3);
             this._centralProcessUnit.Size = new System.Drawing.Size(476, 346);
-            this._centralProcessUnit.TabIndex = 1;
+            this._centralProcessUnit.TabIndex = 0;
             this._centralProcessUnit.Text = "CPU";
             this._centralProcessUnit.UseVisualStyleBackColor = true;
             // 
@@ -713,7 +727,7 @@
             // 
             // _memoryPage1Item1
             // 
-            this._memoryPage1Item1.BackgroundImage = global::Shopping.Properties.Resources._memoryPage1Item1;
+            this._memoryPage1Item1.BackgroundImage = global::ShopList.Properties.Resources._memoryPage1Item1;
             this._memoryPage1Item1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._memoryPage1Item1.Location = new System.Drawing.Point(3, 3);
             this._memoryPage1Item1.Name = "_memoryPage1Item1";
@@ -724,7 +738,7 @@
             // 
             // _memoryPage1Item2
             // 
-            this._memoryPage1Item2.BackgroundImage = global::Shopping.Properties.Resources._memoryPage1Item2;
+            this._memoryPage1Item2.BackgroundImage = global::ShopList.Properties.Resources._memoryPage1Item2;
             this._memoryPage1Item2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._memoryPage1Item2.Location = new System.Drawing.Point(161, 3);
             this._memoryPage1Item2.Name = "_memoryPage1Item2";
@@ -735,7 +749,7 @@
             // 
             // _memoryPage1Item3
             // 
-            this._memoryPage1Item3.BackgroundImage = global::Shopping.Properties.Resources._memoryPage1Item3;
+            this._memoryPage1Item3.BackgroundImage = global::ShopList.Properties.Resources._memoryPage1Item3;
             this._memoryPage1Item3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._memoryPage1Item3.Location = new System.Drawing.Point(319, 3);
             this._memoryPage1Item3.Name = "_memoryPage1Item3";
@@ -746,7 +760,7 @@
             // 
             // _memoryPage1Item4
             // 
-            this._memoryPage1Item4.BackgroundImage = global::Shopping.Properties.Resources._memoryPage1Item4;
+            this._memoryPage1Item4.BackgroundImage = global::ShopList.Properties.Resources._memoryPage1Item4;
             this._memoryPage1Item4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._memoryPage1Item4.Location = new System.Drawing.Point(3, 173);
             this._memoryPage1Item4.Name = "_memoryPage1Item4";
@@ -757,7 +771,7 @@
             // 
             // _memoryPage1Item5
             // 
-            this._memoryPage1Item5.BackgroundImage = global::Shopping.Properties.Resources._memoryPage1Item5;
+            this._memoryPage1Item5.BackgroundImage = global::ShopList.Properties.Resources._memoryPage1Item5;
             this._memoryPage1Item5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._memoryPage1Item5.Location = new System.Drawing.Point(161, 173);
             this._memoryPage1Item5.Name = "_memoryPage1Item5";
@@ -768,7 +782,7 @@
             // 
             // _memoryPage1Item6
             // 
-            this._memoryPage1Item6.BackgroundImage = global::Shopping.Properties.Resources._memoryPage1Item6;
+            this._memoryPage1Item6.BackgroundImage = global::ShopList.Properties.Resources._memoryPage1Item6;
             this._memoryPage1Item6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._memoryPage1Item6.Location = new System.Drawing.Point(319, 173);
             this._memoryPage1Item6.Name = "_memoryPage1Item6";
@@ -810,7 +824,7 @@
             // 
             // _diskPage1Item1
             // 
-            this._diskPage1Item1.BackgroundImage = global::Shopping.Properties.Resources._diskPage1Item1;
+            this._diskPage1Item1.BackgroundImage = global::ShopList.Properties.Resources._diskPage1Item1;
             this._diskPage1Item1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._diskPage1Item1.Location = new System.Drawing.Point(3, 3);
             this._diskPage1Item1.Name = "_diskPage1Item1";
@@ -821,7 +835,7 @@
             // 
             // _diskPage1Item2
             // 
-            this._diskPage1Item2.BackgroundImage = global::Shopping.Properties.Resources._diskPage1Item2;
+            this._diskPage1Item2.BackgroundImage = global::ShopList.Properties.Resources._diskPage1Item2;
             this._diskPage1Item2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._diskPage1Item2.Location = new System.Drawing.Point(160, 3);
             this._diskPage1Item2.Name = "_diskPage1Item2";
@@ -832,7 +846,7 @@
             // 
             // _diskPage1Item3
             // 
-            this._diskPage1Item3.BackgroundImage = global::Shopping.Properties.Resources._diskPage1Item3;
+            this._diskPage1Item3.BackgroundImage = global::ShopList.Properties.Resources._diskPage1Item3;
             this._diskPage1Item3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._diskPage1Item3.Location = new System.Drawing.Point(317, 3);
             this._diskPage1Item3.Name = "_diskPage1Item3";
@@ -843,7 +857,7 @@
             // 
             // _diskPage1Item4
             // 
-            this._diskPage1Item4.BackgroundImage = global::Shopping.Properties.Resources._diskPage1Item4;
+            this._diskPage1Item4.BackgroundImage = global::ShopList.Properties.Resources._diskPage1Item4;
             this._diskPage1Item4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._diskPage1Item4.Location = new System.Drawing.Point(3, 176);
             this._diskPage1Item4.Name = "_diskPage1Item4";
@@ -854,7 +868,7 @@
             // 
             // _diskPage1Item5
             // 
-            this._diskPage1Item5.BackgroundImage = global::Shopping.Properties.Resources._diskPage1Item5;
+            this._diskPage1Item5.BackgroundImage = global::ShopList.Properties.Resources._diskPage1Item5;
             this._diskPage1Item5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._diskPage1Item5.Location = new System.Drawing.Point(160, 176);
             this._diskPage1Item5.Name = "_diskPage1Item5";
@@ -865,7 +879,7 @@
             // 
             // _diskPage1Item6
             // 
-            this._diskPage1Item6.BackgroundImage = global::Shopping.Properties.Resources._diskPage1Item6;
+            this._diskPage1Item6.BackgroundImage = global::ShopList.Properties.Resources._diskPage1Item6;
             this._diskPage1Item6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._diskPage1Item6.Location = new System.Drawing.Point(317, 176);
             this._diskPage1Item6.Name = "_diskPage1Item6";
@@ -908,7 +922,7 @@
             // 
             // _graphicsProcessUnitPage1Item2
             // 
-            this._graphicsProcessUnitPage1Item2.BackgroundImage = global::Shopping.Properties.Resources._graphicsProcessUnitPage1Item2;
+            this._graphicsProcessUnitPage1Item2.BackgroundImage = global::ShopList.Properties.Resources._graphicsProcessUnitPage1Item2;
             this._graphicsProcessUnitPage1Item2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._graphicsProcessUnitPage1Item2.Location = new System.Drawing.Point(159, 3);
             this._graphicsProcessUnitPage1Item2.Name = "_graphicsProcessUnitPage1Item2";
@@ -919,7 +933,7 @@
             // 
             // _graphicsProcessUnitPage1Item3
             // 
-            this._graphicsProcessUnitPage1Item3.BackgroundImage = global::Shopping.Properties.Resources._graphicsProcessUnitPage1Item3;
+            this._graphicsProcessUnitPage1Item3.BackgroundImage = global::ShopList.Properties.Resources._graphicsProcessUnitPage1Item3;
             this._graphicsProcessUnitPage1Item3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._graphicsProcessUnitPage1Item3.Location = new System.Drawing.Point(315, 3);
             this._graphicsProcessUnitPage1Item3.Name = "_graphicsProcessUnitPage1Item3";
@@ -930,7 +944,7 @@
             // 
             // _graphicsProcessUnitPage1Item4
             // 
-            this._graphicsProcessUnitPage1Item4.BackgroundImage = global::Shopping.Properties.Resources._graphicsProcessUnitPage1Item4;
+            this._graphicsProcessUnitPage1Item4.BackgroundImage = global::ShopList.Properties.Resources._graphicsProcessUnitPage1Item4;
             this._graphicsProcessUnitPage1Item4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this._graphicsProcessUnitPage1Item4.Location = new System.Drawing.Point(3, 175);
             this._graphicsProcessUnitPage1Item4.Name = "_graphicsProcessUnitPage1Item4";
@@ -941,7 +955,7 @@
             // 
             // _graphicsProcessUnitPage1Item5
             // 
-            this._graphicsProcessUnitPage1Item5.BackgroundImage = global::Shopping.Properties.Resources._graphicsProcessUnitPage1Item5;
+            this._graphicsProcessUnitPage1Item5.BackgroundImage = global::ShopList.Properties.Resources._graphicsProcessUnitPage1Item5;
             this._graphicsProcessUnitPage1Item5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._graphicsProcessUnitPage1Item5.Location = new System.Drawing.Point(159, 175);
             this._graphicsProcessUnitPage1Item5.Name = "_graphicsProcessUnitPage1Item5";
@@ -952,7 +966,7 @@
             // 
             // _graphicsProcessUnitPage1Item6
             // 
-            this._graphicsProcessUnitPage1Item6.BackgroundImage = global::Shopping.Properties.Resources._graphicsProcessUnitPage1Item6;
+            this._graphicsProcessUnitPage1Item6.BackgroundImage = global::ShopList.Properties.Resources._graphicsProcessUnitPage1Item6;
             this._graphicsProcessUnitPage1Item6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._graphicsProcessUnitPage1Item6.Location = new System.Drawing.Point(315, 175);
             this._graphicsProcessUnitPage1Item6.Name = "_graphicsProcessUnitPage1Item6";
@@ -963,7 +977,7 @@
             // 
             // _graphicsProcessUnitPage1Item1
             // 
-            this._graphicsProcessUnitPage1Item1.BackgroundImage = global::Shopping.Properties.Resources._graphicsProcessUnitPage1Item1;
+            this._graphicsProcessUnitPage1Item1.BackgroundImage = global::ShopList.Properties.Resources._graphicsProcessUnitPage1Item1;
             this._graphicsProcessUnitPage1Item1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._graphicsProcessUnitPage1Item1.Location = new System.Drawing.Point(3, 3);
             this._graphicsProcessUnitPage1Item1.Name = "_graphicsProcessUnitPage1Item1";
@@ -1005,7 +1019,7 @@
             // 
             // _computerPage1Item1
             // 
-            this._computerPage1Item1.BackgroundImage = global::Shopping.Properties.Resources._computerPage1Item1;
+            this._computerPage1Item1.BackgroundImage = global::ShopList.Properties.Resources._computerPage1Item1;
             this._computerPage1Item1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._computerPage1Item1.Location = new System.Drawing.Point(3, 3);
             this._computerPage1Item1.Name = "_computerPage1Item1";
@@ -1016,7 +1030,7 @@
             // 
             // _computerPage1Item2
             // 
-            this._computerPage1Item2.BackgroundImage = global::Shopping.Properties.Resources._computerPage1Item2;
+            this._computerPage1Item2.BackgroundImage = global::ShopList.Properties.Resources._computerPage1Item2;
             this._computerPage1Item2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._computerPage1Item2.Location = new System.Drawing.Point(160, 3);
             this._computerPage1Item2.Name = "_computerPage1Item2";
@@ -1027,7 +1041,7 @@
             // 
             // _computerPage1Item3
             // 
-            this._computerPage1Item3.BackgroundImage = global::Shopping.Properties.Resources._computerPage1Item3;
+            this._computerPage1Item3.BackgroundImage = global::ShopList.Properties.Resources._computerPage1Item3;
             this._computerPage1Item3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._computerPage1Item3.Location = new System.Drawing.Point(317, 3);
             this._computerPage1Item3.Name = "_computerPage1Item3";
@@ -1038,7 +1052,7 @@
             // 
             // _computerPage1Item4
             // 
-            this._computerPage1Item4.BackgroundImage = global::Shopping.Properties.Resources._computerPage1Item4;
+            this._computerPage1Item4.BackgroundImage = global::ShopList.Properties.Resources._computerPage1Item4;
             this._computerPage1Item4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._computerPage1Item4.Location = new System.Drawing.Point(3, 173);
             this._computerPage1Item4.Name = "_computerPage1Item4";
@@ -1049,7 +1063,7 @@
             // 
             // _computerPage1Item5
             // 
-            this._computerPage1Item5.BackgroundImage = global::Shopping.Properties.Resources._computerPage1Item5;
+            this._computerPage1Item5.BackgroundImage = global::ShopList.Properties.Resources._computerPage1Item5;
             this._computerPage1Item5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._computerPage1Item5.Location = new System.Drawing.Point(160, 173);
             this._computerPage1Item5.Name = "_computerPage1Item5";
@@ -1060,7 +1074,7 @@
             // 
             // _computerPage1Item6
             // 
-            this._computerPage1Item6.BackgroundImage = global::Shopping.Properties.Resources._computerPage1Item6;
+            this._computerPage1Item6.BackgroundImage = global::ShopList.Properties.Resources._computerPage1Item6;
             this._computerPage1Item6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this._computerPage1Item6.Location = new System.Drawing.Point(317, 173);
             this._computerPage1Item6.Name = "_computerPage1Item6";
@@ -1180,12 +1194,13 @@
         private System.Windows.Forms.TableLayoutPanel _pageControlTableLayoutPanel;
         private System.Windows.Forms.Label _pageLabel;
         private System.Windows.Forms.Label _currentPageLabel;
-        private System.Windows.Forms.Label _totalPageNumber;
+        private System.Windows.Forms.Label _totalPageLabel;
         private System.Windows.Forms.Button _lastPageButton;
         private System.Windows.Forms.DataGridViewButtonColumn _delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemType;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemPrice;
+        private System.Windows.Forms.Label _label;
     }
 }
 
