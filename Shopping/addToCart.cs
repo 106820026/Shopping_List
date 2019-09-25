@@ -36,5 +36,12 @@ namespace ShopList
         {
             return _totalPrice;
         }
+
+        // 拿出購物車
+        public void deleteItem(String itemName, int price)
+        {
+            _items.Remove(itemName);
+            _totalPrice -= price;
+        }
     }
 }

@@ -37,10 +37,6 @@
             this._totalPriceLabel = new System.Windows.Forms.Label();
             this._bookButton = new System.Windows.Forms.Button();
             this._orderDataGridView = new System.Windows.Forms.DataGridView();
-            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._merchandiseGroupBox = new System.Windows.Forms.GroupBox();
             this._itemControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nextPageButton = new System.Windows.Forms.Button();
@@ -105,6 +101,10 @@
             this._computerPage1Item4 = new System.Windows.Forms.Button();
             this._computerPage1Item5 = new System.Windows.Forms.Button();
             this._computerPage1Item6 = new System.Windows.Forms.Button();
+            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this._bottomTableLayoutPanel.SuspendLayout();
             this._myOrderTableLayoutPanel.SuspendLayout();
             this._totalPriceTableLayoutPanel.SuspendLayout();
@@ -237,36 +237,6 @@
             this._orderDataGridView.RowTemplate.Height = 27;
             this._orderDataGridView.Size = new System.Drawing.Size(491, 566);
             this._orderDataGridView.TabIndex = 2;
-            // 
-            // _delete
-            // 
-            this._delete.FillWeight = 34.73391F;
-            this._delete.HeaderText = "刪除";
-            this._delete.Name = "_delete";
-            this._delete.ReadOnly = true;
-            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // _itemName
-            // 
-            this._itemName.FillWeight = 64.4507F;
-            this._itemName.HeaderText = "商品名稱";
-            this._itemName.Name = "_itemName";
-            this._itemName.ReadOnly = true;
-            // 
-            // _itemType
-            // 
-            this._itemType.FillWeight = 64.4507F;
-            this._itemType.HeaderText = "商品分類";
-            this._itemType.Name = "_itemType";
-            this._itemType.ReadOnly = true;
-            // 
-            // _itemPrice
-            // 
-            this._itemPrice.FillWeight = 64.4507F;
-            this._itemPrice.HeaderText = "單價";
-            this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.ReadOnly = true;
             // 
             // _merchandiseGroupBox
             // 
@@ -1055,13 +1025,43 @@
             this._computerPage1Item6.UseVisualStyleBackColor = true;
             this._computerPage1Item6.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // _shopList
+            // _itemPrice
+            // 
+            this._itemPrice.FillWeight = 64.4507F;
+            this._itemPrice.HeaderText = "單價";
+            this._itemPrice.Name = "_itemPrice";
+            this._itemPrice.ReadOnly = true;
+            // 
+            // _itemType
+            // 
+            this._itemType.FillWeight = 64.4507F;
+            this._itemType.HeaderText = "商品分類";
+            this._itemType.Name = "_itemType";
+            this._itemType.ReadOnly = true;
+            // 
+            // _itemName
+            // 
+            this._itemName.FillWeight = 64.4507F;
+            this._itemName.HeaderText = "商品名稱";
+            this._itemName.Name = "_itemName";
+            this._itemName.ReadOnly = true;
+            // 
+            // _delete
+            // 
+            this._delete.FillWeight = 34.73391F;
+            this._delete.HeaderText = "刪除";
+            this._delete.Name = "_delete";
+            this._delete.ReadOnly = true;
+            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ShopList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this._bottomTableLayoutPanel);
-            this.Name = "_shopList";
+            this.Name = "ShopList";
             this.Text = "訂購";
             this._bottomTableLayoutPanel.ResumeLayout(false);
             this._myOrderTableLayoutPanel.ResumeLayout(false);

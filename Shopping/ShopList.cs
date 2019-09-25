@@ -64,9 +64,25 @@ namespace ShopList
         // 按下加入購物車
         private void AddToCartButtonClick(object sender, EventArgs e)
         {
+            _orderDataGridView.CellPainting += new DataGridViewCellPaintingEventHandler(dataGridView1_CellPainting);
             _cart.AddItem(_currentItemName, int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)));
             _orderDataGridView.Rows.Add("", _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), GetPrice());
             _totalPriceLabel.Text = _cart.GetTotalPrice().ToString(FORMAT);
+        }
+
+        // 幫button加icon
+        void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == -1 || e.RowIndex == -1)
+                return;
+
+            if (_orderDataGridView.Columns[e.ColumnIndex].Name == "_delete")
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                //DrawImage(圖片, x軸, y軸, 長, 寬)
+                e.Graphics.DrawImage(global::Shopping.Properties.Resources._deleteIcon, e.CellBounds.Left + 17, e.CellBounds.Top + 3, 20, 20);
+                e.Handled = true;//false的話 圖片不穩定
+            }
         }
 
         //  切換Tab時 詳細資料空白
