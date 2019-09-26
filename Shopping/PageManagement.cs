@@ -10,7 +10,7 @@ namespace ShopList
     {
         // current page
         int _motherBoardCurrentPage = 1;
-        int _centralProcessUnitCurrentPage = 2;
+        int _centralProcessUnitCurrentPage = 1;
         int _diskCurrentPage = 1;
         int _memoryCurrentPage = 1;
         int _graphicsProcessUnitCurrentPage = 1;
@@ -22,10 +22,17 @@ namespace ShopList
         int _memoryTotalPage = 2;
         int _graphicsProcessUnitTotalPage = 2;
         int _computerTotalPage = 2;
+        // tab Index
+        const int MOTHER_BOARD          = 0;
+        const int CENTRAL_PROCESS_UNIT  = 1;
+        const int DISK                  = 2;
+        const int MEMORY                = 3;
+        const int GRAPHICS_PROCESS_UNIT = 4;
+        const int COMPUTER              = 5;
 
         public PageManagement()
         {
-
+            _motherBoardCurrentPage = 1;
         }
 
         // 取得目前頁數
@@ -33,17 +40,17 @@ namespace ShopList
         {
             switch (tabIndex)
             {
-                case 0:
+                case MOTHER_BOARD:
                     return _motherBoardCurrentPage;
-                case 1:
+                case CENTRAL_PROCESS_UNIT:
                     return _centralProcessUnitCurrentPage;
-                case 2:
+                case DISK:
                     return _diskCurrentPage;
-                case 3:
+                case MEMORY:
                     return _memoryCurrentPage;
-                case 4:
+                case GRAPHICS_PROCESS_UNIT:
                     return _graphicsProcessUnitCurrentPage;
-                case 5:
+                case COMPUTER:
                     return _computerCurrentPage;
                 default:
                     return 0;
@@ -55,20 +62,48 @@ namespace ShopList
         {
             switch (tabIndex)
             {
-                case 0:
+                case MOTHER_BOARD:
                     return _motherBoardTotalPage;
-                case 1:
+                case CENTRAL_PROCESS_UNIT:
                     return _centralProcessUnitTotalPage;
-                case 2:
+                case DISK:
                     return _diskTotalPage;
-                case 3:
+                case MEMORY:
                     return _memoryTotalPage;
-                case 4:
+                case GRAPHICS_PROCESS_UNIT:
                     return _graphicsProcessUnitTotalPage;
-                case 5:
+                case COMPUTER:
                     return _computerTotalPage;
                 default:
                     return 0;
+            }
+        }
+
+        // 處理換頁動作
+        public void SwitchPage(int tabIndex, int offset)
+        {
+            switch (tabIndex)
+            {
+                case MOTHER_BOARD:
+                    _motherBoardCurrentPage += offset;
+                    break;
+                case CENTRAL_PROCESS_UNIT:
+                    _centralProcessUnitCurrentPage += offset;
+                    break;
+                case DISK:
+                    _diskCurrentPage += offset;
+                    break;
+                case MEMORY:
+                    _memoryCurrentPage += offset;
+                    break;
+                case GRAPHICS_PROCESS_UNIT:
+                    _graphicsProcessUnitCurrentPage += offset;
+                    break;
+                case COMPUTER:
+                    _computerCurrentPage += offset;
+                    break;
+                default:
+                    break;
             }
         }
     }

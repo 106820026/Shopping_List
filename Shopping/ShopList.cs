@@ -20,21 +20,24 @@ namespace ShopList
         AddToCart _cart = new AddToCart();
         PageManagement _pages = new PageManagement();
         String _currentItemName;
+        String _currentTabName;
         // ini key
         const String MODEL_KEY = "model";
         const String DETAIL_KEY = "detail";
         const String PRICE_KEY = "price";
         const String TYPE_KEY = "type";
+        const String DELETE_COLUMN = "_delete";
 
         public ShopList()
         {
             InitializeComponent();
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
-            _orderDataGridView.CellPainting += new DataGridViewCellPaintingEventHandler(DataGridViewCellPainting);
-            _orderDataGridView.CellClick += new DataGridViewCellEventHandler(DataGridViewCellClick);
+            _orderDataGridView.CellPainting += new DataGridViewCellPaintingEventHandler(PaintDataGridViewCell);
+            _orderDataGridView.CellClick += new DataGridViewCellEventHandler(ClickDataGridViewCell);
             // 初始化頁數
             _currentPageLabel.Text = _pages.GetCurrentPage(_itemTabControl.TabIndex).ToString();
             _totalPageLabel.Text = _pages.GetTotalPage(_itemTabControl.TabIndex).ToString();
+            _currentTabName = _itemTabControl.SelectedTab.Name;
             _lastPageButton.Enabled = false;
         }
 
@@ -48,9 +51,11 @@ namespace ShopList
 
             Button button; // 取得商品物件
             button = (Button)sender;
-            _currentItemName = button.Name; // 取得目前商品id
-
-            _descriptionRichTextBox.AppendText(_initialFile.Read(button.Name, MODEL_KEY) + SEPARATE_LINE + _initialFile.Read(button.Name, DETAIL_KEY));
+            _currentItemName = button.Name + "Page" + _pages.GetCurrentPage(_itemTabControl.SelectedIndex); // 取得目前商品id
+            if (_initialFile.Read(_currentItemName, MODEL_KEY) != String.Empty) // 如果找的到ini檔的話
+                _descriptionRichTextBox.AppendText(_initialFile.Read(_currentItemName, MODEL_KEY) + SEPARATE_LINE + _initialFile.Read(_currentItemName, DETAIL_KEY));
+            else
+                _addToCartButton.Enabled = false;
             _priceLabel.Text = GetPrice();
         }
 
@@ -63,27 +68,29 @@ namespace ShopList
         }
 
         // 幫button加icon
-        void DataGridViewCellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-
-            if (_orderDataGridView.Columns[e.ColumnIndex].Name == "_delete")
+            if (_orderDataGridView.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
             {
+                const int LEFT_OFFSET = 17;
+                const int TOP_OFFSET = 3;
+                const int PICTURE_SIZE = 20;
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                //DrawImage(圖片, x軸, y軸, 長, 寬)
-                e.Graphics.DrawImage(global::ShopList.Properties.Resources._deleteIcon, e.CellBounds.Left + 17, e.CellBounds.Top + 3, 20, 20);
+                // DrawImage(圖片, x軸, y軸, 長, 寬)
+                e.Graphics.DrawImage(global::ShopList.Properties.Resources._deleteIcon, e.CellBounds.Left + LEFT_OFFSET, e.CellBounds.Top + TOP_OFFSET, PICTURE_SIZE, PICTURE_SIZE);
                 e.Handled = true;//false的話 圖片不穩定
             }
         }
 
         // 刪除購物車內容
-        void DataGridViewCellClick(object sender, DataGridViewCellEventArgs e)
+        void ClickDataGridViewCell(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
 
-            if (_orderDataGridView.Columns[e.ColumnIndex].Name == "_delete")
+            if (_orderDataGridView.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
             {
                 _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
                 _cart.DeleteItem(e.RowIndex);
@@ -94,26 +101,59 @@ namespace ShopList
         // 取得格式化價錢
         private String GetPrice()
         {
-            return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
+            if (_initialFile.Read(_currentItemName, PRICE_KEY) != String.Empty)
+                return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
+            else
+                return String.Empty;
         }
 
         // 設定頁數 & 切換Tab時 詳細資料空白
-        private void TabIndexChange(object sender, EventArgs e)
-        {   
-            _descriptionRichTextBox.ResetText(); // 清除目前字串
-            _priceLabel.ResetText(); // 清除目前字串
+        private void ChangeTabIndex(object sender, EventArgs e)
+        {
+            this.CleanDetail(); // 清除物品詳細資料
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
-
-            String FIRST_PAGE = "1";
+            _currentTabName = _itemTabControl.SelectedTab.Name; // 取得目前tab的id
+            
             _currentPageLabel.Text = _pages.GetCurrentPage(_itemTabControl.SelectedIndex).ToString(); // 取得目前頁數
             _totalPageLabel.Text = _pages.GetTotalPage(_itemTabControl.SelectedIndex).ToString(); // 取得總頁數
+            CheckChangePageButton();
+        }
 
-            _nextPageButton.Enabled = true;
-            _lastPageButton.Enabled = true;
+        // 確認換頁按鈕是否可以按下
+        private void CheckChangePageButton()
+        {
+            const String FIRST_PAGE = "1";
+            _nextPageButton.Enabled = _lastPageButton.Enabled = true;
             if (_currentPageLabel.Text == FIRST_PAGE)
-                _lastPageButton.Enabled = false;
-            if(_currentPageLabel.Text == _totalPageLabel.Text)
-                _nextPageButton.Enabled = false;
+                _lastPageButton.Enabled = false; // 禁用上一頁按鈕
+            if (_currentPageLabel.Text == _totalPageLabel.Text)
+                _nextPageButton.Enabled = false;// 禁用下一頁按鈕
+        }
+
+        // 換頁
+        private void ClickChangePageButton(object sender, EventArgs e)
+        {
+            const String NEXT_PAGE_BUTTON = "_nextPageButton";
+            const String LAST_PAGE_BUTTON = "_lastPageButton";
+
+            this.CleanDetail(); // 清除物品詳細資料
+            Button button; // 取得商品物件
+            button = (Button)sender;
+
+            if(button.Name == NEXT_PAGE_BUTTON)
+                _pages.SwitchPage(_itemTabControl.SelectedIndex, 1);  // 頁數+1
+            if (button.Name == LAST_PAGE_BUTTON)
+                _pages.SwitchPage(_itemTabControl.SelectedIndex, -1); // 頁數-1
+                
+            _currentPageLabel.Text = _pages.GetCurrentPage(_itemTabControl.SelectedIndex).ToString(); // 顯示目前頁數
+            CheckChangePageButton(); // 確認換頁按鈕
+        }
+
+        // 詳細資訊清除
+        private void CleanDetail()
+        {
+            _descriptionRichTextBox.ResetText();
+            _priceLabel.ResetText();
         }
     }
 }
