@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
             this._bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._myOrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -39,7 +39,7 @@
             this._totalPriceTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._totalPriceTextLabel = new System.Windows.Forms.Label();
             this._totalPriceLabel = new System.Windows.Forms.Label();
-            this._bookButton = new System.Windows.Forms.Button();
+            this._orderButton = new System.Windows.Forms.Button();
             this._orderDataGridView = new System.Windows.Forms.DataGridView();
             this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,7 +187,7 @@
             this._totalPriceTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this._totalPriceTableLayoutPanel.Controls.Add(this._totalPriceTextLabel, 0, 0);
             this._totalPriceTableLayoutPanel.Controls.Add(this._totalPriceLabel, 1, 0);
-            this._totalPriceTableLayoutPanel.Controls.Add(this._bookButton, 2, 0);
+            this._totalPriceTableLayoutPanel.Controls.Add(this._orderButton, 2, 0);
             this._totalPriceTableLayoutPanel.Location = new System.Drawing.Point(98, 659);
             this._totalPriceTableLayoutPanel.Name = "_totalPriceTableLayoutPanel";
             this._totalPriceTableLayoutPanel.RowCount = 1;
@@ -216,15 +216,16 @@
             this._totalPriceLabel.Size = new System.Drawing.Size(0, 24);
             this._totalPriceLabel.TabIndex = 1;
             // 
-            // _bookButton
+            // _orderButton
             // 
-            this._bookButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._bookButton.Location = new System.Drawing.Point(267, 3);
-            this._bookButton.Name = "_bookButton";
-            this._bookButton.Size = new System.Drawing.Size(126, 47);
-            this._bookButton.TabIndex = 2;
-            this._bookButton.Text = "訂購";
-            this._bookButton.UseVisualStyleBackColor = true;
+            this._orderButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._orderButton.Location = new System.Drawing.Point(267, 3);
+            this._orderButton.Name = "_orderButton";
+            this._orderButton.Size = new System.Drawing.Size(126, 47);
+            this._orderButton.TabIndex = 2;
+            this._orderButton.Text = "訂購";
+            this._orderButton.UseVisualStyleBackColor = true;
+            this._orderButton.Click += new System.EventHandler(this.ClickOrderButton);
             // 
             // _orderDataGridView
             // 
@@ -242,12 +243,14 @@
             this._orderDataGridView.RowTemplate.Height = 27;
             this._orderDataGridView.Size = new System.Drawing.Size(491, 566);
             this._orderDataGridView.TabIndex = 2;
+            this._orderDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDataGridViewCell);
+            this._orderDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.PaintDataGridViewCell);
             // 
             // _delete
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._delete.DefaultCellStyle = dataGridViewCellStyle5;
             this._delete.FillWeight = 25F;
             this._delete.HeaderText = "刪除";
             this._delete.Name = "_delete";
@@ -257,8 +260,8 @@
             // 
             // _itemName
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemName.DefaultCellStyle = dataGridViewCellStyle6;
             this._itemName.FillWeight = 64.4507F;
             this._itemName.HeaderText = "商品名稱";
             this._itemName.Name = "_itemName";
@@ -266,8 +269,8 @@
             // 
             // _itemType
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemType.DefaultCellStyle = dataGridViewCellStyle7;
             this._itemType.FillWeight = 40F;
             this._itemType.HeaderText = "商品分類";
             this._itemType.Name = "_itemType";
@@ -275,8 +278,8 @@
             // 
             // _itemPrice
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this._itemPrice.FillWeight = 30F;
             this._itemPrice.HeaderText = "單價";
             this._itemPrice.Name = "_itemPrice";
@@ -1225,7 +1228,7 @@
         private System.Windows.Forms.Button _motherBoardItem5;
         private System.Windows.Forms.Button _motherBoardItem6;
         internal System.Windows.Forms.Button _motherBoardItem1;
-        private System.Windows.Forms.Button _bookButton;
+        private System.Windows.Forms.Button _orderButton;
         private System.Windows.Forms.TableLayoutPanel _itemControlTableLayoutPanel;
         private System.Windows.Forms.Button _addToCartButton;
         private System.Windows.Forms.Button _nextPageButton;

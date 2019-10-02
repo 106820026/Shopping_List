@@ -53,6 +53,7 @@
             // 
             // _orderSystemButton
             // 
+            this._orderSystemButton.Dock = System.Windows.Forms.DockStyle.Top;
             this._orderSystemButton.Font = new System.Drawing.Font("新細明體", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(5)));
             this._orderSystemButton.Location = new System.Drawing.Point(3, 3);
             this._orderSystemButton.Name = "_orderSystemButton";
@@ -85,13 +86,13 @@
             this._exitButton.UseVisualStyleBackColor = true;
             this._exitButton.Click += new System.EventHandler(this.ClickExitButton);
             // 
-            // _menuForm
+            // MenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this._buttonTableLayoutPanel);
-            this.Name = "_menuForm";
+            this.Name = "MenuForm";
             this.Text = "Menu";
             this._buttonTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);

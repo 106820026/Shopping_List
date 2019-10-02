@@ -10,3 +10,4 @@ C:\Users\ASUS\source\repos\Shopping\Shopping\bin\Debug\ShopList.pdb
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.Properties.Resources.resources
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.exe
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.pdb
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.CreditCardPayment.resources

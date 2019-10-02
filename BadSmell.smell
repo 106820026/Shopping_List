@@ -188,114 +188,50 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>Literal constants(字面常數)-2</SmellType>
-              <HashCode>LiteralConstants._motherBoardTotalPage.2</HashCode>
-              <Severity>Warning</Severity>
+              <SmellType>ICS(空白與空行-3)</SmellType>
+              <HashCode>SpacingAndNewLine3</HashCode>
+              <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
-              <File>PageManagement.cs</File>
-              <Line>18</Line>
+              <File>ShopList.cs</File>
+              <Line>166</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment />
+              <Comment>ICS(空白與空行-3) for, foreach, while, switch, if 等關鍵字與左括號之間加一個空白</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>2</Id>
-              <SmellType>Literal constants(字面常數)-2</SmellType>
-              <HashCode>LiteralConstants._centralProcessUnitTotalPage.2</HashCode>
-              <Severity>Warning</Severity>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>60 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
+              <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
-              <File>PageManagement.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.cs</File>
+              <Line>60</Line>
+              <StartLine>59</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
+              <EndLine>60</EndLine>
               <EndCol>0</EndCol>
-              <Comment />
+              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>3</Id>
-              <SmellType>Literal constants(字面常數)-2</SmellType>
-              <HashCode>LiteralConstants._diskTotalPage.2</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>PageManagement.cs</File>
-              <Line>20</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>4</Id>
-              <SmellType>Literal constants(字面常數)-2</SmellType>
-              <HashCode>LiteralConstants._memoryTotalPage.2</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>PageManagement.cs</File>
-              <Line>21</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>5</Id>
-              <SmellType>Literal constants(字面常數)-2</SmellType>
-              <HashCode>LiteralConstants._graphicsProcessUnitTotalPage.2</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>PageManagement.cs</File>
-              <Line>22</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>6</Id>
-              <SmellType>Literal constants(字面常數)-2</SmellType>
-              <HashCode>LiteralConstants._computerTotalPage.2</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>PageManagement.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>7</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>54 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
+              <HashCode>109 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.cs</File>
-              <Line>54</Line>
-              <StartLine>52</StartLine>
+              <Line>109</Line>
+              <StartLine>108</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>54</EndLine>
+              <EndLine>109</EndLine>
               <EndCol>0</EndCol>
-              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</Comment>
+              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</Comment>
               <Auto>false</Auto>
             </Smell>
           </Reviews>
@@ -370,7 +306,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1840</ProductionLoc>
+          <ProductionLoc>1911</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

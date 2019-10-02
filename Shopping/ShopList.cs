@@ -14,36 +14,38 @@ namespace ShopList
     public partial class ShopList : Form
     {
         // ini file
+        readonly Initial _initialFile = new Initial(FILE_PATH);
         const String FILE_PATH = "../../Data Info.ini";
         const String FORMAT = "#, 0";
-        readonly Initial _initialFile = new Initial(FILE_PATH);
-        AddToCart _cart = new AddToCart();
-        PageManagement _pages = new PageManagement();
-        String _currentItemName;
-        String _currentTabName;
         // ini key
         const String MODEL_KEY = "model";
         const String DETAIL_KEY = "detail";
         const String PRICE_KEY = "price";
         const String TYPE_KEY = "type";
         const String DELETE_COLUMN = "_delete";
+        AddToCart _cart = new AddToCart();
+        PageManagement _pages = new PageManagement();
+        String _currentItemName;
+        String _currentTabName;
+        TableLayoutPanel[] _tabTableLayoutPanel;
 
         public ShopList()
         {
             InitializeComponent();
-            _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
-            _orderDataGridView.CellPainting += new DataGridViewCellPaintingEventHandler(PaintDataGridViewCell);
-            _orderDataGridView.CellClick += new DataGridViewCellEventHandler(ClickDataGridViewCell);
+            _addToCartButton.Enabled = _orderButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
             // 初始化頁數
             _currentPageLabel.Text = _pages.GetCurrentPage(_itemTabControl.TabIndex).ToString();
             _totalPageLabel.Text = _pages.GetTotalPage(_itemTabControl.TabIndex).ToString();
             _currentTabName = _itemTabControl.SelectedTab.Name;
             _lastPageButton.Enabled = false;
+            // 為了取得每頁的按鈕
+            _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _diskTableLayoutPanel, _memoryTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
         }
 
         // 處理所有商品點擊事件
         private void ButtonClick(object sender, EventArgs e)
         {
+            const String PAGE = "page";
             _addToCartButton.Enabled = true; // 啟用按鍵
 
             const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
@@ -51,7 +53,7 @@ namespace ShopList
 
             Button button; // 取得商品物件
             button = (Button)sender;
-            _currentItemName = button.Name + "Page" + _pages.GetCurrentPage(_itemTabControl.SelectedIndex); // 取得目前商品id
+            _currentItemName = button.Name + PAGE + _pages.GetCurrentPage(_itemTabControl.SelectedIndex); // 取得目前商品id
             if (_initialFile.Read(_currentItemName, MODEL_KEY) != String.Empty) // 如果找的到ini檔的話
                 _descriptionRichTextBox.AppendText(_initialFile.Read(_currentItemName, MODEL_KEY) + SEPARATE_LINE + _initialFile.Read(_currentItemName, DETAIL_KEY));
             else
@@ -65,6 +67,7 @@ namespace ShopList
             _cart.AddItem(_currentItemName);
             _orderDataGridView.Rows.Add(String.Empty, _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), GetPrice());
             _totalPriceLabel.Text = _cart.GetTotalPrice().ToString(FORMAT);
+            CheckConfirmButton();
         }
 
         // 幫button加icon
@@ -95,6 +98,7 @@ namespace ShopList
                 _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
                 _cart.DeleteItem(e.RowIndex);
                 _totalPriceLabel.Text = _cart.GetTotalPrice().ToString(FORMAT);
+                CheckConfirmButton();
             }
         }
 
@@ -140,8 +144,8 @@ namespace ShopList
             Button button; // 取得商品物件
             button = (Button)sender;
 
-            if(button.Name == NEXT_PAGE_BUTTON)
-                _pages.SwitchPage(_itemTabControl.SelectedIndex, 1);  // 頁數+1
+            if (button.Name == NEXT_PAGE_BUTTON)
+                _pages.SwitchPage(_itemTabControl.SelectedIndex, 1); // 頁數+1
             if (button.Name == LAST_PAGE_BUTTON)
                 _pages.SwitchPage(_itemTabControl.SelectedIndex, -1); // 頁數-1
                 
@@ -154,6 +158,33 @@ namespace ShopList
         {
             _descriptionRichTextBox.ResetText();
             _priceLabel.ResetText();
+        }
+
+        // 設定按鈕圖片
+        private void SetPicture(int currentTabIndex)
+        {
+            foreach (Control button in _tabTableLayoutPanel[currentTabIndex].Controls)
+            {
+                Image i = Image.FromFile("../../Resource/"+"");
+                //button.BackgroundImage = global::ShopList.Properties.Resources.
+                System.Diagnostics.Debug.Print(button.Name.ToString());
+            }
+        }
+
+        // 點選訂購
+        private void ClickOrderButton(object sender, EventArgs e)
+        {
+            CreditCardPayment _creditCardPayment = new CreditCardPayment();
+            _creditCardPayment.ShowDialog();
+        }
+
+        // 確認訂購按鈕可以按下
+        private void CheckConfirmButton()
+        {
+            if (_orderDataGridView.Rows.Count == 0)
+                _orderButton.Enabled = false;
+            else
+                _orderButton.Enabled = true;
         }
     }
 }
