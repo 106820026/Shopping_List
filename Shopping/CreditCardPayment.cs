@@ -202,6 +202,7 @@ namespace ShopList
         private void _clickConfirmButton(object sender, EventArgs e)
         {
             MessageBox.Show("訂購完成");
+            _backNumberTextBox.ResetText();
             this.Close();
         }
     }

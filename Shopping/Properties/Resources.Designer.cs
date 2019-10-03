@@ -73,6 +73,76 @@ namespace ShopList.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage1Item1 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage1Item1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage1Item2 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage1Item2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage1Item3 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage1Item3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage1Item4 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage1Item4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage1Item5 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage1Item5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage1Item6 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage1Item6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _centralProcessUnitPage2Item1 {
+            get {
+                object obj = ResourceManager.GetObject("_centralProcessUnitPage2Item1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap _computerPage1Item1 {
             get {
                 object obj = ResourceManager.GetObject("_computerPage1Item1", resourceCulture);
@@ -136,76 +206,6 @@ namespace ShopList.Properties {
         internal static System.Drawing.Bitmap _computerPage2Item1 {
             get {
                 object obj = ResourceManager.GetObject("_computerPage2Item1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage1Item1 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage1Item1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage1Item2 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage1Item2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage1Item3 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage1Item3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage1Item4 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage1Item4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage1Item5 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage1Item5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage1Item6 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage1Item6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _contralProcessUnitPage2Item1 {
-            get {
-                object obj = ResourceManager.GetObject("_contralProcessUnitPage2Item1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -516,16 +516,6 @@ namespace ShopList.Properties {
         internal static System.Drawing.Bitmap _nextPageIcon {
             get {
                 object obj = ResourceManager.GetObject("_nextPageIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap _nextPageIcon1 {
-            get {
-                object obj = ResourceManager.GetObject("_nextPageIcon1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

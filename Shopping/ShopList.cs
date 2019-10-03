@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace ShopList
@@ -28,6 +29,7 @@ namespace ShopList
         String _currentItemName;
         String _currentTabName;
         TableLayoutPanel[] _tabTableLayoutPanel;
+        CreditCardPayment _creditCardPayment = new CreditCardPayment();
 
         public ShopList()
         {
@@ -39,7 +41,7 @@ namespace ShopList
             _currentTabName = _itemTabControl.SelectedTab.Name;
             _lastPageButton.Enabled = false;
             // 為了取得每頁的按鈕
-            _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _diskTableLayoutPanel, _memoryTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
+            _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _memoryTableLayoutPanel, _diskTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
         }
 
         // 處理所有商品點擊事件
@@ -148,8 +150,9 @@ namespace ShopList
                 _pages.SwitchPage(_itemTabControl.SelectedIndex, 1); // 頁數+1
             if (button.Name == LAST_PAGE_BUTTON)
                 _pages.SwitchPage(_itemTabControl.SelectedIndex, -1); // 頁數-1
-                
+            
             _currentPageLabel.Text = _pages.GetCurrentPage(_itemTabControl.SelectedIndex).ToString(); // 顯示目前頁數
+            SetPicture();
             CheckChangePageButton(); // 確認換頁按鈕
         }
 
@@ -161,20 +164,27 @@ namespace ShopList
         }
 
         // 設定按鈕圖片
-        private void SetPicture(int currentTabIndex)
+        private void SetPicture()
         {
-            foreach (Control button in _tabTableLayoutPanel[currentTabIndex].Controls)
+            foreach (Control button in _tabTableLayoutPanel[_itemTabControl.SelectedIndex].Controls)
             {
-                Image i = Image.FromFile("../../Resource/"+"");
-                //button.BackgroundImage = global::ShopList.Properties.Resources.
-                System.Diagnostics.Debug.Print(button.Name.ToString());
+                String _filePath = "../../Resources/" + _currentTabName + "Page" + _currentPageLabel.Text.ToString() + "Item" + button.Tag.ToString() + ".jpg";
+                if (File.Exists(_filePath))
+                {
+                    button.BackgroundImage = Image.FromFile(_filePath);
+                    button.Enabled = true;
+                }
+                else
+                {
+                    button.BackgroundImage = null;
+                    button.Enabled = false;
+                }
             }
         }
 
         // 點選訂購
         private void ClickOrderButton(object sender, EventArgs e)
         {
-            CreditCardPayment _creditCardPayment = new CreditCardPayment();
             _creditCardPayment.ShowDialog();
         }
 

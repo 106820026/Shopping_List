@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopListControl.cs" />
     <EmbeddedResource Include="CreditCardPayment.resx">
       <DependentUpon>CreditCardPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,13 +139,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_centralProcessUnitPage1Item1.png" />
+    <None Include="Resources\_cartIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_centralProcessUnitPage1Item2.png" />
+    <None Include="Resources\_centralProcessUnitPage1Item1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_centralProcessUnitPage1Item3.png" />
+    <None Include="Resources\_centralProcessUnitPage1Item2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_centralProcessUnitPage1Item3.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_centralProcessUnitPage1Item4.jpg" />
@@ -154,33 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_centralProcessUnitPage1Item6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage1Item1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage1Item2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage1Item3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage1Item4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage1Item5.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage1Item6.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_lastPageIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_nextPageIcon1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_cartIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_computerPage1Item1.jpg" />
@@ -199,6 +176,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_computerPage1Item6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_computerPage2Item1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_deleteIcon.png" />
@@ -222,6 +202,9 @@
     <None Include="Resources\_diskPage1Item6.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\_diskPage2Item1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\_graphicsProcessUnitPage1Item1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -240,6 +223,12 @@
     <None Include="Resources\_graphicsProcessUnitPage1Item6.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\_graphicsProcessUnitPage2Item1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_lastPageIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\_memoryPage1Item1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -252,10 +241,13 @@
     <None Include="Resources\_memoryPage1Item4.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_memoryPage1Item5.png" />
+    <None Include="Resources\_memoryPage1Item5.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_memoryPage1Item6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_memoryPage2Item1.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_motherBoardPage1Item1.jpg" />
@@ -276,25 +268,13 @@
     <None Include="Resources\_motherBoardPage1Item6.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\_motherBoardPage2Item1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\_nextPageIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\_computerPage2Item1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_contralProcessUnitPage2Item1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_diskPage2Item1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_graphicsProcessUnitPage2Item1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_memoryPage2Item1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\_motherBoardPage2Item1.jpg" />
+    <None Include="Resources\_centralProcessUnitPage2Item1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
