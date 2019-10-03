@@ -81,7 +81,6 @@
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ini.cs" />
-    <Compile Include="PageManagement.cs" />
     <Compile Include="ShopList.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -33,14 +33,14 @@ namespace ShopList
             TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
-            if(_textBox == _addressTextBox) // 地址只需要有輸入東西即可
+            if (_textBox == _addressTextBox) // 地址只需要有輸入東西即可
             {
                 if (e.KeyChar == 8 && _textBox.Text.Length == 1)
                     addressValid = false;
                 else
                     addressValid = true;
             }
-            else if ((e.KeyChar >= '0' && e.KeyChar <= '9')) // 不可輸入數字
+            else if (e.KeyChar >= '0' && e.KeyChar <= '9') // 不可輸入數字
             {
                 e.Handled = true;
                 errorProvider.SetError(_textBox, "no number input");
@@ -77,7 +77,7 @@ namespace ShopList
                 e.Handled = true;
                 errorProvider.SetError(_textBox, "only number input");
             }
-            else if(e.KeyChar == 8) // 按下刪除鍵
+            else if (e.KeyChar == 8) // 按下刪除鍵
             {
                 if (_textBox == _cardNumber1textBox)
                     cardNumber1Valid = false;

@@ -50,7 +50,7 @@
             this._firstNameTextBox = new System.Windows.Forms.TextBox();
             this._label1 = new System.Windows.Forms.Label();
             this._lastNameTextBox = new System.Windows.Forms.TextBox();
-            this._exprieDateFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this._expireDateFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this._monthComboBox = new System.Windows.Forms.ComboBox();
             this._label5 = new System.Windows.Forms.Label();
             this._yearComboBox = new System.Windows.Forms.ComboBox();
@@ -60,7 +60,7 @@
             this._contentTableLayoutPanel.SuspendLayout();
             this._cardNumberFlowLayoutPanel.SuspendLayout();
             this._ownerFlowLayoutPanel.SuspendLayout();
-            this._exprieDateFlowLayoutPanel.SuspendLayout();
+            this._expireDateFlowLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _titleLabel
@@ -96,7 +96,7 @@
             this._contentTableLayoutPanel.Controls.Add(this._cardNumberLabel, 0, 2);
             this._contentTableLayoutPanel.Controls.Add(this._ownerLabel, 0, 0);
             this._contentTableLayoutPanel.Controls.Add(this._ownerFlowLayoutPanel, 0, 1);
-            this._contentTableLayoutPanel.Controls.Add(this._exprieDateFlowLayoutPanel, 0, 5);
+            this._contentTableLayoutPanel.Controls.Add(this._expireDateFlowLayoutPanel, 0, 5);
             this._contentTableLayoutPanel.Controls.Add(this._backNumberLabel, 0, 6);
             this._contentTableLayoutPanel.Controls.Add(this._backNumberTextBox, 0, 7);
             this._contentTableLayoutPanel.Controls.Add(this._confirmButton, 0, 13);
@@ -359,15 +359,15 @@
             this._lastNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._lastNameTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 
-            // _exprieDateFlowLayoutPanel
+            // _expireDateFlowLayoutPanel
             // 
-            this._exprieDateFlowLayoutPanel.Controls.Add(this._monthComboBox);
-            this._exprieDateFlowLayoutPanel.Controls.Add(this._label5);
-            this._exprieDateFlowLayoutPanel.Controls.Add(this._yearComboBox);
-            this._exprieDateFlowLayoutPanel.Location = new System.Drawing.Point(3, 193);
-            this._exprieDateFlowLayoutPanel.Name = "_exprieDateFlowLayoutPanel";
-            this._exprieDateFlowLayoutPanel.Size = new System.Drawing.Size(494, 32);
-            this._exprieDateFlowLayoutPanel.TabIndex = 6;
+            this._expireDateFlowLayoutPanel.Controls.Add(this._monthComboBox);
+            this._expireDateFlowLayoutPanel.Controls.Add(this._label5);
+            this._expireDateFlowLayoutPanel.Controls.Add(this._yearComboBox);
+            this._expireDateFlowLayoutPanel.Location = new System.Drawing.Point(3, 193);
+            this._expireDateFlowLayoutPanel.Name = "_expireDateFlowLayoutPanel";
+            this._expireDateFlowLayoutPanel.Size = new System.Drawing.Size(494, 32);
+            this._expireDateFlowLayoutPanel.TabIndex = 6;
             // 
             // _monthComboBox
             // 
@@ -481,8 +481,8 @@
             this._cardNumberFlowLayoutPanel.PerformLayout();
             this._ownerFlowLayoutPanel.ResumeLayout(false);
             this._ownerFlowLayoutPanel.PerformLayout();
-            this._exprieDateFlowLayoutPanel.ResumeLayout(false);
-            this._exprieDateFlowLayoutPanel.PerformLayout();
+            this._expireDateFlowLayoutPanel.ResumeLayout(false);
+            this._expireDateFlowLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -507,7 +507,7 @@
         private System.Windows.Forms.Label _label4;
         private System.Windows.Forms.TextBox _cardNumber4textBox;
         private System.Windows.Forms.Label _expireDateLabel;
-        private System.Windows.Forms.FlowLayoutPanel _exprieDateFlowLayoutPanel;
+        private System.Windows.Forms.FlowLayoutPanel _expireDateFlowLayoutPanel;
         private System.Windows.Forms.ComboBox _monthComboBox;
         private System.Windows.Forms.Label _label5;
         private System.Windows.Forms.ComboBox _yearComboBox;
