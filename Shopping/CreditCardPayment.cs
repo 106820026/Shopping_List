@@ -33,11 +33,14 @@ namespace ShopList
             TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
-            if(_textBox == _addressTextBox && _textBox.Text != "")
+            if(_textBox == _addressTextBox) // 地址只需要有輸入東西即可
             {
-                addressValid = true;
+                if (e.KeyChar == 8 && _textBox.Text.Length == 1)
+                    addressValid = false;
+                else
+                    addressValid = true;
             }
-            else if ((e.KeyChar >= '0' && e.KeyChar <= '9'))
+            else if ((e.KeyChar >= '0' && e.KeyChar <= '9')) // 不可輸入數字
             {
                 e.Handled = true;
                 errorProvider.SetError(_textBox, "no number input");
@@ -46,10 +49,20 @@ namespace ShopList
             {
                 e.Handled = false;
                 errorProvider.Clear();
-                if (_textBox == _firstNameTextBox)
-                    firstNameValid = true;
-                if (_textBox == _lastNameTextBox)
-                    lastNameValid = true;
+                if (e.KeyChar == 8 && _textBox.Text.Length <= 1) // 按下刪除鍵
+                {
+                    if (_textBox == _firstNameTextBox)
+                        firstNameValid = false;
+                    if (_textBox == _lastNameTextBox)
+                        lastNameValid = false;
+                }
+                else
+                {
+                    if (_textBox == _firstNameTextBox)
+                        firstNameValid = true;
+                    if (_textBox == _lastNameTextBox)
+                        lastNameValid = true;
+                }
             }
         }
 
@@ -59,24 +72,40 @@ namespace ShopList
             TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
-            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != 8))
+            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != 8)) //輸入非數字
             {
                 e.Handled = true;
                 errorProvider.SetError(_textBox, "only number input");
+            }
+            else if(e.KeyChar == 8) // 按下刪除鍵
+            {
+                if (_textBox == _cardNumber1textBox)
+                    cardNumber1Valid = false;
+                if (_textBox == _cardNumber2textBox)
+                    cardNumber2Valid = false;
+                if (_textBox == _cardNumber3textBox)
+                    cardNumber3Valid = false;
+                if (_textBox == _cardNumber4textBox)
+                    cardNumber4Valid = false;
+                if (_textBox == _backNumberTextBox)
+                    backNumberValid = false;
             }
             else
             {
                 e.Handled = false;
                 errorProvider.Clear();
-                if (_textBox == _cardNumber1textBox)
-                    cardNumber1Valid = true;
-                if (_textBox == _cardNumber2textBox)
-                    cardNumber2Valid = true;
-                if (_textBox == _cardNumber3textBox)
-                    cardNumber3Valid = true;
-                if (_textBox == _cardNumber4textBox)
-                    cardNumber4Valid = true;
-                if (_textBox == _backNumberTextBox)
+                if(_textBox.Text.Length >= 3)
+                {
+                    if (_textBox == _cardNumber1textBox)
+                        cardNumber1Valid = true;
+                    if (_textBox == _cardNumber2textBox)
+                        cardNumber2Valid = true;
+                    if (_textBox == _cardNumber3textBox)
+                        cardNumber3Valid = true;
+                    if (_textBox == _cardNumber4textBox)
+                        cardNumber4Valid = true;
+                }
+                if (_textBox == _backNumberTextBox && _textBox.Text.Length >= 2)
                     backNumberValid = true;
             }
         }
@@ -132,7 +161,6 @@ namespace ShopList
                     errorProvider.SetError(_textBox, "U must input 3 numbers!");
                     backNumberValid = false;
                 }
-
             }
             // 卡號字數問題
             else
@@ -159,17 +187,6 @@ namespace ShopList
                 _confirmButton.Enabled = true;
             else
                 _confirmButton.Enabled = false;
-            System.Diagnostics.Debug.Print("firstNameValid = " + firstNameValid.ToString());
-            System.Diagnostics.Debug.Print("lastNameValid = " + lastNameValid.ToString());
-            System.Diagnostics.Debug.Print("cardNumber1Valid = " + cardNumber1Valid.ToString());
-            System.Diagnostics.Debug.Print("cardNumber2Valid = " + cardNumber2Valid.ToString());
-            System.Diagnostics.Debug.Print("cardNumber3Valid = " + cardNumber3Valid.ToString());
-            System.Diagnostics.Debug.Print("cardNumber4Valid = " + cardNumber4Valid.ToString());
-            System.Diagnostics.Debug.Print("backNumberValid = " + backNumberValid.ToString());
-            System.Diagnostics.Debug.Print("mailValid = " + mailValid.ToString());
-            System.Diagnostics.Debug.Print("addressValid = " + addressValid.ToString());
-            System.Diagnostics.Debug.Print("all = " + ConfirmAll().ToString());
-            System.Diagnostics.Debug.Print("-------------------------------------");
         }
 
         // 確認資料輸入完整
@@ -179,17 +196,6 @@ namespace ShopList
                 return true;
             else
                 return false;
-            //int parsedValue;
-            //if (Regex.IsMatch(_firstNameTextBox.Text, "[^A-Z|^a-z|^ |^\t]") && Regex.IsMatch(_lastNameTextBox.Text, "[^A-Z|^a-z|^ |^\t]") &&
-            //    (!int.TryParse(_cardNumber1textBox.Text, out parsedValue) == true && _cardNumber1textBox.Text.Length == 4) &&
-            //    (!int.TryParse(_cardNumber2textBox.Text, out parsedValue) == true && _cardNumber2textBox.Text.Length == 4) &&
-            //    (!int.TryParse(_cardNumber3textBox.Text, out parsedValue) == true && _cardNumber3textBox.Text.Length == 4) &&
-            //    (!int.TryParse(_cardNumber4textBox.Text, out parsedValue) == true && _cardNumber4textBox.Text.Length == 4) &&
-            //    (!int.TryParse(_backNumberTextBox.Text, out parsedValue) == true && _backNumberTextBox.Text.Length == 4) &&
-            //    Regex.IsMatch(_mailTextBox.Text, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*") && _addressTextBox.Text != "")
-            //    return true;
-            //else
-            //    return false;
         }
 
         // 按下確認按鈕
@@ -197,7 +203,6 @@ namespace ShopList
         {
             MessageBox.Show("訂購完成");
             this.Close();
-            
         }
     }
 }
