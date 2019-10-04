@@ -330,7 +330,7 @@
             this._firstNameTextBox.Size = new System.Drawing.Size(210, 27);
             this._firstNameTextBox.TabIndex = 0;
             this._firstNameTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._firstNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyString);
+            this._firstNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoNumberString);
             this._firstNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._firstNameTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 
@@ -355,7 +355,7 @@
             this._lastNameTextBox.Size = new System.Drawing.Size(210, 27);
             this._lastNameTextBox.TabIndex = 1;
             this._lastNameTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._lastNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyString);
+            this._lastNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoNumberString);
             this._lastNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._lastNameTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 

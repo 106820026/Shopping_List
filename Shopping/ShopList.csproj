@@ -68,6 +68,7 @@
     <Compile Include="CreditCardPayment.Designer.cs">
       <DependentUpon>CreditCardPayment.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreditCardPaymentControl.cs" />
     <Compile Include="InventorySystem.cs">
       <SubType>Form</SubType>
     </Compile>

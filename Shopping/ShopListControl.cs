@@ -30,6 +30,10 @@ namespace ShopList
         const int THREE = 3;
         const int FOUR = 4;
         const int FIVE = 5;
+        int _currentTabIndex;
+        int _currentPage;
+        int _TotalPage;
+        int _rowCount;
         // current page
         int _motherBoardCurrentPage = 1;
         int _centralProcessUnitCurrentPage = 1;
@@ -62,10 +66,34 @@ namespace ShopList
             _allTotalPage = new int[] { _motherBoardTotalPage, _centralProcessUnitTotalPage, _diskTotalPage, _memoryTotalPage, _graphicsProcessUnitTotalPage, _computerTotalPage };
         }
 
-        // 取得商品名稱
-        public void GetCurrentItemName(Control button, TabControl tabControl)
+        // 取得目前Tab Index
+        public void GetCurrentTabIndex(int tabIndex)
         {
-            _currentItemName = button.Name + PAGE + this.ShowCurrentPage(tabControl);
+            _currentTabIndex = tabIndex;
+        }
+
+        // 取得目前頁數
+        public void GetCurrentPage(int page)
+        {
+            _currentPage = page;
+        }
+
+        // 取得目前總頁數
+        public void GetTotalPage(int pages)
+        {
+            _TotalPage = pages;
+        }
+
+        // 購物車商品數量
+        public void GetRowCount(int rowCount)
+        {
+            _rowCount = rowCount;
+        }
+
+        // 取得商品名稱
+        public void GetCurrentItemName(String buttonName, TabControl tabControl)
+        {
+            _currentItemName = buttonName + PAGE + _currentPage;
         }
 
         // 顯示商品詳細資訊

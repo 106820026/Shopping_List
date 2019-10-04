@@ -34,6 +34,11 @@ namespace ShopList
             _lastPageButton.Enabled = false;
             // 為了取得每頁的按鈕
             _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _memoryTableLayoutPanel, _diskTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
+            /////////////////////////////
+            _shopListControl.GetCurrentTabIndex(_itemTabControl.SelectedIndex);
+            _shopListControl.GetCurrentPage(int.Parse(_currentPageLabel.Text));
+            _shopListControl.GetTotalPage(int .Parse(_totalPageLabel.Text));
+            _shopListControl.GetRowCount(_orderDataGridView.RowCount);
         }
 
         // 處理所有商品點擊事件
