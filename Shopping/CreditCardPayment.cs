@@ -13,8 +13,10 @@ namespace ShopList
 {
     public partial class CreditCardPayment : Form
     {
-        ErrorProvider errorProvider = new ErrorProvider();
+        ErrorProvider _errorProvider = new ErrorProvider();
         CreditCardPaymentControl _creditCardPaymentControl = new CreditCardPaymentControl();
+        TextBox _textBox; // 取得商品物件
+        const String SUCCESS = "訂購完成";
 
         public CreditCardPayment()
         {
@@ -25,9 +27,8 @@ namespace ShopList
         }
 
         // 名字只能輸入無數字字串
-        private void NoNumberString(object sender, KeyPressEventArgs e)
+        private void InputNoNumberString(object sender, KeyPressEventArgs e)
         {
-            TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
             _creditCardPaymentControl.ConfirmName(_textBox.Name, _textBox.TextLength, e);
@@ -35,9 +36,8 @@ namespace ShopList
         }
 
         // 地址只能輸入字串
-        private void OnlyString(object sender, KeyPressEventArgs e)
+        private void InputOnlyString(object sender, KeyPressEventArgs e)
         {
-            TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
             _creditCardPaymentControl.ConfirmAddress(_textBox.TextLength, e);
@@ -45,9 +45,8 @@ namespace ShopList
         }
 
         // 只能輸入數字
-        private void OnlyNumber(object sender, KeyPressEventArgs e)
+        private void InputOnlyNumber(object sender, KeyPressEventArgs e)
         {
-            TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
             _creditCardPaymentControl.InputOnlyNumber(_textBox.Name, _textBox.TextLength, e);
@@ -55,9 +54,8 @@ namespace ShopList
         }
 
         // 信箱格式確認
-        private void MailValidator(object sender, KeyPressEventArgs e)
+        private void MailValid(object sender, KeyPressEventArgs e)
         {
-            TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
             _creditCardPaymentControl.ConfirmMailFormat(_textBox.Text);
@@ -67,7 +65,6 @@ namespace ShopList
         // 不能為空字串
         private void IsEmpty(object sender, EventArgs e)
         {
-            TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
             _creditCardPaymentControl.CheckNoEmpty(_textBox.Name, _textBox.Text);
@@ -75,9 +72,8 @@ namespace ShopList
         }
 
         // 字數不夠
-        private void NotEnoughWords(object sender, EventArgs e)
+        private void InputNotEnoughWords(object sender, EventArgs e)
         {
-            TextBox _textBox; // 取得商品物件
             _textBox = (TextBox)sender;
 
             _creditCardPaymentControl.LackNumber(_textBox.Name, _textBox.TextLength);
@@ -91,17 +87,19 @@ namespace ShopList
         }
 
         // 按下確認按鈕
-        private void _clickConfirmButton(object sender, EventArgs e)
+        private void ClickConfirmButton(object sender, EventArgs e)
         {
-            MessageBox.Show("訂購完成");
-            _backNumberTextBox.ResetText();
+            _backNumberTextBox.Text = _creditCardPaymentControl.CleanBackNumber(); // 清除後3碼
+            _confirmButton.Enabled = _creditCardPaymentControl.ConfirmAll(); // 重新確認按鈕狀態
+            this.DialogResult = DialogResult.OK;
+            MessageBox.Show(SUCCESS);
             this.Close();
         }
 
         // 顯示錯誤訊息
         private void ShowError(Object control)
         {
-            errorProvider.SetError((Control)control, _creditCardPaymentControl.ErrorMessage());
+            _errorProvider.SetError((Control)control, _creditCardPaymentControl.GetErrorMessage());
         }
     }
 }

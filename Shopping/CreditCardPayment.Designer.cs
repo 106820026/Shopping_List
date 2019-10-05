@@ -129,8 +129,9 @@
             this._addressTextBox.Name = "_addressTextBox";
             this._addressTextBox.Size = new System.Drawing.Size(450, 27);
             this._addressTextBox.TabIndex = 12;
+            this._addressTextBox.Tag = "9";
             this._addressTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._addressTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyString);
+            this._addressTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyString);
             this._addressTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._addressTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 
@@ -154,8 +155,9 @@
             this._mailTextBox.Name = "_mailTextBox";
             this._mailTextBox.Size = new System.Drawing.Size(450, 27);
             this._mailTextBox.TabIndex = 10;
+            this._mailTextBox.Tag = "8";
             this._mailTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._mailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MailValidator);
+            this._mailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MailValid);
             this._mailTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._mailTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 
@@ -205,10 +207,11 @@
             this._cardNumber1textBox.Name = "_cardNumber1textBox";
             this._cardNumber1textBox.Size = new System.Drawing.Size(90, 27);
             this._cardNumber1textBox.TabIndex = 0;
+            this._cardNumber1textBox.Tag = "3";
             this._cardNumber1textBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._cardNumber1textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            this._cardNumber1textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
             this._cardNumber1textBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
-            this._cardNumber1textBox.Leave += new System.EventHandler(this.NotEnoughWords);
+            this._cardNumber1textBox.Leave += new System.EventHandler(this.InputNotEnoughWords);
             // 
             // _label2
             // 
@@ -231,10 +234,11 @@
             this._cardNumber2textBox.Name = "_cardNumber2textBox";
             this._cardNumber2textBox.Size = new System.Drawing.Size(90, 27);
             this._cardNumber2textBox.TabIndex = 1;
+            this._cardNumber2textBox.Tag = "4";
             this._cardNumber2textBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._cardNumber2textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            this._cardNumber2textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
             this._cardNumber2textBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
-            this._cardNumber2textBox.Leave += new System.EventHandler(this.NotEnoughWords);
+            this._cardNumber2textBox.Leave += new System.EventHandler(this.InputNotEnoughWords);
             // 
             // _label3
             // 
@@ -257,10 +261,11 @@
             this._cardNumber3textBox.Name = "_cardNumber3textBox";
             this._cardNumber3textBox.Size = new System.Drawing.Size(90, 27);
             this._cardNumber3textBox.TabIndex = 3;
+            this._cardNumber3textBox.Tag = "5";
             this._cardNumber3textBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._cardNumber3textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            this._cardNumber3textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
             this._cardNumber3textBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
-            this._cardNumber3textBox.Leave += new System.EventHandler(this.NotEnoughWords);
+            this._cardNumber3textBox.Leave += new System.EventHandler(this.InputNotEnoughWords);
             // 
             // _label4
             // 
@@ -283,10 +288,11 @@
             this._cardNumber4textBox.Name = "_cardNumber4textBox";
             this._cardNumber4textBox.Size = new System.Drawing.Size(90, 27);
             this._cardNumber4textBox.TabIndex = 4;
+            this._cardNumber4textBox.Tag = "6";
             this._cardNumber4textBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._cardNumber4textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            this._cardNumber4textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
             this._cardNumber4textBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
-            this._cardNumber4textBox.Leave += new System.EventHandler(this.NotEnoughWords);
+            this._cardNumber4textBox.Leave += new System.EventHandler(this.InputNotEnoughWords);
             // 
             // _cardNumberLabel
             // 
@@ -329,8 +335,9 @@
             this._firstNameTextBox.Name = "_firstNameTextBox";
             this._firstNameTextBox.Size = new System.Drawing.Size(210, 27);
             this._firstNameTextBox.TabIndex = 0;
+            this._firstNameTextBox.Tag = "1";
             this._firstNameTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._firstNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoNumberString);
+            this._firstNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputNoNumberString);
             this._firstNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._firstNameTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 
@@ -354,8 +361,9 @@
             this._lastNameTextBox.Name = "_lastNameTextBox";
             this._lastNameTextBox.Size = new System.Drawing.Size(210, 27);
             this._lastNameTextBox.TabIndex = 1;
+            this._lastNameTextBox.Tag = "2";
             this._lastNameTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._lastNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoNumberString);
+            this._lastNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputNoNumberString);
             this._lastNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._lastNameTextBox.Leave += new System.EventHandler(this.IsEmpty);
             // 
@@ -445,10 +453,11 @@
             this._backNumberTextBox.Name = "_backNumberTextBox";
             this._backNumberTextBox.Size = new System.Drawing.Size(450, 27);
             this._backNumberTextBox.TabIndex = 8;
+            this._backNumberTextBox.Tag = "7";
             this._backNumberTextBox.Click += new System.EventHandler(this.CheckDataComplete);
-            this._backNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyNumber);
+            this._backNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
             this._backNumberTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
-            this._backNumberTextBox.Leave += new System.EventHandler(this.NotEnoughWords);
+            this._backNumberTextBox.Leave += new System.EventHandler(this.InputNotEnoughWords);
             // 
             // _confirmButton
             // 
@@ -462,7 +471,7 @@
             this._confirmButton.TabIndex = 13;
             this._confirmButton.Text = "確認";
             this._confirmButton.UseVisualStyleBackColor = false;
-            this._confirmButton.Click += new System.EventHandler(this._clickConfirmButton);
+            this._confirmButton.Click += new System.EventHandler(this.ClickConfirmButton);
             // 
             // CreditCardPayment
             // 

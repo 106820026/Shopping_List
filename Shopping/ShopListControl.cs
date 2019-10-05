@@ -11,9 +11,9 @@ namespace ShopList
 {
     class ShopListControl
     {
+        #region Member Data
         readonly Initial _initialFile = new Initial(FILE_PATH);
         AddToCart _cart = new AddToCart();
-
         const String FILE_PATH = "../../Data Info.ini";
         const String MODEL_KEY = "model";
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
@@ -30,9 +30,8 @@ namespace ShopList
         const int THREE = 3;
         const int FOUR = 4;
         const int FIVE = 5;
+        String _currentItemName;
         int _currentTabIndex;
-        int _currentPage;
-        int _TotalPage;
         int _rowCount;
         // current page
         int _motherBoardCurrentPage = 1;
@@ -57,43 +56,32 @@ namespace ShopList
         const int MEMORY = THREE;
         const int GRAPHICS_PROCESS_UNIT = FOUR;
         const int COMPUTER = FIVE;
-
-        String _currentItemName;
-
+        #endregion
+        
         public ShopListControl()
         {
             _allCurrentPage = new int[] { _motherBoardCurrentPage, _centralProcessUnitCurrentPage, _diskCurrentPage, _memoryCurrentPage, _graphicsProcessUnitCurrentPage, _computerCurrentPage };
             _allTotalPage = new int[] { _motherBoardTotalPage, _centralProcessUnitTotalPage, _diskTotalPage, _memoryTotalPage, _graphicsProcessUnitTotalPage, _computerTotalPage };
+            _currentTabIndex = 0;
+            _rowCount = 0;
         }
 
         // 取得目前Tab Index
-        public void GetCurrentTabIndex(int tabIndex)
+        public void SetCurrentTabIndex(int tabIndex)
         {
             _currentTabIndex = tabIndex;
         }
 
-        // 取得目前頁數
-        public void GetCurrentPage(int page)
-        {
-            _currentPage = page;
-        }
-
-        // 取得目前總頁數
-        public void GetTotalPage(int pages)
-        {
-            _TotalPage = pages;
-        }
-
         // 購物車商品數量
-        public void GetRowCount(int rowCount)
+        public void SetRowCount(int rowCount)
         {
             _rowCount = rowCount;
         }
 
         // 取得商品名稱
-        public void GetCurrentItemName(String buttonName, TabControl tabControl)
+        public void GetCurrentItemName(String buttonName)
         {
-            _currentItemName = buttonName + PAGE + _currentPage;
+            _currentItemName = buttonName + PAGE + _allCurrentPage[_currentTabIndex];
         }
 
         // 顯示商品詳細資訊
@@ -103,15 +91,21 @@ namespace ShopList
         }
 
         // 顯示目前頁數
-        public String ShowCurrentPage(TabControl tabControl)
+        public String GetCurrentPage()
         {
-            return _allCurrentPage[tabControl.SelectedIndex].ToString();
+            return _allCurrentPage[_currentTabIndex].ToString();
         }
 
         // 顯示總頁數
-        public String ShowTotalPage(TabControl tabControl)
+        public String GetTotalPage()
         {
-            return _allTotalPage[tabControl.SelectedIndex].ToString();
+            return _allTotalPage[_currentTabIndex].ToString();
+        }
+
+        // 取得購物車
+        public AddToCart GetCart()
+        {
+            return _cart;
         }
 
         // 加入商品至購物車
@@ -121,9 +115,9 @@ namespace ShopList
         }
 
         // 顯示購物車商品至表格
-        public void ShowCartItem(DataGridView dataGridView)
+        public String[] GetCartItem()
         {
-            dataGridView.Rows.Add(String.Empty, _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), this.ShowPrice());
+            return new string[] { String.Empty, _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), this.ShowPrice() };
         }
 
         // 顯示商品價錢
@@ -141,77 +135,40 @@ namespace ShopList
             return _cart.GetTotalPrice().ToString(FORMAT);
         }
 
-        // 加上Delete按鈕Icon
-        public void AddDeleteButtonIcon(DataGridView dataGridView, DataGridViewCellPaintingEventArgs e)
+        // 按下刪除鍵
+        public bool IsDeleteColumn(String columnName)
         {
-            if (e.ColumnIndex == -1 || e.RowIndex == -1)
-                return;
-            if (dataGridView.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
-            {
-                const int LEFT_OFFSET = 17;
-                const int TOP_OFFSET = 3;
-                const int PICTURE_SIZE = 20;
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                // DrawImage(圖片, x軸, y軸, 長, 寬)
-                e.Graphics.DrawImage(global::ShopList.Properties.Resources._deleteIcon, e.CellBounds.Left + LEFT_OFFSET, e.CellBounds.Top + TOP_OFFSET, PICTURE_SIZE, PICTURE_SIZE);
-                e.Handled = true;//false的話 圖片不穩定
-            }
-        }
-
-        // 刪除購物車商品
-        public void DeleteCartItem(DataGridView dataGridView, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == -1 || e.RowIndex == -1)
-                return;
-
-            if (dataGridView.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
-            {
-                dataGridView.Rows.Remove(dataGridView.Rows[e.RowIndex]);
-                _cart.DeleteItem(e.RowIndex);
-            }
+            return columnName == DELETE_COLUMN;
         }
 
         // 翻頁
-        public void ChangePage(String itemName, TabControl tabControl)
+        public void ChangePage(String itemName)
         {
             if (itemName == NEXT_PAGE_BUTTON)
-                _allCurrentPage[tabControl.SelectedIndex] += 1; // 頁數+1
+                _allCurrentPage[_currentTabIndex] += 1; // 頁數+1
             if (itemName == LAST_PAGE_BUTTON)
-                _allCurrentPage[tabControl.SelectedIndex] -= 1; // 頁數-1
+                _allCurrentPage[_currentTabIndex] -= 1; // 頁數-1
         }
 
-        // 確認換頁按鈕是否可以按下
-        public void CheckChangePageButton(Button nextPageButton, Button lastPageButton, TabControl tabControl)
+        //是否為第一頁
+        public bool IsFirstPage()
         {
-            nextPageButton.Enabled = lastPageButton.Enabled = true;
-            if (this.ShowCurrentPage(tabControl) == FIRST_PAGE)
-                lastPageButton.Enabled = false; // 禁用上一頁按鈕
-            if (this.ShowCurrentPage(tabControl) == this.ShowTotalPage(tabControl))
-                nextPageButton.Enabled = false;// 禁用下一頁按鈕
+            return _allCurrentPage[_currentTabIndex] == 1;
         }
 
-        // 確認圖片路徑存在
-        public void ConfirmPictureExist(Control button, String filePath)
+        // 是否為最後一頁
+        public bool IsLastPage()
         {
-            if (File.Exists(filePath))
-            {
-                button.BackgroundImage = Image.FromFile(filePath);
-                button.Enabled = true;
-            }
-            else
-            {
-                button.BackgroundImage = null;
-                button.Enabled = false;
-            }
+            return _allCurrentPage[_currentTabIndex] == _allTotalPage[_currentTabIndex];
         }
 
         // 確認訂購按鈕可以按下
-        public void CheckConfirmButton(int rowCount, Button orderButton)
+        public bool CheckConfirmButton()
         {
-            if (rowCount == 0)
-                orderButton.Enabled = false;
+            if (_rowCount == 0)
+                return false;
             else
-                orderButton.Enabled = true;
+                return true;
         }
     }
 }

@@ -327,6 +327,7 @@
             this._nextPageButton.Name = "_nextPageButton";
             this._nextPageButton.Size = new System.Drawing.Size(82, 43);
             this._nextPageButton.TabIndex = 5;
+            this._nextPageButton.Tag = "1";
             this._nextPageButton.UseVisualStyleBackColor = false;
             this._nextPageButton.Click += new System.EventHandler(this.ClickChangePageButton);
             // 
@@ -413,6 +414,7 @@
             this._lastPageButton.Name = "_lastPageButton";
             this._lastPageButton.Size = new System.Drawing.Size(82, 43);
             this._lastPageButton.TabIndex = 4;
+            this._lastPageButton.Tag = "0";
             this._lastPageButton.UseVisualStyleBackColor = false;
             this._lastPageButton.Click += new System.EventHandler(this.ClickChangePageButton);
             // 
