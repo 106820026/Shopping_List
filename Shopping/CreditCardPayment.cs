@@ -31,7 +31,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.ConfirmName(_textBox.Name, _textBox.TextLength, e);
+            _creditCardPaymentControl.ConfirmName(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e);
             ShowError(_textBox);
         }
 
@@ -49,7 +49,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.InputOnlyNumber(_textBox.Name, _textBox.TextLength, e);
+            _creditCardPaymentControl.InputOnlyNumber(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e);
             ShowError(_textBox);
         }
 
@@ -67,7 +67,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.CheckNoEmpty(_textBox.Name, _textBox.Text);
+            _creditCardPaymentControl.CheckNoEmpty(int.Parse(_textBox.Tag.ToString()), _textBox.Text);
             ShowError(_textBox);
         }
 
@@ -76,7 +76,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.LackNumber(_textBox.Name, _textBox.TextLength);
+            _creditCardPaymentControl.LackNumber(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength);
             ShowError(_textBox);
         }
 

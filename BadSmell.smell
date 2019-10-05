@@ -188,45 +188,45 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>ICS(變數-3)</SmellType>
-              <HashCode>Variable3._firstNameValid._firstNameValid</HashCode>
+              <SmellType>ICS(空白與空行-7)</SmellType>
+              <HashCode>SpacingAndNewLine7</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>14</Line>
+              <Line>166</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(變數-3) 除了函式參數-其餘一行只宣告一個變數</Comment>
+              <Comment>ICS(空白與空行-7) 二元運算子的前面與後面各加一個空白</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>2</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.CreditCardPaymentControl.ConfirmName.28String itemName;int length;KeyPressEventArgs e;</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>28</Weight>
+              <SmellType>ICS(空白與空行-7)</SmellType>
+              <HashCode>SpacingAndNewLine7</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>48</Line>
+              <Line>166</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment />
+              <Comment>ICS(空白與空行-7) 二元運算子的前面與後面各加一個空白</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>3</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.CreditCardPaymentControl.InputOnlyNumber.44String itemName;int length;KeyPressEventArgs e;</HashCode>
+              <SmellType>Literal constants(字面常數)-8</SmellType>
+              <HashCode>LiteralConstants.ConfirmAddress.8</HashCode>
               <Severity>Red</Severity>
-              <Weight>44</Weight>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>93</Line>
+              <Line>85</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -236,13 +236,13 @@
             </Smell>
             <Smell>
               <Id>4</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.CreditCardPaymentControl.LackNumber.28String itemName;int length;</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>28</Weight>
+              <SmellType>Literal constants(字面常數)-8</SmellType>
+              <HashCode>LiteralConstants.ConfirmAddress.8</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>171</Line>
+              <Line>89</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -252,13 +252,13 @@
             </Smell>
             <Smell>
               <Id>5</Id>
-              <SmellType>Duplicated code(重複的程式碼)精確比對1</SmellType>
-              <HashCode>ShopList.CreditCardPaymentControl.cs.InputOnlyNumber.102.110</HashCode>
+              <SmellType>Literal constants(字面常數)-6</SmellType>
+              <HashCode>LiteralConstants.InputOnlyNumber.6</HashCode>
               <Severity>Red</Severity>
-              <Weight>9</Weight>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>102</Line>
+              <Line>113</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -268,13 +268,13 @@
             </Smell>
             <Smell>
               <Id>6</Id>
-              <SmellType>Duplicated code(重複的程式碼)精確比對1</SmellType>
-              <HashCode>ShopList.CreditCardPaymentControl.cs.LackNumber.187.195</HashCode>
+              <SmellType>Literal constants(字面常數)-6</SmellType>
+              <HashCode>LiteralConstants.LackNumber.6</HashCode>
               <Severity>Red</Severity>
-              <Weight>9</Weight>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>187</Line>
+              <Line>146</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -284,13 +284,13 @@
             </Smell>
             <Smell>
               <Id>7</Id>
-              <SmellType>Duplicated code(重複的程式碼)弱式比對1</SmellType>
-              <HashCode>ShopList.CreditCardPaymentControl.cs.CheckNoEmpty.158.166</HashCode>
+              <SmellType>Literal constants(字面常數)-7</SmellType>
+              <HashCode>LiteralConstants.ConfirmMailFormat.7</HashCode>
               <Severity>Red</Severity>
-              <Weight>9</Weight>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>158</Line>
+              <Line>123</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -300,13 +300,13 @@
             </Smell>
             <Smell>
               <Id>8</Id>
-              <SmellType>Duplicated code(重複的程式碼)弱式比對1</SmellType>
-              <HashCode>ShopList.CreditCardPaymentControl.cs.InputOnlyNumber.102.110</HashCode>
+              <SmellType>Literal constants(字面常數)-7</SmellType>
+              <HashCode>LiteralConstants.ConfirmMailFormat.7</HashCode>
               <Severity>Red</Severity>
-              <Weight>9</Weight>
+              <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>CreditCardPaymentControl.cs</File>
-              <Line>102</Line>
+              <Line>129</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -316,6 +316,38 @@
             </Smell>
             <Smell>
               <Id>9</Id>
+              <SmellType>Literal constants(字面常數)-9</SmellType>
+              <HashCode>LiteralConstants.ConfirmAll.9</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>CreditCardPaymentControl.cs</File>
+              <Line>166</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>10</Id>
+              <SmellType>Long method(過長函式)</SmellType>
+              <HashCode>LongMethod.CreditCardPaymentControl.InputOnlyNumber.23int itemTag;int length;KeyPressEventArgs e;</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>23</Weight>
+              <Project>ShopList</Project>
+              <File>CreditCardPaymentControl.cs</File>
+              <Line>94</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>11</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>90 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
               <Severity>Warning</Severity>
@@ -331,7 +363,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>10</Id>
+              <Id>12</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>120 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
               <Severity>Warning</Severity>
@@ -347,7 +379,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>11</Id>
+              <Id>13</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>127 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
               <Severity>Warning</Severity>
@@ -363,7 +395,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>12</Id>
+              <Id>14</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>87 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListControl，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListControl.GetCart() 以及 ShopList.ShopListControl.IsDeleteColumn(string)</HashCode>
               <Severity>Warning</Severity>
@@ -465,7 +497,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2873</ProductionLoc>
+          <ProductionLoc>2854</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

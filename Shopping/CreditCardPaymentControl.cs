@@ -29,6 +29,7 @@ namespace ShopList
         const String INPUT_VALID_MAIL = "Plz enter a valid email address!";
         const String YOU_MUST_INPUT_3_NUMBERS = "U must input 3 numbers!";
         const String YOU_MUST_INPUT_4_NUMBERS = "U must input 4 numbers!";
+        const String YOU_MUST_INPUT_MORE_NUMBERS = "U must input more numbers!";
         const String NO_ERROR = "";
         // 所有值確認
         bool _firstNameValid = false;
@@ -55,7 +56,7 @@ namespace ShopList
         }
 
         // 確認姓名輸入
-        public void ConfirmName(String itemName, int length, KeyPressEventArgs e)
+        public void ConfirmName(int itemTag, int length, KeyPressEventArgs e)
         {
             if (e.KeyChar >= ZERO && e.KeyChar <= NINE) // 不可輸入數字
             {
@@ -67,19 +68,11 @@ namespace ShopList
                 e.Handled = false;
                 if (e.KeyChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
                 {
-                    if (itemName == FIRST_NAME_TEXT_BOX)
-                        _firstNameValid = false;
-                    if (itemName == LAST_NAME_TEXT_BOX)
-                        _lastNameValid = false;
-                    _errorMessage = YOU_MUST_INPUT_SOMETHING;
+                    this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_SOMETHING);
                 }
                 else
                 {
-                    if (itemName == FIRST_NAME_TEXT_BOX)
-                        _firstNameValid = true;
-                    if (itemName == LAST_NAME_TEXT_BOX)
-                        _lastNameValid = true;
-                    _errorMessage = NO_ERROR;
+                    this.GetValidStatus(itemTag, true, NO_ERROR);
                 }
             }
         }
@@ -89,18 +82,16 @@ namespace ShopList
         {
             if (e.KeyChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
             {
-                _addressValid = false;
-                _errorMessage = YOU_MUST_INPUT_SOMETHING;
+                this.GetValidStatus(8, false, YOU_MUST_INPUT_SOMETHING);
             }
             else
             {
-                _addressValid = true;
-                _errorMessage = NO_ERROR;
+                this.GetValidStatus(8, true, NO_ERROR);
             }
         }
 
         // 卡號只能輸入數字
-        public void InputOnlyNumber(String itemName, int length, KeyPressEventArgs e)
+        public void InputOnlyNumber(int itemTag, int length, KeyPressEventArgs e)
         {
             if ((!char.IsDigit(e.KeyChar) && e.KeyChar != DELETE_BUTTON)) //輸入非數字
             {
@@ -109,21 +100,7 @@ namespace ShopList
             }
             else if (e.KeyChar == DELETE_BUTTON) // 按下刪除鍵
             {
-                _errorMessage = YOU_MUST_INPUT_4_NUMBERS;
-                if (itemName == CARD_NUMBER1_TEXT_BOX)
-                    _cardNumber1Valid = false;
-                if (itemName == CARD_NUMBER2_TEXT_BOX)
-                    _cardNumber2Valid = false;
-                if (itemName == CARD_NUMBER3_TEXT_BOX)
-                    _cardNumber3Valid = false;
-                if (itemName == CARD_NUMBER4_TEXT_BOX)
-                    _cardNumber4Valid = false;
-                if (itemName == BACK_CARD_TEXT_BOX)
-                {
-                    _backNumberValid = false;
-                    _errorMessage = YOU_MUST_INPUT_3_NUMBERS;
-                }
-                    
+                this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_MORE_NUMBERS);
             }
             else
             {
@@ -131,17 +108,10 @@ namespace ShopList
                 _errorMessage = NO_ERROR;
                 if (length >= THREE)
                 {
-                    if (itemName == CARD_NUMBER1_TEXT_BOX)
-                        _cardNumber1Valid = true;
-                    if (itemName == CARD_NUMBER2_TEXT_BOX)
-                        _cardNumber2Valid = true;
-                    if (itemName == CARD_NUMBER3_TEXT_BOX)
-                        _cardNumber3Valid = true;
-                    if (itemName == CARD_NUMBER4_TEXT_BOX)
-                        _cardNumber4Valid = true;
+                    this.GetValidStatus(itemTag, true, NO_ERROR);
                 }
-                if (itemName == BACK_CARD_TEXT_BOX && length >= TWO)
-                    _backNumberValid = true;
+                if (itemTag == 6 && length >= TWO)
+                    this.GetValidStatus(itemTag, true, NO_ERROR);
             }
         }
 
@@ -150,43 +120,34 @@ namespace ShopList
         {
             if (!Regex.IsMatch(text, PATTERN))
             {
-                _errorMessage = INPUT_VALID_MAIL;
-                _mailValid = false;
+                this.GetValidStatus(7, false, INPUT_VALID_MAIL);
             }
             else
             {
-                _errorMessage = NO_ERROR;
-                _mailValid = true;
+                //_errorMessage = NO_ERROR;
+                //_mailValid = true;
+                this.GetValidStatus(7, true, NO_ERROR);
             }
         }
 
         // 禁止出現空字串
-        public void CheckNoEmpty(String itemName, String text)
+        public void CheckNoEmpty(int itemTag, String text)
         {
             if (text == "")
             {
-                _errorMessage = YOU_MUST_INPUT_SOMETHING;
-                if (itemName == FIRST_NAME_TEXT_BOX)
-                    _firstNameValid = false;
-                if (itemName == LAST_NAME_TEXT_BOX)
-                    _lastNameValid = false;
-                if (itemName == MAIL_TEXT_BOX)
-                    _mailValid = false;
-                if (itemName == ADDRESS_TEXT_BOX)
-                    _addressValid = false;
+                this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_SOMETHING);
             }
         }
 
         // 卡號字數不足
-        public void LackNumber(String itemName, int length)
+        public void LackNumber(int itemTag, int length)
         {
             // 背面末3碼字數問題
-            if (itemName == BACK_CARD_TEXT_BOX)
+            if (itemTag == 6)
             {
                 if (length < THREE)
                 {
-                    _errorMessage = YOU_MUST_INPUT_3_NUMBERS;
-                    _backNumberValid = false;
+                    this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_3_NUMBERS);
                 }
             }
             // 卡號字數問題
@@ -194,15 +155,7 @@ namespace ShopList
             {
                 if (length < FOUR)
                 {
-                    _errorMessage = YOU_MUST_INPUT_4_NUMBERS;
-                    if (itemName == CARD_NUMBER1_TEXT_BOX)
-                        _cardNumber1Valid = false;
-                    if (itemName == CARD_NUMBER2_TEXT_BOX)
-                        _cardNumber2Valid = false;
-                    if (itemName == CARD_NUMBER3_TEXT_BOX)
-                        _cardNumber3Valid = false;
-                    if (itemName == CARD_NUMBER4_TEXT_BOX)
-                        _cardNumber4Valid = false;
+                    this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_4_NUMBERS);
                 }
             }
         }
@@ -210,10 +163,12 @@ namespace ShopList
         // 確認資料輸入完整
         public bool ConfirmAll()
         {
-            if (_firstNameValid == true && _lastNameValid == true && _cardNumber1Valid == true && _cardNumber2Valid == true && _cardNumber3Valid == true && _cardNumber4Valid == true && _backNumberValid == true && _mailValid == true && _addressValid == true)
-                return true;
-            else
-                return false;
+            for (int i = 0; i < 9; i++) // 如果有false的話就直接return false
+            {
+                if (_allValid[i] != true)
+                    return false;
+            }
+            return true;
         }
 
         // 顯示錯誤訊息
@@ -226,7 +181,14 @@ namespace ShopList
         public String CleanBackNumber()
         {
             _backNumberValid = false;
-            return "";
+            return String.Empty;
+        }
+
+        // 輸入框狀態改變
+        private void GetValidStatus(int itemTag, bool flag, String errorMessage)
+        {
+            _allValid[itemTag] = flag;
+            _errorMessage = errorMessage;
         }
     }
 }
