@@ -95,7 +95,6 @@ namespace ShopList
         private void ChangeTabIndex(object sender, EventArgs e)
         {
             this.CleanDetail(); // 清除物品詳細資料
-            _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
             _currentTabName = _itemTabControl.SelectedTab.Name; // 取得目前tab的id
             _shopListControl.SetCurrentTabIndex(_itemTabControl.SelectedIndex);
             _currentPageLabel.Text = _shopListControl.GetCurrentPage(); // 取得目前頁數
@@ -116,7 +115,6 @@ namespace ShopList
             _currentTabName = _itemTabControl.SelectedTab.Name;
             this.SetPicture(); //  換圖片
             this.CheckChangePageButton(); // 確認換頁按鈕
-            _addToCartButton.Enabled = false;
         }
 
         // 確認換頁按鈕是否可以按下
@@ -132,6 +130,7 @@ namespace ShopList
         {
             _descriptionRichTextBox.ResetText(); // 清除詳細資訊欄位
             _priceLabel.ResetText(); // 清除價錢
+            _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
         }
 
         // 設定按鈕圖片
@@ -143,13 +142,12 @@ namespace ShopList
                 if (File.Exists(_filePath))
                 {
                     button.BackgroundImage = Image.FromFile(_filePath);
-                    button.Enabled = true;
+                    ChangeButtonStatus(button, true);
                 }
                 else
                 {
                     button.BackgroundImage = null;
-                    button.Enabled = false;
-                    button.Visible = false;
+                    ChangeButtonStatus(button, false);
                 }
             }
         }
@@ -163,7 +161,15 @@ namespace ShopList
                 _totalPriceLabel.ResetText(); // 清空總金額
                 _shopListControl.SetRowCount(_orderDataGridView.Rows.Count); // 取得購物車商品數量
                 _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 訂購按鈕不能再按下
+                this.CleanDetail();
             }
+        }
+
+        // 設定按鈕狀態
+        private void ChangeButtonStatus(Control button, bool flag)
+        {
+            ((Button)button).Enabled = flag;
+            ((Button)button).Visible = flag;
         }
     }
 }

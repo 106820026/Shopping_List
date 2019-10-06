@@ -48,6 +48,10 @@ namespace ShopList
         const int THREE = 3;
         const int FOUR = 4;
         const int DELETE_BUTTON = 8;
+        const int BACK_NUMBER_TAG = 6;
+        const int MAIL_TAG = 7;
+        const int ADDRESS_TAG = 8;
+        const int TEXT_BOX_NUMBER = 9;
         #endregion
 
         public CreditCardPaymentControl()
@@ -81,13 +85,9 @@ namespace ShopList
         public void ConfirmAddress(int length, KeyPressEventArgs e)
         {
             if (e.KeyChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
-            {
-                this.GetValidStatus(8, false, YOU_MUST_INPUT_SOMETHING);
-            }
+                this.GetValidStatus(ADDRESS_TAG, false, YOU_MUST_INPUT_SOMETHING);
             else
-            {
-                this.GetValidStatus(8, true, NO_ERROR);
-            }
+                this.GetValidStatus(ADDRESS_TAG, true, NO_ERROR);
         }
 
         // 卡號只能輸入數字
@@ -106,11 +106,9 @@ namespace ShopList
             {
                 e.Handled = false;
                 _errorMessage = NO_ERROR;
-                if (length >= THREE)
-                {
+                if (itemTag == BACK_NUMBER_TAG && length >= TWO)
                     this.GetValidStatus(itemTag, true, NO_ERROR);
-                }
-                if (itemTag == 6 && length >= TWO)
+                if (length >= THREE)
                     this.GetValidStatus(itemTag, true, NO_ERROR);
             }
         }
@@ -119,51 +117,39 @@ namespace ShopList
         public void ConfirmMailFormat(String text)
         {
             if (!Regex.IsMatch(text, PATTERN))
-            {
-                this.GetValidStatus(7, false, INPUT_VALID_MAIL);
-            }
+                this.GetValidStatus(MAIL_TAG, false, INPUT_VALID_MAIL);
             else
-            {
-                //_errorMessage = NO_ERROR;
-                //_mailValid = true;
-                this.GetValidStatus(7, true, NO_ERROR);
-            }
+                this.GetValidStatus(MAIL_TAG, true, NO_ERROR);
         }
 
         // 禁止出現空字串
         public void CheckNoEmpty(int itemTag, String text)
         {
             if (text == "")
-            {
                 this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_SOMETHING);
-            }
         }
 
         // 卡號字數不足
         public void LackNumber(int itemTag, int length)
         {
             // 背面末3碼字數問題
-            if (itemTag == 6)
+            if (itemTag == BACK_NUMBER_TAG)
             {
                 if (length < THREE)
-                {
                     this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_3_NUMBERS);
-                }
             }
             // 卡號字數問題
             else
             {
                 if (length < FOUR)
-                {
                     this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_4_NUMBERS);
-                }
             }
         }
 
         // 確認資料輸入完整
         public bool ConfirmAll()
         {
-            for (int i = 0; i < 9; i++) // 如果有false的話就直接return false
+            for (int i = 0; i < TEXT_BOX_NUMBER; i++) // 如果有false的話就直接return false
             {
                 if (_allValid[i] != true)
                     return false;
