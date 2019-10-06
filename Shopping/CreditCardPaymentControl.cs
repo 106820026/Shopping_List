@@ -166,7 +166,7 @@ namespace ShopList
         // 清除末3碼
         public String CleanBackNumber()
         {
-            _backNumberValid = false;
+            _allValid[BACK_NUMBER_TAG] = false;
             return String.Empty;
         }
 
