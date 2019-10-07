@@ -105,7 +105,6 @@ namespace ShopList
             else
             {
                 e.Handled = false;
-                _errorMessage = NO_ERROR;
                 if (itemTag == BACK_NUMBER_TAG && length >= TWO)
                     this.GetValidStatus(itemTag, true, NO_ERROR);
                 if (length >= THREE)

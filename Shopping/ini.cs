@@ -10,6 +10,11 @@ namespace ShopList
     class Initial
     {
         private string _filePath;
+        const String MODEL_KEY = "model";
+        const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
+        const String DETAIL_KEY = "detail";
+        const String TYPE_KEY = "type";
+        const String PRICE_KEY = "price";
 
         // 我也不知道這在幹嘛
         [DllImport("kernel32")]
@@ -53,6 +58,18 @@ namespace ShopList
             {
                 this._filePath = value;
             }
+        }
+
+        // 格式化商品資訊
+        public String GetDescription(String currentItemName)
+        {
+            return this.Read(currentItemName, MODEL_KEY) + SEPARATE_LINE + this.Read(currentItemName, DETAIL_KEY);
+        }
+
+        // 格式化表格資訊
+        public String[] GetItemRow(String currentItemName)
+        {
+            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), this.Read(currentItemName, PRICE_KEY) };
         }
     }
 }

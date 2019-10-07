@@ -22,7 +22,6 @@ namespace ShopList
         const String PRICE_KEY = "price";
         const String PAGE = "page";
         const String FORMAT = "#, 0";
-        const String DELETE_COLUMN = "_delete";
         const String NEXT_PAGE_BUTTON = "_nextPageButton";
         const String LAST_PAGE_BUTTON = "_lastPageButton";
         const String FIRST_PAGE = "1";
@@ -87,7 +86,7 @@ namespace ShopList
         // 顯示商品詳細資訊
         public String GetDetail()
         {
-            return _initialFile.Read(_currentItemName, MODEL_KEY) + SEPARATE_LINE + _initialFile.Read(_currentItemName, DETAIL_KEY);
+            return _initialFile.GetDescription(_currentItemName);
         }
 
         // 顯示目前頁數
@@ -102,10 +101,10 @@ namespace ShopList
             return _allTotalPage[_currentTabIndex].ToString();
         }
 
-        // 取得購物車
-        public AddToCart GetCart()
+        // 刪除購物車內容
+        public void DeleteCartItem(int rowIndex)
         {
-            return _cart;
+            _cart.DeleteItem(rowIndex);
         }
 
         // 加入商品至購物車
@@ -117,28 +116,19 @@ namespace ShopList
         // 顯示購物車商品至表格
         public String[] GetCartItem()
         {
-            return new string[] { String.Empty, _initialFile.Read(_currentItemName, MODEL_KEY), _initialFile.Read(_currentItemName, TYPE_KEY), this.ShowPrice() };
+            return _initialFile.GetItemRow(_currentItemName);
         }
 
         // 顯示商品價錢
-        public String ShowPrice()
+        public String GetPrice()
         {
-            if (_initialFile.Read(_currentItemName, PRICE_KEY) != String.Empty)
-                return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
-            else
-                return String.Empty;
+            return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
         }
 
         // 顯示總價錢
         public String GetTotalPrice()
         {
             return _cart.GetTotalPrice().ToString(FORMAT);
-        }
-
-        // 按下刪除鍵
-        public bool IsDeleteColumn(String columnName)
-        {
-            return columnName == DELETE_COLUMN;
         }
 
         // 翻頁

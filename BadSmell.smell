@@ -185,96 +185,9 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews>
-            <Smell>
-              <Id>1</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.CreditCardPaymentControl.InputOnlyNumber.21int itemTag;int length;KeyPressEventArgs e;</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>21</Weight>
-              <Project>ShopList</Project>
-              <File>CreditCardPaymentControl.cs</File>
-              <Line>94</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>90 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopListControl.cs</File>
-              <Line>90</Line>
-              <StartLine>89</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>90</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>120 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopListControl.cs</File>
-              <Line>120</Line>
-              <StartLine>119</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>120</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>4</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>127 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopListControl.cs</File>
-              <Line>127</Line>
-              <StartLine>126</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>127</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>5</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>87 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListControl，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListControl.GetCart() 以及 ShopList.ShopListControl.IsDeleteColumn(string)</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.cs</File>
-              <Line>87</Line>
-              <StartLine>86</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>87</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListControl，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListControl.GetCart() 以及 ShopList.ShopListControl.IsDeleteColumn(string)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-          </Reviews>
+          <Reviews />
           <HashCodeIgnoreList />
-          <HashCodeRequestIgnoreList>
-            <string>LongMethod.CreditCardPaymentControl.InputOnlyNumber.21int itemTag;int length;KeyPressEventArgs e;</string>
-            <string>90 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</string>
-            <string>120 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</string>
-            <string>127 目前物件 ShopList.ShopListControl，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Initial，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Initial.Read(string, string) 以及 ShopList.Initial.Read(string, string)</string>
-            <string>87 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListControl，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListControl.GetCart() 以及 ShopList.ShopListControl.IsDeleteColumn(string)</string>
-          </HashCodeRequestIgnoreList>
+          <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
@@ -359,7 +272,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2846</ProductionLoc>
+          <ProductionLoc>2857</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

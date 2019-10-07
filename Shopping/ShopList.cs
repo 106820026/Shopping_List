@@ -18,6 +18,7 @@ namespace ShopList
         const String PAGE = "Page";
         const String ITEM = "Item";
         const String ATTACHMENT_NAME = ".jpg";
+        const String DELETE_COLUMN = "_delete";
         String _currentTabName;
         TableLayoutPanel[] _tabTableLayoutPanel;
         ShopListControl _shopListControl = new ShopListControl();
@@ -45,7 +46,7 @@ namespace ShopList
             button = (Button)sender;
             _shopListControl.GetCurrentItemName(button.Name); // 取得目前商品id
             _descriptionRichTextBox.Text = _shopListControl.GetDetail(); // 顯示商品詳細資料
-            _priceLabel.Text = _shopListControl.ShowPrice(); // 顯示價錢
+            _priceLabel.Text = _shopListControl.GetPrice(); // 顯示價錢
         }
 
         // 按下加入購物車
@@ -61,9 +62,11 @@ namespace ShopList
         // 幫button加icon
         void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            var senderGrid = (DataGridView)sender;
+
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-            if (_shopListControl.IsDeleteColumn(_orderDataGridView.Columns[e.ColumnIndex].Name))
+            if (senderGrid.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
             {
                 const int LEFT_OFFSET = 17;
                 const int TOP_OFFSET = 3;
@@ -78,17 +81,19 @@ namespace ShopList
         // 刪除購物車內容
         void ClickDataGridViewCell(object sender, DataGridViewCellEventArgs e)
         {
+            var senderGrid = (DataGridView)sender;
+
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-
-            if (_shopListControl.IsDeleteColumn(_orderDataGridView.Columns[e.ColumnIndex].Name))
+            if (senderGrid.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
             {
                 _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
-                _shopListControl.GetCart().DeleteItem(e.RowIndex);
+                _shopListControl.DeleteCartItem(e.RowIndex);
             }
             _totalPriceLabel.Text = _shopListControl.GetTotalPrice(); // 顯示更新後價錢
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 取得目前購物車商品數量
             _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 確認訂購按鈕可以按下
+            this.CleanDetail();
         }
 
         // 設定頁數 & 切換Tab時 詳細資料空白
