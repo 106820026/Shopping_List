@@ -116,7 +116,7 @@ namespace ShopList
         // 顯示購物車商品至表格
         public String[] GetCartItem()
         {
-            return _initialFile.GetItemRow(_currentItemName);
+            return _initialFile.GetOrderItemRow(_currentItemName);
         }
 
         // 顯示商品價錢

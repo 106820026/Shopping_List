@@ -12,9 +12,50 @@ namespace ShopList
 {
     public partial class InventorySystem : Form
     {
+        InventorySystemControl _inventorySystemControl = new InventorySystemControl();
+        const String REPLENISHMENT_COLUMN = "_replenishment";
+        const int REPLENISHMENT_COLUMN_INDEX = 4;
+
         public InventorySystem()
         {
             InitializeComponent();
+            _itemDataGridView.AllowUserToResizeRows = false; //禁止更動cell大小
+            foreach (String[] item in _inventorySystemControl.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
+                _itemDataGridView.Rows.Add(item);
+        }
+
+        // 加入補貨icon
+        private void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (e.ColumnIndex == -1 || e.RowIndex == -1)
+                return;
+            if (senderGrid.Columns[e.ColumnIndex].Name == REPLENISHMENT_COLUMN)
+            {
+                const int LEFT_OFFSET = 13;
+                const int TOP_OFFSET = 3;
+                const int PICTURE_SIZE = 20;
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                // DrawImage(圖片, x軸, y軸, 長, 寬)
+                e.Graphics.DrawImage(global::ShopList.Properties.Resources._replenishmentIcon, e.CellBounds.Left + LEFT_OFFSET, e.CellBounds.Top + TOP_OFFSET, PICTURE_SIZE, PICTURE_SIZE);
+                e.Handled = true;//false的話 圖片不穩定
+            }
+        }
+
+        // click表格
+        private void ClickItem(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            if (e.ColumnIndex == -1 || e.RowIndex == -1)
+                return;
+            else
+            {
+                _itemPictureBox.Image = _inventorySystemControl.GetImageFilePath(senderGrid.Rows[e.RowIndex].Index);
+                _itemDetailTextBox.Text = _inventorySystemControl.GetItemDetail(senderGrid.Rows[e.RowIndex].Index);
+                if (e.ColumnIndex == REPLENISHMENT_COLUMN_INDEX) // 如果按補貨按鈕
+                    _inventorySystemControl.OpenReplenishmentPage(senderGrid.Rows[e.RowIndex].Index);
+            }
         }
     }
 }

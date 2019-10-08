@@ -75,13 +75,20 @@
     <Compile Include="InventorySystem.Designer.cs">
       <DependentUpon>InventorySystem.cs</DependentUpon>
     </Compile>
+    <Compile Include="InventorySystemControl.cs" />
     <Compile Include="MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ini.cs" />
+    <Compile Include="Initial.cs" />
+    <Compile Include="Replenishment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Replenishment.Designer.cs">
+      <DependentUpon>Replenishment.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShopList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +117,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Replenishment.resx">
+      <DependentUpon>Replenishment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShopList.resx">
       <DependentUpon>ShopList.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +285,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_centralProcessUnitPage2Item1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_replenishmentIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

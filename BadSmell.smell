@@ -185,7 +185,152 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>Unsuitable naming(名不符實)-REPLENISHMENT_COLUMN(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.InventorySystem.REPLENISHMENT_COLUMN.REPLENISHMENT_COLUMN</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>InventorySystem.cs</File>
+              <Line>16</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>Unsuitable naming(名不符實)-_replenishment(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.InventorySystem._replenishment._replenishment</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>InventorySystem.Designer.cs</File>
+              <Line>259</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Unsuitable naming(名不符實)-Replenishment(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.ShopList.Replenishment.Replenishment</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>Replenishment.cs</File>
+              <Line>13</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Unsuitable naming(名不符實)-Replenishment(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.ShopList.Replenishment.Replenishment</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>Replenishment.Designer.cs</File>
+              <Line>3</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Unsuitable naming(名不符實)-_replenishmentTableLayoutPanel(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.Replenishment._replenishmentTableLayoutPanel._replenishmentTableLayoutPanel</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>Replenishment.Designer.cs</File>
+              <Line>338</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Unsuitable naming(名不符實)-_itemReplenishmentNumberLabel(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.Replenishment._itemReplenishmentNumberLabel._itemReplenishmentNumberLabel</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>Replenishment.Designer.cs</File>
+              <Line>339</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>Unsuitable naming(名不符實)-_replenishmentTextBox(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.Replenishment._replenishmentTextBox._replenishmentTextBox</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>Replenishment.Designer.cs</File>
+              <Line>351</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>Duplicated code(重複的程式碼)強式比對1</SmellType>
+              <HashCode>ShopList.InventorySystem.cs.PaintDataGridViewCell.29.41</HashCode>
+              <Severity>Red</Severity>
+              <Weight>13</Weight>
+              <Project>ShopList</Project>
+              <File>InventorySystem.cs</File>
+              <Line>29</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
+              <SmellType>Duplicated code(重複的程式碼)強式比對1</SmellType>
+              <HashCode>ShopList.ShopList.cs.PaintDataGridViewCell.65.77</HashCode>
+              <Severity>Red</Severity>
+              <Weight>13</Weight>
+              <Project>ShopList</Project>
+              <File>ShopList.cs</File>
+              <Line>65</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -211,7 +356,7 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>ini.cs</RelativePath>
+                <RelativePath>Initial.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -224,6 +369,11 @@
                 <RelativePath>InventorySystem.Designer.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>InventorySystemControl.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>MenuForm.cs</RelativePath>
@@ -256,6 +406,16 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Replenishment.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Replenishment.Designer.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>ShopList.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -272,7 +432,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2865</ProductionLoc>
+          <ProductionLoc>3577</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>
