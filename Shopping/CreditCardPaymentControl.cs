@@ -106,9 +106,9 @@ namespace ShopList
             {
                 e.Handled = false;
                 if (itemTag == BACK_NUMBER_TAG && length >= TWO)
-                    this.GetValidStatus(itemTag, true, NO_ERROR);
+                    this.GetValidStatus(itemTag, true, NO_ERROR); // 檢查長度
                 if (length >= THREE)
-                    this.GetValidStatus(itemTag, true, NO_ERROR);
+                    this.GetValidStatus(itemTag, true, NO_ERROR); // 檢查長度
             }
         }
 

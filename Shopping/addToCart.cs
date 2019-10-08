@@ -14,6 +14,7 @@ namespace ShopList
         const String PRICE_KEY = "price";
         int _totalPrice;
         List<String> _items = new List<string>(); //儲存加入購物車的物品
+        //List<String> _itemList = new List<string>(); //儲存加入購物車的物品的清單
 
         public AddToCart()
         {

@@ -15,6 +15,7 @@ namespace ShopList
         const String DETAIL_KEY = "detail";
         const String TYPE_KEY = "type";
         const String PRICE_KEY = "price";
+        const String FORMAT = "#, 0";
 
         // 我也不知道這在幹嘛
         [DllImport("kernel32")]
@@ -69,7 +70,7 @@ namespace ShopList
         // 格式化表格資訊
         public String[] GetItemRow(String currentItemName)
         {
-            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), this.Read(currentItemName, PRICE_KEY) };
+            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
         }
     }
 }
