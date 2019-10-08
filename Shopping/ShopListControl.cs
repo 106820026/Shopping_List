@@ -160,5 +160,12 @@ namespace ShopList
             else
                 return true;
         }
+
+        // 清空購物車所有東西並取得rowCount
+        public void ResetCart(int rowCount)
+        {
+            _cart.GetItemList().Clear();
+            this.SetRowCount(rowCount);
+        }
     }
 }

@@ -164,7 +164,7 @@ namespace ShopList
             {
                 _orderDataGridView.Rows.Clear(); // 清空右邊欄位
                 _totalPriceLabel.ResetText(); // 清空總金額
-                _shopListControl.SetRowCount(_orderDataGridView.Rows.Count); // 取得購物車商品數量
+                _shopListControl.ResetCart(_orderDataGridView.Rows.Count); // 清空購物車
                 _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 訂購按鈕不能再按下
                 this.CleanDetail();
             }
