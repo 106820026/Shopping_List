@@ -115,6 +115,7 @@ namespace ShopList
         public String[] GetOrderItemRow(String currentItemName)
         {
             return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
+
         }
 
         // 取得商品所有資訊 (InventorySystem用)

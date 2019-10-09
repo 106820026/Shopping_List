@@ -11,3 +11,7 @@ C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.csproj.GenerateR
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.exe
 C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.pdb
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.csprojAssemblyReference.cache
+C:\Users\ASUS\source\repos\Shopping\Shopping\bin\Debug\DataGridViewNumericUpDownElements.dll
+C:\Users\ASUS\source\repos\Shopping\Shopping\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.csproj.CopyComplete

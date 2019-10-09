@@ -46,6 +46,7 @@ namespace ShopList
             button = (Button)sender;
             _shopListControl.GetCurrentItemName(button.Name); // 取得目前商品id
             _descriptionRichTextBox.Text = _shopListControl.GetDetail(); // 顯示商品詳細資料
+            _stockLabel.Text = _shopListControl.GetStock();
             _priceLabel.Text = _shopListControl.GetPrice(); // 顯示價錢
         }
 
@@ -89,11 +90,11 @@ namespace ShopList
             {
                 _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
                 _shopListControl.DeleteCartItem(e.RowIndex);
+                this.CleanDetail();
             }
             _totalPriceLabel.Text = _shopListControl.GetTotalPrice(); // 顯示更新後價錢
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 取得目前購物車商品數量
             _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 確認訂購按鈕可以按下
-            this.CleanDetail();
         }
 
         // 設定頁數 & 切換Tab時 詳細資料空白
@@ -134,6 +135,7 @@ namespace ShopList
         private void CleanDetail()
         {
             _descriptionRichTextBox.ResetText(); // 清除詳細資訊欄位
+            _stockLabel.ResetText(); // 清除庫存
             _priceLabel.ResetText(); // 清除價錢
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
         }

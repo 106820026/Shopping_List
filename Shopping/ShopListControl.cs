@@ -19,6 +19,7 @@ namespace ShopList
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
         const String DETAIL_KEY = "detail";
         const String TYPE_KEY = "type";
+        const String STOCK_KEY = "stock";
         const String PRICE_KEY = "price";
         const String PAGE = "page";
         const String FORMAT = "#, 0";
@@ -117,6 +118,12 @@ namespace ShopList
         public String[] GetCartItem()
         {
             return _initialFile.GetOrderItemRow(_currentItemName);
+        }
+
+        // 顯示商品庫存
+        public String GetStock()
+        {
+            return int.Parse(_initialFile.Read(_currentItemName, STOCK_KEY)).ToString(FORMAT);
         }
 
         // 顯示商品價錢

@@ -41,7 +41,7 @@ namespace ShopList
         // 開啟補貨頁面
         public void OpenReplenishmentPage(int index)
         {
-            Replenishment _replenishment = new Replenishment();
+            Replenishment _replenishment = new Replenishment(index);
             _replenishment.ShowDialog();
         }
     }

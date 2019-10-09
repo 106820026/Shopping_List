@@ -36,7 +36,7 @@
             this._itemReplenishmentNumberLabel = new System.Windows.Forms.Label();
             this._replenishmentTextBox = new System.Windows.Forms.TextBox();
             this._stockTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._stockLabel = new System.Windows.Forms.Label();
+            this._itemStockLabel = new System.Windows.Forms.Label();
             this._itemNumberTextLabel = new System.Windows.Forms.Label();
             this._itemPriceTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._itemPriceLabel = new System.Windows.Forms.Label();
@@ -100,6 +100,7 @@
             this._cancelButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._cancelButton.BackColor = System.Drawing.Color.Salmon;
             this._cancelButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._cancelButton.ForeColor = System.Drawing.Color.DarkRed;
             this._cancelButton.Location = new System.Drawing.Point(263, 10);
             this._cancelButton.Name = "_cancelButton";
             this._cancelButton.Size = new System.Drawing.Size(227, 40);
@@ -113,6 +114,7 @@
             this._confirmButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._confirmButton.BackColor = System.Drawing.Color.PaleGreen;
             this._confirmButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._confirmButton.ForeColor = System.Drawing.Color.Green;
             this._confirmButton.Location = new System.Drawing.Point(12, 10);
             this._confirmButton.Name = "_confirmButton";
             this._confirmButton.Size = new System.Drawing.Size(227, 40);
@@ -154,13 +156,16 @@
             this._replenishmentTextBox.Name = "_replenishmentTextBox";
             this._replenishmentTextBox.Size = new System.Drawing.Size(100, 34);
             this._replenishmentTextBox.TabIndex = 2;
+            this._replenishmentTextBox.Click += new System.EventHandler(this.ConfirmConfirmButton);
+            this._replenishmentTextBox.TextChanged += new System.EventHandler(this.ConfirmConfirmButton);
+            this._replenishmentTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
             // 
             // _stockTableLayoutPanel
             // 
             this._stockTableLayoutPanel.ColumnCount = 2;
             this._stockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this._stockTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this._stockTableLayoutPanel.Controls.Add(this._stockLabel, 0, 0);
+            this._stockTableLayoutPanel.Controls.Add(this._itemStockLabel, 0, 0);
             this._stockTableLayoutPanel.Controls.Add(this._itemNumberTextLabel, 0, 0);
             this._stockTableLayoutPanel.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._stockTableLayoutPanel.Location = new System.Drawing.Point(3, 294);
@@ -170,15 +175,15 @@
             this._stockTableLayoutPanel.Size = new System.Drawing.Size(503, 60);
             this._stockTableLayoutPanel.TabIndex = 4;
             // 
-            // _stockLabel
+            // _itemStockLabel
             // 
-            this._stockLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this._stockLabel.AutoSize = true;
-            this._stockLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._stockLabel.Location = new System.Drawing.Point(153, 17);
-            this._stockLabel.Name = "_stockLabel";
-            this._stockLabel.Size = new System.Drawing.Size(0, 25);
-            this._stockLabel.TabIndex = 2;
+            this._itemStockLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._itemStockLabel.AutoSize = true;
+            this._itemStockLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemStockLabel.Location = new System.Drawing.Point(153, 17);
+            this._itemStockLabel.Name = "_itemStockLabel";
+            this._itemStockLabel.Size = new System.Drawing.Size(0, 25);
+            this._itemStockLabel.TabIndex = 2;
             // 
             // _itemNumberTextLabel
             // 
@@ -350,7 +355,7 @@
         private System.Windows.Forms.Button _cancelButton;
         private System.Windows.Forms.Button _confirmButton;
         private System.Windows.Forms.TextBox _replenishmentTextBox;
-        private System.Windows.Forms.Label _stockLabel;
+        private System.Windows.Forms.Label _itemStockLabel;
         private System.Windows.Forms.Label _itemPriceLabel;
         private System.Windows.Forms.Label _itemTypeLabel;
         private System.Windows.Forms.Label _itemNameLabel;
