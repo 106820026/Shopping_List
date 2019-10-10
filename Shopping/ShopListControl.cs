@@ -114,7 +114,7 @@ namespace ShopList
             _cart.AddItem(_currentItemName);
         }
 
-        // 顯示購物車商品至表格
+        // 更新購物車表格
         public String[] GetCartItem()
         {
             return _initialFile.GetOrderItemRow(_currentItemName);
@@ -173,6 +173,18 @@ namespace ShopList
         {
             _cart.GetItemList().Clear();
             this.SetRowCount(rowCount);
+        }
+
+        // 已加入購物車
+        public bool AlreadyInCart()
+        {
+            return !_cart.GetItemList().Contains(_currentItemName);
+        }
+
+        // 單一商品總價
+        public String GetSubprice(int number, int rowIndex)
+        {
+            return (number * int.Parse(_initialFile.GetPrice(_cart.GetItemList()[rowIndex]))).ToString(FORMAT);
         }
     }
 }

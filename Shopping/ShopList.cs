@@ -19,6 +19,8 @@ namespace ShopList
         const String ITEM = "Item";
         const String ATTACHMENT_NAME = ".jpg";
         const String DELETE_COLUMN = "_delete";
+        const String NUMBER_COLUMN = "_number";
+        const int NUMBER_COLUMN_INDEX = 5;
         String _currentTabName;
         TableLayoutPanel[] _tabTableLayoutPanel;
         ShopListControl _shopListControl = new ShopListControl();
@@ -44,20 +46,14 @@ namespace ShopList
 
             Button button; // 取得商品物件
             button = (Button)sender;
-            _shopListControl.GetCurrentItemName(button.Name); // 取得目前商品id
-            _descriptionRichTextBox.Text = _shopListControl.GetDetail(); // 顯示商品詳細資料
-            _stockLabel.Text = _shopListControl.GetStock();
-            _priceLabel.Text = _shopListControl.GetPrice(); // 顯示價錢
+            this.updateItemClick(button);
         }
 
         // 按下加入購物車
         private void AddToCartButtonClick(object sender, EventArgs e)
         {
             _shopListControl.AddItemToCart(); // 加入購物車
-            _orderDataGridView.Rows.Add(_shopListControl.GetCartItem()); // 顯示物品到右邊表格
-            _totalPriceLabel.Text = _shopListControl.GetTotalPrice(); // 顯示總價錢
-            _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 取得目前購物車商品數量
-            _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 確認訂購按鈕可以按下
+            this.updateAddToCart(); // 更新顯示
         }
 
         // 幫button加icon
@@ -79,14 +75,14 @@ namespace ShopList
             }
         }
 
-        // 刪除購物車內容
+        // 點選DataGridView內容
         void ClickDataGridViewCell(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
 
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-            if (senderGrid.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
+            if (senderGrid.Columns[e.ColumnIndex].Name == DELETE_COLUMN) // 點選刪除
             {
                 _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
                 _shopListControl.DeleteCartItem(e.RowIndex);
@@ -172,11 +168,42 @@ namespace ShopList
             }
         }
 
-        // 設定按鈕狀態
+        //按下加入購物車後更新視窗
+        private void updateAddToCart()
+        {
+            _addToCartButton.Enabled = false;
+            _orderDataGridView.Rows.Add(_shopListControl.GetCartItem()); // 顯示物品到右邊表格
+            _totalPriceLabel.Text = _shopListControl.GetTotalPrice(); // 顯示總價錢
+            _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 取得目前購物車商品數量
+            _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 確認訂購按鈕可以按下
+        }
+
+        // 選取商品後更新視窗
+        private void updateItemClick(Button button)
+        {
+            _shopListControl.GetCurrentItemName(button.Name); // 取得目前商品id
+            _descriptionRichTextBox.Text = _shopListControl.GetDetail(); // 顯示商品詳細資料
+            _stockLabel.Text = _shopListControl.GetStock(); // 顯示庫存
+            _priceLabel.Text = _shopListControl.GetPrice(); // 顯示價錢
+            _addToCartButton.Enabled = _shopListControl.AlreadyInCart(); // 如已加入購物車 就不可再次加入
+        }
+
+        // 設定商品按鈕狀態
         private void ChangeButtonStatus(Control button, bool flag)
         {
             ((Button)button).Enabled = flag;
             ((Button)button).Visible = flag;
+        }
+
+        // 更改單一商品總價錢
+        private void UpdateSubprice(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增加數量
+            {
+                _orderDataGridView.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value = _shopListControl.GetSubprice(int.Parse(_orderDataGridView.CurrentCell.Value.ToString()), e.RowIndex);
+                //foreach(Control row in _orderDataGridView.SelectedColumns)
+            }
         }
     }
 }

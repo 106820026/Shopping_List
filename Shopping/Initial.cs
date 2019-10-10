@@ -104,6 +104,11 @@ namespace ShopList
                 this._filePath = value;
             }
         }
+        // 取得價格
+        public String GetPrice(String currentItemName)
+        {
+            return this.Read(currentItemName, PRICE_KEY);
+        }
 
         // 格式化商品資訊(_descriptionRichTextBox用)
         public String GetDescription(String currentItemName)
@@ -111,11 +116,10 @@ namespace ShopList
             return this.Read(currentItemName, MODEL_KEY) + SEPARATE_LINE + this.Read(currentItemName, DETAIL_KEY);
         }
 
-        // 格式化表格資訊 (_orderDataGridView用)
+        // 格式化表格資訊 (適用於按下addToCart Button)
         public String[] GetOrderItemRow(String currentItemName)
         {
-            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
-
+            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT), "1", int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
         }
 
         // 取得商品所有資訊 (InventorySystem用)
