@@ -19,6 +19,7 @@ namespace ShopList
         const String PRICE_KEY = "price";
         const String STOCK_KEY = "stock";
         const String FORMAT = "#, 0";
+        const String ONE = "1";
         const int SIZE = 65535;
         const int CAPACITY = 255;
 
@@ -104,10 +105,17 @@ namespace ShopList
                 this._filePath = value;
             }
         }
+
         // 取得價格
         public String GetPrice(String currentItemName)
         {
             return this.Read(currentItemName, PRICE_KEY);
+        }
+
+        // 取得庫存
+        public String GetStock(String currentItemName)
+        {
+            return this.Read(currentItemName, STOCK_KEY);
         }
 
         // 格式化商品資訊(_descriptionRichTextBox用)
@@ -119,7 +127,7 @@ namespace ShopList
         // 格式化表格資訊 (適用於按下addToCart Button)
         public String[] GetOrderItemRow(String currentItemName)
         {
-            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT), "1", int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
+            return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT), ONE, int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
         }
 
         // 取得商品所有資訊 (InventorySystem用)

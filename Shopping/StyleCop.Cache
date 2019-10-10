@@ -51,7 +51,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 13:43:24.416</sourceFile>
+      <sourceFile>2019/10/10 14:02:23.660</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -95,7 +95,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/09 00:02:37.577</sourceFile>
+      <sourceFile>2019/10/10 18:49:59.219</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -106,7 +106,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 23:53:52.520</sourceFile>
+      <sourceFile>2019/10/09 12:00:58.701</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -123,13 +123,24 @@
         <endColumn>61</endColumn>
         <warning>False</warning>
       </violation>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-REPLENISHMENT_COLUMN_INDEX(replenishment)</context>
+        <line>17</line>
+        <index>463</index>
+        <endIndex>503</endIndex>
+        <startLine>17</startLine>
+        <startColumn>9</startColumn>
+        <endLine>17</endLine>
+        <endColumn>49</endColumn>
+        <warning>False</warning>
+      </violation>
     </violations>
   </sourcecode>
   <sourcecode name="InventorySystem.Designer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 23:48:00.340</sourceFile>
+      <sourceFile>2019/10/09 00:48:09.810</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -137,12 +148,12 @@
     <violations>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
         <context>Unsuitable naming(名不符實)-_replenishment(replenishment)</context>
-        <line>259</line>
-        <index>16107</index>
-        <endIndex>16175</endIndex>
-        <startLine>259</startLine>
+        <line>260</line>
+        <index>16205</index>
+        <endIndex>16273</endIndex>
+        <startLine>260</startLine>
         <startColumn>9</startColumn>
-        <endLine>259</endLine>
+        <endLine>260</endLine>
         <endColumn>77</endColumn>
         <warning>False</warning>
       </violation>
@@ -152,12 +163,35 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/09 00:01:15.389</sourceFile>
+      <sourceFile>2019/10/10 18:49:59.211</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
     </timestamps>
-    <violations />
+    <violations>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-replenishment(replenishment)</context>
+        <line>44</line>
+        <index>1163</index>
+        <endIndex>1202</endIndex>
+        <startLine>44</startLine>
+        <startColumn>27</startColumn>
+        <endLine>44</endLine>
+        <endColumn>66</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-OpenReplenishmentPage(replenishment)</context>
+        <line>42</line>
+        <index>1080</index>
+        <endIndex>1255</endIndex>
+        <startLine>42</startLine>
+        <startColumn>9</startColumn>
+        <endLine>46</endLine>
+        <endColumn>9</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
   <sourcecode name="MenuForm.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
@@ -229,7 +263,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 16:54:04.082</sourceFile>
+      <sourceFile>2019/10/10 18:35:25.461</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -237,13 +271,24 @@
     <violations>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
         <context>Unsuitable naming(名不符實)-Replenishment(replenishment)</context>
-        <line>13</line>
-        <index>252</index>
-        <endIndex>396</endIndex>
-        <startLine>13</startLine>
+        <line>14</line>
+        <index>291</index>
+        <endIndex>2108</endIndex>
+        <startLine>14</startLine>
         <startColumn>5</startColumn>
-        <endLine>19</endLine>
+        <endLine>62</endLine>
         <endColumn>5</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-_replenishmentControl(replenishment)</context>
+        <line>16</line>
+        <index>349</index>
+        <endIndex>420</endIndex>
+        <startLine>16</startLine>
+        <startColumn>9</startColumn>
+        <endLine>16</endLine>
+        <endColumn>80</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -252,7 +297,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 16:54:02.375</sourceFile>
+      <sourceFile>2019/10/09 13:51:21.211</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -262,44 +307,67 @@
         <context>Unsuitable naming(名不符實)-Replenishment(replenishment)</context>
         <line>3</line>
         <index>27</index>
-        <endIndex>23597</endIndex>
+        <endIndex>24211</endIndex>
         <startLine>3</startLine>
         <startColumn>5</startColumn>
-        <endLine>356</endLine>
+        <endLine>362</endLine>
         <endColumn>5</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
         <context>Unsuitable naming(名不符實)-_replenishmentTableLayoutPanel(replenishment)</context>
-        <line>338</line>
-        <index>22369</index>
-        <endIndex>22445</endIndex>
-        <startLine>338</startLine>
+        <line>344</line>
+        <index>22979</index>
+        <endIndex>23055</endIndex>
+        <startLine>344</startLine>
         <startColumn>9</startColumn>
-        <endLine>338</endLine>
+        <endLine>344</endLine>
         <endColumn>85</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
         <context>Unsuitable naming(名不符實)-_itemReplenishmentNumberLabel(replenishment)</context>
-        <line>339</line>
-        <index>22456</index>
-        <endIndex>22520</endIndex>
-        <startLine>339</startLine>
+        <line>345</line>
+        <index>23066</index>
+        <endIndex>23130</endIndex>
+        <startLine>345</startLine>
         <startColumn>9</startColumn>
-        <endLine>339</endLine>
+        <endLine>345</endLine>
         <endColumn>73</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
         <context>Unsuitable naming(名不符實)-_replenishmentTextBox(replenishment)</context>
-        <line>351</line>
-        <index>23294</index>
-        <endIndex>23352</endIndex>
-        <startLine>351</startLine>
+        <line>357</line>
+        <index>23904</index>
+        <endIndex>23962</endIndex>
+        <startLine>357</startLine>
         <startColumn>9</startColumn>
-        <endLine>351</endLine>
+        <endLine>357</endLine>
         <endColumn>67</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
+  </sourcecode>
+  <sourcecode name="ReplenishmentControl.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/10/10 18:49:59.202</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-ReplenishmentControl(replenishment)</context>
+        <line>9</line>
+        <index>150</index>
+        <endIndex>679</endIndex>
+        <startLine>9</startLine>
+        <startColumn>5</startColumn>
+        <endLine>29</endLine>
+        <endColumn>5</endColumn>
         <warning>False</warning>
       </violation>
     </violations>
@@ -308,18 +376,41 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 17:49:08.250</sourceFile>
+      <sourceFile>2019/10/10 18:56:47.907</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
     </timestamps>
-    <violations />
+    <violations>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-SUBPRICE_COLUMN_INDEX(subprice)</context>
+        <line>25</line>
+        <index>694</index>
+        <endIndex>729</endIndex>
+        <startLine>25</startLine>
+        <startColumn>9</startColumn>
+        <endLine>25</endLine>
+        <endColumn>44</endColumn>
+        <warning>False</warning>
+      </violation>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-UpdateSubPrice(sub)</context>
+        <line>201</line>
+        <index>8237</index>
+        <endIndex>9029</endIndex>
+        <startLine>201</startLine>
+        <startColumn>9</startColumn>
+        <endLine>211</endLine>
+        <endColumn>9</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
   <sourcecode name="ShopList.Designer.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 17:49:08.242</sourceFile>
+      <sourceFile>2019/10/10 18:46:36.752</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -330,11 +421,23 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/08 19:29:05.554</sourceFile>
+      <sourceFile>2019/10/10 18:56:47.899</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
     </timestamps>
-    <violations />
+    <violations>
+      <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="UnsuitableNaming" ruleCheckId="UN0001">
+        <context>Unsuitable naming(名不符實)-GetSubprice(subprice)</context>
+        <line>181</line>
+        <index>5530</index>
+        <endIndex>5693</endIndex>
+        <startLine>181</startLine>
+        <startColumn>9</startColumn>
+        <endLine>184</endLine>
+        <endColumn>9</endColumn>
+        <warning>False</warning>
+      </violation>
+    </violations>
   </sourcecode>
 </stylecopresultscache>

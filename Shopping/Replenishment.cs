@@ -23,17 +23,16 @@ namespace ShopList
         const String STOCK_KEY = "stock";
         private int _rowCount;
 
-
         public Replenishment(int rowCount)
         {
             InitializeComponent();
             _sectionList = _initial.GetAllSections(); // 取得Section列表
-             _rowCount = rowCount; // 取得按下的行數
-            this.showDialogInformation();
+            _rowCount = rowCount; // 取得按下的行數
+            this.ShowDialogInformation();
         }
 
         // 顯示視窗資訊
-        void showDialogInformation()
+        void ShowDialogInformation()
         {
             _itemNameLabel.Text = _initial.Read(_sectionList[_rowCount], MODEL_KEY);
             _itemTypeLabel.Text = _initial.Read(_sectionList[_rowCount], TYPE_KEY);
@@ -41,7 +40,6 @@ namespace ShopList
             _itemStockLabel.Text = _initial.Read(_sectionList[_rowCount], STOCK_KEY);
         }
         
-
         // 關閉視窗
         private void ClickCancelButton(object sender, EventArgs e)
         {
@@ -51,8 +49,8 @@ namespace ShopList
         // 確認確認按鈕
         private void ConfirmConfirmButton(object sender, EventArgs e)
         {
-            TextBox _textBox;
-            _textBox = (TextBox)sender;
+            TextBox textBox;
+            textBox = (TextBox)sender;
             _confirmButton.Enabled = _replenishmentControl.IsZero(_replenishmentTextBox.Text);
         }
 

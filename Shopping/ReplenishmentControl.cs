@@ -13,7 +13,7 @@ namespace ShopList
         // 輸入項目為0或空白
         public bool IsZero(String inputText)
         {
-            if (inputText == "" || int.Parse(inputText)+1 == 1)
+            if (inputText == "" || int.Parse(inputText) + 1 == 1)
                 return false;
             return true;
         }

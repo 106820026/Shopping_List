@@ -26,6 +26,8 @@ namespace ShopList
         const String NEXT_PAGE_BUTTON = "_nextPageButton";
         const String LAST_PAGE_BUTTON = "_lastPageButton";
         const String FIRST_PAGE = "1";
+        const String OUT_OF_STOCK = "庫存不足";
+        const String STOCK_STATUS = "庫存狀態";
         const int TWO = 2;
         const int THREE = 3;
         const int FOUR = 4;
@@ -132,12 +134,6 @@ namespace ShopList
             return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
         }
 
-        // 顯示總價錢
-        public String GetTotalPrice()
-        {
-            return _cart.GetTotalPrice().ToString(FORMAT);
-        }
-
         // 翻頁
         public void ChangePage(String itemName)
         {
@@ -176,15 +172,32 @@ namespace ShopList
         }
 
         // 已加入購物車
-        public bool AlreadyInCart()
+        public bool IsAlreadyInCart()
         {
             return !_cart.GetItemList().Contains(_currentItemName);
         }
 
         // 單一商品總價
-        public String GetSubprice(int number, int rowIndex)
+        public int GetSubprice(int number, int rowIndex)
         {
-            return (number * int.Parse(_initialFile.GetPrice(_cart.GetItemList()[rowIndex]))).ToString(FORMAT);
+            return number * int.Parse(_initialFile.GetPrice(_cart.GetItemList()[rowIndex]));
+        }
+
+        // 庫存不足
+        public bool OutOfStock(int rowIndex, int orderNumber)
+        {
+            if (int.Parse(_initialFile.GetStock(_cart.GetItemList()[rowIndex])) < orderNumber)
+            {
+                MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
+                return true;
+            }
+            return false;
+        }
+
+        // 取得庫存
+        public String GetStockNumber(int rowIndex)
+        {
+            return _initialFile.GetStock(_cart.GetItemList()[rowIndex]);
         }
     }
 }
