@@ -178,9 +178,17 @@ namespace ShopList
         }
 
         // 單一商品總價
-        public int GetSubprice(int number, int rowIndex)
+        public int GetSubtotal(int number, int rowIndex)
         {
             return number * int.Parse(_initialFile.GetPrice(_cart.GetItemList()[rowIndex]));
+        }
+
+        // 確認庫存量
+        public String CheckStock(int rowIndex, int orderNumber)
+        {
+            if (this.OutOfStock(rowIndex, orderNumber)) // 如果庫存不足
+                return this.GetStockNumber(rowIndex); //值設定成庫存量
+            return orderNumber.ToString(FORMAT);
         }
 
         // 庫存不足

@@ -27,11 +27,9 @@ namespace ShopList
         // 加入補貨icon
         private void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
-
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-            if (senderGrid.Columns[e.ColumnIndex].Name == REPLENISHMENT_COLUMN)
+            if (((DataGridView)sender).Columns[e.ColumnIndex].Name == REPLENISHMENT_COLUMN)
             {
                 const int LEFT_OFFSET = 13;
                 const int TOP_OFFSET = 3;
@@ -46,15 +44,14 @@ namespace ShopList
         // click表格
         private void ClickItem(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
             else
             {
-                _itemPictureBox.Image = _inventorySystemControl.GetImageFilePath(senderGrid.Rows[e.RowIndex].Index);
-                _itemDetailTextBox.Text = _inventorySystemControl.GetItemDetail(senderGrid.Rows[e.RowIndex].Index);
+                _itemPictureBox.Image = _inventorySystemControl.GetImageFilePath(((DataGridView)sender).Rows[e.RowIndex].Index);
+                _itemDetailTextBox.Text = _inventorySystemControl.GetItemDetail(((DataGridView)sender).Rows[e.RowIndex].Index);
                 if (e.ColumnIndex == REPLENISHMENT_COLUMN_INDEX) // 如果按補貨按鈕
-                    _inventorySystemControl.OpenReplenishmentPage(senderGrid.Rows[e.RowIndex].Index);
+                    _inventorySystemControl.OpenReplenishmentPage(((DataGridView)sender).Rows[e.RowIndex].Index);
             }
         }
     }

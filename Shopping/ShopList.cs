@@ -22,7 +22,7 @@ namespace ShopList
         const String NUMBER_COLUMN = "_number";
         const String FORMAT = "#, 0";
         const int NUMBER_COLUMN_INDEX = 4;
-        const int SUBPRICE_COLUMN_INDEX = 5;
+        const int SUBTOTAL_COLUMN_INDEX = 5;
         String _currentTabName;
         TableLayoutPanel[] _tabTableLayoutPanel;
         ShopListControl _shopListControl = new ShopListControl();
@@ -39,6 +39,7 @@ namespace ShopList
             _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _memoryTableLayoutPanel, _diskTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
             _shopListControl.SetCurrentTabIndex(_itemTabControl.SelectedIndex); // 目前Tab頁數
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 購物車商品數量
+            _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); //顯示總價錢
         }
 
         // 處理所有商品點擊事件
@@ -58,14 +59,12 @@ namespace ShopList
             this.UpdateAddToCart(); // 更新顯示
         }
 
-        // 幫button加icon
+        // 幫button加icon 垃圾桶
         void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            DataGridView senderGrid = (DataGridView)sender;
-
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-            if (senderGrid.Columns[e.ColumnIndex].Name == DELETE_COLUMN)
+            if (((DataGridView)sender).Columns[e.ColumnIndex].Name == DELETE_COLUMN)
             {
                 const int LEFT_OFFSET = 15;
                 const int TOP_OFFSET = 3;
@@ -80,11 +79,9 @@ namespace ShopList
         // 點選DataGridView內容
         void ClickDataGridViewCell(object sender, DataGridViewCellEventArgs e)
         {
-            var senderGrid = (DataGridView)sender;
-
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
                 return;
-            if (senderGrid.Columns[e.ColumnIndex].Name == DELETE_COLUMN) // 點選刪除
+            if (((DataGridView)sender).Columns[e.ColumnIndex].Name == DELETE_COLUMN) // 點選刪除
             {
                 _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
                 _shopListControl.DeleteCartItem(e.RowIndex);
@@ -197,28 +194,27 @@ namespace ShopList
             ((Button)button).Visible = flag;
         }
 
-        // 更改單一商品總價錢
-        private void UpdateSubPrice(object sender, DataGridViewCellEventArgs e)
-        {
-            var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增加數量
-            {
-                _orderDataGridView.Rows[e.RowIndex].Cells[SUBPRICE_COLUMN_INDEX].Value = _shopListControl.GetSubprice(int.Parse(_orderDataGridView.CurrentCell.Value.ToString()), e.RowIndex).ToString(FORMAT);
-                if (_shopListControl.OutOfStock(e.RowIndex, int.Parse(_orderDataGridView.CurrentCell.Value.ToString()))) // 如果庫存不足
-                    _orderDataGridView.CurrentCell.Value = _shopListControl.GetStockNumber(e.RowIndex); //值設定成庫存量
-                _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
-            }
-        }
-
         // 取得總價錢
         private int GetTotalPrice()
         {
             int totalPrice = 0;
             for (int i = 0; i < _orderDataGridView.RowCount; i++)
             {
-                totalPrice += _shopListControl.GetSubprice(int.Parse(_orderDataGridView.Rows[i].Cells[NUMBER_COLUMN_INDEX].Value.ToString()), i);
+                totalPrice += _shopListControl.GetSubtotal(int.Parse(_orderDataGridView.Rows[i].Cells[NUMBER_COLUMN_INDEX].Value.ToString()), i);
             }
             return totalPrice;
+        }
+
+        // 更改單一商品總價錢
+        private void UpdateSubtotal(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增加數量
+            {
+                _orderDataGridView.Rows[e.RowIndex].Cells[SUBTOTAL_COLUMN_INDEX].Value = _shopListControl.GetSubtotal(int.Parse(_orderDataGridView.CurrentCell.Value.ToString()), e.RowIndex).ToString(FORMAT);
+                _orderDataGridView.CurrentCell.Value = _shopListControl.CheckStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()));
+                _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
+            }
         }
     }
 }
