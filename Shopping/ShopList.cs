@@ -159,6 +159,7 @@ namespace ShopList
         {
             if (_creditCardPayment.ShowDialog() == DialogResult.OK)
             {
+                _shopListControl.UpdateStock(); // 購買完後更新庫存
                 _orderDataGridView.Rows.Clear(); // 清空右邊欄位
                 _totalPriceLabel.ResetText(); // 清空總金額
                 _shopListControl.ResetCart(_orderDataGridView.Rows.Count); // 清空購物車

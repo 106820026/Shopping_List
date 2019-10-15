@@ -121,6 +121,7 @@
             this._confirmButton.TabIndex = 0;
             this._confirmButton.Text = "確認";
             this._confirmButton.UseVisualStyleBackColor = false;
+            this._confirmButton.Click += new System.EventHandler(this.ClickConfirmButton);
             // 
             // _replenishmentTableLayoutPanel
             // 

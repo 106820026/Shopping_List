@@ -23,6 +23,11 @@ namespace ShopList
         const int SIZE = 65535;
         const int CAPACITY = 255;
 
+        //// 自訂事件
+        //public event WriteNewDataEventHandler WriteNewData;
+        //public delegate void WriteNewDataEventHandler();
+        //public WriteNewDataEventHandler stockAction;
+
         //聲明讀寫INI文件的API函數
         [DllImport("kernel32")]
 
@@ -49,6 +54,12 @@ namespace ShopList
         {
             WritePrivateProfileString(section, key, value.ToLower(), this._filePath);
         }
+
+        //// 如果有寫入資料 所有view都要更新
+        //private void UpdateView()
+        //{
+        //    WriteNewData?.Invoke();
+        //}
 
         // 讀取檔案
         public string Read(string section, string key)

@@ -194,7 +194,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.cs</File>
-              <Line>16</Line>
+              <Line>18</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -210,7 +210,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.cs</File>
-              <Line>17</Line>
+              <Line>19</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -226,7 +226,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.Designer.cs</File>
-              <Line>260</Line>
+              <Line>261</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -322,7 +322,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>Replenishment.Designer.cs</File>
-              <Line>344</Line>
+              <Line>345</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -338,7 +338,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>Replenishment.Designer.cs</File>
-              <Line>345</Line>
+              <Line>346</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -354,7 +354,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>Replenishment.Designer.cs</File>
-              <Line>357</Line>
+              <Line>358</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -371,6 +371,54 @@
               <Project>ShopList</Project>
               <File>ReplenishmentControl.cs</File>
               <Line>9</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>13</Id>
+              <SmellType>Unsuitable naming(名不符實)-_replenishmentNumber(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.ReplenishmentControl._replenishmentNumber._replenishmentNumber</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ReplenishmentControl.cs</File>
+              <Line>15</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>14</Id>
+              <SmellType>Unsuitable naming(名不符實)-GetReplenishmentNumber(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.ReplenishmentControl.GetReplenishmentNumber.GetReplenishmentNumber</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ReplenishmentControl.cs</File>
+              <Line>35</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>15</Id>
+              <SmellType>Literal constants(字面常數)-"0"</SmellType>
+              <HashCode>LiteralConstants.IsAlreadyInCart."0"</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ShopListControl.cs</File>
+              <Line>180</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -516,7 +564,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3887</ProductionLoc>
+          <ProductionLoc>3953</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

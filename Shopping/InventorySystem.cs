@@ -13,15 +13,15 @@ namespace ShopList
     public partial class InventorySystem : Form
     {
         InventorySystemControl _inventorySystemControl = new InventorySystemControl();
+        Initial _initial = new Initial(FILE_PATH);
+        const String FILE_PATH = "../../Data Info.ini";
         const String REPLENISHMENT_COLUMN = "_replenishment";
         const int REPLENISHMENT_COLUMN_INDEX = 4;
 
         public InventorySystem()
         {
             InitializeComponent();
-            _itemDataGridView.AllowUserToResizeRows = false; //禁止更動cell大小
-            foreach (String[] item in _inventorySystemControl.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
-                _itemDataGridView.Rows.Add(item);
+            this.LoadAndShowDataGridView();
         }
 
         // 加入補貨icon
@@ -53,6 +53,13 @@ namespace ShopList
                 if (e.ColumnIndex == REPLENISHMENT_COLUMN_INDEX) // 如果按補貨按鈕
                     _inventorySystemControl.OpenReplenishmentPage(((DataGridView)sender).Rows[e.RowIndex].Index);
             }
+        }
+
+        // 讀取DaraGridView資料 並顯示
+        private void LoadAndShowDataGridView()
+        {
+            foreach (String[] item in _inventorySystemControl.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
+                _itemDataGridView.Rows.Add(item);
         }
     }
 }

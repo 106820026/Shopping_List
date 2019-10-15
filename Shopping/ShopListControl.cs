@@ -28,11 +28,13 @@ namespace ShopList
         const String FIRST_PAGE = "1";
         const String OUT_OF_STOCK = "庫存不足";
         const String STOCK_STATUS = "庫存狀態";
+        const String ZERO = "0";
         const int TWO = 2;
         const int THREE = 3;
         const int FOUR = 4;
         const int FIVE = 5;
         String _currentItemName;
+        Dictionary<string, string> _itemNameAndSellNumber = new Dictionary<string, string>();
         int _currentTabIndex;
         int _rowCount;
         // current page
@@ -174,12 +176,19 @@ namespace ShopList
         // 已加入購物車
         public bool IsAlreadyInCart()
         {
-            return !_cart.GetItemList().Contains(_currentItemName);
+            // 如果已經在DGV上或是庫存沒了都不可以
+            return !(_cart.GetItemList().Contains(_currentItemName) || _initialFile.GetStock(_currentItemName) == ZERO);
         }
 
         // 單一商品總價
         public int GetSubtotal(int number, int rowIndex)
         {
+            String value = ZERO;
+            _itemNameAndSellNumber.TryGetValue(_cart.GetItemList()[rowIndex], out value); // 確認字典中無重複的key
+            if (value == ZERO)
+                _itemNameAndSellNumber.Add(_cart.GetItemList()[rowIndex], number.ToString());
+            else
+                _itemNameAndSellNumber[_cart.GetItemList()[rowIndex]] = number.ToString(); // 存入商品名稱和購買數量
             return number * int.Parse(_initialFile.GetPrice(_cart.GetItemList()[rowIndex]));
         }
 
@@ -206,6 +215,16 @@ namespace ShopList
         public String GetStockNumber(int rowIndex)
         {
             return _initialFile.GetStock(_cart.GetItemList()[rowIndex]);
+        }
+
+        // 更新購買後庫存
+        public void UpdateStock()
+        {
+            foreach (String key in _itemNameAndSellNumber.Keys)
+            {
+                int originalStock = int.Parse(_initialFile.GetStock(key));
+                _initialFile.Write(key, STOCK_KEY, (originalStock - int.Parse(_itemNameAndSellNumber[key])).ToString());
+            }
         }
     }
 }

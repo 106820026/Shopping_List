@@ -52,12 +52,20 @@ namespace ShopList
             TextBox textBox;
             textBox = (TextBox)sender;
             _confirmButton.Enabled = _replenishmentControl.IsZero(_replenishmentTextBox.Text);
+            _replenishmentControl.GetReplenishmentNumber(_replenishmentTextBox.Text);
         }
 
         // 只能輸入數字
         private void InputOnlyNumber(object sender, KeyPressEventArgs e)
         {
             e.Handled = _replenishmentControl.InputOnlyNumber(e.KeyChar);
+        }
+
+        // 按下確認按鈕
+        private void ClickConfirmButton(object sender, EventArgs e)
+        {
+            _replenishmentControl.UpdateStockNumber(_sectionList[_rowCount]);
+            this.Close();
         }
     }
 }
