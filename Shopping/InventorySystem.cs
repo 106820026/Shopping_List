@@ -71,13 +71,15 @@ namespace ShopList
         // 更新庫存數量
         private void UpdateStock()
         {
-            _itemDataGridView.Rows[_currentRow].Cells[NUMBER_COLUMN_INDEX].Value = _inventorySystemControl.GetStock(_currentRow);
+            for(int i=0; i<_initial.GetAllItemList().Count; i++)
+            _itemDataGridView.Rows[i].Cells[NUMBER_COLUMN_INDEX].Value = _inventorySystemControl.GetStock(i);
         }
 
         // 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
             _initial._writeNewData -= UpdateStock;
+            this.Dispose();
         }
     }
 }

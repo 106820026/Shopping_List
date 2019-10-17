@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShopList
 {
@@ -25,8 +24,6 @@ namespace ShopList
         const String NEXT_PAGE_BUTTON = "_nextPageButton";
         const String LAST_PAGE_BUTTON = "_lastPageButton";
         const String FIRST_PAGE = "1";
-        const String OUT_OF_STOCK = "庫存不足";
-        const String STOCK_STATUS = "庫存狀態";
         const String ZERO = "0";
         const int TWO = 2;
         const int THREE = 3;
@@ -128,7 +125,7 @@ namespace ShopList
         // 顯示商品庫存
         public String GetStock()
         {
-            return int.Parse(_initial.Read(_currentItemName, STOCK_KEY)).ToString(FORMAT);
+            return int.Parse(_initial.Read(_currentItemName, STOCK_KEY)).ToString();
         }
 
         // 顯示商品價錢
@@ -193,22 +190,17 @@ namespace ShopList
             return number * int.Parse(_initial.GetPrice(_cart.GetItemList()[rowIndex]));
         }
 
-        // 確認庫存量
-        public String CheckStock(int rowIndex, int orderNumber)
+        // 改成庫存量
+        public String ChangeToMaximumStock(int rowIndex)
         {
-            if (this.OutOfStock(rowIndex, orderNumber)) // 如果庫存不足
-                return this.GetStockNumber(rowIndex); //值設定成庫存量
-            return orderNumber.ToString();
+            return this.GetStockNumber(rowIndex); //值設定成庫存量
         }
 
         // 庫存不足
         public bool OutOfStock(int rowIndex, int orderNumber)
         {
             if (int.Parse(_initial.GetStock(_cart.GetItemList()[rowIndex])) < orderNumber)
-            {
-                MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
                 return true;
-            }
             return false;
         }
 

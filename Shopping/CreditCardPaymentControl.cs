@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ShopList
 {
@@ -60,55 +59,52 @@ namespace ShopList
         }
 
         // 確認姓名輸入
-        public void ConfirmName(int itemTag, int length, KeyPressEventArgs e)
+        public bool ConfirmName(int itemTag, int length, char inputChar)
         {
-            if (e.KeyChar >= ZERO && e.KeyChar <= NINE) // 不可輸入數字
+            if (inputChar >= ZERO && inputChar <= NINE) // 不可輸入數字
             {
-                e.Handled = true;
                 _errorMessage = NO_NUMBER_INPUT;
+                return true;
             }
             else
             {
-                e.Handled = false;
-                if (e.KeyChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
-                {
+                if (inputChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
                     this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_SOMETHING);
-                }
                 else
-                {
                     this.GetValidStatus(itemTag, true, NO_ERROR);
-                }
+                return false;
             }
         }
 
         // 確認地址輸入
-        public void ConfirmAddress(int length, KeyPressEventArgs e)
+        public void ConfirmAddress(int length, char inputChar)
         {
-            if (e.KeyChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
+            if (inputChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
                 this.GetValidStatus(ADDRESS_TAG, false, YOU_MUST_INPUT_SOMETHING);
             else
                 this.GetValidStatus(ADDRESS_TAG, true, NO_ERROR);
         }
 
         // 卡號只能輸入數字
-        public void InputOnlyNumber(int itemTag, int length, KeyPressEventArgs e)
+        public bool InputOnlyNumber(int itemTag, int length, char inputChar)
         {
-            if ((!char.IsDigit(e.KeyChar) && e.KeyChar != DELETE_BUTTON)) //輸入非數字
+            if ((!char.IsDigit(inputChar) && inputChar != DELETE_BUTTON)) //輸入非數字
             {
-                e.Handled = true;
                 _errorMessage = ONLY_NUMBER_INPUT;
+                return true;
             }
-            else if (e.KeyChar == DELETE_BUTTON) // 按下刪除鍵
+            else if (inputChar == DELETE_BUTTON) // 按下刪除鍵
             {
                 this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_MORE_NUMBERS);
-            }
+                return true;
+            }  
             else
             {
-                e.Handled = false;
                 if (itemTag == BACK_NUMBER_TAG && length >= TWO)
                     this.GetValidStatus(itemTag, true, NO_ERROR); // 檢查長度
                 if (length >= THREE)
                     this.GetValidStatus(itemTag, true, NO_ERROR); // 檢查長度
+                return false;
             }
         }
 

@@ -22,6 +22,8 @@ namespace ShopList
         const String DELETE_COLUMN = "_delete";
         const String NUMBER_COLUMN = "_number";
         const String FORMAT = "#, 0";
+        const String OUT_OF_STOCK = "庫存不足";
+        const String STOCK_STATUS = "庫存狀態";
         const int NUMBER_COLUMN_INDEX = 4;
         const int SUBTOTAL_COLUMN_INDEX = 5;
         String _currentTabName;
@@ -92,25 +94,13 @@ namespace ShopList
                 return;
             if (((DataGridView)sender).Columns[e.ColumnIndex].Name == DELETE_COLUMN) // 點選刪除
             {
-                this.RemoveItem(e);
-                this.ShowTotalPrice();
+                _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
+                _shopListControl.DeleteCartItem(e.RowIndex);
+                _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); // 顯示總價錢
                 this.CleanDetail();
             }
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 取得目前購物車商品數量
             _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 確認訂購按鈕可以按下
-        }
-
-        // 移除商品
-        private void RemoveItem(DataGridViewCellEventArgs e)
-        {
-            _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
-            _shopListControl.DeleteCartItem(e.RowIndex);
-        }
-
-        // 顯示總價錢
-        private void ShowTotalPrice()
-        {
-            _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); // 顯示總價錢
         }
 
         // 設定頁數 & 切換Tab時 詳細資料空白
@@ -232,9 +222,14 @@ namespace ShopList
         {
             var senderGrid = (DataGridView)sender;
             if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增加數量
-            {
+            {   // 如果庫存不足
+                if (_shopListControl.OutOfStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString())))
+                {
+                    MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
+                    _orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.ChangeToMaximumStock(e.RowIndex);
+                }
                 _orderDataGridView.Rows[e.RowIndex].Cells[SUBTOTAL_COLUMN_INDEX].Value = _shopListControl.GetSubtotal(int.Parse(_orderDataGridView.CurrentCell.Value.ToString()), e.RowIndex).ToString(FORMAT);
-                _orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.CheckStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()));
+                //_orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.CheckStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()));
                 _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
             }
         }
@@ -248,7 +243,8 @@ namespace ShopList
         // 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
-            _initial._writeNewData += UpdateStock;
+            _initial._writeNewData -= UpdateStock;
+            this.Dispose();
         }
     }
 }

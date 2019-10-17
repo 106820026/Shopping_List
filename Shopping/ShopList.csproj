@@ -150,6 +150,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Data Info.ini" />
     <None Include="Resources\_cartIcon.png" />
   </ItemGroup>
   <ItemGroup>

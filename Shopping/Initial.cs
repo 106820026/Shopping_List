@@ -134,7 +134,7 @@ namespace ShopList
             return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT), ONE, int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };
         }
 
-        // 取得商品所有資訊 (InventorySystem用)
+        // 取得商品所有資訊 (InventorySystem的DGV用)
         public List<String[]> GetAllItemList()
         {
             this.ReadSections(_sectionList); // 讀取所有Section

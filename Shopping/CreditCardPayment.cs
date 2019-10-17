@@ -31,7 +31,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.ConfirmName(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e);
+            e.Handled =  _creditCardPaymentControl.ConfirmName(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e.KeyChar);
             ShowError(_textBox);
         }
 
@@ -40,7 +40,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.ConfirmAddress(_textBox.TextLength, e);
+            _creditCardPaymentControl.ConfirmAddress(_textBox.TextLength, e.KeyChar);
             ShowError(_textBox);
         }
 
@@ -49,7 +49,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            _creditCardPaymentControl.InputOnlyNumber(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e);
+            e.Handled = _creditCardPaymentControl.InputOnlyNumber(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e.KeyChar);
             ShowError(_textBox);
         }
 
