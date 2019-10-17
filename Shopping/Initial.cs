@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class Initial
+    public class Initial
     {
+        public event WriteNewDataEventHandler _writeNewData;// 自訂事件
+        public delegate void WriteNewDataEventHandler();
         private string _filePath;
         StringCollection _sectionList = new StringCollection();
         const String MODEL_KEY = "model";
@@ -22,11 +24,6 @@ namespace ShopList
         const String ONE = "1";
         const int SIZE = 65535;
         const int CAPACITY = 255;
-
-        //// 自訂事件
-        //public event WriteNewDataEventHandler WriteNewData;
-        //public delegate void WriteNewDataEventHandler();
-        //public WriteNewDataEventHandler stockAction;
 
         //聲明讀寫INI文件的API函數
         [DllImport("kernel32")]
@@ -53,13 +50,9 @@ namespace ShopList
         public void Write(string section, string key, string value)
         {
             WritePrivateProfileString(section, key, value.ToLower(), this._filePath);
+            if (_writeNewData != null)
+                this._writeNewData(); // 如果ini檔有變動 需要重新load DGV
         }
-
-        //// 如果有寫入資料 所有view都要更新
-        //private void UpdateView()
-        //{
-        //    WriteNewData?.Invoke();
-        //}
 
         // 讀取檔案
         public string Read(string section, string key)

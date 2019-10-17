@@ -14,6 +14,7 @@ namespace ShopList
 {
     public partial class ShopList : Form
     {
+        #region Member Data
         const String FOLDER = "../../Resources/";
         const String PAGE = "Page";
         const String ITEM = "Item";
@@ -24,18 +25,28 @@ namespace ShopList
         const int NUMBER_COLUMN_INDEX = 4;
         const int SUBTOTAL_COLUMN_INDEX = 5;
         String _currentTabName;
+        Initial _initial;
         TableLayoutPanel[] _tabTableLayoutPanel;
-        ShopListControl _shopListControl = new ShopListControl();
+        ShopListControl _shopListControl;
         CreditCardPayment _creditCardPayment = new CreditCardPayment();
+        #endregion
 
-        public ShopList()
+        public ShopList(Initial initial)
         {
             InitializeComponent();
-            _addToCartButton.Enabled = _orderButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
-            // 初始化頁數和換頁按鈕
+            this._initial = initial;
+            _shopListControl = new ShopListControl(_initial);
+            _initial._writeNewData += UpdateStock;
+            this.InitialForm();
+        }
+
+        // 初始化視窗
+        private void InitialForm()
+        {
+            this.CheckChangePageButton();
             _currentPageLabel.Text = _shopListControl.GetCurrentPage();
             _totalPageLabel.Text = _shopListControl.GetTotalPage();
-            this.CheckChangePageButton();
+            _addToCartButton.Enabled = _orderButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
             _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _memoryTableLayoutPanel, _diskTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
             _shopListControl.SetCurrentTabIndex(_itemTabControl.SelectedIndex); // 目前Tab頁數
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 購物車商品數量
@@ -45,10 +56,8 @@ namespace ShopList
         // 處理所有商品點擊事件
         private void ButtonClick(object sender, EventArgs e)
         {
+            Button button = (Button)sender; // 取得商品物件
             _addToCartButton.Enabled = true; // 啟用按鍵
-
-            Button button; // 取得商品物件
-            button = (Button)sender;
             this.UpdateItemClick(button);
         }
 
@@ -59,7 +68,7 @@ namespace ShopList
             this.UpdateAddToCart(); // 更新顯示
         }
 
-        // 幫button加icon 垃圾桶
+        // 幫button加垃圾桶icon 
         void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
@@ -83,13 +92,25 @@ namespace ShopList
                 return;
             if (((DataGridView)sender).Columns[e.ColumnIndex].Name == DELETE_COLUMN) // 點選刪除
             {
-                _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
-                _shopListControl.DeleteCartItem(e.RowIndex);
-                _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); // 顯示總價錢
+                this.RemoveItem(e);
+                this.ShowTotalPrice();
                 this.CleanDetail();
             }
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 取得目前購物車商品數量
             _orderButton.Enabled = _shopListControl.CheckConfirmButton(); // 確認訂購按鈕可以按下
+        }
+
+        // 移除商品
+        private void RemoveItem(DataGridViewCellEventArgs e)
+        {
+            _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
+            _shopListControl.DeleteCartItem(e.RowIndex);
+        }
+
+        // 顯示總價錢
+        private void ShowTotalPrice()
+        {
+            _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); // 顯示總價錢
         }
 
         // 設定頁數 & 切換Tab時 詳細資料空白
@@ -213,9 +234,21 @@ namespace ShopList
             if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增加數量
             {
                 _orderDataGridView.Rows[e.RowIndex].Cells[SUBTOTAL_COLUMN_INDEX].Value = _shopListControl.GetSubtotal(int.Parse(_orderDataGridView.CurrentCell.Value.ToString()), e.RowIndex).ToString(FORMAT);
-                _orderDataGridView.CurrentCell.Value = _shopListControl.CheckStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()));
+                _orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.CheckStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()));
                 _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
             }
+        }
+
+        // 補貨時 更新庫存數量
+        private void UpdateStock()
+        {
+            _stockLabel.Text = _shopListControl.GetStock();
+        }
+
+        // 解除event
+        private void CancelEvent(object sender, FormClosedEventArgs e)
+        {
+            _initial._writeNewData += UpdateStock;
         }
     }
 }

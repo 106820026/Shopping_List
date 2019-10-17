@@ -210,7 +210,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.cs</File>
-              <Line>19</Line>
+              <Line>20</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -226,7 +226,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.Designer.cs</File>
-              <Line>261</Line>
+              <Line>262</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -242,7 +242,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystemControl.cs</File>
-              <Line>44</Line>
+              <Line>48</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -258,7 +258,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystemControl.cs</File>
-              <Line>42</Line>
+              <Line>46</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -290,7 +290,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>Replenishment.cs</File>
-              <Line>16</Line>
+              <Line>17</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -386,7 +386,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ReplenishmentControl.cs</File>
-              <Line>15</Line>
+              <Line>14</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -402,23 +402,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ReplenishmentControl.cs</File>
-              <Line>35</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>15</Id>
-              <SmellType>Literal constants(字面常數)-"0"</SmellType>
-              <HashCode>LiteralConstants.IsAlreadyInCart."0"</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>ShopListControl.cs</File>
-              <Line>180</Line>
+              <Line>38</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -564,7 +548,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>3953</ProductionLoc>
+          <ProductionLoc>3999</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

@@ -10,9 +10,13 @@ namespace ShopList
 {
     class InventorySystemControl
     {
-        Initial _initial = new Initial(FILE_PATH);
-        const String FILE_PATH = "../../Data Info.ini";
+        Initial _initial;
         const String PICTURE_KEY = "picture";
+
+        public InventorySystemControl(Initial initial)
+        {
+            this._initial = initial;
+        }
 
         // 取得所有商品詳細資料
         public List<String[]> GetAllItemDetail()
@@ -41,8 +45,14 @@ namespace ShopList
         // 開啟補貨頁面
         public void OpenReplenishmentPage(int index)
         {
-            Replenishment replenishment = new Replenishment(index);
+            Replenishment replenishment = new Replenishment(index, _initial);
             replenishment.ShowDialog();
+        }
+
+        // 取得庫存量
+        public String GetStock(int rowIndex)
+        {
+            return _initial.GetStock(this.GetAllSelection()[rowIndex]);
         }
     }
 }

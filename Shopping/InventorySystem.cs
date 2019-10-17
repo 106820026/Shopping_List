@@ -12,15 +12,20 @@ namespace ShopList
 {
     public partial class InventorySystem : Form
     {
-        InventorySystemControl _inventorySystemControl = new InventorySystemControl();
-        Initial _initial = new Initial(FILE_PATH);
         const String FILE_PATH = "../../Data Info.ini";
+        Initial _initial;
+        InventorySystemControl _inventorySystemControl;
         const String REPLENISHMENT_COLUMN = "_replenishment";
+        const int NUMBER_COLUMN_INDEX = 3;
         const int REPLENISHMENT_COLUMN_INDEX = 4;
+        int _currentRow;
 
-        public InventorySystem()
+        public InventorySystem(Initial initial)
         {
             InitializeComponent();
+            this._initial = initial;
+            _inventorySystemControl = new InventorySystemControl(_initial);
+            _initial._writeNewData += UpdateStock;
             this.LoadAndShowDataGridView();
         }
 
@@ -48,6 +53,7 @@ namespace ShopList
                 return;
             else
             {
+                _currentRow = e.RowIndex; // 取得目前row Index
                 _itemPictureBox.Image = _inventorySystemControl.GetImageFilePath(((DataGridView)sender).Rows[e.RowIndex].Index);
                 _itemDetailTextBox.Text = _inventorySystemControl.GetItemDetail(((DataGridView)sender).Rows[e.RowIndex].Index);
                 if (e.ColumnIndex == REPLENISHMENT_COLUMN_INDEX) // 如果按補貨按鈕
@@ -60,6 +66,18 @@ namespace ShopList
         {
             foreach (String[] item in _inventorySystemControl.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
                 _itemDataGridView.Rows.Add(item);
+        }
+
+        // 更新庫存數量
+        private void UpdateStock()
+        {
+            _itemDataGridView.Rows[_currentRow].Cells[NUMBER_COLUMN_INDEX].Value = _inventorySystemControl.GetStock(_currentRow);
+        }
+
+        // 解除event
+        private void CancelEvent(object sender, FormClosedEventArgs e)
+        {
+            _initial._writeNewData -= UpdateStock;
         }
     }
 }

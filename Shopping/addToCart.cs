@@ -9,22 +9,21 @@ namespace ShopList
 {
     class AddToCart
     {
-        const String FILE_PATH = "../../Data Info.ini";
-        readonly Initial _initialFile = new Initial(FILE_PATH);
+        Initial _initial;
         const String PRICE_KEY = "price";
         int _totalPrice;
         List<String> _items = new List<string>(); //儲存加入購物車的物品
 
-        public AddToCart()
+        public AddToCart(Initial initial)
         {
-
+            this._initial = initial;
         }
 
         // 加入購物車
         public void AddItem(String itemName)
         {
             _items.Add(itemName);
-            _totalPrice += int.Parse(_initialFile.Read(itemName, PRICE_KEY));
+            _totalPrice += int.Parse(_initial.Read(itemName, PRICE_KEY));
         }
 
         // 取得購物車內容
@@ -42,7 +41,7 @@ namespace ShopList
         // 拿出購物車
         public void DeleteItem(int rowIndex)
         {
-            _totalPrice -= int.Parse(_initialFile.Read(_items[rowIndex], PRICE_KEY));
+            _totalPrice -= int.Parse(_initial.Read(_items[rowIndex], PRICE_KEY));
             _items.RemoveAt(rowIndex);
         }
     }

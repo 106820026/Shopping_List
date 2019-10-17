@@ -14,6 +14,8 @@ namespace ShopList
     {
         ShopList _shopList;
         InventorySystem _inventorySystem;
+        Initial _initial = new Initial(FILE_PATH);
+        const String FILE_PATH = "../../Data Info.ini";
 
         public MenuForm()
         {
@@ -23,7 +25,7 @@ namespace ShopList
         // 開啟網購視窗
         private void ClickOrderSystemButton(object sender, EventArgs e)
         {
-            _shopList = new ShopList();
+            _shopList = new ShopList(_initial);
             _shopList.Show();
             _orderSystemButton.Enabled = false;
             this._shopList.FormClosed += ResetOrderButton;
@@ -32,7 +34,7 @@ namespace ShopList
         // 開啟資料庫
         private void ClickInventorySystemButton(object sender, EventArgs e)
         {
-            _inventorySystem = new InventorySystem();
+            _inventorySystem = new InventorySystem(_initial);
             _inventorySystem.Show();
             _inventorySystemButton.Enabled = false;
             this._inventorySystem.FormClosed += ResetInventoryButton; 

@@ -9,11 +9,14 @@ namespace ShopList
     class ReplenishmentControl
     {
         const int DELETE_BUTTON = 8;
-        readonly Initial _initial = new Initial(FILE_PATH);
-        const String FILE_PATH = "../../Data Info.ini";
+        Initial _initial;
         const String STOCK_KEY = "stock";
         private int _replenishmentNumber;
 
+        public ReplenishmentControl(Initial initial)
+        {
+            this._initial = initial;
+        }
         // 輸入項目為0或空白
         public bool IsZero(String inputText)
         {

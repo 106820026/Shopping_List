@@ -12,9 +12,8 @@ namespace ShopList
     class ShopListControl
     {
         #region Member Data
-        readonly Initial _initialFile = new Initial(FILE_PATH);
-        AddToCart _cart = new AddToCart();
-        const String FILE_PATH = "../../Data Info.ini";
+        Initial _initial;
+        AddToCart _cart;
         const String MODEL_KEY = "model";
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
         const String DETAIL_KEY = "detail";
@@ -62,8 +61,10 @@ namespace ShopList
         const int COMPUTER = FIVE;
         #endregion
         
-        public ShopListControl()
+        public ShopListControl(Initial initial)
         {
+            this._initial = initial;
+            _cart = new AddToCart(_initial);
             _allCurrentPage = new int[] { _motherBoardCurrentPage, _centralProcessUnitCurrentPage, _diskCurrentPage, _memoryCurrentPage, _graphicsProcessUnitCurrentPage, _computerCurrentPage };
             _allTotalPage = new int[] { _motherBoardTotalPage, _centralProcessUnitTotalPage, _diskTotalPage, _memoryTotalPage, _graphicsProcessUnitTotalPage, _computerTotalPage };
             _currentTabIndex = 0;
@@ -91,7 +92,7 @@ namespace ShopList
         // 顯示商品詳細資訊
         public String GetDetail()
         {
-            return _initialFile.GetDescription(_currentItemName);
+            return _initial.GetDescription(_currentItemName);
         }
 
         // 顯示目前頁數
@@ -121,19 +122,19 @@ namespace ShopList
         // 更新購物車表格
         public String[] GetCartItem()
         {
-            return _initialFile.GetOrderItemRow(_currentItemName);
+            return _initial.GetOrderItemRow(_currentItemName);
         }
 
         // 顯示商品庫存
         public String GetStock()
         {
-            return int.Parse(_initialFile.Read(_currentItemName, STOCK_KEY)).ToString(FORMAT);
+            return int.Parse(_initial.Read(_currentItemName, STOCK_KEY)).ToString(FORMAT);
         }
 
         // 顯示商品價錢
         public String GetPrice()
         {
-            return int.Parse(_initialFile.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
+            return int.Parse(_initial.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
         }
 
         // 翻頁
@@ -177,7 +178,7 @@ namespace ShopList
         public bool IsAlreadyInCart()
         {
             // 如果已經在DGV上或是庫存沒了都不可以
-            return !(_cart.GetItemList().Contains(_currentItemName) || _initialFile.GetStock(_currentItemName) == ZERO);
+            return !(_cart.GetItemList().Contains(_currentItemName) || _initial.GetStock(_currentItemName) == ZERO);
         }
 
         // 單一商品總價
@@ -189,7 +190,7 @@ namespace ShopList
                 _itemNameAndSellNumber.Add(_cart.GetItemList()[rowIndex], number.ToString());
             else
                 _itemNameAndSellNumber[_cart.GetItemList()[rowIndex]] = number.ToString(); // 存入商品名稱和購買數量
-            return number * int.Parse(_initialFile.GetPrice(_cart.GetItemList()[rowIndex]));
+            return number * int.Parse(_initial.GetPrice(_cart.GetItemList()[rowIndex]));
         }
 
         // 確認庫存量
@@ -197,13 +198,13 @@ namespace ShopList
         {
             if (this.OutOfStock(rowIndex, orderNumber)) // 如果庫存不足
                 return this.GetStockNumber(rowIndex); //值設定成庫存量
-            return orderNumber.ToString(FORMAT);
+            return orderNumber.ToString();
         }
 
         // 庫存不足
         public bool OutOfStock(int rowIndex, int orderNumber)
         {
-            if (int.Parse(_initialFile.GetStock(_cart.GetItemList()[rowIndex])) < orderNumber)
+            if (int.Parse(_initial.GetStock(_cart.GetItemList()[rowIndex])) < orderNumber)
             {
                 MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
                 return true;
@@ -214,7 +215,7 @@ namespace ShopList
         // 取得庫存
         public String GetStockNumber(int rowIndex)
         {
-            return _initialFile.GetStock(_cart.GetItemList()[rowIndex]);
+            return _initial.GetStock(_cart.GetItemList()[rowIndex]);
         }
 
         // 更新購買後庫存
@@ -222,8 +223,8 @@ namespace ShopList
         {
             foreach (String key in _itemNameAndSellNumber.Keys)
             {
-                int originalStock = int.Parse(_initialFile.GetStock(key));
-                _initialFile.Write(key, STOCK_KEY, (originalStock - int.Parse(_itemNameAndSellNumber[key])).ToString());
+                int originalStock = int.Parse(_initial.GetStock(key));
+                _initial.Write(key, STOCK_KEY, (originalStock - int.Parse(_itemNameAndSellNumber[key])).ToString());
             }
         }
     }
