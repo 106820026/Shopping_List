@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class InventorySystemControl
+    class InventorySystemPresentationModel
     {
         Initial _initial;
         const String PICTURE_KEY = "picture";
 
-        public InventorySystemControl(Initial initial)
+        public InventorySystemPresentationModel(Initial initial)
         {
             this._initial = initial;
         }

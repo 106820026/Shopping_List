@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class ReplenishmentControl
+    class ReplenishmentPresentationModel
     {
         const int DELETE_BUTTON = 8;
         Initial _initial;
         const String STOCK_KEY = "stock";
         private int _replenishmentNumber;
 
-        public ReplenishmentControl(Initial initial)
+        public ReplenishmentPresentationModel(Initial initial)
         {
             this._initial = initial;
         }

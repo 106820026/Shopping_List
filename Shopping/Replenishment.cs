@@ -14,7 +14,7 @@ namespace ShopList
     public partial class Replenishment : Form
     {
         Initial _initial;
-        ReplenishmentControl _replenishmentControl;
+        ReplenishmentPresentationModel _replenishmentControl;
         StringCollection _sectionList = new StringCollection();
         const String FILE_PATH = "../../Data Info.ini";
         const String MODEL_KEY = "model";
@@ -27,7 +27,7 @@ namespace ShopList
         {
             InitializeComponent();
             this._initial = initial;
-            _replenishmentControl = new ReplenishmentControl(_initial);
+            _replenishmentControl = new ReplenishmentPresentationModel(_initial);
             _sectionList = _initial.GetAllSections(); // 取得Section列表
             _rowCount = rowCount; // 取得按下的行數
             this.ShowDialogInformation();

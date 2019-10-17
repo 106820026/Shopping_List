@@ -14,7 +14,7 @@ namespace ShopList
     public partial class CreditCardPayment : Form
     {
         ErrorProvider _errorProvider = new ErrorProvider();
-        CreditCardPaymentControl _creditCardPaymentControl = new CreditCardPaymentControl();
+        CreditCardPaymentPresentationModel _creditCardPaymentControl = new CreditCardPaymentPresentationModel();
         TextBox _textBox; // 取得商品物件
         const String SUCCESS = "訂購完成";
 
@@ -31,7 +31,7 @@ namespace ShopList
         {
             _textBox = (TextBox)sender;
 
-            e.Handled =  _creditCardPaymentControl.ConfirmName(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e.KeyChar);
+            e.Handled = _creditCardPaymentControl.ConfirmName(int.Parse(_textBox.Tag.ToString()), _textBox.TextLength, e.KeyChar);
             ShowError(_textBox);
         }
 

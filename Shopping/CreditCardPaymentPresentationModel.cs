@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class CreditCardPaymentControl
+    class CreditCardPaymentPresentationModel
     {
         #region Member Data
         bool[] _allValid;
@@ -53,7 +53,7 @@ namespace ShopList
         const int TEXT_BOX_NUMBER = 9;
         #endregion
 
-        public CreditCardPaymentControl()
+        public CreditCardPaymentPresentationModel()
         {
             _allValid = new bool[] { _firstNameValid, _lastNameValid, _cardNumber1Valid, _cardNumber2Valid, _cardNumber3Valid, _cardNumber4Valid, _backNumberValid, _mailValid, _addressValid };
         }
@@ -96,16 +96,22 @@ namespace ShopList
             else if (inputChar == DELETE_BUTTON) // 按下刪除鍵
             {
                 this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_MORE_NUMBERS);
-                return true;
+                return false;
             }  
             else
             {
-                if (itemTag == BACK_NUMBER_TAG && length >= TWO)
-                    this.GetValidStatus(itemTag, true, NO_ERROR); // 檢查長度
-                if (length >= THREE)
-                    this.GetValidStatus(itemTag, true, NO_ERROR); // 檢查長度
+                this.CheckLength(itemTag, length);
                 return false;
             }
+        }
+
+        // 檢查長度
+        public void CheckLength(int itemTag, int length)
+        {
+            if (itemTag == BACK_NUMBER_TAG && length >= TWO)
+                this.GetValidStatus(itemTag, true, NO_ERROR);
+            if (length >= THREE)
+                this.GetValidStatus(itemTag, true, NO_ERROR);
         }
 
         // 確認信箱格式

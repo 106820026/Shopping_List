@@ -29,7 +29,7 @@ namespace ShopList
         String _currentTabName;
         Initial _initial;
         TableLayoutPanel[] _tabTableLayoutPanel;
-        ShopListControl _shopListControl;
+        ShopListPresentationModel _shopListControl;
         CreditCardPayment _creditCardPayment = new CreditCardPayment();
         #endregion
 
@@ -37,7 +37,7 @@ namespace ShopList
         {
             InitializeComponent();
             this._initial = initial;
-            _shopListControl = new ShopListControl(_initial);
+            _shopListControl = new ShopListPresentationModel(_initial);
             _initial._writeNewData += UpdateStock;
             this.InitialForm();
         }
@@ -221,17 +221,20 @@ namespace ShopList
         private void UpdateSubtotal(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增加數量
-            {   // 如果庫存不足
-                if (_shopListControl.OutOfStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString())))
-                {
-                    MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
-                    _orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.ChangeToMaximumStock(e.RowIndex);
-                }
+            if (senderGrid.Columns[e.ColumnIndex].Name == NUMBER_COLUMN) // 增減數量
+            {
+                if (_shopListControl.OutOfStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()))) // 如果庫存不足
+                    NotifyOutOfStockAndChangeToMaximumStock(e);
                 _orderDataGridView.Rows[e.RowIndex].Cells[SUBTOTAL_COLUMN_INDEX].Value = _shopListControl.GetSubtotal(int.Parse(_orderDataGridView.CurrentCell.Value.ToString()), e.RowIndex).ToString(FORMAT);
-                //_orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.CheckStock(e.RowIndex, int.Parse(senderGrid.Rows[e.RowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()));
                 _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
             }
+        }
+
+        // 提示庫存不足並且改回最大庫存
+        private void NotifyOutOfStockAndChangeToMaximumStock(DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
+            _orderDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = _shopListControl.ChangeToMaximumStock(e.RowIndex);
         }
 
         // 補貨時 更新庫存數量

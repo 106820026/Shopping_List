@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class ShopListControl
+    class ShopListPresentationModel
     {
         #region Member Data
         Initial _initial;
@@ -58,7 +58,7 @@ namespace ShopList
         const int COMPUTER = FIVE;
         #endregion
         
-        public ShopListControl(Initial initial)
+        public ShopListPresentationModel(Initial initial)
         {
             this._initial = initial;
             _cart = new AddToCart(_initial);
@@ -190,10 +190,14 @@ namespace ShopList
             return number * int.Parse(_initial.GetPrice(_cart.GetItemList()[rowIndex]));
         }
 
-        // 改成庫存量
-        public String ChangeToMaximumStock(int rowIndex)
+        // 更新購買後庫存
+        public void UpdateStock()
         {
-            return this.GetStockNumber(rowIndex); //值設定成庫存量
+            foreach (String key in _itemNameAndSellNumber.Keys)
+            {
+                int originalStock = int.Parse(_initial.GetStock(key));
+                _initial.Write(key, STOCK_KEY, (originalStock - int.Parse(_itemNameAndSellNumber[key])).ToString());
+            }
         }
 
         // 庫存不足
@@ -204,20 +208,10 @@ namespace ShopList
             return false;
         }
 
-        // 取得庫存
-        public String GetStockNumber(int rowIndex)
+        // 改成庫存量
+        public String ChangeToMaximumStock(int rowIndex)
         {
             return _initial.GetStock(_cart.GetItemList()[rowIndex]);
-        }
-
-        // 更新購買後庫存
-        public void UpdateStock()
-        {
-            foreach (String key in _itemNameAndSellNumber.Keys)
-            {
-                int originalStock = int.Parse(_initial.GetStock(key));
-                _initial.Write(key, STOCK_KEY, (originalStock - int.Parse(_itemNameAndSellNumber[key])).ToString());
-            }
         }
     }
 }

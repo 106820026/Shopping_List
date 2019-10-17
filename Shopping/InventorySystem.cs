@@ -14,7 +14,7 @@ namespace ShopList
     {
         const String FILE_PATH = "../../Data Info.ini";
         Initial _initial;
-        InventorySystemControl _inventorySystemControl;
+        InventorySystemPresentationModel _inventorySystemControl;
         const String REPLENISHMENT_COLUMN = "_replenishment";
         const int NUMBER_COLUMN_INDEX = 3;
         const int REPLENISHMENT_COLUMN_INDEX = 4;
@@ -24,7 +24,7 @@ namespace ShopList
         {
             InitializeComponent();
             this._initial = initial;
-            _inventorySystemControl = new InventorySystemControl(_initial);
+            _inventorySystemControl = new InventorySystemPresentationModel(_initial);
             _initial._writeNewData += UpdateStock;
             this.LoadAndShowDataGridView();
         }
@@ -71,8 +71,8 @@ namespace ShopList
         // 更新庫存數量
         private void UpdateStock()
         {
-            for(int i=0; i<_initial.GetAllItemList().Count; i++)
-            _itemDataGridView.Rows[i].Cells[NUMBER_COLUMN_INDEX].Value = _inventorySystemControl.GetStock(i);
+            for (int i = 0; i < _initial.GetAllItemList().Count; i++)
+                _itemDataGridView.Rows[i].Cells[NUMBER_COLUMN_INDEX].Value = _inventorySystemControl.GetStock(i);
         }
 
         // 解除event
