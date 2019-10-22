@@ -32,3 +32,4 @@ C:\Users\ASUS\Desktop\106820026\Shopping - 複製\Shopping\obj\Debug\ShopList.cs
 C:\Users\ASUS\Desktop\106820026\Shopping - 複製\Shopping\obj\Debug\ShopList.csproj.CopyComplete
 C:\Users\ASUS\Desktop\106820026\Shopping - 複製\Shopping\obj\Debug\ShopList.exe
 C:\Users\ASUS\Desktop\106820026\Shopping - 複製\Shopping\obj\Debug\ShopList.pdb
+C:\Users\ASUS\source\repos\Shopping\Shopping\obj\Debug\ShopList.ProductManagementSystem.resources

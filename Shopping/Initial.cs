@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,6 +21,7 @@ namespace ShopList
         const String TYPE_KEY = "type";
         const String PRICE_KEY = "price";
         const String STOCK_KEY = "stock";
+        const String PICTURE_KEY = "picture";
         const String FORMAT = "#, 0";
         const String ONE = "1";
         const int SIZE = 65535;
@@ -110,25 +112,49 @@ namespace ShopList
             }
         }
 
-        // 取得價格
+        // 取得名稱(用section來取)
+        public String GetName(String currentItemName)
+        {
+            return this.Read(currentItemName, MODEL_KEY);
+        }
+
+        // 取得詳細資訊(用section來取)
+        public String GetDetail(String currentItemName)
+        {
+            return this.Read(currentItemName, DETAIL_KEY);
+        }
+
+        // 取得類別(用section來取)
+        public String GetType(String currentItemName)
+        {
+            return this.Read(currentItemName, TYPE_KEY);
+        }
+
+        // 取得價格(用section來取)
         public String GetPrice(String currentItemName)
         {
             return this.Read(currentItemName, PRICE_KEY);
         }
 
-        // 取得庫存
+        // 取得庫存(用section來取)
         public String GetStock(String currentItemName)
         {
             return this.Read(currentItemName, STOCK_KEY);
         }
 
-        // 格式化商品資訊(_descriptionRichTextBox用)
+        // 取得圖片路徑(用section來取)
+        public String GetPicturePath(String currentItemName)
+        {
+            return this.Read(currentItemName, PICTURE_KEY);
+        }
+
+        // 格式化商品資訊(用section來取)(_descriptionRichTextBox用)
         public String GetDescription(String currentItemName)
         {
             return this.Read(currentItemName, MODEL_KEY) + SEPARATE_LINE + this.Read(currentItemName, DETAIL_KEY);
         }
 
-        // 格式化表格資訊 (適用於按下addToCart Button)
+        // 格式化表格資訊(用section來取)(適用於按下addToCart Button)
         public String[] GetOrderItemRow(String currentItemName)
         {
             return new string[] { String.Empty, this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT), ONE, int.Parse(this.Read(currentItemName, PRICE_KEY)).ToString(FORMAT) };

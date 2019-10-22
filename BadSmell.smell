@@ -226,7 +226,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.Designer.cs</File>
-              <Line>262</Line>
+              <Line>264</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -475,6 +475,21 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>ProductManagementSystem.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>ProductManagementSystem.Designer.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>ProductManagementSystemPresentationModel.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Program.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>ViewOrController</AnalysisFileType>
@@ -546,7 +561,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>4044</ProductionLoc>
+          <ProductionLoc>4620</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

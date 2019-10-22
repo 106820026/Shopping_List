@@ -14,6 +14,7 @@ namespace ShopList
     {
         ShopList _shopList;
         InventorySystem _inventorySystem;
+        ProductManagementSystem _productManagementSystem;
         Initial _initial = new Initial(FILE_PATH);
         const String FILE_PATH = "../../Data Info.ini";
 
@@ -31,13 +32,22 @@ namespace ShopList
             this._shopList.FormClosed += ResetOrderButton;
         }
 
-        // 開啟資料庫
+        // 開啟庫存視窗
         private void ClickInventorySystemButton(object sender, EventArgs e)
         {
             _inventorySystem = new InventorySystem(_initial);
             _inventorySystem.Show();
             _inventorySystemButton.Enabled = false;
             this._inventorySystem.FormClosed += ResetInventoryButton; 
+        }
+
+        // 開啟庫存管理視窗
+        private void ClickProductManagementSystemButton(object sender, EventArgs e)
+        {
+            _productManagementSystem = new ProductManagementSystem(_initial);
+            _productManagementSystem.Show();
+            _productManagementSystemButton.Enabled = false;
+            this._productManagementSystem.FormClosed += ResetProductManagementSystemButton;
         }
 
         // 關閉程式
@@ -56,6 +66,12 @@ namespace ShopList
         private void ResetInventoryButton(object sender, EventArgs e)
         {
             _inventorySystemButton.Enabled = true;
+        }
+
+        // 使按鈕可再次使用
+        private void ResetProductManagementSystemButton(object sender, EventArgs e)
+        {
+            _productManagementSystemButton.Enabled = true;
         }
     }
 }

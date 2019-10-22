@@ -83,6 +83,13 @@
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Initial.cs" />
+    <Compile Include="ProductManagementSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductManagementSystem.Designer.cs">
+      <DependentUpon>ProductManagementSystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductManagementSystemPresentationModel.cs" />
     <Compile Include="Replenishment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductManagementSystem.resx">
+      <DependentUpon>ProductManagementSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
