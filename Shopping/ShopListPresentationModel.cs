@@ -190,8 +190,8 @@ namespace ShopList
             return number * int.Parse(_initial.GetPrice(_cart.GetItemList()[rowIndex]));
         }
 
-        // 更新購買後庫存
-        public void UpdateStock()
+        // 更新購買後庫存(寫入ini檔)
+        public void UpdateStockAndWriteInInitial()
         {
             foreach (String key in _itemNameAndSellNumber.Keys)
             {

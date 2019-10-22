@@ -157,6 +157,7 @@
             this._mailTextBox.TabIndex = 10;
             this._mailTextBox.Tag = "7";
             this._mailTextBox.Click += new System.EventHandler(this.CheckDataComplete);
+            this._mailTextBox.TextChanged += new System.EventHandler(this.IsEmpty);
             this._mailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MailValid);
             this._mailTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CheckDataComplete);
             this._mailTextBox.Leave += new System.EventHandler(this.IsEmpty);

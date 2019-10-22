@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this._titleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._titleLabel = new System.Windows.Forms.Label();
             this._contentTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -104,10 +104,12 @@
             this._number,
             this._replenishment});
             this._itemDataGridView.Location = new System.Drawing.Point(3, 3);
+            this._itemDataGridView.MultiSelect = false;
             this._itemDataGridView.Name = "_itemDataGridView";
             this._itemDataGridView.ReadOnly = true;
             this._itemDataGridView.RowHeadersVisible = false;
             this._itemDataGridView.RowTemplate.Height = 27;
+            this._itemDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._itemDataGridView.Size = new System.Drawing.Size(697, 652);
             this._itemDataGridView.TabIndex = 0;
             this._itemDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickItem);
@@ -115,8 +117,8 @@
             // 
             // _name
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._name.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._name.DefaultCellStyle = dataGridViewCellStyle6;
             this._name.FillWeight = 150F;
             this._name.HeaderText = "商品名稱";
             this._name.Name = "_name";
@@ -125,8 +127,8 @@
             // 
             // _type
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._type.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._type.DefaultCellStyle = dataGridViewCellStyle7;
             this._type.HeaderText = "商品類別";
             this._type.Name = "_type";
             this._type.ReadOnly = true;
@@ -134,8 +136,8 @@
             // 
             // _price
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._price.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._price.DefaultCellStyle = dataGridViewCellStyle8;
             this._price.HeaderText = "單價";
             this._price.Name = "_price";
             this._price.ReadOnly = true;
@@ -143,8 +145,8 @@
             // 
             // _number
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._number.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._number.DefaultCellStyle = dataGridViewCellStyle9;
             this._number.HeaderText = "數量";
             this._number.Name = "_number";
             this._number.ReadOnly = true;
@@ -152,9 +154,9 @@
             // 
             // _replenishment
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._replenishment.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._replenishment.DefaultCellStyle = dataGridViewCellStyle10;
             this._replenishment.FillWeight = 50F;
             this._replenishment.HeaderText = "補貨";
             this._replenishment.Name = "_replenishment";
