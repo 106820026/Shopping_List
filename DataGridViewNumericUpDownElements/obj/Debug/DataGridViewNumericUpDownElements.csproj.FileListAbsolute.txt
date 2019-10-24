@@ -16,6 +16,7 @@ C:\Users\ASUS\Downloads\DataGridViewNumericUpDownElements\obj\Debug\DataGridView
 C:\Users\ASUS\Downloads\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb
 C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.dll
 C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\bin\Debug\DataGridViewNumericUpDownElements.pdb
+C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csprojAssemblyReference.cache
 C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.dll
 C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\obj\Debug\DataGridViewNumericUpDownElements.pdb

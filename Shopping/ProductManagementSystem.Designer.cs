@@ -139,6 +139,7 @@
             this._addNewItemButton.TabIndex = 1;
             this._addNewItemButton.Text = "新增商品";
             this._addNewItemButton.UseVisualStyleBackColor = true;
+            this._addNewItemButton.Click += new System.EventHandler(this.ClickAddNewItemButton);
             // 
             // _editItemGroupBox
             // 
@@ -199,10 +200,13 @@
             // _itemNameTextBox
             // 
             this._itemNameTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._itemNameTextBox.Enabled = false;
+            this._itemNameTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._itemNameTextBox.Location = new System.Drawing.Point(116, 8);
             this._itemNameTextBox.Name = "_itemNameTextBox";
             this._itemNameTextBox.Size = new System.Drawing.Size(449, 27);
             this._itemNameTextBox.TabIndex = 1;
+            this._itemNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditName);
             // 
             // _tableLayoutPanel4
             // 
@@ -237,11 +241,15 @@
             // _itemPriceTextBox
             // 
             this._itemPriceTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._itemPriceTextBox.Enabled = false;
+            this._itemPriceTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._itemPriceTextBox.Location = new System.Drawing.Point(116, 8);
             this._itemPriceTextBox.Name = "_itemPriceTextBox";
             this._itemPriceTextBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this._itemPriceTextBox.Size = new System.Drawing.Size(107, 27);
             this._itemPriceTextBox.TabIndex = 1;
+            this._itemPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputOnlyNumber);
+            this._itemPriceTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditPrice);
             // 
             // _unitLabel
             // 
@@ -267,6 +275,7 @@
             // 
             this._itemCategoryComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._itemCategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this._itemCategoryComboBox.Enabled = false;
             this._itemCategoryComboBox.FormattingEnabled = true;
             this._itemCategoryComboBox.Items.AddRange(new object[] {
             "主機板",
@@ -279,6 +288,7 @@
             this._itemCategoryComboBox.Name = "_itemCategoryComboBox";
             this._itemCategoryComboBox.Size = new System.Drawing.Size(167, 27);
             this._itemCategoryComboBox.TabIndex = 4;
+            this._itemCategoryComboBox.SelectionChangeCommitted += new System.EventHandler(this.EditType);
             // 
             // _tableLayoutPanel5
             // 
@@ -309,20 +319,25 @@
             // _itemPicturePathTextBox
             // 
             this._itemPicturePathTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._itemPicturePathTextBox.Enabled = false;
+            this._itemPicturePathTextBox.ImeMode = System.Windows.Forms.ImeMode.Off;
             this._itemPicturePathTextBox.Location = new System.Drawing.Point(145, 8);
             this._itemPicturePathTextBox.Name = "_itemPicturePathTextBox";
             this._itemPicturePathTextBox.Size = new System.Drawing.Size(334, 27);
             this._itemPicturePathTextBox.TabIndex = 1;
+            this._itemPicturePathTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditPath);
             // 
             // _searchButton
             // 
             this._searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._searchButton.Enabled = false;
             this._searchButton.Location = new System.Drawing.Point(485, 5);
             this._searchButton.Name = "_searchButton";
             this._searchButton.Size = new System.Drawing.Size(80, 33);
             this._searchButton.TabIndex = 2;
             this._searchButton.Text = "瀏覽...";
             this._searchButton.UseVisualStyleBackColor = true;
+            this._searchButton.Click += new System.EventHandler(this.ClickSearchButton);
             // 
             // _itemDescriptionLabel
             // 
@@ -336,11 +351,13 @@
             // 
             // _itemDescriptionTextBox
             // 
+            this._itemDescriptionTextBox.Enabled = false;
             this._itemDescriptionTextBox.Location = new System.Drawing.Point(3, 199);
             this._itemDescriptionTextBox.Name = "_itemDescriptionTextBox";
             this._itemDescriptionTextBox.Size = new System.Drawing.Size(568, 246);
             this._itemDescriptionTextBox.TabIndex = 4;
             this._itemDescriptionTextBox.Text = "";
+            this._itemDescriptionTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditDetail);
             // 
             // _saveButton
             // 

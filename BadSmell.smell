@@ -412,16 +412,7 @@
             </Smell>
           </Reviews>
           <HashCodeIgnoreList />
-          <HashCodeRequestIgnoreList>
-            <string>UnsuitableNaming.InventorySystem.REPLENISHMENT_COLUMN.REPLENISHMENT_COLUMN</string>
-            <string>UnsuitableNaming.InventorySystem.REPLENISHMENT_COLUMN_INDEX.REPLENISHMENT_COLUMN_INDEX</string>
-            <string>UnsuitableNaming.InventorySystem._replenishment._replenishment</string>
-            <string>UnsuitableNaming.ShopList.Replenishment.Replenishment</string>
-            <string>UnsuitableNaming.Replenishment._replenishmentControl._replenishmentControl</string>
-            <string>UnsuitableNaming.Replenishment._replenishmentTableLayoutPanel._replenishmentTableLayoutPanel</string>
-            <string>UnsuitableNaming.Replenishment._itemReplenishmentNumberLabel._itemReplenishmentNumberLabel</string>
-            <string>UnsuitableNaming.Replenishment._replenishmentTextBox._replenishmentTextBox</string>
-          </HashCodeRequestIgnoreList>
+          <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
             <AnalysisFiles>
               <AnalysisFile>
@@ -561,7 +552,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>4620</ProductionLoc>
+          <ProductionLoc>4808</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>
