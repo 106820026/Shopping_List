@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this._bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._myOrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._orderTitleTextLabel = new System.Windows.Forms.Label();
@@ -45,6 +45,12 @@
             this._totalPriceLabel = new System.Windows.Forms.Label();
             this._orderButton = new System.Windows.Forms.Button();
             this._orderDataGridView = new System.Windows.Forms.DataGridView();
+            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._number = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
+            this._totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._merchandiseGroupBox = new System.Windows.Forms.GroupBox();
             this._itemControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nextPageButton = new System.Windows.Forms.Button();
@@ -66,65 +72,47 @@
             this._stockTextLabel = new System.Windows.Forms.Label();
             this._stockLabel = new System.Windows.Forms.Label();
             this._itemTabControl = new System.Windows.Forms.TabControl();
-            this._motherBoard = new System.Windows.Forms.TabPage();
-            this._motherBoardTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._motherBoardItem2 = new System.Windows.Forms.Button();
-            this._motherBoardItem3 = new System.Windows.Forms.Button();
-            this._motherBoardItem4 = new System.Windows.Forms.Button();
-            this._motherBoardItem5 = new System.Windows.Forms.Button();
-            this._motherBoardItem6 = new System.Windows.Forms.Button();
-            this._motherBoardItem1 = new System.Windows.Forms.Button();
-            this._centralProcessUnit = new System.Windows.Forms.TabPage();
-            this._centralProcessUnitTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._centralProcessUnitItem1 = new System.Windows.Forms.Button();
-            this._centralProcessUnitItem2 = new System.Windows.Forms.Button();
-            this._centralProcessUnitItem3 = new System.Windows.Forms.Button();
-            this._centralProcessUnitItem4 = new System.Windows.Forms.Button();
-            this._centralProcessUnitItem5 = new System.Windows.Forms.Button();
-            this._centralProcessUnitItem6 = new System.Windows.Forms.Button();
-            this._memory = new System.Windows.Forms.TabPage();
-            this._memoryTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._memoryItem1 = new System.Windows.Forms.Button();
-            this._memoryItem2 = new System.Windows.Forms.Button();
-            this._memoryItem3 = new System.Windows.Forms.Button();
-            this._memoryItem4 = new System.Windows.Forms.Button();
-            this._memoryItem5 = new System.Windows.Forms.Button();
-            this._memoryItem6 = new System.Windows.Forms.Button();
-            this._disk = new System.Windows.Forms.TabPage();
-            this._diskTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._diskItem1 = new System.Windows.Forms.Button();
-            this._diskItem2 = new System.Windows.Forms.Button();
-            this._diskItem3 = new System.Windows.Forms.Button();
-            this._diskItem4 = new System.Windows.Forms.Button();
-            this._diskItem5 = new System.Windows.Forms.Button();
-            this._diskItem6 = new System.Windows.Forms.Button();
-            this._graphicsProcessUnit = new System.Windows.Forms.TabPage();
-            this._graphicsProcessUnitTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._graphicsProcessUnitItem2 = new System.Windows.Forms.Button();
-            this._graphicsProcessUnitItem3 = new System.Windows.Forms.Button();
-            this._graphicsProcessUnitItem4 = new System.Windows.Forms.Button();
-            this._graphicsProcessUnitItem6 = new System.Windows.Forms.Button();
-            this._graphicsProcessUnitItem1 = new System.Windows.Forms.Button();
-            this._graphicsProcessUnitItem5 = new System.Windows.Forms.Button();
-            this._computer = new System.Windows.Forms.TabPage();
-            this._computerTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._computerItem1 = new System.Windows.Forms.Button();
-            this._computerItem2 = new System.Windows.Forms.Button();
-            this._computerItem3 = new System.Windows.Forms.Button();
-            this._computerItem4 = new System.Windows.Forms.Button();
-            this._computerItem5 = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewNumericUpDownColumn1 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._computerItem6 = new System.Windows.Forms.Button();
-            this._dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._dataGridViewNumericUpDownColumn1 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
-            this._dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._number = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
-            this._totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._computerItem5 = new System.Windows.Forms.Button();
+            this._computerItem4 = new System.Windows.Forms.Button();
+            this._computerItem3 = new System.Windows.Forms.Button();
+            this._computerItem2 = new System.Windows.Forms.Button();
+            this._computerItem1 = new System.Windows.Forms.Button();
+            this._graphicsProcessUnitItem5 = new System.Windows.Forms.Button();
+            this._graphicsProcessUnitItem1 = new System.Windows.Forms.Button();
+            this._graphicsProcessUnitItem6 = new System.Windows.Forms.Button();
+            this._graphicsProcessUnitItem4 = new System.Windows.Forms.Button();
+            this._graphicsProcessUnitItem3 = new System.Windows.Forms.Button();
+            this._graphicsProcessUnitItem2 = new System.Windows.Forms.Button();
+            this._diskItem6 = new System.Windows.Forms.Button();
+            this._diskItem5 = new System.Windows.Forms.Button();
+            this._diskItem4 = new System.Windows.Forms.Button();
+            this._diskItem3 = new System.Windows.Forms.Button();
+            this._diskItem2 = new System.Windows.Forms.Button();
+            this._diskItem1 = new System.Windows.Forms.Button();
+            this._memoryItem6 = new System.Windows.Forms.Button();
+            this._memoryItem5 = new System.Windows.Forms.Button();
+            this._memoryItem4 = new System.Windows.Forms.Button();
+            this._memoryItem3 = new System.Windows.Forms.Button();
+            this._memoryItem2 = new System.Windows.Forms.Button();
+            this._memoryItem1 = new System.Windows.Forms.Button();
+            this._centralProcessUnitItem6 = new System.Windows.Forms.Button();
+            this._centralProcessUnitItem5 = new System.Windows.Forms.Button();
+            this._centralProcessUnitItem4 = new System.Windows.Forms.Button();
+            this._centralProcessUnitItem3 = new System.Windows.Forms.Button();
+            this._centralProcessUnitItem2 = new System.Windows.Forms.Button();
+            this._centralProcessUnitItem1 = new System.Windows.Forms.Button();
+            this._motherBoardItem1 = new System.Windows.Forms.Button();
+            this._motherBoardItem6 = new System.Windows.Forms.Button();
+            this._motherBoardItem5 = new System.Windows.Forms.Button();
+            this._motherBoardItem4 = new System.Windows.Forms.Button();
+            this._motherBoardItem3 = new System.Windows.Forms.Button();
+            this._motherBoardItem2 = new System.Windows.Forms.Button();
             this._bottomTableLayoutPanel.SuspendLayout();
             this._myOrderTableLayoutPanel.SuspendLayout();
             this._totalPriceTableLayoutPanel.SuspendLayout();
@@ -137,19 +125,6 @@
             this._stockAndStockTableLayoutPanel.SuspendLayout();
             this._priceTableLayoutPanel.SuspendLayout();
             this._stockTableLayoutPanel1.SuspendLayout();
-            this._itemTabControl.SuspendLayout();
-            this._motherBoard.SuspendLayout();
-            this._motherBoardTableLayoutPanel.SuspendLayout();
-            this._centralProcessUnit.SuspendLayout();
-            this._centralProcessUnitTableLayoutPanel.SuspendLayout();
-            this._memory.SuspendLayout();
-            this._memoryTableLayoutPanel.SuspendLayout();
-            this._disk.SuspendLayout();
-            this._diskTableLayoutPanel.SuspendLayout();
-            this._graphicsProcessUnit.SuspendLayout();
-            this._graphicsProcessUnitTableLayoutPanel.SuspendLayout();
-            this._computer.SuspendLayout();
-            this._computerTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _bottomTableLayoutPanel
@@ -267,6 +242,66 @@
             this._orderDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDataGridViewCell);
             this._orderDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.PaintDataGridViewCell);
             this._orderDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.UpdateSubtotal);
+            // 
+            // _delete
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this._delete.FillWeight = 25F;
+            this._delete.HeaderText = "刪除";
+            this._delete.Name = "_delete";
+            this._delete.ReadOnly = true;
+            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // _itemName
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
+            this._itemName.FillWeight = 55F;
+            this._itemName.HeaderText = "商品名稱";
+            this._itemName.Name = "_itemName";
+            this._itemName.ReadOnly = true;
+            // 
+            // _itemType
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
+            this._itemType.FillWeight = 45F;
+            this._itemType.HeaderText = "商品分類";
+            this._itemType.Name = "_itemType";
+            this._itemType.ReadOnly = true;
+            // 
+            // _itemPrice
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            this._itemPrice.FillWeight = 30F;
+            this._itemPrice.HeaderText = "單價";
+            this._itemPrice.Name = "_itemPrice";
+            this._itemPrice.ReadOnly = true;
+            // 
+            // _number
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._number.DefaultCellStyle = dataGridViewCellStyle5;
+            this._number.FillWeight = 25F;
+            this._number.HeaderText = "數量";
+            this._number.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this._number.Name = "_number";
+            this._number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // _totalPrice
+            // 
+            this._totalPrice.FillWeight = 30F;
+            this._totalPrice.HeaderText = "總價";
+            this._totalPrice.Name = "_totalPrice";
             // 
             // _merchandiseGroupBox
             // 
@@ -526,12 +561,6 @@
             // 
             // _itemTabControl
             // 
-            this._itemTabControl.Controls.Add(this._motherBoard);
-            this._itemTabControl.Controls.Add(this._centralProcessUnit);
-            this._itemTabControl.Controls.Add(this._memory);
-            this._itemTabControl.Controls.Add(this._disk);
-            this._itemTabControl.Controls.Add(this._graphicsProcessUnit);
-            this._itemTabControl.Controls.Add(this._computer);
             this._itemTabControl.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this._itemTabControl.Location = new System.Drawing.Point(7, 35);
             this._itemTabControl.Name = "_itemTabControl";
@@ -541,60 +570,447 @@
             this._itemTabControl.Tag = "1";
             this._itemTabControl.SelectedIndexChanged += new System.EventHandler(this.ChangeTabIndex);
             // 
-            // _motherBoard
+            // dataGridViewTextBoxColumn1
             // 
-            this._motherBoard.Controls.Add(this._motherBoardTableLayoutPanel);
-            this._motherBoard.Location = new System.Drawing.Point(4, 34);
-            this._motherBoard.Name = "_motherBoard";
-            this._motherBoard.Padding = new System.Windows.Forms.Padding(3);
-            this._motherBoard.Size = new System.Drawing.Size(511, 346);
-            this._motherBoard.TabIndex = 0;
-            this._motherBoard.Text = "主機板";
-            this._motherBoard.UseVisualStyleBackColor = true;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn1.FillWeight = 55F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "商品名稱";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 151;
             // 
-            // _motherBoardTableLayoutPanel
+            // dataGridViewTextBoxColumn2
             // 
-            this._motherBoardTableLayoutPanel.ColumnCount = 3;
-            this._motherBoardTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._motherBoardTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._motherBoardTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._motherBoardTableLayoutPanel.Controls.Add(this._motherBoardItem2, 1, 0);
-            this._motherBoardTableLayoutPanel.Controls.Add(this._motherBoardItem3, 2, 0);
-            this._motherBoardTableLayoutPanel.Controls.Add(this._motherBoardItem4, 0, 1);
-            this._motherBoardTableLayoutPanel.Controls.Add(this._motherBoardItem5, 1, 1);
-            this._motherBoardTableLayoutPanel.Controls.Add(this._motherBoardItem6, 2, 1);
-            this._motherBoardTableLayoutPanel.Controls.Add(this._motherBoardItem1, 0, 0);
-            this._motherBoardTableLayoutPanel.Location = new System.Drawing.Point(2, 3);
-            this._motherBoardTableLayoutPanel.Name = "_motherBoardTableLayoutPanel";
-            this._motherBoardTableLayoutPanel.RowCount = 2;
-            this._motherBoardTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._motherBoardTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._motherBoardTableLayoutPanel.Size = new System.Drawing.Size(506, 340);
-            this._motherBoardTableLayoutPanel.TabIndex = 1;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn2.FillWeight = 45F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "商品分類";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 124;
             // 
-            // _motherBoardItem2
+            // dataGridViewTextBoxColumn3
             // 
-            this._motherBoardItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem2.BackgroundImage")));
-            this._motherBoardItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._motherBoardItem2.Location = new System.Drawing.Point(171, 3);
-            this._motherBoardItem2.Name = "_motherBoardItem2";
-            this._motherBoardItem2.Size = new System.Drawing.Size(162, 164);
-            this._motherBoardItem2.TabIndex = 7;
-            this._motherBoardItem2.Tag = "2";
-            this._motherBoardItem2.UseVisualStyleBackColor = true;
-            this._motherBoardItem2.Click += new System.EventHandler(this.ButtonClick);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn3.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "單價";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 83;
             // 
-            // _motherBoardItem3
+            // dataGridViewNumericUpDownColumn1
             // 
-            this._motherBoardItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem3.BackgroundImage")));
-            this._motherBoardItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._motherBoardItem3.Location = new System.Drawing.Point(339, 3);
-            this._motherBoardItem3.Name = "_motherBoardItem3";
-            this._motherBoardItem3.Size = new System.Drawing.Size(164, 164);
-            this._motherBoardItem3.TabIndex = 8;
-            this._motherBoardItem3.Tag = "3";
-            this._motherBoardItem3.UseVisualStyleBackColor = true;
-            this._motherBoardItem3.Click += new System.EventHandler(this.ButtonClick);
+            this.dataGridViewNumericUpDownColumn1.FillWeight = 25F;
+            this.dataGridViewNumericUpDownColumn1.HeaderText = "數量";
+            this.dataGridViewNumericUpDownColumn1.Name = "dataGridViewNumericUpDownColumn1";
+            this.dataGridViewNumericUpDownColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewNumericUpDownColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewNumericUpDownColumn1.Width = 68;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "總價";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 83;
+            // 
+            // _computerItem6
+            // 
+            this._computerItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem6.BackgroundImage")));
+            this._computerItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._computerItem6.Location = new System.Drawing.Point(339, 173);
+            this._computerItem6.Name = "_computerItem6";
+            this._computerItem6.Size = new System.Drawing.Size(163, 164);
+            this._computerItem6.TabIndex = 5;
+            this._computerItem6.Tag = "6";
+            this._computerItem6.UseVisualStyleBackColor = true;
+            this._computerItem6.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _computerItem5
+            // 
+            this._computerItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem5.BackgroundImage")));
+            this._computerItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._computerItem5.Location = new System.Drawing.Point(171, 173);
+            this._computerItem5.Name = "_computerItem5";
+            this._computerItem5.Size = new System.Drawing.Size(162, 164);
+            this._computerItem5.TabIndex = 4;
+            this._computerItem5.Tag = "5";
+            this._computerItem5.UseVisualStyleBackColor = true;
+            this._computerItem5.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _computerItem4
+            // 
+            this._computerItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem4.BackgroundImage")));
+            this._computerItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._computerItem4.Location = new System.Drawing.Point(3, 173);
+            this._computerItem4.Name = "_computerItem4";
+            this._computerItem4.Size = new System.Drawing.Size(162, 164);
+            this._computerItem4.TabIndex = 3;
+            this._computerItem4.Tag = "4";
+            this._computerItem4.UseVisualStyleBackColor = true;
+            this._computerItem4.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _computerItem3
+            // 
+            this._computerItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem3.BackgroundImage")));
+            this._computerItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._computerItem3.Location = new System.Drawing.Point(339, 3);
+            this._computerItem3.Name = "_computerItem3";
+            this._computerItem3.Size = new System.Drawing.Size(163, 164);
+            this._computerItem3.TabIndex = 2;
+            this._computerItem3.Tag = "3";
+            this._computerItem3.UseVisualStyleBackColor = true;
+            this._computerItem3.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _computerItem2
+            // 
+            this._computerItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem2.BackgroundImage")));
+            this._computerItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._computerItem2.Location = new System.Drawing.Point(171, 3);
+            this._computerItem2.Name = "_computerItem2";
+            this._computerItem2.Size = new System.Drawing.Size(162, 164);
+            this._computerItem2.TabIndex = 1;
+            this._computerItem2.Tag = "2";
+            this._computerItem2.UseVisualStyleBackColor = true;
+            this._computerItem2.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _computerItem1
+            // 
+            this._computerItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem1.BackgroundImage")));
+            this._computerItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._computerItem1.Location = new System.Drawing.Point(3, 3);
+            this._computerItem1.Name = "_computerItem1";
+            this._computerItem1.Size = new System.Drawing.Size(162, 164);
+            this._computerItem1.TabIndex = 0;
+            this._computerItem1.Tag = "1";
+            this._computerItem1.UseVisualStyleBackColor = true;
+            this._computerItem1.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _graphicsProcessUnitItem5
+            // 
+            this._graphicsProcessUnitItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem5.BackgroundImage")));
+            this._graphicsProcessUnitItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._graphicsProcessUnitItem5.Location = new System.Drawing.Point(170, 173);
+            this._graphicsProcessUnitItem5.Name = "_graphicsProcessUnitItem5";
+            this._graphicsProcessUnitItem5.Size = new System.Drawing.Size(161, 164);
+            this._graphicsProcessUnitItem5.TabIndex = 4;
+            this._graphicsProcessUnitItem5.Tag = "5";
+            this._graphicsProcessUnitItem5.UseVisualStyleBackColor = true;
+            this._graphicsProcessUnitItem5.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _graphicsProcessUnitItem1
+            // 
+            this._graphicsProcessUnitItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem1.BackgroundImage")));
+            this._graphicsProcessUnitItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._graphicsProcessUnitItem1.Location = new System.Drawing.Point(3, 3);
+            this._graphicsProcessUnitItem1.Name = "_graphicsProcessUnitItem1";
+            this._graphicsProcessUnitItem1.Size = new System.Drawing.Size(161, 164);
+            this._graphicsProcessUnitItem1.TabIndex = 0;
+            this._graphicsProcessUnitItem1.Tag = "1";
+            this._graphicsProcessUnitItem1.UseVisualStyleBackColor = true;
+            this._graphicsProcessUnitItem1.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _graphicsProcessUnitItem6
+            // 
+            this._graphicsProcessUnitItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem6.BackgroundImage")));
+            this._graphicsProcessUnitItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._graphicsProcessUnitItem6.Location = new System.Drawing.Point(337, 173);
+            this._graphicsProcessUnitItem6.Name = "_graphicsProcessUnitItem6";
+            this._graphicsProcessUnitItem6.Size = new System.Drawing.Size(161, 164);
+            this._graphicsProcessUnitItem6.TabIndex = 5;
+            this._graphicsProcessUnitItem6.Tag = "6";
+            this._graphicsProcessUnitItem6.UseVisualStyleBackColor = true;
+            this._graphicsProcessUnitItem6.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _graphicsProcessUnitItem4
+            // 
+            this._graphicsProcessUnitItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem4.BackgroundImage")));
+            this._graphicsProcessUnitItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this._graphicsProcessUnitItem4.Location = new System.Drawing.Point(3, 173);
+            this._graphicsProcessUnitItem4.Name = "_graphicsProcessUnitItem4";
+            this._graphicsProcessUnitItem4.Size = new System.Drawing.Size(161, 164);
+            this._graphicsProcessUnitItem4.TabIndex = 3;
+            this._graphicsProcessUnitItem4.Tag = "4";
+            this._graphicsProcessUnitItem4.UseVisualStyleBackColor = true;
+            this._graphicsProcessUnitItem4.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _graphicsProcessUnitItem3
+            // 
+            this._graphicsProcessUnitItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem3.BackgroundImage")));
+            this._graphicsProcessUnitItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._graphicsProcessUnitItem3.Location = new System.Drawing.Point(337, 3);
+            this._graphicsProcessUnitItem3.Name = "_graphicsProcessUnitItem3";
+            this._graphicsProcessUnitItem3.Size = new System.Drawing.Size(161, 164);
+            this._graphicsProcessUnitItem3.TabIndex = 2;
+            this._graphicsProcessUnitItem3.Tag = "3";
+            this._graphicsProcessUnitItem3.UseVisualStyleBackColor = true;
+            this._graphicsProcessUnitItem3.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _graphicsProcessUnitItem2
+            // 
+            this._graphicsProcessUnitItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem2.BackgroundImage")));
+            this._graphicsProcessUnitItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._graphicsProcessUnitItem2.Location = new System.Drawing.Point(170, 3);
+            this._graphicsProcessUnitItem2.Name = "_graphicsProcessUnitItem2";
+            this._graphicsProcessUnitItem2.Size = new System.Drawing.Size(161, 164);
+            this._graphicsProcessUnitItem2.TabIndex = 1;
+            this._graphicsProcessUnitItem2.Tag = "2";
+            this._graphicsProcessUnitItem2.UseVisualStyleBackColor = true;
+            this._graphicsProcessUnitItem2.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _diskItem6
+            // 
+            this._diskItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem6.BackgroundImage")));
+            this._diskItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._diskItem6.Location = new System.Drawing.Point(339, 173);
+            this._diskItem6.Name = "_diskItem6";
+            this._diskItem6.Size = new System.Drawing.Size(164, 164);
+            this._diskItem6.TabIndex = 5;
+            this._diskItem6.Tag = "6";
+            this._diskItem6.UseVisualStyleBackColor = true;
+            this._diskItem6.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _diskItem5
+            // 
+            this._diskItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem5.BackgroundImage")));
+            this._diskItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._diskItem5.Location = new System.Drawing.Point(171, 173);
+            this._diskItem5.Name = "_diskItem5";
+            this._diskItem5.Size = new System.Drawing.Size(162, 164);
+            this._diskItem5.TabIndex = 4;
+            this._diskItem5.Tag = "5";
+            this._diskItem5.UseVisualStyleBackColor = true;
+            this._diskItem5.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _diskItem4
+            // 
+            this._diskItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem4.BackgroundImage")));
+            this._diskItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._diskItem4.Location = new System.Drawing.Point(3, 173);
+            this._diskItem4.Name = "_diskItem4";
+            this._diskItem4.Size = new System.Drawing.Size(162, 164);
+            this._diskItem4.TabIndex = 3;
+            this._diskItem4.Tag = "4";
+            this._diskItem4.UseVisualStyleBackColor = true;
+            this._diskItem4.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _diskItem3
+            // 
+            this._diskItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem3.BackgroundImage")));
+            this._diskItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._diskItem3.Location = new System.Drawing.Point(339, 3);
+            this._diskItem3.Name = "_diskItem3";
+            this._diskItem3.Size = new System.Drawing.Size(164, 164);
+            this._diskItem3.TabIndex = 2;
+            this._diskItem3.Tag = "3";
+            this._diskItem3.UseVisualStyleBackColor = true;
+            this._diskItem3.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _diskItem2
+            // 
+            this._diskItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem2.BackgroundImage")));
+            this._diskItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._diskItem2.Location = new System.Drawing.Point(171, 3);
+            this._diskItem2.Name = "_diskItem2";
+            this._diskItem2.Size = new System.Drawing.Size(162, 164);
+            this._diskItem2.TabIndex = 1;
+            this._diskItem2.Tag = "2";
+            this._diskItem2.UseVisualStyleBackColor = true;
+            this._diskItem2.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _diskItem1
+            // 
+            this._diskItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem1.BackgroundImage")));
+            this._diskItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._diskItem1.Location = new System.Drawing.Point(3, 3);
+            this._diskItem1.Name = "_diskItem1";
+            this._diskItem1.Size = new System.Drawing.Size(162, 164);
+            this._diskItem1.TabIndex = 0;
+            this._diskItem1.Tag = "1";
+            this._diskItem1.UseVisualStyleBackColor = true;
+            this._diskItem1.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _memoryItem6
+            // 
+            this._memoryItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem6.BackgroundImage")));
+            this._memoryItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._memoryItem6.Location = new System.Drawing.Point(337, 173);
+            this._memoryItem6.Name = "_memoryItem6";
+            this._memoryItem6.Size = new System.Drawing.Size(163, 165);
+            this._memoryItem6.TabIndex = 5;
+            this._memoryItem6.Tag = "6";
+            this._memoryItem6.UseVisualStyleBackColor = true;
+            this._memoryItem6.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _memoryItem5
+            // 
+            this._memoryItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem5.BackgroundImage")));
+            this._memoryItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._memoryItem5.Location = new System.Drawing.Point(170, 173);
+            this._memoryItem5.Name = "_memoryItem5";
+            this._memoryItem5.Size = new System.Drawing.Size(161, 165);
+            this._memoryItem5.TabIndex = 4;
+            this._memoryItem5.Tag = "5";
+            this._memoryItem5.UseVisualStyleBackColor = true;
+            this._memoryItem5.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _memoryItem4
+            // 
+            this._memoryItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem4.BackgroundImage")));
+            this._memoryItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._memoryItem4.Location = new System.Drawing.Point(3, 173);
+            this._memoryItem4.Name = "_memoryItem4";
+            this._memoryItem4.Size = new System.Drawing.Size(161, 165);
+            this._memoryItem4.TabIndex = 3;
+            this._memoryItem4.Tag = "4";
+            this._memoryItem4.UseVisualStyleBackColor = true;
+            this._memoryItem4.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _memoryItem3
+            // 
+            this._memoryItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem3.BackgroundImage")));
+            this._memoryItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._memoryItem3.Location = new System.Drawing.Point(337, 3);
+            this._memoryItem3.Name = "_memoryItem3";
+            this._memoryItem3.Size = new System.Drawing.Size(163, 164);
+            this._memoryItem3.TabIndex = 2;
+            this._memoryItem3.Tag = "3";
+            this._memoryItem3.UseVisualStyleBackColor = true;
+            this._memoryItem3.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _memoryItem2
+            // 
+            this._memoryItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem2.BackgroundImage")));
+            this._memoryItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._memoryItem2.Location = new System.Drawing.Point(170, 3);
+            this._memoryItem2.Name = "_memoryItem2";
+            this._memoryItem2.Size = new System.Drawing.Size(161, 164);
+            this._memoryItem2.TabIndex = 1;
+            this._memoryItem2.Tag = "2";
+            this._memoryItem2.UseVisualStyleBackColor = true;
+            this._memoryItem2.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _memoryItem1
+            // 
+            this._memoryItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem1.BackgroundImage")));
+            this._memoryItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._memoryItem1.Location = new System.Drawing.Point(3, 3);
+            this._memoryItem1.Name = "_memoryItem1";
+            this._memoryItem1.Size = new System.Drawing.Size(161, 164);
+            this._memoryItem1.TabIndex = 0;
+            this._memoryItem1.Tag = "1";
+            this._memoryItem1.UseVisualStyleBackColor = true;
+            this._memoryItem1.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _centralProcessUnitItem6
+            // 
+            this._centralProcessUnitItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem6.BackgroundImage")));
+            this._centralProcessUnitItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._centralProcessUnitItem6.Location = new System.Drawing.Point(337, 173);
+            this._centralProcessUnitItem6.Name = "_centralProcessUnitItem6";
+            this._centralProcessUnitItem6.Size = new System.Drawing.Size(163, 164);
+            this._centralProcessUnitItem6.TabIndex = 5;
+            this._centralProcessUnitItem6.Tag = "6";
+            this._centralProcessUnitItem6.UseVisualStyleBackColor = true;
+            this._centralProcessUnitItem6.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _centralProcessUnitItem5
+            // 
+            this._centralProcessUnitItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem5.BackgroundImage")));
+            this._centralProcessUnitItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._centralProcessUnitItem5.Location = new System.Drawing.Point(170, 173);
+            this._centralProcessUnitItem5.Name = "_centralProcessUnitItem5";
+            this._centralProcessUnitItem5.Size = new System.Drawing.Size(161, 164);
+            this._centralProcessUnitItem5.TabIndex = 4;
+            this._centralProcessUnitItem5.Tag = "5";
+            this._centralProcessUnitItem5.UseVisualStyleBackColor = true;
+            this._centralProcessUnitItem5.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _centralProcessUnitItem4
+            // 
+            this._centralProcessUnitItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem4.BackgroundImage")));
+            this._centralProcessUnitItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._centralProcessUnitItem4.Location = new System.Drawing.Point(3, 173);
+            this._centralProcessUnitItem4.Name = "_centralProcessUnitItem4";
+            this._centralProcessUnitItem4.Size = new System.Drawing.Size(161, 164);
+            this._centralProcessUnitItem4.TabIndex = 3;
+            this._centralProcessUnitItem4.Tag = "4";
+            this._centralProcessUnitItem4.UseVisualStyleBackColor = true;
+            this._centralProcessUnitItem4.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _centralProcessUnitItem3
+            // 
+            this._centralProcessUnitItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem3.BackgroundImage")));
+            this._centralProcessUnitItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._centralProcessUnitItem3.Location = new System.Drawing.Point(337, 3);
+            this._centralProcessUnitItem3.Name = "_centralProcessUnitItem3";
+            this._centralProcessUnitItem3.Size = new System.Drawing.Size(163, 164);
+            this._centralProcessUnitItem3.TabIndex = 2;
+            this._centralProcessUnitItem3.Tag = "3";
+            this._centralProcessUnitItem3.UseVisualStyleBackColor = true;
+            this._centralProcessUnitItem3.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _centralProcessUnitItem2
+            // 
+            this._centralProcessUnitItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem2.BackgroundImage")));
+            this._centralProcessUnitItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._centralProcessUnitItem2.Location = new System.Drawing.Point(170, 3);
+            this._centralProcessUnitItem2.Name = "_centralProcessUnitItem2";
+            this._centralProcessUnitItem2.Size = new System.Drawing.Size(161, 164);
+            this._centralProcessUnitItem2.TabIndex = 1;
+            this._centralProcessUnitItem2.Tag = "2";
+            this._centralProcessUnitItem2.UseVisualStyleBackColor = true;
+            this._centralProcessUnitItem2.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _centralProcessUnitItem1
+            // 
+            this._centralProcessUnitItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem1.BackgroundImage")));
+            this._centralProcessUnitItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._centralProcessUnitItem1.Location = new System.Drawing.Point(3, 3);
+            this._centralProcessUnitItem1.Name = "_centralProcessUnitItem1";
+            this._centralProcessUnitItem1.Size = new System.Drawing.Size(161, 164);
+            this._centralProcessUnitItem1.TabIndex = 0;
+            this._centralProcessUnitItem1.Tag = "1";
+            this._centralProcessUnitItem1.UseVisualStyleBackColor = true;
+            this._centralProcessUnitItem1.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _motherBoardItem1
+            // 
+            this._motherBoardItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem1.BackgroundImage")));
+            this._motherBoardItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._motherBoardItem1.Location = new System.Drawing.Point(3, 3);
+            this._motherBoardItem1.Name = "_motherBoardItem1";
+            this._motherBoardItem1.Size = new System.Drawing.Size(162, 164);
+            this._motherBoardItem1.TabIndex = 6;
+            this._motherBoardItem1.Tag = "1";
+            this._motherBoardItem1.UseVisualStyleBackColor = true;
+            this._motherBoardItem1.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _motherBoardItem6
+            // 
+            this._motherBoardItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem6.BackgroundImage")));
+            this._motherBoardItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._motherBoardItem6.Location = new System.Drawing.Point(339, 173);
+            this._motherBoardItem6.Name = "_motherBoardItem6";
+            this._motherBoardItem6.Size = new System.Drawing.Size(164, 164);
+            this._motherBoardItem6.TabIndex = 11;
+            this._motherBoardItem6.Tag = "6";
+            this._motherBoardItem6.UseVisualStyleBackColor = true;
+            this._motherBoardItem6.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _motherBoardItem5
+            // 
+            this._motherBoardItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem5.BackgroundImage")));
+            this._motherBoardItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._motherBoardItem5.Location = new System.Drawing.Point(171, 173);
+            this._motherBoardItem5.Name = "_motherBoardItem5";
+            this._motherBoardItem5.Size = new System.Drawing.Size(162, 164);
+            this._motherBoardItem5.TabIndex = 10;
+            this._motherBoardItem5.Tag = "5";
+            this._motherBoardItem5.UseVisualStyleBackColor = true;
+            this._motherBoardItem5.Click += new System.EventHandler(this.ButtonClick);
             // 
             // _motherBoardItem4
             // 
@@ -609,663 +1025,29 @@
             this._motherBoardItem4.UseVisualStyleBackColor = true;
             this._motherBoardItem4.Click += new System.EventHandler(this.ButtonClick);
             // 
-            // _motherBoardItem5
-            // 
-            this._motherBoardItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem5.BackgroundImage")));
-            this._motherBoardItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._motherBoardItem5.Location = new System.Drawing.Point(171, 173);
-            this._motherBoardItem5.Name = "_motherBoardItem5";
-            this._motherBoardItem5.Size = new System.Drawing.Size(162, 164);
-            this._motherBoardItem5.TabIndex = 10;
-            this._motherBoardItem5.Tag = "5";
-            this._motherBoardItem5.UseVisualStyleBackColor = true;
-            this._motherBoardItem5.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _motherBoardItem6
-            // 
-            this._motherBoardItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem6.BackgroundImage")));
-            this._motherBoardItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._motherBoardItem6.Location = new System.Drawing.Point(339, 173);
-            this._motherBoardItem6.Name = "_motherBoardItem6";
-            this._motherBoardItem6.Size = new System.Drawing.Size(164, 164);
-            this._motherBoardItem6.TabIndex = 11;
-            this._motherBoardItem6.Tag = "6";
-            this._motherBoardItem6.UseVisualStyleBackColor = true;
-            this._motherBoardItem6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _motherBoardItem1
-            // 
-            this._motherBoardItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem1.BackgroundImage")));
-            this._motherBoardItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._motherBoardItem1.Location = new System.Drawing.Point(3, 3);
-            this._motherBoardItem1.Name = "_motherBoardItem1";
-            this._motherBoardItem1.Size = new System.Drawing.Size(162, 164);
-            this._motherBoardItem1.TabIndex = 6;
-            this._motherBoardItem1.Tag = "1";
-            this._motherBoardItem1.UseVisualStyleBackColor = true;
-            this._motherBoardItem1.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _centralProcessUnit
-            // 
-            this._centralProcessUnit.Controls.Add(this._centralProcessUnitTableLayoutPanel);
-            this._centralProcessUnit.Location = new System.Drawing.Point(4, 34);
-            this._centralProcessUnit.Name = "_centralProcessUnit";
-            this._centralProcessUnit.Padding = new System.Windows.Forms.Padding(3);
-            this._centralProcessUnit.Size = new System.Drawing.Size(511, 346);
-            this._centralProcessUnit.TabIndex = 0;
-            this._centralProcessUnit.Text = "CPU";
-            this._centralProcessUnit.UseVisualStyleBackColor = true;
-            // 
-            // _centralProcessUnitTableLayoutPanel
-            // 
-            this._centralProcessUnitTableLayoutPanel.ColumnCount = 3;
-            this._centralProcessUnitTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._centralProcessUnitTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this._centralProcessUnitTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this._centralProcessUnitTableLayoutPanel.Controls.Add(this._centralProcessUnitItem1, 0, 0);
-            this._centralProcessUnitTableLayoutPanel.Controls.Add(this._centralProcessUnitItem2, 1, 0);
-            this._centralProcessUnitTableLayoutPanel.Controls.Add(this._centralProcessUnitItem3, 2, 0);
-            this._centralProcessUnitTableLayoutPanel.Controls.Add(this._centralProcessUnitItem4, 0, 1);
-            this._centralProcessUnitTableLayoutPanel.Controls.Add(this._centralProcessUnitItem5, 1, 1);
-            this._centralProcessUnitTableLayoutPanel.Controls.Add(this._centralProcessUnitItem6, 2, 1);
-            this._centralProcessUnitTableLayoutPanel.Location = new System.Drawing.Point(2, 3);
-            this._centralProcessUnitTableLayoutPanel.Name = "_centralProcessUnitTableLayoutPanel";
-            this._centralProcessUnitTableLayoutPanel.RowCount = 2;
-            this._centralProcessUnitTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._centralProcessUnitTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._centralProcessUnitTableLayoutPanel.Size = new System.Drawing.Size(503, 340);
-            this._centralProcessUnitTableLayoutPanel.TabIndex = 0;
-            // 
-            // _centralProcessUnitItem1
-            // 
-            this._centralProcessUnitItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem1.BackgroundImage")));
-            this._centralProcessUnitItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._centralProcessUnitItem1.Location = new System.Drawing.Point(3, 3);
-            this._centralProcessUnitItem1.Name = "_centralProcessUnitItem1";
-            this._centralProcessUnitItem1.Size = new System.Drawing.Size(161, 164);
-            this._centralProcessUnitItem1.TabIndex = 0;
-            this._centralProcessUnitItem1.Tag = "1";
-            this._centralProcessUnitItem1.UseVisualStyleBackColor = true;
-            this._centralProcessUnitItem1.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _centralProcessUnitItem2
-            // 
-            this._centralProcessUnitItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem2.BackgroundImage")));
-            this._centralProcessUnitItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._centralProcessUnitItem2.Location = new System.Drawing.Point(170, 3);
-            this._centralProcessUnitItem2.Name = "_centralProcessUnitItem2";
-            this._centralProcessUnitItem2.Size = new System.Drawing.Size(161, 164);
-            this._centralProcessUnitItem2.TabIndex = 1;
-            this._centralProcessUnitItem2.Tag = "2";
-            this._centralProcessUnitItem2.UseVisualStyleBackColor = true;
-            this._centralProcessUnitItem2.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _centralProcessUnitItem3
-            // 
-            this._centralProcessUnitItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem3.BackgroundImage")));
-            this._centralProcessUnitItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._centralProcessUnitItem3.Location = new System.Drawing.Point(337, 3);
-            this._centralProcessUnitItem3.Name = "_centralProcessUnitItem3";
-            this._centralProcessUnitItem3.Size = new System.Drawing.Size(163, 164);
-            this._centralProcessUnitItem3.TabIndex = 2;
-            this._centralProcessUnitItem3.Tag = "3";
-            this._centralProcessUnitItem3.UseVisualStyleBackColor = true;
-            this._centralProcessUnitItem3.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _centralProcessUnitItem4
-            // 
-            this._centralProcessUnitItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem4.BackgroundImage")));
-            this._centralProcessUnitItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._centralProcessUnitItem4.Location = new System.Drawing.Point(3, 173);
-            this._centralProcessUnitItem4.Name = "_centralProcessUnitItem4";
-            this._centralProcessUnitItem4.Size = new System.Drawing.Size(161, 164);
-            this._centralProcessUnitItem4.TabIndex = 3;
-            this._centralProcessUnitItem4.Tag = "4";
-            this._centralProcessUnitItem4.UseVisualStyleBackColor = true;
-            this._centralProcessUnitItem4.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _centralProcessUnitItem5
-            // 
-            this._centralProcessUnitItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem5.BackgroundImage")));
-            this._centralProcessUnitItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._centralProcessUnitItem5.Location = new System.Drawing.Point(170, 173);
-            this._centralProcessUnitItem5.Name = "_centralProcessUnitItem5";
-            this._centralProcessUnitItem5.Size = new System.Drawing.Size(161, 164);
-            this._centralProcessUnitItem5.TabIndex = 4;
-            this._centralProcessUnitItem5.Tag = "5";
-            this._centralProcessUnitItem5.UseVisualStyleBackColor = true;
-            this._centralProcessUnitItem5.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _centralProcessUnitItem6
-            // 
-            this._centralProcessUnitItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_centralProcessUnitItem6.BackgroundImage")));
-            this._centralProcessUnitItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._centralProcessUnitItem6.Location = new System.Drawing.Point(337, 173);
-            this._centralProcessUnitItem6.Name = "_centralProcessUnitItem6";
-            this._centralProcessUnitItem6.Size = new System.Drawing.Size(163, 164);
-            this._centralProcessUnitItem6.TabIndex = 5;
-            this._centralProcessUnitItem6.Tag = "6";
-            this._centralProcessUnitItem6.UseVisualStyleBackColor = true;
-            this._centralProcessUnitItem6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _memory
-            // 
-            this._memory.Controls.Add(this._memoryTableLayoutPanel);
-            this._memory.Location = new System.Drawing.Point(4, 34);
-            this._memory.Name = "_memory";
-            this._memory.Padding = new System.Windows.Forms.Padding(3);
-            this._memory.Size = new System.Drawing.Size(511, 346);
-            this._memory.TabIndex = 2;
-            this._memory.Text = "記憶體";
-            this._memory.UseVisualStyleBackColor = true;
-            // 
-            // _memoryTableLayoutPanel
-            // 
-            this._memoryTableLayoutPanel.ColumnCount = 3;
-            this._memoryTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._memoryTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._memoryTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._memoryTableLayoutPanel.Controls.Add(this._memoryItem1, 0, 0);
-            this._memoryTableLayoutPanel.Controls.Add(this._memoryItem2, 1, 0);
-            this._memoryTableLayoutPanel.Controls.Add(this._memoryItem3, 2, 0);
-            this._memoryTableLayoutPanel.Controls.Add(this._memoryItem4, 0, 1);
-            this._memoryTableLayoutPanel.Controls.Add(this._memoryItem5, 1, 1);
-            this._memoryTableLayoutPanel.Controls.Add(this._memoryItem6, 2, 1);
-            this._memoryTableLayoutPanel.Location = new System.Drawing.Point(2, 3);
-            this._memoryTableLayoutPanel.Name = "_memoryTableLayoutPanel";
-            this._memoryTableLayoutPanel.RowCount = 2;
-            this._memoryTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._memoryTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._memoryTableLayoutPanel.Size = new System.Drawing.Size(503, 341);
-            this._memoryTableLayoutPanel.TabIndex = 0;
-            // 
-            // _memoryItem1
-            // 
-            this._memoryItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem1.BackgroundImage")));
-            this._memoryItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem1.Location = new System.Drawing.Point(3, 3);
-            this._memoryItem1.Name = "_memoryItem1";
-            this._memoryItem1.Size = new System.Drawing.Size(161, 164);
-            this._memoryItem1.TabIndex = 0;
-            this._memoryItem1.Tag = "1";
-            this._memoryItem1.UseVisualStyleBackColor = true;
-            this._memoryItem1.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _memoryItem2
-            // 
-            this._memoryItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem2.BackgroundImage")));
-            this._memoryItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem2.Location = new System.Drawing.Point(170, 3);
-            this._memoryItem2.Name = "_memoryItem2";
-            this._memoryItem2.Size = new System.Drawing.Size(161, 164);
-            this._memoryItem2.TabIndex = 1;
-            this._memoryItem2.Tag = "2";
-            this._memoryItem2.UseVisualStyleBackColor = true;
-            this._memoryItem2.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _memoryItem3
-            // 
-            this._memoryItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem3.BackgroundImage")));
-            this._memoryItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem3.Location = new System.Drawing.Point(337, 3);
-            this._memoryItem3.Name = "_memoryItem3";
-            this._memoryItem3.Size = new System.Drawing.Size(163, 164);
-            this._memoryItem3.TabIndex = 2;
-            this._memoryItem3.Tag = "3";
-            this._memoryItem3.UseVisualStyleBackColor = true;
-            this._memoryItem3.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _memoryItem4
-            // 
-            this._memoryItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem4.BackgroundImage")));
-            this._memoryItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem4.Location = new System.Drawing.Point(3, 173);
-            this._memoryItem4.Name = "_memoryItem4";
-            this._memoryItem4.Size = new System.Drawing.Size(161, 165);
-            this._memoryItem4.TabIndex = 3;
-            this._memoryItem4.Tag = "4";
-            this._memoryItem4.UseVisualStyleBackColor = true;
-            this._memoryItem4.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _memoryItem5
-            // 
-            this._memoryItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem5.BackgroundImage")));
-            this._memoryItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem5.Location = new System.Drawing.Point(170, 173);
-            this._memoryItem5.Name = "_memoryItem5";
-            this._memoryItem5.Size = new System.Drawing.Size(161, 165);
-            this._memoryItem5.TabIndex = 4;
-            this._memoryItem5.Tag = "5";
-            this._memoryItem5.UseVisualStyleBackColor = true;
-            this._memoryItem5.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _memoryItem6
-            // 
-            this._memoryItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_memoryItem6.BackgroundImage")));
-            this._memoryItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._memoryItem6.Location = new System.Drawing.Point(337, 173);
-            this._memoryItem6.Name = "_memoryItem6";
-            this._memoryItem6.Size = new System.Drawing.Size(163, 165);
-            this._memoryItem6.TabIndex = 5;
-            this._memoryItem6.Tag = "6";
-            this._memoryItem6.UseVisualStyleBackColor = true;
-            this._memoryItem6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _disk
-            // 
-            this._disk.Controls.Add(this._diskTableLayoutPanel);
-            this._disk.Location = new System.Drawing.Point(4, 34);
-            this._disk.Name = "_disk";
-            this._disk.Padding = new System.Windows.Forms.Padding(3);
-            this._disk.Size = new System.Drawing.Size(511, 346);
-            this._disk.TabIndex = 3;
-            this._disk.Text = "硬碟";
-            this._disk.UseVisualStyleBackColor = true;
-            // 
-            // _diskTableLayoutPanel
-            // 
-            this._diskTableLayoutPanel.ColumnCount = 3;
-            this._diskTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._diskTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._diskTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._diskTableLayoutPanel.Controls.Add(this._diskItem1, 0, 0);
-            this._diskTableLayoutPanel.Controls.Add(this._diskItem2, 1, 0);
-            this._diskTableLayoutPanel.Controls.Add(this._diskItem3, 2, 0);
-            this._diskTableLayoutPanel.Controls.Add(this._diskItem4, 0, 1);
-            this._diskTableLayoutPanel.Controls.Add(this._diskItem5, 1, 1);
-            this._diskTableLayoutPanel.Controls.Add(this._diskItem6, 2, 1);
-            this._diskTableLayoutPanel.Location = new System.Drawing.Point(2, 3);
-            this._diskTableLayoutPanel.Name = "_diskTableLayoutPanel";
-            this._diskTableLayoutPanel.RowCount = 2;
-            this._diskTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._diskTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._diskTableLayoutPanel.Size = new System.Drawing.Size(506, 340);
-            this._diskTableLayoutPanel.TabIndex = 0;
-            // 
-            // _diskItem1
-            // 
-            this._diskItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem1.BackgroundImage")));
-            this._diskItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._diskItem1.Location = new System.Drawing.Point(3, 3);
-            this._diskItem1.Name = "_diskItem1";
-            this._diskItem1.Size = new System.Drawing.Size(162, 164);
-            this._diskItem1.TabIndex = 0;
-            this._diskItem1.Tag = "1";
-            this._diskItem1.UseVisualStyleBackColor = true;
-            this._diskItem1.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _diskItem2
-            // 
-            this._diskItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem2.BackgroundImage")));
-            this._diskItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._diskItem2.Location = new System.Drawing.Point(171, 3);
-            this._diskItem2.Name = "_diskItem2";
-            this._diskItem2.Size = new System.Drawing.Size(162, 164);
-            this._diskItem2.TabIndex = 1;
-            this._diskItem2.Tag = "2";
-            this._diskItem2.UseVisualStyleBackColor = true;
-            this._diskItem2.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _diskItem3
-            // 
-            this._diskItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem3.BackgroundImage")));
-            this._diskItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._diskItem3.Location = new System.Drawing.Point(339, 3);
-            this._diskItem3.Name = "_diskItem3";
-            this._diskItem3.Size = new System.Drawing.Size(164, 164);
-            this._diskItem3.TabIndex = 2;
-            this._diskItem3.Tag = "3";
-            this._diskItem3.UseVisualStyleBackColor = true;
-            this._diskItem3.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _diskItem4
-            // 
-            this._diskItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem4.BackgroundImage")));
-            this._diskItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._diskItem4.Location = new System.Drawing.Point(3, 173);
-            this._diskItem4.Name = "_diskItem4";
-            this._diskItem4.Size = new System.Drawing.Size(162, 164);
-            this._diskItem4.TabIndex = 3;
-            this._diskItem4.Tag = "4";
-            this._diskItem4.UseVisualStyleBackColor = true;
-            this._diskItem4.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _diskItem5
-            // 
-            this._diskItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem5.BackgroundImage")));
-            this._diskItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._diskItem5.Location = new System.Drawing.Point(171, 173);
-            this._diskItem5.Name = "_diskItem5";
-            this._diskItem5.Size = new System.Drawing.Size(162, 164);
-            this._diskItem5.TabIndex = 4;
-            this._diskItem5.Tag = "5";
-            this._diskItem5.UseVisualStyleBackColor = true;
-            this._diskItem5.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _diskItem6
-            // 
-            this._diskItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_diskItem6.BackgroundImage")));
-            this._diskItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._diskItem6.Location = new System.Drawing.Point(339, 173);
-            this._diskItem6.Name = "_diskItem6";
-            this._diskItem6.Size = new System.Drawing.Size(164, 164);
-            this._diskItem6.TabIndex = 5;
-            this._diskItem6.Tag = "6";
-            this._diskItem6.UseVisualStyleBackColor = true;
-            this._diskItem6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _graphicsProcessUnit
-            // 
-            this._graphicsProcessUnit.Controls.Add(this._graphicsProcessUnitTableLayoutPanel);
-            this._graphicsProcessUnit.Location = new System.Drawing.Point(4, 34);
-            this._graphicsProcessUnit.Name = "_graphicsProcessUnit";
-            this._graphicsProcessUnit.Padding = new System.Windows.Forms.Padding(3);
-            this._graphicsProcessUnit.Size = new System.Drawing.Size(511, 346);
-            this._graphicsProcessUnit.TabIndex = 4;
-            this._graphicsProcessUnit.Text = "顯卡";
-            this._graphicsProcessUnit.UseVisualStyleBackColor = true;
-            // 
-            // _graphicsProcessUnitTableLayoutPanel
-            // 
-            this._graphicsProcessUnitTableLayoutPanel.ColumnCount = 3;
-            this._graphicsProcessUnitTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._graphicsProcessUnitTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._graphicsProcessUnitTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._graphicsProcessUnitTableLayoutPanel.Controls.Add(this._graphicsProcessUnitItem2, 1, 0);
-            this._graphicsProcessUnitTableLayoutPanel.Controls.Add(this._graphicsProcessUnitItem3, 2, 0);
-            this._graphicsProcessUnitTableLayoutPanel.Controls.Add(this._graphicsProcessUnitItem4, 0, 1);
-            this._graphicsProcessUnitTableLayoutPanel.Controls.Add(this._graphicsProcessUnitItem6, 2, 1);
-            this._graphicsProcessUnitTableLayoutPanel.Controls.Add(this._graphicsProcessUnitItem1, 0, 0);
-            this._graphicsProcessUnitTableLayoutPanel.Controls.Add(this._graphicsProcessUnitItem5, 1, 1);
-            this._graphicsProcessUnitTableLayoutPanel.Location = new System.Drawing.Point(7, 3);
-            this._graphicsProcessUnitTableLayoutPanel.Name = "_graphicsProcessUnitTableLayoutPanel";
-            this._graphicsProcessUnitTableLayoutPanel.RowCount = 2;
-            this._graphicsProcessUnitTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._graphicsProcessUnitTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._graphicsProcessUnitTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this._graphicsProcessUnitTableLayoutPanel.Size = new System.Drawing.Size(501, 340);
-            this._graphicsProcessUnitTableLayoutPanel.TabIndex = 0;
-            // 
-            // _graphicsProcessUnitItem2
-            // 
-            this._graphicsProcessUnitItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem2.BackgroundImage")));
-            this._graphicsProcessUnitItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._graphicsProcessUnitItem2.Location = new System.Drawing.Point(170, 3);
-            this._graphicsProcessUnitItem2.Name = "_graphicsProcessUnitItem2";
-            this._graphicsProcessUnitItem2.Size = new System.Drawing.Size(161, 164);
-            this._graphicsProcessUnitItem2.TabIndex = 1;
-            this._graphicsProcessUnitItem2.Tag = "2";
-            this._graphicsProcessUnitItem2.UseVisualStyleBackColor = true;
-            this._graphicsProcessUnitItem2.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _graphicsProcessUnitItem3
-            // 
-            this._graphicsProcessUnitItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem3.BackgroundImage")));
-            this._graphicsProcessUnitItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._graphicsProcessUnitItem3.Location = new System.Drawing.Point(337, 3);
-            this._graphicsProcessUnitItem3.Name = "_graphicsProcessUnitItem3";
-            this._graphicsProcessUnitItem3.Size = new System.Drawing.Size(161, 164);
-            this._graphicsProcessUnitItem3.TabIndex = 2;
-            this._graphicsProcessUnitItem3.Tag = "3";
-            this._graphicsProcessUnitItem3.UseVisualStyleBackColor = true;
-            this._graphicsProcessUnitItem3.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _graphicsProcessUnitItem4
-            // 
-            this._graphicsProcessUnitItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem4.BackgroundImage")));
-            this._graphicsProcessUnitItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this._graphicsProcessUnitItem4.Location = new System.Drawing.Point(3, 173);
-            this._graphicsProcessUnitItem4.Name = "_graphicsProcessUnitItem4";
-            this._graphicsProcessUnitItem4.Size = new System.Drawing.Size(161, 164);
-            this._graphicsProcessUnitItem4.TabIndex = 3;
-            this._graphicsProcessUnitItem4.Tag = "4";
-            this._graphicsProcessUnitItem4.UseVisualStyleBackColor = true;
-            this._graphicsProcessUnitItem4.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _graphicsProcessUnitItem6
-            // 
-            this._graphicsProcessUnitItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem6.BackgroundImage")));
-            this._graphicsProcessUnitItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._graphicsProcessUnitItem6.Location = new System.Drawing.Point(337, 173);
-            this._graphicsProcessUnitItem6.Name = "_graphicsProcessUnitItem6";
-            this._graphicsProcessUnitItem6.Size = new System.Drawing.Size(161, 164);
-            this._graphicsProcessUnitItem6.TabIndex = 5;
-            this._graphicsProcessUnitItem6.Tag = "6";
-            this._graphicsProcessUnitItem6.UseVisualStyleBackColor = true;
-            this._graphicsProcessUnitItem6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _graphicsProcessUnitItem1
-            // 
-            this._graphicsProcessUnitItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem1.BackgroundImage")));
-            this._graphicsProcessUnitItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._graphicsProcessUnitItem1.Location = new System.Drawing.Point(3, 3);
-            this._graphicsProcessUnitItem1.Name = "_graphicsProcessUnitItem1";
-            this._graphicsProcessUnitItem1.Size = new System.Drawing.Size(161, 164);
-            this._graphicsProcessUnitItem1.TabIndex = 0;
-            this._graphicsProcessUnitItem1.Tag = "1";
-            this._graphicsProcessUnitItem1.UseVisualStyleBackColor = true;
-            this._graphicsProcessUnitItem1.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _graphicsProcessUnitItem5
-            // 
-            this._graphicsProcessUnitItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_graphicsProcessUnitItem5.BackgroundImage")));
-            this._graphicsProcessUnitItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._graphicsProcessUnitItem5.Location = new System.Drawing.Point(170, 173);
-            this._graphicsProcessUnitItem5.Name = "_graphicsProcessUnitItem5";
-            this._graphicsProcessUnitItem5.Size = new System.Drawing.Size(161, 164);
-            this._graphicsProcessUnitItem5.TabIndex = 4;
-            this._graphicsProcessUnitItem5.Tag = "5";
-            this._graphicsProcessUnitItem5.UseVisualStyleBackColor = true;
-            this._graphicsProcessUnitItem5.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _computer
-            // 
-            this._computer.Controls.Add(this._computerTableLayoutPanel);
-            this._computer.Location = new System.Drawing.Point(4, 34);
-            this._computer.Name = "_computer";
-            this._computer.Padding = new System.Windows.Forms.Padding(3);
-            this._computer.Size = new System.Drawing.Size(511, 346);
-            this._computer.TabIndex = 5;
-            this._computer.Text = "套裝電腦";
-            this._computer.UseVisualStyleBackColor = true;
-            // 
-            // _computerTableLayoutPanel
-            // 
-            this._computerTableLayoutPanel.ColumnCount = 3;
-            this._computerTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._computerTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._computerTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._computerTableLayoutPanel.Controls.Add(this._computerItem1, 0, 0);
-            this._computerTableLayoutPanel.Controls.Add(this._computerItem2, 1, 0);
-            this._computerTableLayoutPanel.Controls.Add(this._computerItem3, 2, 0);
-            this._computerTableLayoutPanel.Controls.Add(this._computerItem4, 0, 1);
-            this._computerTableLayoutPanel.Controls.Add(this._computerItem5, 1, 1);
-            this._computerTableLayoutPanel.Controls.Add(this._computerItem6, 2, 1);
-            this._computerTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            this._computerTableLayoutPanel.Name = "_computerTableLayoutPanel";
-            this._computerTableLayoutPanel.RowCount = 2;
-            this._computerTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._computerTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._computerTableLayoutPanel.Size = new System.Drawing.Size(505, 340);
-            this._computerTableLayoutPanel.TabIndex = 0;
-            // 
-            // _computerItem1
-            // 
-            this._computerItem1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem1.BackgroundImage")));
-            this._computerItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._computerItem1.Location = new System.Drawing.Point(3, 3);
-            this._computerItem1.Name = "_computerItem1";
-            this._computerItem1.Size = new System.Drawing.Size(162, 164);
-            this._computerItem1.TabIndex = 0;
-            this._computerItem1.Tag = "1";
-            this._computerItem1.UseVisualStyleBackColor = true;
-            this._computerItem1.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _computerItem2
-            // 
-            this._computerItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem2.BackgroundImage")));
-            this._computerItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._computerItem2.Location = new System.Drawing.Point(171, 3);
-            this._computerItem2.Name = "_computerItem2";
-            this._computerItem2.Size = new System.Drawing.Size(162, 164);
-            this._computerItem2.TabIndex = 1;
-            this._computerItem2.Tag = "2";
-            this._computerItem2.UseVisualStyleBackColor = true;
-            this._computerItem2.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _computerItem3
-            // 
-            this._computerItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem3.BackgroundImage")));
-            this._computerItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._computerItem3.Location = new System.Drawing.Point(339, 3);
-            this._computerItem3.Name = "_computerItem3";
-            this._computerItem3.Size = new System.Drawing.Size(163, 164);
-            this._computerItem3.TabIndex = 2;
-            this._computerItem3.Tag = "3";
-            this._computerItem3.UseVisualStyleBackColor = true;
-            this._computerItem3.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _computerItem4
-            // 
-            this._computerItem4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem4.BackgroundImage")));
-            this._computerItem4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._computerItem4.Location = new System.Drawing.Point(3, 173);
-            this._computerItem4.Name = "_computerItem4";
-            this._computerItem4.Size = new System.Drawing.Size(162, 164);
-            this._computerItem4.TabIndex = 3;
-            this._computerItem4.Tag = "4";
-            this._computerItem4.UseVisualStyleBackColor = true;
-            this._computerItem4.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _computerItem5
-            // 
-            this._computerItem5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem5.BackgroundImage")));
-            this._computerItem5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._computerItem5.Location = new System.Drawing.Point(171, 173);
-            this._computerItem5.Name = "_computerItem5";
-            this._computerItem5.Size = new System.Drawing.Size(162, 164);
-            this._computerItem5.TabIndex = 4;
-            this._computerItem5.Tag = "5";
-            this._computerItem5.UseVisualStyleBackColor = true;
-            this._computerItem5.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // _computerItem6
-            // 
-            this._computerItem6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_computerItem6.BackgroundImage")));
-            this._computerItem6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this._computerItem6.Location = new System.Drawing.Point(339, 173);
-            this._computerItem6.Name = "_computerItem6";
-            this._computerItem6.Size = new System.Drawing.Size(163, 164);
-            this._computerItem6.TabIndex = 5;
-            this._computerItem6.Tag = "6";
-            this._computerItem6.UseVisualStyleBackColor = true;
-            this._computerItem6.Click += new System.EventHandler(this.ButtonClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
-            this._dataGridViewTextBoxColumn1.FillWeight = 55F;
-            this._dataGridViewTextBoxColumn1.HeaderText = "商品名稱";
-            this._dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this._dataGridViewTextBoxColumn1.ReadOnly = true;
-            this._dataGridViewTextBoxColumn1.Width = 151;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
-            this._dataGridViewTextBoxColumn2.FillWeight = 45F;
-            this._dataGridViewTextBoxColumn2.HeaderText = "商品分類";
-            this._dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this._dataGridViewTextBoxColumn2.ReadOnly = true;
-            this._dataGridViewTextBoxColumn2.Width = 124;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
-            this._dataGridViewTextBoxColumn3.FillWeight = 30F;
-            this._dataGridViewTextBoxColumn3.HeaderText = "單價";
-            this._dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this._dataGridViewTextBoxColumn3.ReadOnly = true;
-            this._dataGridViewTextBoxColumn3.Width = 83;
-            // 
-            // dataGridViewNumericUpDownColumn1
-            // 
-            this._dataGridViewNumericUpDownColumn1.FillWeight = 25F;
-            this._dataGridViewNumericUpDownColumn1.HeaderText = "數量";
-            this._dataGridViewNumericUpDownColumn1.Name = "dataGridViewNumericUpDownColumn1";
-            this._dataGridViewNumericUpDownColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._dataGridViewNumericUpDownColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this._dataGridViewNumericUpDownColumn1.Width = 68;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this._dataGridViewTextBoxColumn4.FillWeight = 30F;
-            this._dataGridViewTextBoxColumn4.HeaderText = "總價";
-            this._dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this._dataGridViewTextBoxColumn4.Width = 83;
-            // 
-            // _delete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this._delete.FillWeight = 25F;
-            this._delete.HeaderText = "刪除";
-            this._delete.Name = "_delete";
-            this._delete.ReadOnly = true;
-            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // _itemName
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
-            this._itemName.FillWeight = 55F;
-            this._itemName.HeaderText = "商品名稱";
-            this._itemName.Name = "_itemName";
-            this._itemName.ReadOnly = true;
-            // 
-            // _itemType
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
-            this._itemType.FillWeight = 45F;
-            this._itemType.HeaderText = "商品分類";
-            this._itemType.Name = "_itemType";
-            this._itemType.ReadOnly = true;
-            // 
-            // _itemPrice
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
-            this._itemPrice.FillWeight = 30F;
-            this._itemPrice.HeaderText = "單價";
-            this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.ReadOnly = true;
-            // 
-            // _number
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._number.DefaultCellStyle = dataGridViewCellStyle5;
-            this._number.FillWeight = 25F;
-            this._number.HeaderText = "數量";
-            this._number.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this._number.Name = "_number";
-            this._number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // _totalPrice
-            // 
-            this._totalPrice.FillWeight = 30F;
-            this._totalPrice.HeaderText = "總價";
-            this._totalPrice.Name = "_totalPrice";
+            // _motherBoardItem3
+            // 
+            this._motherBoardItem3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem3.BackgroundImage")));
+            this._motherBoardItem3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._motherBoardItem3.Location = new System.Drawing.Point(339, 3);
+            this._motherBoardItem3.Name = "_motherBoardItem3";
+            this._motherBoardItem3.Size = new System.Drawing.Size(164, 164);
+            this._motherBoardItem3.TabIndex = 8;
+            this._motherBoardItem3.Tag = "3";
+            this._motherBoardItem3.UseVisualStyleBackColor = true;
+            this._motherBoardItem3.Click += new System.EventHandler(this.ButtonClick);
+            // 
+            // _motherBoardItem2
+            // 
+            this._motherBoardItem2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("_motherBoardItem2.BackgroundImage")));
+            this._motherBoardItem2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this._motherBoardItem2.Location = new System.Drawing.Point(171, 3);
+            this._motherBoardItem2.Name = "_motherBoardItem2";
+            this._motherBoardItem2.Size = new System.Drawing.Size(162, 164);
+            this._motherBoardItem2.TabIndex = 7;
+            this._motherBoardItem2.Tag = "2";
+            this._motherBoardItem2.UseVisualStyleBackColor = true;
+            this._motherBoardItem2.Click += new System.EventHandler(this.ButtonClick);
             // 
             // ShopList
             // 
@@ -1293,19 +1075,6 @@
             this._priceTableLayoutPanel.PerformLayout();
             this._stockTableLayoutPanel1.ResumeLayout(false);
             this._stockTableLayoutPanel1.PerformLayout();
-            this._itemTabControl.ResumeLayout(false);
-            this._motherBoard.ResumeLayout(false);
-            this._motherBoardTableLayoutPanel.ResumeLayout(false);
-            this._centralProcessUnit.ResumeLayout(false);
-            this._centralProcessUnitTableLayoutPanel.ResumeLayout(false);
-            this._memory.ResumeLayout(false);
-            this._memoryTableLayoutPanel.ResumeLayout(false);
-            this._disk.ResumeLayout(false);
-            this._diskTableLayoutPanel.ResumeLayout(false);
-            this._graphicsProcessUnit.ResumeLayout(false);
-            this._graphicsProcessUnitTableLayoutPanel.ResumeLayout(false);
-            this._computer.ResumeLayout(false);
-            this._computerTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1322,56 +1091,8 @@
         private System.Windows.Forms.TableLayoutPanel _descriptionTableLayoutPanel;
         private System.Windows.Forms.RichTextBox _descriptionRichTextBox;
         private System.Windows.Forms.TabControl _itemTabControl;
-        private System.Windows.Forms.TabPage _motherBoard;
-        private System.Windows.Forms.TabPage _memory;
-        private System.Windows.Forms.TabPage _disk;
-        private System.Windows.Forms.TabPage _graphicsProcessUnit;
-        private System.Windows.Forms.TabPage _computer;
         private System.Windows.Forms.Label _totalPriceLabel;
-        private System.Windows.Forms.TableLayoutPanel _memoryTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel _diskTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel _graphicsProcessUnitTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel _computerTableLayoutPanel;
         private System.Windows.Forms.DataGridView _orderDataGridView;
-        private System.Windows.Forms.Button _memoryItem1;
-        private System.Windows.Forms.Button _memoryItem2;
-        private System.Windows.Forms.Button _memoryItem3;
-        private System.Windows.Forms.Button _memoryItem4;
-        private System.Windows.Forms.Button _diskItem1;
-        private System.Windows.Forms.Button _diskItem2;
-        private System.Windows.Forms.Button _diskItem3;
-        private System.Windows.Forms.Button _graphicsProcessUnitItem1;
-        private System.Windows.Forms.Button _graphicsProcessUnitItem2;
-        private System.Windows.Forms.Button _graphicsProcessUnitItem3;
-        private System.Windows.Forms.Button _graphicsProcessUnitItem4;
-        private System.Windows.Forms.Button _computerItem1;
-        private System.Windows.Forms.Button _computerItem2;
-        private System.Windows.Forms.Button _computerItem3;
-        private System.Windows.Forms.Button _computerItem4;
-        private System.Windows.Forms.Button _computerItem5;
-        private System.Windows.Forms.TabPage _centralProcessUnit;
-        private System.Windows.Forms.TableLayoutPanel _centralProcessUnitTableLayoutPanel;
-        private System.Windows.Forms.Button _centralProcessUnitItem1;
-        private System.Windows.Forms.Button _centralProcessUnitItem2;
-        private System.Windows.Forms.Button _centralProcessUnitItem3;
-        private System.Windows.Forms.Button _centralProcessUnitItem4;
-        private System.Windows.Forms.Button _centralProcessUnitItem5;
-        private System.Windows.Forms.Button _centralProcessUnitItem6;
-        private System.Windows.Forms.Button _memoryItem5;
-        private System.Windows.Forms.Button _memoryItem6;
-        private System.Windows.Forms.Button _diskItem4;
-        private System.Windows.Forms.Button _diskItem5;
-        private System.Windows.Forms.Button _diskItem6;
-        private System.Windows.Forms.Button _graphicsProcessUnitItem5;
-        private System.Windows.Forms.Button _graphicsProcessUnitItem6;
-        private System.Windows.Forms.Button _computerItem6;
-        private System.Windows.Forms.TableLayoutPanel _motherBoardTableLayoutPanel;
-        private System.Windows.Forms.Button _motherBoardItem2;
-        private System.Windows.Forms.Button _motherBoardItem3;
-        private System.Windows.Forms.Button _motherBoardItem4;
-        private System.Windows.Forms.Button _motherBoardItem5;
-        private System.Windows.Forms.Button _motherBoardItem6;
-        internal System.Windows.Forms.Button _motherBoardItem1;
         private System.Windows.Forms.Button _orderButton;
         private System.Windows.Forms.TableLayoutPanel _itemControlTableLayoutPanel;
         private System.Windows.Forms.Button _addToCartButton;
@@ -1400,6 +1121,47 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemPrice;
         private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn _number;
         private System.Windows.Forms.DataGridViewTextBoxColumn _totalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn dataGridViewNumericUpDownColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button _computerItem6;
+        private System.Windows.Forms.Button _computerItem5;
+        private System.Windows.Forms.Button _computerItem4;
+        private System.Windows.Forms.Button _computerItem3;
+        private System.Windows.Forms.Button _computerItem2;
+        private System.Windows.Forms.Button _computerItem1;
+        private System.Windows.Forms.Button _graphicsProcessUnitItem5;
+        private System.Windows.Forms.Button _graphicsProcessUnitItem1;
+        private System.Windows.Forms.Button _graphicsProcessUnitItem6;
+        private System.Windows.Forms.Button _graphicsProcessUnitItem4;
+        private System.Windows.Forms.Button _graphicsProcessUnitItem3;
+        private System.Windows.Forms.Button _graphicsProcessUnitItem2;
+        private System.Windows.Forms.Button _diskItem6;
+        private System.Windows.Forms.Button _diskItem5;
+        private System.Windows.Forms.Button _diskItem4;
+        private System.Windows.Forms.Button _diskItem3;
+        private System.Windows.Forms.Button _diskItem2;
+        private System.Windows.Forms.Button _diskItem1;
+        private System.Windows.Forms.Button _memoryItem6;
+        private System.Windows.Forms.Button _memoryItem5;
+        private System.Windows.Forms.Button _memoryItem4;
+        private System.Windows.Forms.Button _memoryItem3;
+        private System.Windows.Forms.Button _memoryItem2;
+        private System.Windows.Forms.Button _memoryItem1;
+        private System.Windows.Forms.Button _centralProcessUnitItem6;
+        private System.Windows.Forms.Button _centralProcessUnitItem5;
+        private System.Windows.Forms.Button _centralProcessUnitItem4;
+        private System.Windows.Forms.Button _centralProcessUnitItem3;
+        private System.Windows.Forms.Button _centralProcessUnitItem2;
+        private System.Windows.Forms.Button _centralProcessUnitItem1;
+        internal System.Windows.Forms.Button _motherBoardItem1;
+        private System.Windows.Forms.Button _motherBoardItem6;
+        private System.Windows.Forms.Button _motherBoardItem5;
+        private System.Windows.Forms.Button _motherBoardItem4;
+        private System.Windows.Forms.Button _motherBoardItem3;
+        private System.Windows.Forms.Button _motherBoardItem2;
     }
 }
 

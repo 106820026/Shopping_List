@@ -9,6 +9,7 @@ namespace ShopList
     class ProductManagementSystemPresentationModel
     {
         #region Member Data
+        Initial _initial;
         const String MOTHER_BOARD = "主機板";
         const String CENTRAL_PROCESS_UNIT = "CPU";
         const String MEMORY = "記憶體";
@@ -16,12 +17,23 @@ namespace ShopList
         const String GRAPHICS_PROCESS_UNIT = "顯卡";
         const String COMPUTER = "套裝電腦";
         String[] _types = { MOTHER_BOARD, CENTRAL_PROCESS_UNIT, MEMORY, DISK, GRAPHICS_PROCESS_UNIT, COMPUTER };
+        const String MODEL = "model";
+        const String PRICE = "price";
+        const String TYPE = "type";
+        const String PATH = "picture";
+        const String DETAIL = "detail";
+        String[] _keys = { MODEL, PRICE, TYPE, PATH, DETAIL};
         bool _nameValid = false;
         bool _priceValid = false;
         bool _typeValid = false;
         bool _pathValid = false;
         const int DELETE_BUTTON = 8;
         #endregion
+
+        public ProductManagementSystemPresentationModel(Initial initial)
+        {
+            _initial = initial;
+        }
 
         // 回傳商品類別的index
         public int GetItemType(String itemType)
@@ -73,6 +85,14 @@ namespace ShopList
             if (_nameValid == true && _priceValid == true && _typeValid == true && _pathValid == true)
                 return true;
             return false;
+        }
+
+        // 修改商品
+        public void ModifyItem(int itemIndex, String[] content)
+        {
+            String section = _initial.GetAllSections()[itemIndex];
+            for (int i = 0; i < content.Length; i++)
+                _initial.Write(section, _keys[i], content[i]);
         }
     }
 }

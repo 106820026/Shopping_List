@@ -28,8 +28,9 @@ namespace ShopList
         const int SUBTOTAL_COLUMN_INDEX = 5;
         String _currentTabName;
         Initial _initial;
-        TableLayoutPanel[] _tabTableLayoutPanel;
+        //TableLayoutPanel[] _tabTableLayoutPanel;
         ShopListPresentationModel _shopListControl;
+        ItemTabControlPages _itemTabControlPages;
         CreditCardPayment _creditCardPayment = new CreditCardPayment();
         #endregion
 
@@ -38,6 +39,7 @@ namespace ShopList
             InitializeComponent();
             this._initial = initial;
             _shopListControl = new ShopListPresentationModel(_initial);
+            _itemTabControlPages = new ItemTabControlPages(_itemTabControl, _initial);
             _initial._writeNewData += UpdateStock;
             this.InitialForm();
         }
@@ -48,7 +50,7 @@ namespace ShopList
             this.CheckChangePageButton();
             this.ShowCurrentAndTotalPage();
             _addToCartButton.Enabled = _orderButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
-            _tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _memoryTableLayoutPanel, _diskTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
+            //_tabTableLayoutPanel = new TableLayoutPanel[] { _motherBoardTableLayoutPanel, _centralProcessUnitTableLayoutPanel, _memoryTableLayoutPanel, _diskTableLayoutPanel, _graphicsProcessUnitTableLayoutPanel, _computerTableLayoutPanel };
             this.GetCurrentTabIndex(); // 目前Tab頁數
             _shopListControl.SetRowCount(_orderDataGridView.RowCount); // 購物車商品數量
             _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); //顯示總價錢
@@ -161,6 +163,8 @@ namespace ShopList
             _stockLabel.Text = _shopListControl.GetStock();
         }
 
+        // 修改商品名稱時 更新名稱
+
         // 取得目前Tab的name
         private void GetCurrentTabName()
         {
@@ -213,20 +217,20 @@ namespace ShopList
         // 設定按鈕圖片
         private void SetPicture()
         {
-            foreach (Control button in _tabTableLayoutPanel[_itemTabControl.SelectedIndex].Controls)
-            {
-                String _filePath = FOLDER + _currentTabName + PAGE + _currentPageLabel.Text.ToString() + ITEM + button.Tag.ToString() + ATTACHMENT_NAME;
-                if (File.Exists(_filePath))
-                {
-                    button.BackgroundImage = Image.FromFile(_filePath);
-                    ChangeButtonStatus(button, true);
-                }
-                else
-                {
-                    button.BackgroundImage = null;
-                    ChangeButtonStatus(button, false);
-                }
-            }
+            //foreach (Control button in _tabTableLayoutPanel[_itemTabControl.SelectedIndex].Controls)
+            //{
+            //    String _filePath = FOLDER + _currentTabName + PAGE + _currentPageLabel.Text.ToString() + ITEM + button.Tag.ToString() + ATTACHMENT_NAME;
+            //    if (File.Exists(_filePath))
+            //    {
+            //        button.BackgroundImage = Image.FromFile(_filePath);
+            //        ChangeButtonStatus(button, true);
+            //    }
+            //    else
+            //    {
+            //        button.BackgroundImage = null;
+            //        ChangeButtonStatus(button, false);
+            //    }
+            //}
         }
 
         // 更新ini檔

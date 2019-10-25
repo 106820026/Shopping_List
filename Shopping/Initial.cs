@@ -15,6 +15,7 @@ namespace ShopList
         public delegate void WriteNewDataEventHandler();
         private string _filePath;
         StringCollection _sectionList = new StringCollection();
+        List<String> types;
         const String MODEL_KEY = "model";
         const String SEPARATE_LINE = "\n-----------------------------------\n"; // 我是分隔線
         const String DETAIL_KEY = "detail";
@@ -51,9 +52,9 @@ namespace ShopList
         // 寫入檔案
         public void Write(string section, string key, string value)
         {
-            WritePrivateProfileString(section, key, value.ToLower(), this._filePath);
+            WritePrivateProfileString(section, key, value, this._filePath);
             if (_writeNewData != null)
-                this._writeNewData(); // 如果ini檔有變動 需要重新load DGV
+                this._writeNewData(); // 如果ini檔有變動 發出訊號
         }
 
         // 讀取檔案
@@ -97,6 +98,18 @@ namespace ShopList
         {
             this.ReadSections(_sectionList);
             return _sectionList;
+        }
+
+        // 取得所有type
+        public List<String> GetAllType()
+        {
+            types = new List<string>();
+            foreach (String section in this.GetAllSections())
+            {
+                if (!types.Contains(this.Read(section, TYPE_KEY)))
+                    types.Add(this.Read(section, TYPE_KEY));
+            }
+            return types;
         }
 
         // 檔案位置

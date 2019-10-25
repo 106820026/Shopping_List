@@ -13,8 +13,9 @@ namespace ShopList
 {
     public partial class ProductManagementSystem : Form
     {
+        #region Member Data
         Initial _initial;
-        ProductManagementSystemPresentationModel _productManagementSystemPresentationModel = new ProductManagementSystemPresentationModel();
+        ProductManagementSystemPresentationModel _productManagementSystemPresentationModel;
         OpenFileDialog _openFileDialog = new OpenFileDialog();
         List<String> _allSectionList = new List<string>();
         int _currentItemIndex; //目前選取item的Index
@@ -22,11 +23,18 @@ namespace ShopList
         bool _addMode = false;
         const String OPEN = "開啟";
         const String FILE_FORMAT = "圖片格式(*.jpg,*.gif,*.bmp)|*.jpg;*.gif;*.bmp";
+        const String EDIT_ITEM = "編輯商品";
+        const String ADD_ITEM = "新增商品";
+        const String SAVE = "儲存";
+        const String ADD_NEW = "新增";
+        #endregion
 
         public ProductManagementSystem(Initial initial)
         {
             InitializeComponent();
             _initial = initial;
+            _initial._writeNewData += UpdateListBox;
+            _productManagementSystemPresentationModel = new ProductManagementSystemPresentationModel(_initial);
             this.InitialForm();
             this.ShowAllItemNames();
         }
@@ -44,6 +52,9 @@ namespace ShopList
             _currentItemIndex = ((ListBox)sender).SelectedIndex;
             ShowAllDetails(_currentItemIndex);
             _saveButton.Enabled = false;
+            _addNewItemButton.Enabled = true;
+            _titleGroupBox.Text = EDIT_ITEM;
+            _saveButton.Text = SAVE;
             this.SetEditMode(true);
             this.EnableEdit(true);
         }
@@ -152,13 +163,16 @@ namespace ShopList
             }
         }
 
-        // 新增商品
+        // 新增或修改商品
         private void ClickAddNewItemButton(object sender, EventArgs e)
         {
             this.SetEditMode(false);
             this.CleanAllDetail();
             this.EnableEdit(true);
+            _titleGroupBox.Text = ADD_ITEM;
+            _saveButton.Text = ADD_NEW;
             _saveButton.Enabled = false;
+            _addNewItemButton.Enabled = false;
         }
 
         // 清除所有欄位
@@ -169,6 +183,29 @@ namespace ShopList
             _itemPicturePathTextBox.Text = "";
             _itemDescriptionTextBox.Text = "";
             _itemCategoryComboBox.SelectedIndex = -1;
+        }
+
+        //按下新增或修改按鈕
+        private void ClickSaveButton(object sender, EventArgs e)
+        {
+            if (_editMode) // 修改
+                _productManagementSystemPresentationModel.ModifyItem(_currentItemIndex, this.GetAllInput());
+            //if(_addMode) // 新增
+            _saveButton.Enabled = false;
+        }
+
+        // 取得所有修改或新增的資料
+        private String[] GetAllInput()
+        {
+            String[]  _content = new String[] { _itemNameTextBox.Text, _itemPriceTextBox.Text, _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
+            return _content;
+        }
+
+        // 更新儲存完的ListBox
+        private void UpdateListBox()
+        {
+            _itemsListBox.Items[_currentItemIndex] = "";
+            _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
         }
     }
 }

@@ -34,7 +34,7 @@
             this._itemManagementTabPage = new System.Windows.Forms.TabPage();
             this._tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._addNewItemButton = new System.Windows.Forms.Button();
-            this._editItemGroupBox = new System.Windows.Forms.GroupBox();
+            this._titleGroupBox = new System.Windows.Forms.GroupBox();
             this._tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this._tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this._itemNameLabel = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this._managementTabControl.SuspendLayout();
             this._itemManagementTabPage.SuspendLayout();
             this._tableLayoutPanel1.SuspendLayout();
-            this._editItemGroupBox.SuspendLayout();
+            this._titleGroupBox.SuspendLayout();
             this._tableLayoutPanel2.SuspendLayout();
             this._tableLayoutPanel3.SuspendLayout();
             this._tableLayoutPanel4.SuspendLayout();
@@ -118,7 +118,7 @@
             this._tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this._tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this._tableLayoutPanel1.Controls.Add(this._addNewItemButton, 0, 1);
-            this._tableLayoutPanel1.Controls.Add(this._editItemGroupBox, 1, 0);
+            this._tableLayoutPanel1.Controls.Add(this._titleGroupBox, 1, 0);
             this._tableLayoutPanel1.Controls.Add(this._saveButton, 1, 1);
             this._tableLayoutPanel1.Controls.Add(this._itemsListBox, 0, 0);
             this._tableLayoutPanel1.Location = new System.Drawing.Point(0, 3);
@@ -141,15 +141,15 @@
             this._addNewItemButton.UseVisualStyleBackColor = true;
             this._addNewItemButton.Click += new System.EventHandler(this.ClickAddNewItemButton);
             // 
-            // _editItemGroupBox
+            // _titleGroupBox
             // 
-            this._editItemGroupBox.Controls.Add(this._tableLayoutPanel2);
-            this._editItemGroupBox.Location = new System.Drawing.Point(256, 3);
-            this._editItemGroupBox.Name = "_editItemGroupBox";
-            this._editItemGroupBox.Size = new System.Drawing.Size(586, 468);
-            this._editItemGroupBox.TabIndex = 2;
-            this._editItemGroupBox.TabStop = false;
-            this._editItemGroupBox.Text = "編輯商品";
+            this._titleGroupBox.Controls.Add(this._tableLayoutPanel2);
+            this._titleGroupBox.Location = new System.Drawing.Point(256, 3);
+            this._titleGroupBox.Name = "_titleGroupBox";
+            this._titleGroupBox.Size = new System.Drawing.Size(586, 468);
+            this._titleGroupBox.TabIndex = 2;
+            this._titleGroupBox.TabStop = false;
+            this._titleGroupBox.Text = "編輯商品";
             // 
             // _tableLayoutPanel2
             // 
@@ -368,6 +368,7 @@
             this._saveButton.TabIndex = 3;
             this._saveButton.Text = "儲存";
             this._saveButton.UseVisualStyleBackColor = true;
+            this._saveButton.Click += new System.EventHandler(this.ClickSaveButton);
             // 
             // _itemsListBox
             // 
@@ -403,7 +404,7 @@
             this._managementTabControl.ResumeLayout(false);
             this._itemManagementTabPage.ResumeLayout(false);
             this._tableLayoutPanel1.ResumeLayout(false);
-            this._editItemGroupBox.ResumeLayout(false);
+            this._titleGroupBox.ResumeLayout(false);
             this._tableLayoutPanel2.ResumeLayout(false);
             this._tableLayoutPanel2.PerformLayout();
             this._tableLayoutPanel3.ResumeLayout(false);
@@ -424,7 +425,7 @@
         private System.Windows.Forms.TabPage _itemManagementTabPage;
         private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel1;
         private System.Windows.Forms.Button _addNewItemButton;
-        private System.Windows.Forms.GroupBox _editItemGroupBox;
+        private System.Windows.Forms.GroupBox _titleGroupBox;
         private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel3;
         private System.Windows.Forms.Label _itemNameLabel;
