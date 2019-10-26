@@ -10,13 +10,14 @@ namespace ShopList
     {
         #region Member Data
         Initial _initial;
-        const String MOTHER_BOARD = "主機板";
-        const String CENTRAL_PROCESS_UNIT = "CPU";
-        const String MEMORY = "記憶體";
-        const String DISK = "硬碟";
-        const String GRAPHICS_PROCESS_UNIT = "顯卡";
-        const String COMPUTER = "套裝電腦";
-        String[] _types = { MOTHER_BOARD, CENTRAL_PROCESS_UNIT, MEMORY, DISK, GRAPHICS_PROCESS_UNIT, COMPUTER };
+        ProductTypeManagement _productTypeManagement;
+        //const String MOTHER_BOARD = "主機板";
+        //const String CENTRAL_PROCESS_UNIT = "CPU";
+        //const String MEMORY = "記憶體";
+        //const String DISK = "硬碟";
+        //const String GRAPHICS_PROCESS_UNIT = "顯卡";
+        //const String COMPUTER = "套裝電腦";
+        //String[] _types = { MOTHER_BOARD, CENTRAL_PROCESS_UNIT, MEMORY, DISK, GRAPHICS_PROCESS_UNIT, COMPUTER };
         const String MODEL = "model";
         const String PRICE = "price";
         const String TYPE = "type";
@@ -30,16 +31,23 @@ namespace ShopList
         const int DELETE_BUTTON = 8;
         #endregion
 
-        public ProductManagementSystemPresentationModel(Initial initial)
+        public ProductManagementSystemPresentationModel(Initial initial, ProductTypeManagement productTypeManagement)
         {
             _initial = initial;
+            _productTypeManagement = productTypeManagement;
+        }
+
+        // 設定類別的comboBox
+        public  List<String> GetTypes()
+        {
+            return _initial.GetAllType();
         }
 
         // 回傳商品類別的index
         public int GetItemType(String itemType)
         {
-            for (int i = 0; i < _types.Length; i++)
-                if (itemType == _types[i])
+            for (int i = 0; i < this.GetTypes().Count; i++)
+                if (itemType == this.GetTypes()[i])
                     return i;
             return 0;
         }

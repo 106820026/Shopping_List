@@ -16,8 +16,9 @@ namespace ShopList
         #region Member Data
         Initial _initial;
         ProductManagementSystemPresentationModel _productManagementSystemPresentationModel;
+        ProductTypeManagement _productTypeManagement;
         OpenFileDialog _openFileDialog = new OpenFileDialog();
-        List<String> _allSectionList = new List<string>();
+        List<String> _allSection = new List<string>();
         int _currentItemIndex; //目前選取item的Index
         bool _editMode = false;
         bool _addMode = false;
@@ -29,12 +30,13 @@ namespace ShopList
         const String ADD_NEW = "新增";
         #endregion
 
-        public ProductManagementSystem(Initial initial)
+        public ProductManagementSystem(Initial initial, ProductTypeManagement productTypeManagement)
         {
             InitializeComponent();
             _initial = initial;
             _initial._writeNewData += UpdateListBox;
-            _productManagementSystemPresentationModel = new ProductManagementSystemPresentationModel(_initial);
+            _productTypeManagement = productTypeManagement;
+            _productManagementSystemPresentationModel = new ProductManagementSystemPresentationModel(_initial, _productTypeManagement);
             this.InitialForm();
             this.ShowAllItemNames();
         }
@@ -42,8 +44,17 @@ namespace ShopList
         // 初始化視窗
         private void InitialForm()
         {
-            _allSectionList = _initial.GetAllSections().Cast<String>().ToList(); // 取得所有商品Section的List
+            _allSection = _initial.GetAllSections().Cast<String>().ToList(); // 取得所有商品Section的List
+            this.InitialComboBox();
             _saveButton.Enabled = false;
+        }
+
+        // 初始化ComboBox選項
+        private void InitialComboBox()
+        {
+            List<String> types = _productManagementSystemPresentationModel.GetTypes();
+            _itemCategoryComboBox.DataSource = types;
+            _itemCategoryComboBox.SelectedIndex = -1;
         }
 
         // 點擊ListBox,顯示右方詳細資訊
@@ -62,7 +73,7 @@ namespace ShopList
         // 在ListBox中顯示所有商品名稱
         public void ShowAllItemNames()
         {
-            foreach (String section in _allSectionList)
+            foreach (String section in _allSection)
                 _itemsListBox.Items.Add(_initial.GetName(section));
         }
 
@@ -70,10 +81,10 @@ namespace ShopList
         private void ShowAllDetails(int index)
         {
             _itemNameTextBox.Text = _itemsListBox.SelectedItem.ToString();
-            _itemPriceTextBox.Text = _initial.GetPrice(_allSectionList[index]);
-            _itemPicturePathTextBox.Text = _initial.GetPicturePath(_allSectionList[index]);
-            _itemDescriptionTextBox.Text = _initial.GetDetail(_allSectionList[index]);
-            _itemCategoryComboBox.SelectedIndex = _productManagementSystemPresentationModel.GetItemType(_initial.GetType(_allSectionList[index]));
+            _itemPriceTextBox.Text = _initial.GetPrice(_allSection[index]);
+            _itemPicturePathTextBox.Text = _initial.GetPicturePath(_allSection[index]);
+            _itemDescriptionTextBox.Text = _initial.GetDetail(_allSection[index]);
+            _itemCategoryComboBox.SelectedIndex = _productManagementSystemPresentationModel.GetItemType(_initial.GetType(_allSection[index]));
         }
 
         // 編輯名稱

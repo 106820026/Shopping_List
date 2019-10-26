@@ -12,6 +12,8 @@ namespace ShopList
     {
         #region Member Data
         Initial _initial;
+        ItemTabControlPages _itemTabControlPages;
+        ProductTypeManagement _productTypeManagement;
         AddToCart _cart;
         const String MODEL_KEY = "model";
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
@@ -58,9 +60,11 @@ namespace ShopList
         const int COMPUTER = FIVE;
         #endregion
         
-        public ShopListPresentationModel(Initial initial)
+        public ShopListPresentationModel(Initial initial, ItemTabControlPages itemTabControlPages, ProductTypeManagement productTypeManagement)
         {
             this._initial = initial;
+            this._itemTabControlPages = itemTabControlPages;
+            this._productTypeManagement = productTypeManagement;
             _cart = new AddToCart(_initial);
             _allCurrentPage = new int[] { _motherBoardCurrentPage, _centralProcessUnitCurrentPage, _diskCurrentPage, _memoryCurrentPage, _graphicsProcessUnitCurrentPage, _computerCurrentPage };
             _allTotalPage = new int[] { _motherBoardTotalPage, _centralProcessUnitTotalPage, _diskTotalPage, _memoryTotalPage, _graphicsProcessUnitTotalPage, _computerTotalPage };
@@ -81,9 +85,11 @@ namespace ShopList
         }
 
         // 取得商品名稱
-        public void GetCurrentItemName(String buttonName)
+        public void GetCurrentItemName(int tag, String tabName)
         {
-            _currentItemName = buttonName + PAGE + _allCurrentPage[_currentTabIndex];
+            int index = 6 * (int.Parse(_itemTabControlPages.GetCurrentPage()) - 1) + tag;
+            Console.WriteLine(tag);
+            _currentItemName = _productTypeManagement.GetCuttentTypeItemSections(tabName)[index];
         }
 
         // 顯示商品詳細資訊
@@ -92,17 +98,17 @@ namespace ShopList
             return _initial.GetDescription(_currentItemName);
         }
 
-        // 顯示目前頁數
-        public String GetCurrentPage()
-        {
-            return _allCurrentPage[_currentTabIndex].ToString();
-        }
+        //// 顯示目前頁數
+        //public String GetCurrentPage()
+        //{
+        //    return _allCurrentPage[_currentTabIndex].ToString();
+        //}
 
-        // 顯示總頁數
-        public String GetTotalPage()
-        {
-            return _allTotalPage[_currentTabIndex].ToString();
-        }
+        //// 顯示總頁數
+        //public String GetTotalPage()
+        //{
+        //    return _allTotalPage[_currentTabIndex].ToString();
+        //}
 
         // 刪除購物車內容
         public void DeleteCartItem(int rowIndex)
@@ -137,22 +143,29 @@ namespace ShopList
         // 翻頁
         public void ChangePage(String itemName)
         {
+            //if (itemName == NEXT_PAGE_BUTTON)
+            //    _allCurrentPage[_currentTabIndex] += 1; // 頁數+1
+            //if (itemName == LAST_PAGE_BUTTON)
+            //    _allCurrentPage[_currentTabIndex] -= 1; // 頁數-1
             if (itemName == NEXT_PAGE_BUTTON)
-                _allCurrentPage[_currentTabIndex] += 1; // 頁數+1
+                int.Parse(_itemTabControlPages.ChangePage(1));
             if (itemName == LAST_PAGE_BUTTON)
-                _allCurrentPage[_currentTabIndex] -= 1; // 頁數-1
+                int.Parse(_itemTabControlPages.ChangePage(-1));
+
         }
 
         //是否為第一頁
         public bool IsFirstPage()
         {
-            return _allCurrentPage[_currentTabIndex] == 1;
+            //return _allCurrentPage[_currentTabIndex] == 1;
+            return int.Parse(_itemTabControlPages.GetCurrentPage()) == 1;
         }
 
         // 是否為最後一頁
         public bool IsLastPage()
         {
-            return _allCurrentPage[_currentTabIndex] == _allTotalPage[_currentTabIndex];
+            //return _allCurrentPage[_currentTabIndex] == _allTotalPage[_currentTabIndex];
+            return int.Parse(_itemTabControlPages.GetCurrentPage()) == int.Parse(_itemTabControlPages.GetTotalPage());
         }
 
         // 確認訂購按鈕可以按下

@@ -65,6 +65,7 @@ namespace ShopList
             return stringBuilder.ToString();
         }
 
+        #region 讀所有Section的function
         //從Ini文件中，讀取所有的Sections的名稱
         public void ReadSections(StringCollection sectionList)
         {
@@ -92,6 +93,7 @@ namespace ShopList
                 }
             }
         }
+        #endregion
 
         // 回傳所有Section
         public StringCollection GetAllSections()

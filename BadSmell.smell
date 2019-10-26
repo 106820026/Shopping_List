@@ -268,6 +268,22 @@
             </Smell>
             <Smell>
               <Id>6</Id>
+              <SmellType>Long parameter list(過長參數列)</SmellType>
+              <HashCode>LongParameterList.ProductManagementSystemPresentationModel.ModifyItem.String itemIndex;String name;String price;int index;String path;String detail;</HashCode>
+              <Severity>Red</Severity>
+              <Weight>6</Weight>
+              <Project>ShopList</Project>
+              <File>ProductManagementSystemPresentationModel.cs</File>
+              <Line>79</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
               <SmellType>Unsuitable naming(名不符實)-Replenishment(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ShopList.Replenishment.Replenishment</HashCode>
               <Severity>Red</Severity>
@@ -283,7 +299,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>7</Id>
+              <Id>8</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentControl(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._replenishmentControl._replenishmentControl</HashCode>
               <Severity>Red</Severity>
@@ -299,7 +315,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>8</Id>
+              <Id>9</Id>
               <SmellType>Unsuitable naming(名不符實)-Replenishment(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ShopList.Replenishment.Replenishment</HashCode>
               <Severity>Red</Severity>
@@ -315,7 +331,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>9</Id>
+              <Id>10</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentTableLayoutPanel(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._replenishmentTableLayoutPanel._replenishmentTableLayoutPanel</HashCode>
               <Severity>Red</Severity>
@@ -331,7 +347,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>10</Id>
+              <Id>11</Id>
               <SmellType>Unsuitable naming(名不符實)-_itemReplenishmentNumberLabel(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._itemReplenishmentNumberLabel._itemReplenishmentNumberLabel</HashCode>
               <Severity>Red</Severity>
@@ -347,7 +363,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>11</Id>
+              <Id>12</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentTextBox(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._replenishmentTextBox._replenishmentTextBox</HashCode>
               <Severity>Red</Severity>
@@ -363,7 +379,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>12</Id>
+              <Id>13</Id>
               <SmellType>Unsuitable naming(名不符實)-ReplenishmentPresentationModel(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ShopList.ReplenishmentPresentationModel.ReplenishmentPresentationModel</HashCode>
               <Severity>Red</Severity>
@@ -379,7 +395,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>13</Id>
+              <Id>14</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentNumber(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ReplenishmentPresentationModel._replenishmentNumber._replenishmentNumber</HashCode>
               <Severity>Red</Severity>
@@ -395,7 +411,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>14</Id>
+              <Id>15</Id>
               <SmellType>Unsuitable naming(名不符實)-GetReplenishmentNumber(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ReplenishmentPresentationModel.GetReplenishmentNumber.GetReplenishmentNumber</HashCode>
               <Severity>Red</Severity>
@@ -552,7 +568,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>4808</ProductionLoc>
+          <ProductionLoc>4827</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

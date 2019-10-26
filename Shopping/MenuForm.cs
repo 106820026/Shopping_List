@@ -16,17 +16,19 @@ namespace ShopList
         InventorySystem _inventorySystem;
         ProductManagementSystem _productManagementSystem;
         Initial _initial = new Initial(FILE_PATH);
+        ProductTypeManagement _productTypeManagerment;
         const String FILE_PATH = "../../Data Info.ini";
 
         public MenuForm()
         {
             InitializeComponent();
+            _productTypeManagerment = new ProductTypeManagement(_initial);
         }
 
         // 開啟網購視窗
         private void ClickOrderSystemButton(object sender, EventArgs e)
         {
-            _shopList = new ShopList(_initial);
+            _shopList = new ShopList(_initial, _productTypeManagerment);
             _shopList.Show();
             _orderSystemButton.Enabled = false;
             this._shopList.FormClosed += ResetOrderButton;
@@ -44,7 +46,7 @@ namespace ShopList
         // 開啟庫存管理視窗
         private void ClickProductManagementSystemButton(object sender, EventArgs e)
         {
-            _productManagementSystem = new ProductManagementSystem(_initial);
+            _productManagementSystem = new ProductManagementSystem(_initial, _productTypeManagerment);
             _productManagementSystem.Show();
             _productManagementSystemButton.Enabled = false;
             this._productManagementSystem.FormClosed += ResetProductManagementSystemButton;
