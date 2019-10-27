@@ -43,15 +43,6 @@ namespace ShopList
             return _initial.GetAllType();
         }
 
-        // 回傳商品類別的index
-        public int GetItemType(String itemType)
-        {
-            for (int i = 0; i < this.GetTypes().Count; i++)
-                if (itemType == this.GetTypes()[i])
-                    return i;
-            return 0;
-        }
-
         // 名字是否為空
         public void ConfirmName(String text)
         {

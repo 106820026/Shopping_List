@@ -84,7 +84,7 @@ namespace ShopList
             _itemPriceTextBox.Text = _initial.GetPrice(_allSection[index]);
             _itemPicturePathTextBox.Text = _initial.GetPicturePath(_allSection[index]);
             _itemDescriptionTextBox.Text = _initial.GetDetail(_allSection[index]);
-            _itemCategoryComboBox.SelectedIndex = _productManagementSystemPresentationModel.GetItemType(_initial.GetType(_allSection[index]));
+            _itemCategoryComboBox.Text = _initial.GetType(_allSection[index]);
         }
 
         // 編輯名稱
@@ -174,7 +174,7 @@ namespace ShopList
             }
         }
 
-        // 新增或修改商品
+        // 新增商品
         private void ClickAddNewItemButton(object sender, EventArgs e)
         {
             this.SetEditMode(false);
