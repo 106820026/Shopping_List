@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,24 +12,25 @@ namespace ShopList
         #region Member Data
         Initial _initial;
         ProductTypeManagement _productTypeManagement;
-        //const String MOTHER_BOARD = "主機板";
-        //const String CENTRAL_PROCESS_UNIT = "CPU";
-        //const String MEMORY = "記憶體";
-        //const String DISK = "硬碟";
-        //const String GRAPHICS_PROCESS_UNIT = "顯卡";
-        //const String COMPUTER = "套裝電腦";
-        //String[] _types = { MOTHER_BOARD, CENTRAL_PROCESS_UNIT, MEMORY, DISK, GRAPHICS_PROCESS_UNIT, COMPUTER };
+        const String ZERO = "0";
         const String MODEL = "model";
         const String PRICE = "price";
         const String TYPE = "type";
         const String PATH = "picture";
         const String DETAIL = "detail";
+        const String STOCK = "stock";
+        const String DESTINATION = "../../Resources/";
         String[] _keys = { MODEL, PRICE, TYPE, PATH, DETAIL};
         bool _nameValid = false;
         bool _priceValid = false;
         bool _typeValid = false;
         bool _pathValid = false;
         const int DELETE_BUTTON = 8;
+        const int NAME_INDEX = 0;
+        const int PRICE_INDEX = 1;
+        const int TYPE_INDEX = 2;
+        const int PATH_INDEX = 3;
+        const int DETAIL_INDEX = 4;
         #endregion
 
         public ProductManagementSystemPresentationModel(Initial initial, ProductTypeManagement productTypeManagement)
@@ -90,8 +92,35 @@ namespace ShopList
         public void ModifyItem(int itemIndex, String[] content)
         {
             String section = _initial.GetAllSections()[itemIndex];
+            content[3] = this.CopyFileToResources(content[3]);
             for (int i = 0; i < content.Length; i++)
                 _initial.Write(section, _keys[i], content[i]);
+        }
+
+        // 把選取的相片存到內部資料夾
+        public String CopyFileToResources(String filePath)
+        {
+            System.IO.FileInfo file = new System.IO.FileInfo(filePath);
+            try
+            {
+                file.CopyTo(DESTINATION + file.Name);
+            }
+            catch (IOException ex)
+            {
+
+            }
+            return DESTINATION + file.Name;
+        }
+
+        // 新增商品
+        public void AddNewItem(String[] content)
+        {
+            _initial.Write(content[NAME_INDEX], MODEL, content[NAME_INDEX]);
+            _initial.Write(content[NAME_INDEX], TYPE, content[TYPE_INDEX]);
+            _initial.Write(content[NAME_INDEX], DETAIL, content[DETAIL_INDEX]);
+            _initial.Write(content[NAME_INDEX], PRICE, content[PRICE_INDEX]);
+            _initial.Write(content[NAME_INDEX], STOCK, ZERO);
+            _initial.Write(content[NAME_INDEX], PATH, content[PATH_INDEX]);
         }
     }
 }

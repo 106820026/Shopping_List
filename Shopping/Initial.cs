@@ -15,7 +15,8 @@ namespace ShopList
         public delegate void WriteNewDataEventHandler();
         private string _filePath;
         StringCollection _sectionList = new StringCollection();
-        List<String> types;
+        List<String> _types;
+        String _changedSection;
         const String MODEL_KEY = "model";
         const String SEPARATE_LINE = "\n-----------------------------------\n"; // 我是分隔線
         const String DETAIL_KEY = "detail";
@@ -53,6 +54,7 @@ namespace ShopList
         public void Write(string section, string key, string value)
         {
             WritePrivateProfileString(section, key, value, this._filePath);
+            _changedSection = section;
             if (_writeNewData != null)
                 this._writeNewData(); // 如果ini檔有變動 發出訊號
         }
@@ -105,13 +107,13 @@ namespace ShopList
         // 取得所有type
         public List<String> GetAllType()
         {
-            types = new List<string>();
+            _types = new List<string>();
             foreach (String section in this.GetAllSections())
             {
-                if (!types.Contains(this.Read(section, TYPE_KEY)))
-                    types.Add(this.Read(section, TYPE_KEY));
+                if (!_types.Contains(this.Read(section, TYPE_KEY)))
+                    _types.Add(this.Read(section, TYPE_KEY));
             }
-            return types;
+            return _types;
         }
 
         // 檔案位置
@@ -183,6 +185,12 @@ namespace ShopList
             foreach (string currentItemName in _sectionList)
                 allInformationList.Add( new String[] { this.Read(currentItemName, MODEL_KEY), this.Read(currentItemName, TYPE_KEY), this.Read(currentItemName, PRICE_KEY), this.Read(currentItemName, STOCK_KEY), String.Empty });
             return allInformationList;
+        }
+
+        // 取得被更改的item的Section
+        public String GetChangeSection()
+        {
+            return _changedSection;
         }
     }
 }

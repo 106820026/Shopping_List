@@ -49,10 +49,37 @@ namespace ShopList
             replenishment.ShowDialog();
         }
 
-        // 取得庫存量
-        public String GetStock(int rowIndex)
+        // 用Section取得RowIndex
+        public int GetRowIndexBySection(String section)
         {
-            return _initial.GetStock(this.GetAllSelection()[rowIndex]);
+            for (int i = 0; i < this.GetAllSelection().Count; i++)
+                if (this.GetAllSelection()[i] == section)
+                    return i;
+            return 0;
+        }
+
+        // 取得庫存量
+        public String GetStock(String section)
+        {
+            return _initial.GetStock(section);
+        }
+
+        // 取得名稱
+        public String GetName(String section)
+        {
+            return _initial.GetName(section);
+        }
+
+        // 取得類別
+        public String GetType(String section)
+        {
+            return _initial.GetType(section);
+        }
+
+        // 取得價錢
+        public String GetPrice(String section)
+        {
+            return _initial.GetPrice(section);
         }
     }
 }

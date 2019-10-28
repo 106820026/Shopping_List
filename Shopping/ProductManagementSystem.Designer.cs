@@ -399,6 +399,7 @@
             this.Controls.Add(this._tableLayoutPanel);
             this.Name = "ProductManagementSystem";
             this.Text = "ProductManagementSystem";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CancelEvent);
             this._tableLayoutPanel.ResumeLayout(false);
             this._tableLayoutPanel.PerformLayout();
             this._managementTabControl.ResumeLayout(false);

@@ -44,9 +44,15 @@ namespace ShopList
         // 初始化視窗
         private void InitialForm()
         {
-            _allSection = _initial.GetAllSections().Cast<String>().ToList(); // 取得所有商品Section的List
+            this.UpdateSection();
             this.InitialComboBox();
             _saveButton.Enabled = false;
+        }
+
+        // 更新目前所有Section
+        private void UpdateSection()
+        {
+            _allSection = _initial.GetAllSections().Cast<String>().ToList(); // 取得所有商品Section的List
         }
 
         // 初始化ComboBox選項
@@ -66,7 +72,7 @@ namespace ShopList
             _addNewItemButton.Enabled = true;
             _titleGroupBox.Text = EDIT_ITEM;
             _saveButton.Text = SAVE;
-            this.SetEditMode(true);
+            this.SetEditAndAddMode(true, false);
             this.EnableEdit(true);
         }
 
@@ -150,10 +156,10 @@ namespace ShopList
         }
 
         // 設定狀態
-        private void SetEditMode(bool flag)
+        private void SetEditAndAddMode(bool flag1, bool flag2)
         {
-            _editMode = flag;
-            _addMode = !flag;
+            _editMode = flag1;
+            _addMode = flag2;
         }
 
         // 按下瀏覽按鈕
@@ -169,15 +175,15 @@ namespace ShopList
             _openFileDialog.Filter = FILE_FORMAT;
             if (_openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                _itemPicturePathTextBox.Text = _openFileDialog.FileName;
                 this.CheckAllInput();
-                _itemPicturePathTextBox.Text = _openFileDialog.FileName.Replace(Directory.GetCurrentDirectory(), "");// ToString();
             }
         }
 
         // 新增商品
         private void ClickAddNewItemButton(object sender, EventArgs e)
         {
-            this.SetEditMode(false);
+            this.SetEditAndAddMode(false, true);
             this.CleanAllDetail();
             this.EnableEdit(true);
             _titleGroupBox.Text = ADD_ITEM;
@@ -199,10 +205,12 @@ namespace ShopList
         //按下新增或修改按鈕
         private void ClickSaveButton(object sender, EventArgs e)
         {
+            _saveButton.Enabled = false;
             if (_editMode) // 修改
                 _productManagementSystemPresentationModel.ModifyItem(_currentItemIndex, this.GetAllInput());
-            //if(_addMode) // 新增
-            _saveButton.Enabled = false;
+            if(_addMode) // 新增
+                _productManagementSystemPresentationModel.AddNewItem(this.GetAllInput());
+            this.SetEditAndAddMode(true, false);
         }
 
         // 取得所有修改或新增的資料
@@ -215,8 +223,24 @@ namespace ShopList
         // 更新儲存完的ListBox
         private void UpdateListBox()
         {
-            _itemsListBox.Items[_currentItemIndex] = "";
-            _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
+            if (_editMode) // 修改
+            {
+                _itemsListBox.Items[_currentItemIndex] = String.Empty;
+                _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
+            }
+            else if (_addMode) // 新增
+            {
+                this.UpdateSection();
+                _itemsListBox.Items.Insert(0, _initial.GetName(_allSection[_allSection.Count - 1]));
+            }
+            this.SetEditAndAddMode(false, false);
+        }
+
+        // 解除event
+        private void CancelEvent(object sender, FormClosedEventArgs e)
+        {
+            _initial._writeNewData -= UpdateListBox;
+            this.Dispose();
         }
     }
 }

@@ -24,6 +24,7 @@ namespace ShopList
             _allProductManagement = allProductManagement;
             _tableLayoutPanels = new List<TableLayoutPanel>();
             this.InitialAllTabPages(tabControl);
+            _initial._writeNewData += UpdateTotalPage;
         }
 
         public int CurrentTabIndex
@@ -45,6 +46,15 @@ namespace ShopList
                 _allCurrentPage.Add(1); //新增首頁
                 _allTotalPage.Add(_allProductManagement.GetTotalPage(_initial.GetAllType()[i])); //新增總頁數
             }
+        }
+
+        // 更新總頁數
+        public void UpdateTotalPage()
+        {
+            _allTotalPage.Clear();
+            int tabCount = _initial.GetAllType().Count;
+            for (int i = 0; i < tabCount; i++)
+                _allTotalPage.Add(_allProductManagement.GetTotalPage(_initial.GetAllType()[i])); //新增總頁數
         }
 
         // 新增TableLayoutPanel

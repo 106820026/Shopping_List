@@ -31,7 +31,7 @@ namespace ShopList
         const int THREE = 3;
         const int FOUR = 4;
         const int FIVE = 5;
-        String _currentItemName;
+        String _currentItemSection;
         Dictionary<string, string> _itemNameAndSellNumber = new Dictionary<string, string>();
         int _currentTabIndex;
         int _rowCount;
@@ -85,30 +85,18 @@ namespace ShopList
         }
 
         // 取得商品名稱
-        public void GetCurrentItemName(int tag, String tabName)
+        public void GetCurrentItemSection(int tag, String tabName)
         {
             int index = 6 * (int.Parse(_itemTabControlPages.GetCurrentPage()) - 1) + tag;
             Console.WriteLine(tag);
-            _currentItemName = _productTypeManagement.GetCuttentTypeItemSections(tabName)[index];
+            _currentItemSection = _productTypeManagement.GetCuttentTypeItemSections(tabName)[index];
         }
 
         // 顯示商品詳細資訊
         public String GetDetail()
         {
-            return _initial.GetDescription(_currentItemName);
+            return _initial.GetDescription(_currentItemSection);
         }
-
-        //// 顯示目前頁數
-        //public String GetCurrentPage()
-        //{
-        //    return _allCurrentPage[_currentTabIndex].ToString();
-        //}
-
-        //// 顯示總頁數
-        //public String GetTotalPage()
-        //{
-        //    return _allTotalPage[_currentTabIndex].ToString();
-        //}
 
         // 刪除購物車內容
         public void DeleteCartItem(int rowIndex)
@@ -119,34 +107,37 @@ namespace ShopList
         // 加入商品至購物車
         public void AddItemToCart()
         {
-            _cart.AddItem(_currentItemName);
+            _cart.AddItem(_currentItemSection);
         }
 
         // 更新購物車表格
         public String[] GetCartItem()
         {
-            return _initial.GetOrderItemRow(_currentItemName);
+            return _initial.GetOrderItemRow(_currentItemSection);
         }
 
         // 顯示商品庫存
         public String GetStock()
         {
-            return int.Parse(_initial.Read(_currentItemName, STOCK_KEY)).ToString();
+            return _initial.Read(_currentItemSection, STOCK_KEY);
         }
 
         // 顯示商品價錢
         public String GetPrice()
         {
-            return int.Parse(_initial.Read(_currentItemName, PRICE_KEY)).ToString(FORMAT);
+            if (_initial.Read(_currentItemSection, PRICE_KEY) != "" && _currentItemSection != null)
+            {
+                System.Diagnostics.Debug.Print("value:"+ _currentItemSection.ToString());
+                return int.Parse(_initial.Read(_currentItemSection, PRICE_KEY)).ToString(FORMAT);
+            }
+                
+            else
+                return string.Empty;
         }
 
         // 翻頁
         public void ChangePage(String itemName)
         {
-            //if (itemName == NEXT_PAGE_BUTTON)
-            //    _allCurrentPage[_currentTabIndex] += 1; // 頁數+1
-            //if (itemName == LAST_PAGE_BUTTON)
-            //    _allCurrentPage[_currentTabIndex] -= 1; // 頁數-1
             if (itemName == NEXT_PAGE_BUTTON)
                 int.Parse(_itemTabControlPages.ChangePage(1));
             if (itemName == LAST_PAGE_BUTTON)
@@ -157,14 +148,12 @@ namespace ShopList
         //是否為第一頁
         public bool IsFirstPage()
         {
-            //return _allCurrentPage[_currentTabIndex] == 1;
             return int.Parse(_itemTabControlPages.GetCurrentPage()) == 1;
         }
 
         // 是否為最後一頁
         public bool IsLastPage()
         {
-            //return _allCurrentPage[_currentTabIndex] == _allTotalPage[_currentTabIndex];
             return int.Parse(_itemTabControlPages.GetCurrentPage()) == int.Parse(_itemTabControlPages.GetTotalPage());
         }
 
@@ -188,7 +177,7 @@ namespace ShopList
         public bool IsAlreadyInCart()
         {
             // 如果已經在DGV上或是庫存沒了都不可以
-            return !(_cart.GetItemList().Contains(_currentItemName) || _initial.GetStock(_currentItemName) == ZERO);
+            return !(_cart.GetItemList().Contains(_currentItemSection) || _initial.GetStock(_currentItemSection) == ZERO);
         }
 
         // 單一商品總價

@@ -26,6 +26,7 @@ namespace ShopList
         const String STOCK_STATUS = "庫存狀態";
         const int NUMBER_COLUMN_INDEX = 4;
         const int SUBTOTAL_COLUMN_INDEX = 5;
+        List<String> _allTypes;
         Initial _initial;
         ShopListPresentationModel _shopListPresentationModel;
         ItemTabControlPages _itemTabControlPages;
@@ -40,7 +41,7 @@ namespace ShopList
             _productTypeManagement = productTypeManagement;
             _itemTabControlPages = new ItemTabControlPages(_itemTabControl, _initial, _productTypeManagement);
             _shopListPresentationModel = new ShopListPresentationModel(_initial, _itemTabControlPages, _productTypeManagement);
-            _initial._writeNewData += UpdateStock;
+            _initial._writeNewData += UpdatePage;
             this.InitialForm();
         }
 
@@ -57,6 +58,7 @@ namespace ShopList
             /////////////////////
             _shopListPresentationModel.SetRowCount(_orderDataGridView.RowCount); // 購物車商品數量
             _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); //顯示總價錢
+            _allTypes = _initial.GetAllType(); //取得所有的type(只有有更動type數量才要重新GetAllType())
             this.ShowItemPicture(); //顯示商品圖片
         }
 
@@ -161,17 +163,16 @@ namespace ShopList
         // 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
-            _initial._writeNewData -= UpdateStock;
+            _initial._writeNewData -= UpdatePage;
             this.Dispose();
         }
 
-        // 補貨時 更新庫存數量(自訂事件)
-        private void UpdateStock()
+        // 更新整個頁面
+        private void UpdatePage()
         {
-            _stockLabel.Text = _shopListPresentationModel.GetStock();
+            this.ShowItemPicture(); //顯示商品圖片
+            this.CleanDetail();
         }
-
-        // 修改商品名稱時 更新名稱
 
         // 顯示目前頁數和總頁數
         private void ShowCurrentAndTotalPage()
@@ -214,7 +215,7 @@ namespace ShopList
         private void ShowItemPicture()
         {
             int CurrentTabIndex = _itemTabControl.SelectedIndex; //取得目前tab的index
-            List<String> CuttentTypeItemSections = _productTypeManagement.GetCuttentTypeItemSections(_initial.GetAllType()[CurrentTabIndex]); //取得目前類別的所有section 
+            List<String> CuttentTypeItemSections = _productTypeManagement.GetCuttentTypeItemSections(_allTypes[CurrentTabIndex]); //取得目前類別的所有section 
             TableLayoutPanel tableLayoutPanel =  _itemTabControlPages.GetTableLayoutPanel(CurrentTabIndex); //取得目前TableLayoutPanel
             int currentPage = int.Parse(_currentPageLabel.Text); //取得目前頁數
             int index = 6 * (currentPage - 1); //取得每個button的index
@@ -266,7 +267,7 @@ namespace ShopList
         // 選取商品後更新視窗
         private void UpdateItemClick(Button button)
         {
-            _shopListPresentationModel.GetCurrentItemName((int)(button.Tag), _itemTabControl.SelectedTab.Text); // 取得目前商品id
+            _shopListPresentationModel.GetCurrentItemSection((int)(button.Tag), _itemTabControl.SelectedTab.Text); // 取得目前商品id
             _descriptionRichTextBox.Text = _shopListPresentationModel.GetDetail(); // 顯示商品詳細資料
             _stockLabel.Text = _shopListPresentationModel.GetStock(); // 顯示庫存
             _priceLabel.Text = _shopListPresentationModel.GetPrice(); // 顯示價錢

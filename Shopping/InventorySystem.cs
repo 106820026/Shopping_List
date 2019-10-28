@@ -14,9 +14,12 @@ namespace ShopList
     {
         const String FILE_PATH = "../../Data Info.ini";
         Initial _initial;
-        InventorySystemPresentationModel _inventorySystemControl;
+        InventorySystemPresentationModel _inventorySystemPresentationModel;
         const String REPLENISHMENT_COLUMN = "_replenishment";
-        const int NUMBER_COLUMN_INDEX = 3;
+        const int NAME_COLUMN_INDEX = 0;
+        const int TYPE_COLUMN_INDEX = 1;
+        const int PRICE_COLUMN_INDEX = 2;
+        const int STOCK_COLUMN_INDEX = 3;
         const int REPLENISHMENT_COLUMN_INDEX = 4;
         int _currentRow;
 
@@ -24,9 +27,11 @@ namespace ShopList
         {
             InitializeComponent();
             this._initial = initial;
-            _inventorySystemControl = new InventorySystemPresentationModel(_initial);
+            _inventorySystemPresentationModel = new InventorySystemPresentationModel(_initial);
             _initial._writeNewData += UpdateStock;
             this.LoadAndShowDataGridView();
+            _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(0);
+            _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(0);
         }
 
         // 加入補貨icon
@@ -54,25 +59,31 @@ namespace ShopList
             else
             {
                 _currentRow = e.RowIndex; // 取得目前row Index
-                _itemPictureBox.Image = _inventorySystemControl.GetImageFilePath(((DataGridView)sender).Rows[e.RowIndex].Index);
-                _itemDetailTextBox.Text = _inventorySystemControl.GetItemDetail(((DataGridView)sender).Rows[e.RowIndex].Index);
+                _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(((DataGridView)sender).Rows[e.RowIndex].Index);
+                _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(((DataGridView)sender).Rows[e.RowIndex].Index);
                 if (e.ColumnIndex == REPLENISHMENT_COLUMN_INDEX) // 如果按補貨按鈕
-                    _inventorySystemControl.OpenReplenishmentPage(((DataGridView)sender).Rows[e.RowIndex].Index);
+                    _inventorySystemPresentationModel.OpenReplenishmentPage(((DataGridView)sender).Rows[e.RowIndex].Index);
             }
         }
 
         // 讀取DaraGridView資料 並顯示
         private void LoadAndShowDataGridView()
         {
-            foreach (String[] item in _inventorySystemControl.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
+            foreach (String[] item in _inventorySystemPresentationModel.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
                 _itemDataGridView.Rows.Add(item);
         }
 
         // 更新庫存數量
         private void UpdateStock()
         {
-            for (int i = 0; i < _initial.GetAllItemList().Count; i++)
-                _itemDataGridView.Rows[i].Cells[NUMBER_COLUMN_INDEX].Value = _inventorySystemControl.GetStock(i);
+            String changedSection = _initial.GetChangeSection();
+            int rowIndex = _inventorySystemPresentationModel.GetRowIndexBySection(changedSection);
+            _itemDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetName(changedSection);
+            _itemDataGridView.Rows[rowIndex].Cells[TYPE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetType(changedSection);
+            _itemDataGridView.Rows[rowIndex].Cells[PRICE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetPrice(changedSection);
+            _itemDataGridView.Rows[rowIndex].Cells[STOCK_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetStock(changedSection);
+            _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(_itemDataGridView.CurrentCell.RowIndex);
+            _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(_itemDataGridView.CurrentCell.RowIndex);
         }
 
         // 解除event
