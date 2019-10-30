@@ -61,7 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addToCart.cs" />
+    <Compile Include="AddToCart.cs" />
     <Compile Include="ProductTypeManagement.cs" />
     <Compile Include="CreditCardPayment.cs">
       <SubType>Form</SubType>

@@ -208,7 +208,7 @@ namespace ShopList
             _saveButton.Enabled = false;
             if (_editMode) // 修改
                 _productManagementSystemPresentationModel.ModifyItem(_currentItemIndex, this.GetAllInput());
-            if(_addMode) // 新增
+            if (_addMode) // 新增
                 _productManagementSystemPresentationModel.AddNewItem(this.GetAllInput());
             this.SetEditAndAddMode(true, false);
         }
@@ -216,8 +216,8 @@ namespace ShopList
         // 取得所有修改或新增的資料
         private String[] GetAllInput()
         {
-            String[]  _content = new String[] { _itemNameTextBox.Text, _itemPriceTextBox.Text, _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
-            return _content;
+            String[] content = new String[] { _itemNameTextBox.Text, _itemPriceTextBox.Text, _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
+            return content;
         }
 
         // 更新儲存完的ListBox

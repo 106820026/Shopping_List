@@ -20,7 +20,7 @@ namespace ShopList
         const String DETAIL = "detail";
         const String STOCK = "stock";
         const String DESTINATION = "../../Resources/";
-        String[] _keys = { MODEL, PRICE, TYPE, PATH, DETAIL};
+        String[] _keys = { MODEL, PRICE, TYPE, PATH, DETAIL };
         bool _nameValid = false;
         bool _priceValid = false;
         bool _typeValid = false;
@@ -40,7 +40,7 @@ namespace ShopList
         }
 
         // 設定類別的comboBox
-        public  List<String> GetTypes()
+        public List<String> GetTypes()
         {
             return _initial.GetAllType();
         }
@@ -91,10 +91,16 @@ namespace ShopList
         // 修改商品
         public void ModifyItem(int itemIndex, String[] content)
         {
-            String section = _initial.GetAllSections()[itemIndex];
-            content[3] = this.CopyFileToResources(content[3]);
+            String section = this.GetAllSections()[itemIndex];
+            content[PATH_INDEX] = this.CopyFileToResources(content[PATH_INDEX]);
             for (int i = 0; i < content.Length; i++)
                 _initial.Write(section, _keys[i], content[i]);
+        }
+
+        // 取得所有section
+        private List<String> GetAllSections()
+        {
+            return _initial.GetAllSections().Cast<String>().ToList<String>();
         }
 
         // 把選取的相片存到內部資料夾
@@ -107,7 +113,7 @@ namespace ShopList
             }
             catch (IOException ex)
             {
-
+                ex.GetType();
             }
             return DESTINATION + file.Name;
         }

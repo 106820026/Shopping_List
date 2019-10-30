@@ -23,24 +23,24 @@ namespace ShopList
         public int GetTotalPage(String typeName)
         {
             float count = 0;
-            List<String> _currentTypeItemSection = new List<String>();
+            List<String> currentTypeItemSection = new List<String>();
             foreach (String section in _allSections)
                 if (typeName == _initial.GetType(section))
                 {
                     count++;
-                    _currentTypeItemSection.Add(section);
+                    currentTypeItemSection.Add(section);
                 }
-            return (int)(Math.Ceiling(count/6.0f));
+            return (int)(Math.Ceiling(count / 6.0F));
         }
 
         // 取得目前分類的所有section
-        public List<String> GetCuttentTypeItemSections(String typeName)
+        public List<String> GetCurrentTypeItemSections(String typeName)
         {
-            List<String> _currentTypeItemSection = new List<String>();
+            List<String> currentTypeItemSection = new List<String>();
             foreach (String section in _allSections)
                 if (typeName == _initial.GetType(section))
-                    _currentTypeItemSection.Add(section);
-            return _currentTypeItemSection;
+                    currentTypeItemSection.Add(section);
+            return currentTypeItemSection;
         }
     }
 }

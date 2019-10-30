@@ -31,6 +31,7 @@ namespace ShopList
         const int THREE = 3;
         const int FOUR = 4;
         const int FIVE = 5;
+        const int BUTTON_NUMBER = 6;
         String _currentItemSection;
         Dictionary<string, string> _itemNameAndSellNumber = new Dictionary<string, string>();
         int _currentTabIndex;
@@ -72,12 +73,6 @@ namespace ShopList
             _rowCount = 0;
         }
 
-        // 取得目前Tab Index
-        public void SetCurrentTabIndex(int tabIndex)
-        {
-            _currentTabIndex = tabIndex;
-        }
-
         // 購物車商品數量
         public void SetRowCount(int rowCount)
         {
@@ -87,9 +82,9 @@ namespace ShopList
         // 取得商品名稱
         public void GetCurrentItemSection(int tag, String tabName)
         {
-            int index = 6 * (int.Parse(_itemTabControlPages.GetCurrentPage()) - 1) + tag;
+            int index = BUTTON_NUMBER * (int.Parse(_itemTabControlPages.GetCurrentPage()) - 1) + tag;
             Console.WriteLine(tag);
-            _currentItemSection = _productTypeManagement.GetCuttentTypeItemSections(tabName)[index];
+            _currentItemSection = _productTypeManagement.GetCurrentTypeItemSections(tabName)[index];
         }
 
         // 顯示商品詳細資訊
@@ -116,6 +111,12 @@ namespace ShopList
             return _initial.GetOrderItemRow(_currentItemSection);
         }
 
+        // 更新購物車表格
+        public String[] GetCartItem(String section)
+        {
+            return _initial.GetOrderItemRow(section);
+        }
+
         // 顯示商品庫存
         public String GetStock()
         {
@@ -125,14 +126,9 @@ namespace ShopList
         // 顯示商品價錢
         public String GetPrice()
         {
-            if (_initial.Read(_currentItemSection, PRICE_KEY) != "" && _currentItemSection != null)
-            {
-                System.Diagnostics.Debug.Print("value:"+ _currentItemSection.ToString());
+            if (_currentItemSection != null)
                 return int.Parse(_initial.Read(_currentItemSection, PRICE_KEY)).ToString(FORMAT);
-            }
-                
-            else
-                return string.Empty;
+            return string.Empty;
         }
 
         // 翻頁
@@ -214,6 +210,23 @@ namespace ShopList
         public String ChangeToMaximumStock(int rowIndex)
         {
             return _initial.GetStock(_cart.GetItemList()[rowIndex]);
+        }
+
+        // 取得已經加入購物車所有商品的section
+        public List<String> GetItemList()
+        {
+            return _cart.GetItemList();
+        }
+
+        // 如果修改的商品有放在購物車 回傳row index
+        public int GetChangedItemRowIndex()
+        {
+            for (int i = 0; i < this.GetItemList().Count; i++)
+            {
+                if (this.GetItemList()[i] == _initial.GetChangeSection())
+                    return i;
+            }
+            return 0;
         }
     }
 }

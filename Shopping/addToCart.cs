@@ -32,12 +32,6 @@ namespace ShopList
             return _items;
         }
 
-        // 取得購物車內總金額
-        public int GetTotalPrice()
-        {
-            return _totalPrice;
-        }
-
         // 拿出購物車
         public void DeleteItem(int rowIndex)
         {

@@ -56,25 +56,29 @@
             // 
             // _orderSystemButton
             // 
+            this._orderSystemButton.BackColor = System.Drawing.SystemColors.Control;
             this._orderSystemButton.Dock = System.Windows.Forms.DockStyle.Top;
             this._orderSystemButton.Font = new System.Drawing.Font("微軟正黑體", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._orderSystemButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._orderSystemButton.Location = new System.Drawing.Point(3, 3);
             this._orderSystemButton.Name = "_orderSystemButton";
             this._orderSystemButton.Size = new System.Drawing.Size(789, 105);
             this._orderSystemButton.TabIndex = 0;
             this._orderSystemButton.Text = "Order System";
-            this._orderSystemButton.UseVisualStyleBackColor = true;
+            this._orderSystemButton.UseVisualStyleBackColor = false;
             this._orderSystemButton.Click += new System.EventHandler(this.ClickOrderSystemButton);
             // 
             // _inventorySystemButton
             // 
+            this._inventorySystemButton.BackColor = System.Drawing.SystemColors.Control;
             this._inventorySystemButton.Font = new System.Drawing.Font("微軟正黑體", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._inventorySystemButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._inventorySystemButton.Location = new System.Drawing.Point(3, 114);
             this._inventorySystemButton.Name = "_inventorySystemButton";
             this._inventorySystemButton.Size = new System.Drawing.Size(789, 105);
             this._inventorySystemButton.TabIndex = 1;
             this._inventorySystemButton.Text = "Inventory System";
-            this._inventorySystemButton.UseVisualStyleBackColor = true;
+            this._inventorySystemButton.UseVisualStyleBackColor = false;
             this._inventorySystemButton.Click += new System.EventHandler(this.ClickInventorySystemButton);
             // 
             // _exitButton
@@ -91,14 +95,16 @@
             // 
             // _productManagementSystemButton
             // 
+            this._productManagementSystemButton.BackColor = System.Drawing.SystemColors.Control;
             this._productManagementSystemButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this._productManagementSystemButton.Font = new System.Drawing.Font("微軟正黑體", 25.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._productManagementSystemButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this._productManagementSystemButton.Location = new System.Drawing.Point(3, 225);
             this._productManagementSystemButton.Name = "_productManagementSystemButton";
             this._productManagementSystemButton.Size = new System.Drawing.Size(789, 105);
             this._productManagementSystemButton.TabIndex = 3;
             this._productManagementSystemButton.Text = "Product Management System";
-            this._productManagementSystemButton.UseVisualStyleBackColor = true;
+            this._productManagementSystemButton.UseVisualStyleBackColor = false;
             this._productManagementSystemButton.Click += new System.EventHandler(this.ClickProductManagementSystemButton);
             // 
             // MenuForm

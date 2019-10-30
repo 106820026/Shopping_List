@@ -24,8 +24,10 @@ namespace ShopList
         const String FORMAT = "#, 0";
         const String OUT_OF_STOCK = "庫存不足";
         const String STOCK_STATUS = "庫存狀態";
+        const int FOUR = 4;
         const int NUMBER_COLUMN_INDEX = 4;
         const int SUBTOTAL_COLUMN_INDEX = 5;
+        const int BUTTON_NUMBER = 6;
         List<String> _allTypes;
         Initial _initial;
         ShopListPresentationModel _shopListPresentationModel;
@@ -172,6 +174,15 @@ namespace ShopList
         {
             this.ShowItemPicture(); //顯示商品圖片
             this.CleanDetail();
+            this.UpdateCart();
+        }
+
+        // 如果改變的商品有加入到購物車裡面的 也要一起更改
+        private void UpdateCart()
+        {
+            int rowIndex = _shopListPresentationModel.GetChangedItemRowIndex();
+            for (int i = 1; i < FOUR; i++)
+                _orderDataGridView.Rows[rowIndex].Cells[i].Value = _shopListPresentationModel.GetCartItem(_initial.GetChangeSection())[i];
         }
 
         // 顯示目前頁數和總頁數
@@ -214,26 +225,21 @@ namespace ShopList
         // 設定按鈕圖片
         private void ShowItemPicture()
         {
-            int CurrentTabIndex = _itemTabControl.SelectedIndex; //取得目前tab的index
-            List<String> CuttentTypeItemSections = _productTypeManagement.GetCuttentTypeItemSections(_allTypes[CurrentTabIndex]); //取得目前類別的所有section 
-            TableLayoutPanel tableLayoutPanel =  _itemTabControlPages.GetTableLayoutPanel(CurrentTabIndex); //取得目前TableLayoutPanel
-            int currentPage = int.Parse(_currentPageLabel.Text); //取得目前頁數
-            int index = 6 * (currentPage - 1); //取得每個button的index
+            int currentTabIndex = _itemTabControl.SelectedIndex; //取得目前tab的index
+            List<String> currentTypeItemSections = _productTypeManagement.GetCurrentTypeItemSections(_allTypes[currentTabIndex]); //取得目前類別的所有section 
+            TableLayoutPanel tableLayoutPanel = _itemTabControlPages.GetTableLayoutPanel(currentTabIndex); //取得目前TableLayoutPanel
+            int index = BUTTON_NUMBER * (int.Parse(_currentPageLabel.Text) - 1); //取得每個button的index
             foreach (Button button in tableLayoutPanel.Controls)
             {
-                if (index < CuttentTypeItemSections.Count)
+                if (index < currentTypeItemSections.Count)
                 {
-                    String _filePath = _initial.GetPicturePath(CuttentTypeItemSections[index]);
+                    String _filePath = _initial.GetPicturePath(currentTypeItemSections[index]);
                     button.BackgroundImageLayout = ImageLayout.Stretch;
-                    button.BackgroundImage = Image.FromFile(_filePath);
                     button.Click += ButtonClick;
-                    ChangeButtonStatus(button, true);
+                    ChangeButtonStatus(button, true, _filePath);
                 }
                 else
-                {
-                    button.BackgroundImage = null;
-                    ChangeButtonStatus(button, false);
-                }
+                    ChangeButtonStatus(button, false, null);
                 index++;
             }
         }
@@ -275,10 +281,14 @@ namespace ShopList
         }
 
         // 設定商品按鈕狀態
-        private void ChangeButtonStatus(Control button, bool flag)
+        private void ChangeButtonStatus(Control button, bool flag, String filePath)
         {
             ((Button)button).Enabled = flag;
             ((Button)button).Visible = flag;
+            if (flag == true)
+                ((Button)button).BackgroundImage = Image.FromFile(filePath);
+            else
+                ((Button)button).BackgroundImage = null;
         }
 
         // 取得總價錢
