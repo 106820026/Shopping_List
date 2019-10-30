@@ -111,7 +111,7 @@ namespace ShopList
             return _initial.GetOrderItemRow(_currentItemSection);
         }
 
-        // 更新購物車表格
+        // 取得商品的整個row
         public String[] GetCartItem(String section)
         {
             return _initial.GetOrderItemRow(section);

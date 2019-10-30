@@ -274,7 +274,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ItemTabControlPages.cs</File>
-              <Line>96</Line>
+              <Line>98</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -290,7 +290,7 @@
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ItemTabControlPages.cs</File>
-              <Line>98</Line>
+              <Line>100</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -442,11 +442,28 @@
               <Comment />
               <Auto>false</Auto>
             </Smell>
+            <Smell>
+              <Id>17</Id>
+              <SmellType>Unresolved warnings(忽視警告)-已指派欄位 'ShopListPresentationModel._currentTabIndex'，但從未使用過其值。</SmellType>
+              <HashCode>Shopping\ShopList.ShopListPresentationModel.cs.Unresolved warnings(忽視警告)-已指派欄位 'ShopListPresentationModel._currentTabIndex'，但從未使用過其值。.37</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ShopListPresentationModel.cs</File>
+              <Line>37</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
           </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList>
             <string>SpacingAndNewLine9</string>
             <string>UnsuitableNaming.InventorySystemPresentationModel.OpenReplenishmentPage.OpenReplenishmentPage</string>
+            <string>Shopping\ShopList.ShopListPresentationModel.cs.Unresolved warnings(忽視警告)-已指派欄位 'ShopListPresentationModel._currentTabIndex'，但從未使用過其值。.37</string>
           </HashCodeRequestIgnoreList>
           <AnalysisFileManager>
             <AnalysisFiles>
@@ -597,7 +614,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>4966</ProductionLoc>
+          <ProductionLoc>4960</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

@@ -51,13 +51,8 @@ namespace ShopList
         private void InitialForm()
         {
             this.CheckChangePageButton();
-            this.ShowCurrentAndTotalPage();
             _addToCartButton.Enabled = _orderButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
-            //設定頁數////////////
-            _itemTabControl.SelectedIndex = _itemTabControlPages.CurrentTabIndex; // 取得目前Tab的index
-            _currentPageLabel.Text = _itemTabControlPages.GetCurrentPage(); //顯示目前頁數
-            _totalPageLabel.Text = _itemTabControlPages.GetTotalPage(); //顯示總頁數
-            /////////////////////
+            this.ShowCurrentAndTotalPage(); // 顯示頁數
             _shopListPresentationModel.SetRowCount(_orderDataGridView.RowCount); // 購物車商品數量
             _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); //顯示總價錢
             _allTypes = _initial.GetAllType(); //取得所有的type(只有有更動type數量才要重新GetAllType())
@@ -114,11 +109,7 @@ namespace ShopList
         private void ChangeTabIndex(object sender, EventArgs e)
         {
             this.CleanDetail(); // 清除物品詳細資料
-            //設定頁數////////////
-            _itemTabControlPages.CurrentTabIndex = _itemTabControl.SelectedIndex; // 取得目前Tab的index
-            _currentPageLabel.Text = _itemTabControlPages.GetCurrentPage(); //顯示目前頁數
-            _totalPageLabel.Text = _itemTabControlPages.GetTotalPage(); //顯示總頁數
-            /////////////////////
+            this.ShowCurrentAndTotalPage(); // 顯示頁數
             this.ShowItemPicture(); //顯示商品圖片
             this.CheckChangePageButton(); // 確認換頁按鈕
         }
@@ -128,12 +119,8 @@ namespace ShopList
         {
             this.CleanDetail(); // 清除物品詳細資料
             Button button = (Button)sender; // 取得商品物件
-
             _shopListPresentationModel.ChangePage(button.Name);
-            //設定頁數////////////
-            _currentPageLabel.Text = _itemTabControlPages.GetCurrentPage(); //顯示目前頁數
-            _totalPageLabel.Text = _itemTabControlPages.GetTotalPage(); //顯示總頁數
-            /////////////////////
+            this.ShowCurrentAndTotalPage(); // 顯示頁數
             this.ShowItemPicture(); //  換圖片
             this.CheckChangePageButton(); // 確認換頁按鈕
         }
@@ -172,9 +159,11 @@ namespace ShopList
         // 更新整個頁面
         private void UpdatePage()
         {
+            this.ShowCurrentAndTotalPage(); // 顯示頁數
             this.ShowItemPicture(); //顯示商品圖片
             this.CleanDetail();
-            this.UpdateCart();
+            if (_shopListPresentationModel.GetItemList().Contains(_initial.GetChangeSection()))
+                this.UpdateCart();
         }
 
         // 如果改變的商品有加入到購物車裡面的 也要一起更改
@@ -188,8 +177,9 @@ namespace ShopList
         // 顯示目前頁數和總頁數
         private void ShowCurrentAndTotalPage()
         {
-            _currentPageLabel.Text = _itemTabControlPages.GetCurrentPage();
-            _totalPageLabel.Text = _itemTabControlPages.GetTotalPage();
+            _itemTabControlPages.CurrentTabIndex = _itemTabControl.SelectedIndex; // 取得目前Tab的index
+            _currentPageLabel.Text = _itemTabControlPages.GetCurrentPage(); //顯示目前頁數
+            _totalPageLabel.Text = _itemTabControlPages.GetTotalPage(); //顯示總頁數
         }
 
         // 刪除項目

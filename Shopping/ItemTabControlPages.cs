@@ -16,6 +16,7 @@ namespace ShopList
         List<TableLayoutPanel> _tableLayoutPanels;
         List<int> _allCurrentPage = new List<int>();
         List<int> _allTotalPage = new List<int>();
+        List<String> _types = new List<string>();
         const int COLUMN_COUNT = 3;
         const int ROW_COUNT = 2;
         const int WIDTH = 380;
@@ -26,6 +27,7 @@ namespace ShopList
             _initial = initial;
             _allProductManagement = allProductManagement;
             _tableLayoutPanels = new List<TableLayoutPanel>();
+            this.GetAllType();
             this.InitialAllTabPages(tabControl);
             _initial._writeNewData += UpdateTotalPage;
         }
@@ -38,31 +40,31 @@ namespace ShopList
         //初始化所有tabPage
         private void InitialAllTabPages(TabControl tabControl)
         {
-            int tabCount = this.GetAllType().Count;
+            int tabCount = _types.Count;
             for (int i = 0; i < tabCount; i++)
             {
-                _tabPage = new TabPage(this.GetAllType()[i]);
+                _tabPage = new TabPage(_types[i]);
                 _tabPage.Controls.Add(this.AddLayout());
                 _tabPage.UseVisualStyleBackColor = true;
                 tabControl.Controls.Add(_tabPage);
                 _allCurrentPage.Add(1); //新增首頁
-                _allTotalPage.Add(_allProductManagement.GetTotalPage(this.GetAllType()[i])); //新增總頁數
+                _allTotalPage.Add(_allProductManagement.GetTotalPage(_types[i])); //新增總頁數
             }
         }
 
-        // 取得所有type
-        private List<String> GetAllType()
+        // 取得所有type(如果有增減type的話就要重新call這個function)
+        private void GetAllType()
         {
-            return _initial.GetAllType();
+            _types = _initial.GetAllType();
         }
 
         // 更新總頁數
         public void UpdateTotalPage()
         {
             _allTotalPage.Clear();
-            int tabCount = this.GetAllType().Count;
+            int tabCount = _types.Count;
             for (int i = 0; i < tabCount; i++)
-                _allTotalPage.Add(_allProductManagement.GetTotalPage(this.GetAllType()[i])); //新增總頁數
+                _allTotalPage.Add(_allProductManagement.GetTotalPage(_types[i])); //新增總頁數
         }
 
         // 新增TableLayoutPanel
@@ -110,6 +112,8 @@ namespace ShopList
         // 顯示目前頁數
         public String GetCurrentPage()
         {
+            if (_allTotalPage[CurrentTabIndex] < _allCurrentPage[CurrentTabIndex])
+                return (_allCurrentPage[CurrentTabIndex] - 1).ToString();
             return _allCurrentPage[CurrentTabIndex].ToString();
         }
 

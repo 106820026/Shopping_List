@@ -309,7 +309,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/29 14:20:30.813</sourceFile>
+      <sourceFile>2019/10/30 16:29:24.204</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -317,23 +317,23 @@
     <violations>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="SpacingAndNewLine9" ruleCheckId="SN0009">
         <context>ICS(空白與空行-9)</context>
-        <line>96</line>
-        <index>3492</index>
-        <endIndex>3515</endIndex>
-        <startLine>96</startLine>
+        <line>98</line>
+        <index>3545</index>
+        <endIndex>3568</endIndex>
+        <startLine>98</startLine>
         <startColumn>1</startColumn>
-        <endLine>96</endLine>
+        <endLine>98</endLine>
         <endColumn>24</endColumn>
         <warning>False</warning>
       </violation>
       <violation namespace="KellyPalRules.KellyPalAnalyzer" rule="SpacingAndNewLine9" ruleCheckId="SN0009">
         <context>ICS(空白與空行-9)</context>
-        <line>98</line>
-        <index>3597</index>
-        <endIndex>3598</endIndex>
-        <startLine>98</startLine>
+        <line>100</line>
+        <index>3650</index>
+        <endIndex>3651</endIndex>
+        <startLine>100</startLine>
         <startColumn>23</startColumn>
-        <endLine>98</endLine>
+        <endLine>100</endLine>
         <endColumn>24</endColumn>
         <warning>False</warning>
       </violation>
@@ -588,7 +588,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/29 23:32:31.256</sourceFile>
+      <sourceFile>2019/10/30 16:31:05.713</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
@@ -610,7 +610,7 @@
     <timestamps>
       <styleCop>2019/09/10 22:51:54.372</styleCop>
       <settingsFile>0001/01/01 00:00:00.000</settingsFile>
-      <sourceFile>2019/10/29 23:32:31.249</sourceFile>
+      <sourceFile>2019/10/30 14:41:10.844</sourceFile>
       <parser>2019/09/10 22:51:54.372</parser>
       <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
       <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
