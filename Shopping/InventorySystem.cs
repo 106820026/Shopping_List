@@ -78,12 +78,23 @@ namespace ShopList
         {
             String changedSection = _initial.GetChangeSection();
             int rowIndex = _inventorySystemPresentationModel.GetRowIndexBySection(changedSection);
-            _itemDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetName(changedSection);
-            _itemDataGridView.Rows[rowIndex].Cells[TYPE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetType(changedSection);
-            _itemDataGridView.Rows[rowIndex].Cells[PRICE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetPrice(changedSection);
-            _itemDataGridView.Rows[rowIndex].Cells[STOCK_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetStock(changedSection);
-            _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(_itemDataGridView.CurrentCell.RowIndex);
-            _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(_itemDataGridView.CurrentCell.RowIndex);
+            if (this.AddNewItem(rowIndex)) // 新增商品
+                _itemDataGridView.Rows.Add(_inventorySystemPresentationModel.GetAllItemDetail());
+            else // 修改商品
+            {
+                _itemDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetName(changedSection);
+                _itemDataGridView.Rows[rowIndex].Cells[TYPE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetType(changedSection);
+                _itemDataGridView.Rows[rowIndex].Cells[PRICE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetPrice(changedSection);
+                _itemDataGridView.Rows[rowIndex].Cells[STOCK_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetStock(changedSection);
+                _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(_itemDataGridView.CurrentCell.RowIndex);
+                _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(_itemDataGridView.CurrentCell.RowIndex);
+            }
+        }
+
+        // 有新增商品
+        public bool AddNewItem(int rowIndex)
+        {
+            return rowIndex >= _itemDataGridView.Rows.Count;
         }
 
         // 解除event

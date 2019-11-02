@@ -17,6 +17,7 @@ namespace ShopList
             _initial = initial;
             _allSections = _initial.GetAllSections().Cast<String>().ToList(); // 取得所有商品Section的List
             _allTypes = _initial.GetAllType();
+            _initial._writeNewData += UpdateSection;
         }
 
         // 取得每個分類的總頁數
@@ -41,6 +42,14 @@ namespace ShopList
                 if (typeName == _initial.GetType(section))
                     currentTypeItemSection.Add(section);
             return currentTypeItemSection;
+        }
+
+        // 確認有無新Section加入
+        public void UpdateSection()
+        {
+            foreach (String section in _initial.GetAllSections())
+                if (!_allSections.Contains(section))
+                    _allSections.Add(section);
         }
     }
 }

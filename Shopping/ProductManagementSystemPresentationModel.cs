@@ -121,12 +121,12 @@ namespace ShopList
         // 新增商品
         public void AddNewItem(String[] content)
         {
-            _initial.Write(content[NAME_INDEX], MODEL, content[NAME_INDEX]);
+            _initial.Write(content[NAME_INDEX], PATH, content[PATH_INDEX]);
             _initial.Write(content[NAME_INDEX], TYPE, content[TYPE_INDEX]);
+            _initial.Write(content[NAME_INDEX], MODEL, content[NAME_INDEX]);
             _initial.Write(content[NAME_INDEX], DETAIL, content[DETAIL_INDEX]);
             _initial.Write(content[NAME_INDEX], PRICE, content[PRICE_INDEX]);
             _initial.Write(content[NAME_INDEX], STOCK, ZERO);
-            _initial.Write(content[NAME_INDEX], PATH, content[PATH_INDEX]);
         }
     }
 }

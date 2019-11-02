@@ -34,7 +34,6 @@ namespace ShopList
         const int BUTTON_NUMBER = 6;
         String _currentItemSection;
         Dictionary<string, string> _itemNameAndSellNumber = new Dictionary<string, string>();
-        int _currentTabIndex;
         int _rowCount;
         // current page
         int _motherBoardCurrentPage = 1;
@@ -69,7 +68,6 @@ namespace ShopList
             _cart = new AddToCart(_initial);
             _allCurrentPage = new int[] { _motherBoardCurrentPage, _centralProcessUnitCurrentPage, _diskCurrentPage, _memoryCurrentPage, _graphicsProcessUnitCurrentPage, _computerCurrentPage };
             _allTotalPage = new int[] { _motherBoardTotalPage, _centralProcessUnitTotalPage, _diskTotalPage, _memoryTotalPage, _graphicsProcessUnitTotalPage, _computerTotalPage };
-            _currentTabIndex = 0;
             _rowCount = 0;
         }
 
@@ -191,11 +189,12 @@ namespace ShopList
         // 更新購買後庫存(寫入ini檔)
         public void UpdateStockAndWriteInInitial()
         {
-            foreach (String key in _itemNameAndSellNumber.Keys)
+            foreach (String key in _itemNameAndSellNumber.Keys.ToArray())
             {
                 int originalStock = int.Parse(_initial.GetStock(key));
                 _initial.Write(key, STOCK_KEY, (originalStock - int.Parse(_itemNameAndSellNumber[key])).ToString());
             }
+            _itemNameAndSellNumber.Clear();
         }
 
         // 庫存不足

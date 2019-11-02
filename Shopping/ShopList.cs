@@ -160,9 +160,10 @@ namespace ShopList
         private void UpdatePage()
         {
             this.ShowCurrentAndTotalPage(); // 顯示頁數
-            this.ShowItemPicture(); //顯示商品圖片
             this.CleanDetail();
-            if (_shopListPresentationModel.GetItemList().Contains(_initial.GetChangeSection()))
+            this.ShowItemPicture(); //顯示商品圖片
+            this.CheckChangePageButton(); // 換頁按鈕
+            if (_shopListPresentationModel.GetItemList().Contains(_initial.GetChangeSection())) // 修改已經加入購物車的商品
                 this.UpdateCart();
         }
 
@@ -172,6 +173,8 @@ namespace ShopList
             int rowIndex = _shopListPresentationModel.GetChangedItemRowIndex();
             for (int i = 1; i < FOUR; i++)
                 _orderDataGridView.Rows[rowIndex].Cells[i].Value = _shopListPresentationModel.GetCartItem(_initial.GetChangeSection())[i];
+            _orderDataGridView.Rows[rowIndex].Cells[SUBTOTAL_COLUMN_INDEX].Value = _shopListPresentationModel.GetSubtotal(int.Parse(_orderDataGridView.Rows[rowIndex].Cells[NUMBER_COLUMN_INDEX].Value.ToString()), rowIndex).ToString(FORMAT);
+            _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
         }
 
         // 顯示目前頁數和總頁數

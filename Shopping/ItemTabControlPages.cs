@@ -113,7 +113,7 @@ namespace ShopList
         public String GetCurrentPage()
         {
             if (_allTotalPage[CurrentTabIndex] < _allCurrentPage[CurrentTabIndex])
-                return (_allCurrentPage[CurrentTabIndex] - 1).ToString();
+                _allCurrentPage[CurrentTabIndex] = _allCurrentPage[CurrentTabIndex] - 1;
             return _allCurrentPage[CurrentTabIndex].ToString();
         }
 

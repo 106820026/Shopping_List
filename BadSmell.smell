@@ -444,18 +444,18 @@
             </Smell>
             <Smell>
               <Id>17</Id>
-              <SmellType>Unresolved warnings(忽視警告)-已指派欄位 'ShopListPresentationModel._currentTabIndex'，但從未使用過其值。</SmellType>
-              <HashCode>Shopping\ShopList.ShopListPresentationModel.cs.Unresolved warnings(忽視警告)-已指派欄位 'ShopListPresentationModel._currentTabIndex'，但從未使用過其值。.37</HashCode>
-              <Severity>Red</Severity>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>176 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListPresentationModel.GetChangedItemRowIndex() 以及 ShopList.ShopListPresentationModel.GetSubtotal(int, int)</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
-              <Project>Shopping\ShopList</Project>
-              <File>ShopListPresentationModel.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.cs</File>
+              <Line>176</Line>
+              <StartLine>175</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
+              <EndLine>176</EndLine>
               <EndCol>0</EndCol>
-              <Comment />
+              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListPresentationModel.GetChangedItemRowIndex() 以及 ShopList.ShopListPresentationModel.GetSubtotal(int, int)</Comment>
               <Auto>false</Auto>
             </Smell>
           </Reviews>
@@ -463,7 +463,6 @@
           <HashCodeRequestIgnoreList>
             <string>SpacingAndNewLine9</string>
             <string>UnsuitableNaming.InventorySystemPresentationModel.OpenReplenishmentPage.OpenReplenishmentPage</string>
-            <string>Shopping\ShopList.ShopListPresentationModel.cs.Unresolved warnings(忽視警告)-已指派欄位 'ShopListPresentationModel._currentTabIndex'，但從未使用過其值。.37</string>
           </HashCodeRequestIgnoreList>
           <AnalysisFileManager>
             <AnalysisFiles>
@@ -614,7 +613,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>4960</ProductionLoc>
+          <ProductionLoc>4989</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>

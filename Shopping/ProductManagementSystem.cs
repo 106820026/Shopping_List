@@ -70,8 +70,6 @@ namespace ShopList
             ShowAllDetails(_currentItemIndex);
             _saveButton.Enabled = false;
             _addNewItemButton.Enabled = true;
-            _titleGroupBox.Text = EDIT_ITEM;
-            _saveButton.Text = SAVE;
             this.SetEditAndAddMode(true, false);
             this.EnableEdit(true);
         }
@@ -160,6 +158,16 @@ namespace ShopList
         {
             _editMode = flag1;
             _addMode = flag2;
+            if (flag1 == true)
+            {
+                _titleGroupBox.Text = EDIT_ITEM;
+                _saveButton.Text = SAVE;
+            }
+            else
+            {
+                _titleGroupBox.Text = ADD_ITEM;
+                _saveButton.Text = ADD_NEW;
+            }
         }
 
         // 按下瀏覽按鈕
@@ -186,8 +194,6 @@ namespace ShopList
             this.SetEditAndAddMode(false, true);
             this.CleanAllDetail();
             this.EnableEdit(true);
-            _titleGroupBox.Text = ADD_ITEM;
-            _saveButton.Text = ADD_NEW;
             _saveButton.Enabled = false;
             _addNewItemButton.Enabled = false;
         }
@@ -224,16 +230,13 @@ namespace ShopList
         private void UpdateListBox()
         {
             if (_editMode) // 修改
-            {
-                _itemsListBox.Items[_currentItemIndex] = String.Empty;
                 _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
-            }
             else if (_addMode) // 新增
             {
                 this.UpdateSection();
-                _itemsListBox.Items.Insert(0, _initial.GetName(_allSection[_allSection.Count - 1]));
+                _itemsListBox.Items.Add(_initial.GetName(_allSection[_allSection.Count - 1]));
             }
-            this.SetEditAndAddMode(false, false);
+            this.SetEditAndAddMode(true, false);
         }
 
         // 解除event
