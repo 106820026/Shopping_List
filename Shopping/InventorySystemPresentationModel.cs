@@ -10,76 +10,83 @@ namespace ShopList
 {
     class InventorySystemPresentationModel
     {
-        Initial _initial;
+        ProductManagement _productManagement;
         const String PICTURE_KEY = "picture";
+        const String FORMAT = "#,0";
 
-        public InventorySystemPresentationModel(Initial initial)
+        public InventorySystemPresentationModel(ProductManagement productManagement)
         {
-            this._initial = initial;
+            _productManagement = productManagement;
         }
 
-        // 取得所有商品詳細資料
+        /// 取得所有商品詳細資料
         public List<String[]> GetAllItemDetail()
         {
-            return _initial.GetAllItemList();
+            List<String[]> data = new List<string[]>();
+            foreach (Product product in _productManagement.GetAllProducts())
+            {
+                data.Add(new string[] { product.ProductName, product.ProductCategory, int.Parse(product.ProductPrice).ToString(FORMAT), product.ProductQuantity });
+            }
+            return data;
         }
 
-        // 取得所有Section的集合
-        public StringCollection GetAllSelection()
+        /// 取得新增商品詳細資料
+        public String[] GetLastestItemDetail()
         {
-            return _initial.GetAllSections();
+            Product product = _productManagement.GetLastestProduct();
+            return new string[] { product.ProductName, product.ProductCategory, int.Parse(product.ProductPrice).ToString(FORMAT), product.ProductQuantity };
         }
 
-        // 取得圖片
+        /// 取得圖片
         public Image GetImageFilePath(int index)
         {
-            return Image.FromFile(_initial.Read(this.GetAllSelection()[index], PICTURE_KEY));
+            return Image.FromFile(_productManagement.GetAllProducts()[index].ProductPicturePath);
         }
 
-        // 取得詳細資訊
+        /// 取得詳細資訊
         public String GetItemDetail(int index)
         {
-            return _initial.GetDescription(this.GetAllSelection()[index]);
+            return _productManagement.GetAllProducts()[index].ProductDetail;
         }
 
-        // 開啟補貨頁面
+        /// 開啟補貨頁面
         public void OpenReplenishmentPage(int index)
         {
-            Replenishment replenishment = new Replenishment(index, _initial);
+            Replenishment replenishment = new Replenishment(index, _productManagement);
             replenishment.ShowDialog();
         }
 
-        // 用Section取得RowIndex
-        public int GetRowIndexBySection(String section)
+        /// 用Name取得RowIndex
+        public int GetRowIndexBySection(String name)
         {
-            for (int i = 0; i < this.GetAllSelection().Count; i++)
-                if (this.GetAllSelection()[i] == section)
+            for (int i = 0; i < _productManagement.GetAllProducts().Count; i++)
+                if (_productManagement.GetAllProducts()[i].ProductName == name)
                     return i;
             return 0;
         }
 
-        // 取得庫存量
-        public String GetStock(String section)
+        /// 取得名稱
+        public String GetName()
         {
-            return _initial.GetStock(section);
+            return _productManagement.GetEditProduct().ProductName;
         }
 
-        // 取得名稱
-        public String GetName(String section)
+        /// 取得庫存量
+        public String GetStock()
         {
-            return _initial.GetName(section);
+            return _productManagement.GetEditProduct().ProductQuantity;
         }
 
-        // 取得類別
-        public String GetType(String section)
+        /// 取得類別
+        public String GetCategory()
         {
-            return _initial.GetType(section);
+            return _productManagement.GetEditProduct().ProductCategory;
         }
 
-        // 取得價錢
-        public String GetPrice(String section)
+        /// 取得價錢
+        public String GetPrice()
         {
-            return _initial.GetPrice(section);
+            return _productManagement.GetEditProduct().ProductPrice;
         }
     }
 }

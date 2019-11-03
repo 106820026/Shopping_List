@@ -10,17 +10,9 @@ namespace ShopList
     class ProductManagementSystemPresentationModel
     {
         #region Member Data
-        Initial _initial;
-        ProductTypeManagement _productTypeManagement;
-        const String ZERO = "0";
-        const String MODEL = "model";
-        const String PRICE = "price";
-        const String TYPE = "type";
-        const String PATH = "picture";
-        const String DETAIL = "detail";
-        const String STOCK = "stock";
+        CategoryManagement _productTypeManagement;
+        ProductManagement _productManagement;
         const String DESTINATION = "../../Resources/";
-        String[] _keys = { MODEL, PRICE, TYPE, PATH, DETAIL };
         bool _nameValid = false;
         bool _priceValid = false;
         bool _typeValid = false;
@@ -28,30 +20,24 @@ namespace ShopList
         const int DELETE_BUTTON = 8;
         const int NAME_INDEX = 0;
         const int PRICE_INDEX = 1;
-        const int TYPE_INDEX = 2;
+        const int CATEGORY_INDEX = 2;
         const int PATH_INDEX = 3;
         const int DETAIL_INDEX = 4;
         #endregion
 
-        public ProductManagementSystemPresentationModel(Initial initial, ProductTypeManagement productTypeManagement)
+        public ProductManagementSystemPresentationModel(CategoryManagement productTypeManagement, ProductManagement productManagement)
         {
-            _initial = initial;
             _productTypeManagement = productTypeManagement;
+            _productManagement = productManagement;
         }
 
-        // 設定類別的comboBox
-        public List<String> GetTypes()
-        {
-            return _initial.GetAllType();
-        }
-
-        // 名字是否為空
+        /// 名字是否為空
         public void ConfirmName(String text)
         {
             _nameValid = text == "" ? false : true;
         }
 
-        // 限制輸入只能數字
+        /// 限制輸入只能數字
         public bool InputOnlyNumber(char inputChar)
         {
             if ((!char.IsDigit(inputChar) && inputChar != DELETE_BUTTON)) //輸入非數字
@@ -59,7 +45,7 @@ namespace ShopList
             return false;
         }
 
-        // 價錢是否正確
+        /// 價錢是否正確
         public void ConfirmPrice(String text)
         {
             if (text == "" || int.Parse(text) == 0)
@@ -68,19 +54,19 @@ namespace ShopList
                 _priceValid = true;
         }
 
-        // 是否有選擇類別
+        /// 是否有選擇類別
         public void ConfirmType(int index)
         {
             _typeValid = index == -1 ? false : true;
         }
 
-        // 是否有圖片路徑
+        /// 是否有圖片路徑
         public void ConfirmPath(String text)
         {
             _pathValid = text == "" ? false : true;
         }
 
-        // 是否可按下儲存
+        /// 是否可按下儲存
         public bool ConfirmSaveButton()
         {
             if (_nameValid == true && _priceValid == true && _typeValid == true && _pathValid == true)
@@ -88,22 +74,19 @@ namespace ShopList
             return false;
         }
 
-        // 修改商品
-        public void ModifyItem(int itemIndex, String[] content)
+        /// 修改商品
+        public void ModifyProduct(int rowIndex, String[] content)
         {
-            String section = this.GetAllSections()[itemIndex];
+            List<Product> products = _productManagement.GetAllProducts();
             content[PATH_INDEX] = this.CopyFileToResources(content[PATH_INDEX]);
-            for (int i = 0; i < content.Length; i++)
-                _initial.Write(section, _keys[i], content[i]);
+            _productManagement.EditProductName(products[rowIndex], content[NAME_INDEX]);
+            _productManagement.EditProductPrice(products[rowIndex], content[PRICE_INDEX]);
+            _productManagement.EditProductCategory(products[rowIndex], content[CATEGORY_INDEX]);
+            _productManagement.EditProductPicturePath(products[rowIndex], content[PATH_INDEX]);
+            _productManagement.EditProductDetail(products[rowIndex], content[DETAIL_INDEX]);
         }
 
-        // 取得所有section
-        private List<String> GetAllSections()
-        {
-            return _initial.GetAllSections().Cast<String>().ToList<String>();
-        }
-
-        // 把選取的相片存到內部資料夾
+        /// 把選取的相片存到內部資料夾
         public String CopyFileToResources(String filePath)
         {
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
@@ -118,15 +101,10 @@ namespace ShopList
             return DESTINATION + file.Name;
         }
 
-        // 新增商品
-        public void AddNewItem(String[] content)
+        /// 新增商品
+        public void AddNewProduct(String[] content)
         {
-            _initial.Write(content[NAME_INDEX], PATH, content[PATH_INDEX]);
-            _initial.Write(content[NAME_INDEX], TYPE, content[TYPE_INDEX]);
-            _initial.Write(content[NAME_INDEX], MODEL, content[NAME_INDEX]);
-            _initial.Write(content[NAME_INDEX], DETAIL, content[DETAIL_INDEX]);
-            _initial.Write(content[NAME_INDEX], PRICE, content[PRICE_INDEX]);
-            _initial.Write(content[NAME_INDEX], STOCK, ZERO);
+            _productManagement.AddNewProduct(content);
         }
     }
 }

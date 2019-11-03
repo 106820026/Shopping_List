@@ -9,15 +9,15 @@ namespace ShopList
     class ReplenishmentPresentationModel
     {
         const int DELETE_BUTTON = 8;
-        Initial _initial;
-        const String STOCK_KEY = "stock";
-        private int _replenishmentNumber;
+        ProductManagement _productManagement;
+        private String _replenishmentNumber;
 
-        public ReplenishmentPresentationModel(Initial initial)
+        public ReplenishmentPresentationModel(ProductManagement productManagement)
         {
-            this._initial = initial;
+            _productManagement = productManagement;
         }
-        // 輸入項目為0或空白
+
+        /// 輸入項目為0或空白
         public bool IsZero(String inputText)
         {
             if (inputText == "" || int.Parse(inputText) + 1 == 1)
@@ -25,7 +25,7 @@ namespace ShopList
             return true;
         }
 
-        // 只能輸入數字
+        /// 只能輸入數字
         public bool InputOnlyNumber(char inputChar)
         {
             if (char.IsNumber(inputChar) != true && inputChar != DELETE_BUTTON)
@@ -34,18 +34,18 @@ namespace ShopList
 
         }
 
-        // 取得補貨數量
+        /// 取得補貨數量
         public void GetReplenishmentNumber(String number)
         {
             if (number != "")
-                _replenishmentNumber = int.Parse(number);
+                _replenishmentNumber = number;
         }
 
-        // 補貨完 更新庫存數量
-        public void UpdateStockNumber(String itemName)
+        /// 補貨完 更新庫存數量
+        public void UpdateQuantity(int rowindex)
         {
-            int originalStock = int.Parse(_initial.Read(itemName, STOCK_KEY));
-            _initial.Write(itemName, STOCK_KEY, (originalStock + _replenishmentNumber).ToString());
+            Product editProduct = _productManagement.GetAllProducts()[rowindex];
+            _productManagement.EditProductQuantity(editProduct, int.Parse(_replenishmentNumber));
         }
     }
 }

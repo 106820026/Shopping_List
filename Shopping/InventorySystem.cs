@@ -12,9 +12,8 @@ namespace ShopList
 {
     public partial class InventorySystem : Form
     {
-        const String FILE_PATH = "../../Data Info.ini";
-        Initial _initial;
         InventorySystemPresentationModel _inventorySystemPresentationModel;
+        ProductManagement _productManagement;
         const String REPLENISHMENT_COLUMN = "_replenishment";
         const int NAME_COLUMN_INDEX = 0;
         const int TYPE_COLUMN_INDEX = 1;
@@ -23,18 +22,18 @@ namespace ShopList
         const int REPLENISHMENT_COLUMN_INDEX = 4;
         int _currentRow;
 
-        public InventorySystem(Initial initial)
+        public InventorySystem(ReadFile initial, ProductManagement productManagement)
         {
             InitializeComponent();
-            this._initial = initial;
-            _inventorySystemPresentationModel = new InventorySystemPresentationModel(_initial);
-            _initial._writeNewData += UpdateStock;
+            _productManagement = productManagement;
+            _inventorySystemPresentationModel = new InventorySystemPresentationModel(_productManagement);
+            _productManagement._writeNewData += UpdateProductData;
             this.LoadAndShowDataGridView();
             _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(0);
             _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(0);
         }
 
-        // 加入補貨icon
+        /// 加入補貨icon
         private void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
@@ -51,7 +50,7 @@ namespace ShopList
             }
         }
 
-        // click表格
+        /// click表格
         private void ClickItem(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
@@ -66,41 +65,36 @@ namespace ShopList
             }
         }
 
-        // 讀取DaraGridView資料 並顯示
+        /// 讀取DaraGridView資料 並顯示
         private void LoadAndShowDataGridView()
         {
             foreach (String[] item in _inventorySystemPresentationModel.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
                 _itemDataGridView.Rows.Add(item);
         }
 
-        // 更新庫存數量
-        private void UpdateStock()
+        /// 更新庫存數量
+        public void UpdateProductData()
         {
-            String changedSection = _initial.GetChangeSection();
-            int rowIndex = _inventorySystemPresentationModel.GetRowIndexBySection(changedSection);
-            if (this.AddNewItem(rowIndex)) // 新增商品
-                _itemDataGridView.Rows.Add(_inventorySystemPresentationModel.GetAllItemDetail());
-            else // 修改商品
+            int rowIndex = _productManagement.GetEditProductIndexOfAllProducts();
+            try
             {
-                _itemDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetName(changedSection);
-                _itemDataGridView.Rows[rowIndex].Cells[TYPE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetType(changedSection);
-                _itemDataGridView.Rows[rowIndex].Cells[PRICE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetPrice(changedSection);
-                _itemDataGridView.Rows[rowIndex].Cells[STOCK_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetStock(changedSection);
+                _itemDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetName();
+                _itemDataGridView.Rows[rowIndex].Cells[TYPE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetCategory();
+                _itemDataGridView.Rows[rowIndex].Cells[PRICE_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetPrice();
+                _itemDataGridView.Rows[rowIndex].Cells[STOCK_COLUMN_INDEX].Value = _inventorySystemPresentationModel.GetStock();
                 _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(_itemDataGridView.CurrentCell.RowIndex);
                 _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(_itemDataGridView.CurrentCell.RowIndex);
             }
+            catch
+            {
+                _itemDataGridView.Rows.Add(_inventorySystemPresentationModel.GetLastestItemDetail());
+            }
         }
 
-        // 有新增商品
-        public bool AddNewItem(int rowIndex)
-        {
-            return rowIndex >= _itemDataGridView.Rows.Count;
-        }
-
-        // 解除event
+        /// 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
-            _initial._writeNewData -= UpdateStock;
+            _productManagement._writeNewData -= UpdateProductData;
             this.Dispose();
         }
     }

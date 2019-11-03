@@ -58,7 +58,7 @@ namespace ShopList
             _allValid = new bool[] { _firstNameValid, _lastNameValid, _cardNumber1Valid, _cardNumber2Valid, _cardNumber3Valid, _cardNumber4Valid, _backNumberValid, _mailValid, _addressValid };
         }
 
-        // 確認姓名輸入
+        /// 確認姓名輸入
         public bool ConfirmName(int itemTag, int length, char inputChar)
         {
             if (inputChar >= ZERO && inputChar <= NINE) // 不可輸入數字
@@ -76,7 +76,7 @@ namespace ShopList
             }
         }
 
-        // 確認地址輸入
+        /// 確認地址輸入
         public void ConfirmAddress(int length, char inputChar)
         {
             if (inputChar == DELETE_BUTTON && length <= 1) // 按下刪除鍵
@@ -85,7 +85,7 @@ namespace ShopList
                 this.GetValidStatus(ADDRESS_TAG, true, NO_ERROR);
         }
 
-        // 卡號只能輸入數字
+        /// 卡號只能輸入數字
         public bool InputOnlyNumber(int itemTag, int length, char inputChar)
         {
             if ((!char.IsDigit(inputChar) && inputChar != DELETE_BUTTON)) //輸入非數字
@@ -105,7 +105,7 @@ namespace ShopList
             }
         }
 
-        // 檢查長度
+        /// 檢查長度
         public void CheckLength(int itemTag, int length)
         {
             if (itemTag == BACK_NUMBER_TAG && length >= TWO)
@@ -114,7 +114,7 @@ namespace ShopList
                 this.GetValidStatus(itemTag, true, NO_ERROR);
         }
 
-        // 確認信箱格式
+        /// 確認信箱格式
         public void ConfirmMailFormat(String text)
         {
             if (!Regex.IsMatch(text, PATTERN))
@@ -123,14 +123,14 @@ namespace ShopList
                 this.GetValidStatus(MAIL_TAG, true, NO_ERROR);
         }
 
-        // 禁止出現空字串
+        /// 禁止出現空字串
         public void CheckNoEmpty(int itemTag, String text)
         {
             if (text == "")
                 this.GetValidStatus(itemTag, false, YOU_MUST_INPUT_SOMETHING);
         }
 
-        // 卡號字數不足
+        /// 卡號字數不足
         public void LackNumber(int itemTag, int length)
         {
             // 背面末3碼字數問題
@@ -147,7 +147,7 @@ namespace ShopList
             }
         }
 
-        // 確認資料輸入完整
+        /// 確認資料輸入完整
         public bool ConfirmAll()
         {
             for (int i = 0; i < TEXT_BOX_NUMBER; i++) // 如果有false的話就直接return false
@@ -158,20 +158,20 @@ namespace ShopList
             return true;
         }
 
-        // 顯示錯誤訊息
+        /// 顯示錯誤訊息
         public String GetErrorMessage()
         {
             return _errorMessage;
         }
 
-        // 清除末3碼
+        /// 清除末3碼
         public String CleanBackNumber()
         {
             _allValid[BACK_NUMBER_TAG] = false;
             return String.Empty;
         }
 
-        // 輸入框狀態改變
+        /// 輸入框狀態改變
         private void GetValidStatus(int itemTag, bool flag, String errorMessage)
         {
             _allValid[itemTag] = flag;

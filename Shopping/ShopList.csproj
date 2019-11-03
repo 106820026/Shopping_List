@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddToCart.cs" />
-    <Compile Include="ProductTypeManagement.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="CategoryManagement.cs" />
     <Compile Include="CreditCardPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +86,8 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Initial.cs" />
+    <Compile Include="ReadFile.cs" />
+    <Compile Include="ProductManagement.cs" />
     <Compile Include="ProductManagementSystem.cs">
       <SubType>Form</SubType>
     </Compile>

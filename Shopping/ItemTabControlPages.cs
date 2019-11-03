@@ -9,27 +9,22 @@ namespace ShopList
 {
     class ItemTabControlPages
     {
-        Initial _initial;
-        ProductTypeManagement _allProductManagement;
+        CategoryManagement _categoryManagement;
         TabPage _tabPage;
         TableLayoutPanel _tableLayoutPanel;
         List<TableLayoutPanel> _tableLayoutPanels;
         List<int> _allCurrentPage = new List<int>();
         List<int> _allTotalPage = new List<int>();
-        List<String> _types = new List<string>();
         const int COLUMN_COUNT = 3;
         const int ROW_COUNT = 2;
         const int WIDTH = 380;
         const int HEIGHT = 270;
 
-        public ItemTabControlPages(TabControl tabControl, Initial initial, ProductTypeManagement allProductManagement)
+        public ItemTabControlPages(TabControl tabControl, CategoryManagement productTypeManagement)
         {
-            _initial = initial;
-            _allProductManagement = allProductManagement;
+            _categoryManagement = productTypeManagement;
             _tableLayoutPanels = new List<TableLayoutPanel>();
-            this.GetAllType();
             this.InitialAllTabPages(tabControl);
-            _initial._writeNewData += UpdateTotalPage;
         }
 
         public int CurrentTabIndex
@@ -37,37 +32,31 @@ namespace ShopList
             get; set;
         }
 
-        //初始化所有tabPage
+        /// 初始化所有tabPage
         private void InitialAllTabPages(TabControl tabControl)
         {
-            int tabCount = _types.Count;
+            int tabCount = _categoryManagement.GetCategories().Count;
             for (int i = 0; i < tabCount; i++)
             {
-                _tabPage = new TabPage(_types[i]);
+                _tabPage = new TabPage(_categoryManagement.GetCategories()[i].CategoryName);
                 _tabPage.Controls.Add(this.AddLayout());
                 _tabPage.UseVisualStyleBackColor = true;
                 tabControl.Controls.Add(_tabPage);
                 _allCurrentPage.Add(1); //新增首頁
-                _allTotalPage.Add(_allProductManagement.GetTotalPage(_types[i])); //新增總頁數
+                _allTotalPage.Add(_categoryManagement.GetTotalPage(_categoryManagement.GetCategories()[i].CategoryName)); //新增總頁數
             }
         }
 
-        // 取得所有type(如果有增減type的話就要重新call這個function)
-        private void GetAllType()
-        {
-            _types = _initial.GetAllType();
-        }
-
-        // 更新總頁數
+        /// 更新總頁數
         public void UpdateTotalPage()
         {
             _allTotalPage.Clear();
-            int tabCount = _types.Count;
+            int tabCount = _categoryManagement.GetCategories().Count;
             for (int i = 0; i < tabCount; i++)
-                _allTotalPage.Add(_allProductManagement.GetTotalPage(_types[i])); //新增總頁數
+                _allTotalPage.Add(_categoryManagement.GetTotalPage(_categoryManagement.GetCategories()[i].CategoryName)); //新增總頁數
         }
 
-        // 新增TableLayoutPanel
+        /// 新增TableLayoutPanel
         public TableLayoutPanel AddLayout()
         {
             _tableLayoutPanel = new TableLayoutPanel
@@ -86,7 +75,7 @@ namespace ShopList
             return _tableLayoutPanel;
         }
 
-        //新增每個Item的button
+        /// 新增每個Item的button
         public void AddItemButton(TableLayoutPanel tableLayoutPanel)
         {
             int tag = 0;
@@ -103,13 +92,13 @@ namespace ShopList
                 }
         }
 
-        // 取得TableLayoutPanel以取得Button
+        /// 取得TableLayoutPanel以取得Button
         public TableLayoutPanel GetTableLayoutPanel(int tabIndex)
         {
             return _tableLayoutPanels[tabIndex];
         }
 
-        // 顯示目前頁數
+        /// 顯示目前頁數
         public String GetCurrentPage()
         {
             if (_allTotalPage[CurrentTabIndex] < _allCurrentPage[CurrentTabIndex])
@@ -117,13 +106,13 @@ namespace ShopList
             return _allCurrentPage[CurrentTabIndex].ToString();
         }
 
-        // 顯示目前總頁數
+        /// 顯示目前總頁數
         public String GetTotalPage()
         {
             return _allTotalPage[CurrentTabIndex].ToString();
         }
 
-        // 翻頁
+        /// 翻頁
         public String ChangePage(int offset)
         {
             _allCurrentPage[CurrentTabIndex] += offset;

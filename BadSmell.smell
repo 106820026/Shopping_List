@@ -188,29 +188,29 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
+              <SmellType>ICS(空白與空行-16)</SmellType>
+              <HashCode>SpacingAndNewLine16.CreditCardPaymentPresentationModel.ConfirmMailFormat.0</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>CreditCardPaymentPresentationModel.cs</File>
+              <Line>117</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
               <SmellType>Unsuitable naming(名不符實)-REPLENISHMENT_COLUMN(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.InventorySystem.REPLENISHMENT_COLUMN.REPLENISHMENT_COLUMN</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystem.cs</File>
-              <Line>18</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>Unsuitable naming(名不符實)-REPLENISHMENT_COLUMN_INDEX(replenishment)</SmellType>
-              <HashCode>UnsuitableNaming.InventorySystem.REPLENISHMENT_COLUMN_INDEX.REPLENISHMENT_COLUMN_INDEX</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>ShopList</Project>
-              <File>InventorySystem.cs</File>
-              <Line>23</Line>
+              <Line>17</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -220,6 +220,22 @@
             </Smell>
             <Smell>
               <Id>3</Id>
+              <SmellType>Unsuitable naming(名不符實)-REPLENISHMENT_COLUMN_INDEX(replenishment)</SmellType>
+              <HashCode>UnsuitableNaming.InventorySystem.REPLENISHMENT_COLUMN_INDEX.REPLENISHMENT_COLUMN_INDEX</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>InventorySystem.cs</File>
+              <Line>22</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishment(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.InventorySystem._replenishment._replenishment</HashCode>
               <Severity>Red</Severity>
@@ -235,14 +251,46 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>4</Id>
+              <Id>5</Id>
+              <SmellType>ICS(空白與空行-16)</SmellType>
+              <HashCode>SpacingAndNewLine16.InventorySystemPresentationModel.OpenReplenishmentPage.0</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>InventorySystemPresentationModel.cs</File>
+              <Line>52</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>Unsuitable naming(名不符實)-GetLastestItemDetail(lastest)</SmellType>
+              <HashCode>UnsuitableNaming.InventorySystemPresentationModel.GetLastestItemDetail.GetLastestItemDetail</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>InventorySystemPresentationModel.cs</File>
+              <Line>34</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
               <SmellType>Unsuitable naming(名不符實)-replenishment(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.InventorySystemPresentationModel.OpenReplenishmentPage.replenishment</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystemPresentationModel.cs</File>
-              <Line>48</Line>
+              <Line>54</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -251,14 +299,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>5</Id>
+              <Id>8</Id>
               <SmellType>Unsuitable naming(名不符實)-OpenReplenishmentPage(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.InventorySystemPresentationModel.OpenReplenishmentPage.OpenReplenishmentPage</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>InventorySystemPresentationModel.cs</File>
-              <Line>46</Line>
+              <Line>52</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -267,14 +315,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>6</Id>
+              <Id>9</Id>
               <SmellType>ICS(空白與空行-9)</SmellType>
               <HashCode>SpacingAndNewLine9</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ItemTabControlPages.cs</File>
-              <Line>98</Line>
+              <Line>87</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -283,14 +331,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>7</Id>
+              <Id>10</Id>
               <SmellType>ICS(空白與空行-9)</SmellType>
               <HashCode>SpacingAndNewLine9</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ItemTabControlPages.cs</File>
-              <Line>100</Line>
+              <Line>89</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -299,7 +347,23 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>8</Id>
+              <Id>11</Id>
+              <SmellType>Unsuitable naming(名不符實)-GetLastestProduct(lastest)</SmellType>
+              <HashCode>UnsuitableNaming.ProductManagement.GetLastestProduct.GetLastestProduct</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ProductManagement.cs</File>
+              <Line>73</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>12</Id>
               <SmellType>Unsuitable naming(名不符實)-Replenishment(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ShopList.Replenishment.Replenishment</HashCode>
               <Severity>Red</Severity>
@@ -315,14 +379,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>9</Id>
+              <Id>13</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentControl(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._replenishmentControl._replenishmentControl</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>Replenishment.cs</File>
-              <Line>17</Line>
+              <Line>16</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -331,7 +395,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>10</Id>
+              <Id>14</Id>
               <SmellType>Unsuitable naming(名不符實)-Replenishment(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ShopList.Replenishment.Replenishment</HashCode>
               <Severity>Red</Severity>
@@ -347,7 +411,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>11</Id>
+              <Id>15</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentTableLayoutPanel(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._replenishmentTableLayoutPanel._replenishmentTableLayoutPanel</HashCode>
               <Severity>Red</Severity>
@@ -363,7 +427,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>12</Id>
+              <Id>16</Id>
               <SmellType>Unsuitable naming(名不符實)-_itemReplenishmentNumberLabel(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._itemReplenishmentNumberLabel._itemReplenishmentNumberLabel</HashCode>
               <Severity>Red</Severity>
@@ -379,7 +443,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>13</Id>
+              <Id>17</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentTextBox(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.Replenishment._replenishmentTextBox._replenishmentTextBox</HashCode>
               <Severity>Red</Severity>
@@ -395,7 +459,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>14</Id>
+              <Id>18</Id>
               <SmellType>Unsuitable naming(名不符實)-ReplenishmentPresentationModel(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ShopList.ReplenishmentPresentationModel.ReplenishmentPresentationModel</HashCode>
               <Severity>Red</Severity>
@@ -411,14 +475,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>15</Id>
+              <Id>19</Id>
               <SmellType>Unsuitable naming(名不符實)-_replenishmentNumber(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ReplenishmentPresentationModel._replenishmentNumber._replenishmentNumber</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>ReplenishmentPresentationModel.cs</File>
-              <Line>14</Line>
+              <Line>13</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -427,7 +491,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>16</Id>
+              <Id>20</Id>
               <SmellType>Unsuitable naming(名不符實)-GetReplenishmentNumber(replenishment)</SmellType>
               <HashCode>UnsuitableNaming.ReplenishmentPresentationModel.GetReplenishmentNumber.GetReplenishmentNumber</HashCode>
               <Severity>Red</Severity>
@@ -443,19 +507,403 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>17</Id>
+              <Id>21</Id>
+              <SmellType>Unsuitable naming(名不符實)-rowindex(rowindex)</SmellType>
+              <HashCode>UnsuitableNaming.ReplenishmentPresentationModel.UpdateQuantity.rowindex</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ReplenishmentPresentationModel.cs</File>
+              <Line>45</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>22</Id>
+              <SmellType>ICS(空白與空行-16)</SmellType>
+              <HashCode>SpacingAndNewLine16.ShopList.ShowItemPicture.0</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ShopList.cs</File>
+              <Line>218</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>23</Id>
+              <SmellType>ICS(變數-4)</SmellType>
+              <HashCode>Variable4.ChangeButtonStatus.defaultPicturePath</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>ShopList.cs</File>
+              <Line>278</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(變數-4) 定義字面常數的名稱的所有字母大寫，並以底線隔開單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>24</Id>
+              <SmellType>Unresolved warnings(忽視警告)-欄位 'ReadFile._types' 從未使用過</SmellType>
+              <HashCode>Shopping\ShopList.ReadFile.cs.Unresolved warnings(忽視警告)-欄位 'ReadFile._types' 從未使用過.18</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ReadFile.cs</File>
+              <Line>18</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>25</Id>
+              <SmellType>Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn1' 從未使用過</SmellType>
+              <HashCode>Shopping\ShopList.ShopList.Designer.cs.Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn1' 從未使用過.1154</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ShopList.Designer.cs</File>
+              <Line>1154</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>26</Id>
+              <SmellType>Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn2' 從未使用過</SmellType>
+              <HashCode>Shopping\ShopList.ShopList.Designer.cs.Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn2' 從未使用過.1155</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ShopList.Designer.cs</File>
+              <Line>1155</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>27</Id>
+              <SmellType>Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn3' 從未使用過</SmellType>
+              <HashCode>Shopping\ShopList.ShopList.Designer.cs.Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn3' 從未使用過.1156</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ShopList.Designer.cs</File>
+              <Line>1156</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>28</Id>
+              <SmellType>Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewNumericUpDownColumn1' 從未使用過</SmellType>
+              <HashCode>Shopping\ShopList.ShopList.Designer.cs.Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewNumericUpDownColumn1' 從未使用過.1157</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ShopList.Designer.cs</File>
+              <Line>1157</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>29</Id>
+              <SmellType>Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn4' 從未使用過</SmellType>
+              <HashCode>Shopping\ShopList.ShopList.Designer.cs.Unresolved warnings(忽視警告)-欄位 'ShopList._dataGridViewTextBoxColumn4' 從未使用過.1158</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>Shopping\ShopList</Project>
+              <File>ShopList.Designer.cs</File>
+              <Line>1158</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>30</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>176 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListPresentationModel.GetChangedItemRowIndex() 以及 ShopList.ShopListPresentationModel.GetSubtotal(int, int)</HashCode>
+              <HashCode>61 目前物件 ShopList.ShopListPresentationModel，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Product，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Product.ProductName 以及 ShopList.Product.ProductDetail</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopListPresentationModel.cs</File>
+              <Line>61</Line>
+              <StartLine>60</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>61</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ShopListPresentationModel，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.Product，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Product.ProductName 以及 ShopList.Product.ProductDetail</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>31</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>79 目前物件 ShopList.ShopListPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Product，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Product.ProductName 以及 ShopList.Product.ProductCategory</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopListPresentationModel.cs</File>
+              <Line>79</Line>
+              <StartLine>78</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>79</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ShopListPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Product，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.Product.ProductName 以及 ShopList.Product.ProductCategory</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>32</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>37 目前物件 ShopList.InventorySystemPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Product，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：ShopList.Product.ProductName 以及 ShopList.Product.ProductCategory 以及 ShopList.Product.ProductQuantity</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\InventorySystemPresentationModel.cs</File>
+              <Line>37</Line>
+              <StartLine>36</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>37</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.InventorySystemPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.Product，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：ShopList.Product.ProductName 以及 ShopList.Product.ProductCategory 以及 ShopList.Product.ProductQuantity</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>33</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>61 目前物件 ShopList.InventorySystemPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ProductManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ProductManagement.GetAllProducts() 以及 ShopList.ProductManagement.GetAllProducts()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\InventorySystemPresentationModel.cs</File>
+              <Line>61</Line>
+              <StartLine>61</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>61</EndLine>
+              <EndCol>78</EndCol>
+              <Comment>目前物件 ShopList.InventorySystemPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ProductManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ProductManagement.GetAllProducts() 以及 ShopList.ProductManagement.GetAllProducts()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>34</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>48 目前物件 ShopList.ReplenishmentPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ProductManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ProductManagement.GetAllProducts() 以及 ShopList.ProductManagement.EditProductQuantity(ShopList.Product, int)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ReplenishmentPresentationModel.cs</File>
+              <Line>48</Line>
+              <StartLine>47</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>48</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ReplenishmentPresentationModel，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ProductManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ProductManagement.GetAllProducts() 以及 ShopList.ProductManagement.EditProductQuantity(ShopList.Product, int)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>35</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>175 目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListPresentationModel.GetChangedProductRowIndex() 以及 ShopList.ShopListPresentationModel.GetSubtotal(int, int)</HashCode>
               <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>ShopList</Project>
               <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.cs</File>
-              <Line>176</Line>
-              <StartLine>175</StartLine>
+              <Line>175</Line>
+              <StartLine>174</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>176</EndLine>
+              <EndLine>175</EndLine>
               <EndCol>0</EndCol>
-              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListPresentationModel.GetChangedItemRowIndex() 以及 ShopList.ShopListPresentationModel.GetSubtotal(int, int)</Comment>
+              <Comment>目前物件 ShopList.ShopList，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ShopListPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ShopListPresentationModel.GetChangedProductRowIndex() 以及 ShopList.ShopListPresentationModel.GetSubtotal(int, int)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>36</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>41 目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ItemTabControlPages.cs</File>
+              <Line>41</Line>
+              <StartLine>40</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>41</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>37</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>42 目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ItemTabControlPages.cs</File>
+              <Line>42</Line>
+              <StartLine>41</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>42</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>38</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>46 目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ItemTabControlPages.cs</File>
+              <Line>46</Line>
+              <StartLine>45</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>46</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>39</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>56 目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ItemTabControlPages.cs</File>
+              <Line>56</Line>
+              <StartLine>55</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>56</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ItemTabControlPages，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.CategoryManagement，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.CategoryManagement.GetCategories() 以及 ShopList.CategoryManagement.GetCategories()</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>40</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>35 目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetPicturePath(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ProductManagement.cs</File>
+              <Line>35</Line>
+              <StartLine>34</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>35</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetPicturePath(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>41</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>36 目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetName(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ProductManagement.cs</File>
+              <Line>36</Line>
+              <StartLine>35</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>36</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetName(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>42</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>37 目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetType(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ProductManagement.cs</File>
+              <Line>37</Line>
+              <StartLine>36</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>37</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：1次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetType(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>43</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>38 目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetDetail(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ProductManagement.cs</File>
+              <Line>38</Line>
+              <StartLine>37</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>38</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetDetail(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>44</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>39 目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetPrice(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ProductManagement.cs</File>
+              <Line>39</Line>
+              <StartLine>38</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>39</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetPrice(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>45</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>40 目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetStock(string)</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>ShopList</Project>
+              <File>C:\Users\ASUS\source\repos\Shopping\Shopping\ProductManagement.cs</File>
+              <Line>40</Line>
+              <StartLine>39</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>40</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 ShopList.ProductManagement，使用物件的方法或屬性次數：0次，Envy到對象物件 ShopList.ReadFile，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：ShopList.ReadFile.GetAllSections() 以及 ShopList.ReadFile.GetStock(string)</Comment>
               <Auto>false</Auto>
             </Smell>
           </Reviews>
@@ -472,6 +920,16 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Category.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>CategoryManagement.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>CreditCardPayment.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -483,11 +941,6 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>CreditCardPaymentPresentationModel.cs</RelativePath>
-                <ProjectName>ShopList</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>Initial.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -522,6 +975,16 @@
                 <AnalysisFileType>Designer</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>Product.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>ProductManagement.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>ProductManagementSystem.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -533,11 +996,6 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>ProductManagementSystemPresentationModel.cs</RelativePath>
-                <ProjectName>ShopList</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>ProductTypeManagement.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -560,6 +1018,11 @@
                 <RelativePath>Properties\Settings.Designer.cs</RelativePath>
                 <ProjectName>ShopList</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>ReadFile.cs</RelativePath>
+                <ProjectName>ShopList</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Replenishment.cs</RelativePath>
@@ -613,7 +1076,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>4989</ProductionLoc>
+          <ProductionLoc>5127</ProductionLoc>
           <TestLoc>1503</TestLoc>
         </CodeReview>
       </Data>
