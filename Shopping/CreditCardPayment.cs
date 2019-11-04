@@ -26,7 +26,7 @@ namespace ShopList
             _confirmButton.Enabled = false;
         }
 
-        /// 名字只能輸入無數字字串
+        // 名字只能輸入無數字字串
         private void InputNoNumberString(object sender, KeyPressEventArgs e)
         {
             _textBox = (TextBox)sender;
@@ -35,7 +35,7 @@ namespace ShopList
             ShowError(_textBox);
         }
 
-        /// 地址只能輸入字串
+        // 地址只能輸入字串
         private void InputOnlyString(object sender, KeyPressEventArgs e)
         {
             _textBox = (TextBox)sender;
@@ -44,7 +44,7 @@ namespace ShopList
             ShowError(_textBox);
         }
 
-        /// 只能輸入數字
+        // 只能輸入數字
         private void InputOnlyNumber(object sender, KeyPressEventArgs e)
         {
             _textBox = (TextBox)sender;
@@ -53,7 +53,7 @@ namespace ShopList
             ShowError(_textBox);
         }
 
-        /// 信箱格式確認
+        // 信箱格式確認
         private void MailValid(object sender, KeyPressEventArgs e)
         {
             _textBox = (TextBox)sender;
@@ -62,7 +62,7 @@ namespace ShopList
             ShowError(_textBox);
         }
 
-        /// 不能為空字串
+        // 不能為空字串
         private void IsEmpty(object sender, EventArgs e)
         {
             _textBox = (TextBox)sender;
@@ -71,7 +71,7 @@ namespace ShopList
             ShowError(_textBox);
         }
 
-        /// 字數不夠
+        // 字數不夠
         private void InputNotEnoughWords(object sender, EventArgs e)
         {
             _textBox = (TextBox)sender;
@@ -80,13 +80,13 @@ namespace ShopList
             ShowError(_textBox);
         }
 
-        /// 確認資料完整性
+        // 確認資料完整性
         private void CheckDataComplete(object sender, EventArgs e)
         {
             _confirmButton.Enabled = _creditCardPaymentControl.ConfirmAll();
         }
 
-        /// 按下確認按鈕
+        // 按下確認按鈕
         private void ClickConfirmButton(object sender, EventArgs e)
         {
             _backNumberTextBox.Text = _creditCardPaymentControl.CleanBackNumber(); // 清除後3碼
@@ -96,7 +96,7 @@ namespace ShopList
             this.Close();
         }
 
-        /// 顯示錯誤訊息
+        // 顯示錯誤訊息
         private void ShowError(Object control)
         {
             _errorProvider.SetError((Control)control, _creditCardPaymentControl.GetErrorMessage());

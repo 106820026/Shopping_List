@@ -27,7 +27,7 @@ namespace ShopList
             _categoryManagement = new CategoryManagement(_productManagement);
         }
 
-        /// 開啟網購視窗
+        // 開啟網購視窗
         private void ClickOrderSystemButton(object sender, EventArgs e)
         {
             _shopList = new ShopList(_categoryManagement, _productManagement);
@@ -36,7 +36,7 @@ namespace ShopList
             this._shopList.FormClosed += ResetOrderButton;
         }
 
-        /// 開啟庫存視窗
+        // 開啟庫存視窗
         private void ClickInventorySystemButton(object sender, EventArgs e)
         {
             _inventorySystem = new InventorySystem(_initial, _productManagement);
@@ -45,7 +45,7 @@ namespace ShopList
             this._inventorySystem.FormClosed += ResetInventoryButton; 
         }
 
-        /// 開啟庫存管理視窗
+        // 開啟庫存管理視窗
         private void ClickProductManagementSystemButton(object sender, EventArgs e)
         {
             _productManagementSystem = new ProductManagementSystem(_initial, _categoryManagement, _productManagement);
@@ -54,25 +54,25 @@ namespace ShopList
             this._productManagementSystem.FormClosed += ResetProductManagementSystemButton;
         }
 
-        /// 關閉程式
+        // 關閉程式
         private void ClickExitButton(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        /// 使按鈕可再次使用
+        // 使按鈕可再次使用
         private void ResetOrderButton(object sender, EventArgs e)
         {
             _orderSystemButton.Enabled = true;
         }
 
-        /// 使按鈕可再次使用
+        // 使按鈕可再次使用
         private void ResetInventoryButton(object sender, EventArgs e)
         {
             _inventorySystemButton.Enabled = true;
         }
 
-        /// 使按鈕可再次使用
+        // 使按鈕可再次使用
         private void ResetProductManagementSystemButton(object sender, EventArgs e)
         {
             _productManagementSystemButton.Enabled = true;

@@ -16,8 +16,8 @@ namespace ShopList
         private string _filePath;
         StringCollection _sectionList = new StringCollection();
         String _changedSection;
-        const String MODEL_KEY = "model";
         const String SEPARATE_LINE = "\n-----------------------------------\n"; // 我是分隔線
+        const String NAME_KEY = "name";
         const String DETAIL_KEY = "detail";
         const String TYPE_KEY = "type";
         const String PRICE_KEY = "price";
@@ -43,13 +43,13 @@ namespace ShopList
 
         private static extern int GetPrivateProfileString(string section, string key, string definition, byte[] returnValue, int size, string filePath);
         
-        /// 讀取檔案位置
+        // 讀取檔案位置
         public ReadFile(string filePath)
         {
             this._filePath = filePath;
         }
 
-        /// 寫入檔案
+        // 寫入檔案
         public void Write(string section, string key, string value)
         {
             WritePrivateProfileString(section, key, value, this._filePath);
@@ -58,7 +58,7 @@ namespace ShopList
                 this._writeNewData(); // 如果ini檔有變動 發出訊號
         }
 
-        /// 讀取檔案
+        // 讀取檔案
         public string Read(string section, string key)
         {
             StringBuilder stringBuilder = new StringBuilder(CAPACITY);
@@ -67,7 +67,7 @@ namespace ShopList
         }
 
         #region 讀所有Section的function
-        /// 從Ini文件中，讀取所有的Sections的名稱
+        // 從Ini文件中，讀取所有的Sections的名稱
         public void ReadSections(StringCollection sectionList)
         {
             byte[] buffer = new byte[SIZE];
@@ -76,7 +76,7 @@ namespace ShopList
             GetStringsFromBuffer(buffer, bufferLength, sectionList);
         }
 
-        /// 對Section進行解析
+        // 對Section進行解析
         private void GetStringsFromBuffer(Byte[] buffer, int bufferLength, StringCollection strings)
         {
             strings.Clear();
@@ -96,14 +96,14 @@ namespace ShopList
         }
         #endregion
         
-        /// 回傳所有Section
+        // 回傳所有Section
         public StringCollection GetAllSections()
         {
             this.ReadSections(_sectionList);
             return _sectionList;
         }
 
-        /// 檔案位置
+        // 檔案位置
         public string FilePath
         {
             get
@@ -116,43 +116,43 @@ namespace ShopList
             }
         }
 
-        /// 取得名稱(用section來取)
+        // 取得名稱(用section來取)
         public String GetName(String currentItemName)
         {
-            return this.Read(currentItemName, MODEL_KEY);
+            return this.Read(currentItemName, NAME_KEY);
         }
 
-        /// 取得詳細資訊(用section來取)
+        // 取得詳細資訊(用section來取)
         public String GetDetail(String currentItemName)
         {
             return this.Read(currentItemName, DETAIL_KEY);
         }
 
-        /// 取得類別(用section來取)
+        // 取得類別(用section來取)
         public String GetType(String currentItemName)
         {
             return this.Read(currentItemName, TYPE_KEY);
         }
 
-        /// 取得價格(用section來取)
+        // 取得價格(用section來取)
         public String GetPrice(String currentItemName)
         {
             return this.Read(currentItemName, PRICE_KEY);
         }
 
-        /// 取得庫存(用section來取)
+        // 取得庫存(用section來取)
         public String GetStock(String currentItemName)
         {
             return this.Read(currentItemName, STOCK_KEY);
         }
 
-        /// 取得圖片路徑(用section來取)
+        // 取得圖片路徑(用section來取)
         public String GetPicturePath(String currentItemName)
         {
             return this.Read(currentItemName, PICTURE_KEY);
         }
 
-        /// 取得被更改的item的Section
+        // 取得被更改的item的Section
         public String GetChangeSection()
         {
             return _changedSection;

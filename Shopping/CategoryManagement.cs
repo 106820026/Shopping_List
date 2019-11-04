@@ -17,7 +17,7 @@ namespace ShopList
             this.InitialCategories();
         }
 
-        /// 存所有類別(只有在有新增類別的時候才要重call)
+        // 存所有類別(只有在有新增類別的時候才要重call)
         public void InitialCategories()
         {
             _categories.Clear();
@@ -26,13 +26,13 @@ namespace ShopList
                     _categories.Add(new Category(product.ProductCategory));
         }
 
-        /// 取得所有類別
+        // 取得所有類別
         public List<Category> GetCategories()
         {
             return _categories;
         }
 
-        /// 取得所有類別名稱
+        // 取得所有類別名稱
         public List<String> GetCategoryName()
         {
             List<String> category = new List<string>();
@@ -42,19 +42,19 @@ namespace ShopList
             return category;
         }
 
-        /// 取得類別的總頁數
-        public int GetTotalPage(String category)
+        // 取得類別的總頁數
+        public int GetTotalPage(int categoryIndex)
         {
-            float quantity = this.GetCurrentCategoryProduct(category).Count;
+            float quantity = this.GetCurrentCategoryProduct(categoryIndex).Count;
             return (int)(Math.Ceiling(quantity / 6.0F));
         }
 
-        /// 取得目前類別的所有商品
-        public List<Product> GetCurrentCategoryProduct(String category)
+        // 取得目前類別的所有商品
+        public List<Product> GetCurrentCategoryProduct(int categoryIndex)
         {
             List<Product> currentCategoryProduct = new List<Product>();
             foreach (Product product in _productManagement.GetAllProducts())
-                if (product.ProductCategory == category)
+                if (product.ProductCategory == this.GetCategories()[categoryIndex].CategoryName)
                     currentCategoryProduct.Add(product);
             return currentCategoryProduct;
         }

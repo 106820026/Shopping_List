@@ -17,7 +17,7 @@ namespace ShopList
             _productManagement = productManagement;
         }
 
-        /// 輸入項目為0或空白
+        // 輸入項目為0或空白
         public bool IsZero(String inputText)
         {
             if (inputText == "" || int.Parse(inputText) + 1 == 1)
@@ -25,7 +25,7 @@ namespace ShopList
             return true;
         }
 
-        /// 只能輸入數字
+        // 只能輸入數字
         public bool InputOnlyNumber(char inputChar)
         {
             if (char.IsNumber(inputChar) != true && inputChar != DELETE_BUTTON)
@@ -34,18 +34,23 @@ namespace ShopList
 
         }
 
-        /// 取得補貨數量
+        // 取得補貨數量
         public void GetReplenishmentNumber(String number)
         {
             if (number != "")
                 _replenishmentNumber = number;
         }
 
-        /// 補貨完 更新庫存數量
-        public void UpdateQuantity(int rowindex)
+        // 取得被修改的商品
+        public Product GetEditProduct(int rowIndex)
         {
-            Product editProduct = _productManagement.GetAllProducts()[rowindex];
-            _productManagement.EditProductQuantity(editProduct, int.Parse(_replenishmentNumber));
+            return _productManagement.GetAllProducts()[rowIndex];
+        }
+
+        // 補貨完 更新庫存數量
+        public void UpdateQuantity(int rowIndex)
+        {
+            _productManagement.EditProductQuantity(this.GetEditProduct(rowIndex), int.Parse(_replenishmentNumber));
         }
     }
 }

@@ -15,7 +15,6 @@ namespace ShopList
         CategoryManagement _productTypeManagement;
         AddToCart _cart;
         ProductManagement _productManagement;
-        const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 我是分隔線
         const String FORMAT = "#, 0";
         const String NEXT_PAGE_BUTTON = "_nextPageButton";
         const String LAST_PAGE_BUTTON = "_lastPageButton";
@@ -34,20 +33,20 @@ namespace ShopList
             _rowCount = 0;
         }
 
-        /// 購物車商品數量
+        // 購物車商品數量
         public void SetRowCount(int rowCount)
         {
             _rowCount = rowCount;
         }
 
-        /// 取得商品
+        // 取得商品
         public void GetCurrentProduce(int tag, String category)
         {
             int index = BUTTON_NUMBER * (int.Parse(_itemTabControlPages.GetCurrentPage()) - 1) + tag;
             _product = _productManagement.GetProducts(category)[index];
         }
 
-        /// 修改的商品是否有加入購物車
+        // 修改的商品是否有加入購物車
         public bool IsInCart()
         {
             if (_cart.GetProductList().Contains(_productManagement.GetEditProduct()))
@@ -55,10 +54,10 @@ namespace ShopList
             return false;
         }
 
-        /// 顯示商品詳細資訊
+        // 顯示商品詳細資訊
         public String GetDetail()
         {
-            return _product.ProductName + SEPARATE_LINE + _product.ProductDetail;
+            return _product.GetProductCaption();
         }
 
         // 刪除購物車內容
@@ -67,25 +66,25 @@ namespace ShopList
             _cart.DeleteItem(rowIndex);
         }
 
-        /// 加入商品至購物車
+        // 加入商品至購物車
         public void AddItemToCart()
         {
             _cart.AddItem(_product);
         }
 
-        /// 更新購物車表格
+        // 更新購物車表格
         public String[] GetCartItem()
         {
-            return new string[]{String.Empty, _product.ProductName, _product.ProductCategory, int.Parse(_product.ProductPrice).ToString(FORMAT), 1.ToString(), int.Parse(_product.ProductPrice).ToString(FORMAT) };
+            return _product.GetProductCartForm();
         }
 
-        /// 顯示商品庫存
+        // 顯示商品庫存
         public String GetStock()
         {
             return _product.ProductQuantity;
         }
 
-        /// 顯示商品價錢
+        // 顯示商品價錢
         public String GetPrice()
         {
             if (_product != null)
@@ -93,7 +92,7 @@ namespace ShopList
             return string.Empty;
         }
 
-        /// 翻頁
+        // 翻頁
         
         public void ChangePage(String itemName)
         {
@@ -104,19 +103,19 @@ namespace ShopList
 
         }
 
-        /// 是否為第一頁
+        // 是否為第一頁
         public bool IsFirstPage()
         {
             return int.Parse(_itemTabControlPages.GetCurrentPage()) == 1;
         }
 
-        /// 是否為最後一頁
+        // 是否為最後一頁
         public bool IsLastPage()
         {
             return int.Parse(_itemTabControlPages.GetCurrentPage()) == int.Parse(_itemTabControlPages.GetTotalPage());
         }
 
-        /// 確認訂購按鈕可以按下
+        // 確認訂購按鈕可以按下
         public bool CheckConfirmButton()
         {
             if (_rowCount == 0)
@@ -125,21 +124,21 @@ namespace ShopList
                 return true;
         }
 
-        /// 清空購物車所有東西並取得rowCount
+        // 清空購物車所有東西並取得rowCount
         public void ResetCart(int rowCount)
         {
             _cart.GetProductList().Clear();
             this.SetRowCount(rowCount);
         }
 
-        /// 已加入購物車
+        // 已加入購物車
         public bool IsAlreadyInCart()
         {
             // 如果已經在DGV上或是庫存沒了都不可以
             return !(_cart.GetProductList().Contains(_product) || _product.ProductQuantity == 0.ToString());
         }
 
-        /// 單一商品總價
+        // 單一商品總價
         public int GetSubtotal(int number, int rowIndex)
         {
             String value = 0.ToString();
@@ -151,7 +150,7 @@ namespace ShopList
             return number * int.Parse(_cart.GetProductList()[rowIndex].ProductPrice);
         }
 
-        /// 更新購買後庫存
+        // 更新購買後庫存
         public void UpdateProductQuantity()
         {
             foreach (Product product in _itemNameAndSellNumber.Keys.ToArray())
@@ -162,7 +161,7 @@ namespace ShopList
             _itemNameAndSellNumber.Clear();
         }
 
-        /// 庫存不足
+        // 庫存不足
         public bool OutOfStock(int rowIndex, int orderNumber)
         {
             if (int.Parse(_cart.GetProductList()[rowIndex].ProductQuantity) < orderNumber)
@@ -170,19 +169,19 @@ namespace ShopList
             return false;
         }
 
-        /// 改成庫存量
+        // 改成庫存量
         public String ChangeToMaximumStock(int rowIndex)
         {
             return _cart.GetProductList()[rowIndex].ProductQuantity;
         }
 
-        /// 取得已經加入購物車的所有商品
+        // 取得已經加入購物車的所有商品
         public List<Product> GetProductList()
         {
             return _cart.GetProductList();
         }
 
-        /// 如果修改的商品有放在購物車 回傳row index
+        // 如果修改的商品有放在購物車 回傳row index
         public int GetChangedProductRowIndex()
         {
             for (int i = 0; i < this.GetProductList().Count; i++)
@@ -191,22 +190,22 @@ namespace ShopList
             return 0;
         }
 
-        /// 取得修改商品的名稱
+        // 取得修改商品的名稱
         public String GetEditProductName()
         {
             return _productManagement.GetEditProduct().ProductName;
         }
 
-        /// 取得修改商品的類別
+        // 取得修改商品的類別
         public String GetEditProductCategory()
         {
             return _productManagement.GetEditProduct().ProductCategory;
         }
 
-        /// 取得修改商品的價格
+        // 取得修改商品的價格
         public String GetEditProductPrice()
         {
-            return _productManagement.GetEditProduct().ProductPrice;
+            return int.Parse(_productManagement.GetEditProduct().ProductPrice).ToString(FORMAT);
         }
     }
 }

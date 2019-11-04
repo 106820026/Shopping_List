@@ -40,14 +40,14 @@ namespace ShopList
             this.ShowAllItemNames();
         }
 
-        /// 初始化視窗
+        // 初始化視窗
         private void InitialForm()
         {
             this.InitialComboBox();
             _saveButton.Enabled = false;
         }
 
-        /// 初始化ComboBox選項
+        // 初始化ComboBox選項
         private void InitialComboBox()
         {
             List<String> types = _categoryManagement.GetCategoryName();
@@ -55,7 +55,7 @@ namespace ShopList
             _itemCategoryComboBox.SelectedIndex = -1;
         }
 
-        /// 點擊ListBox,顯示右方詳細資訊
+        // 點擊ListBox,顯示右方詳細資訊
         private void GetItemDetail(object sender, EventArgs e)
         {
             _currentItemIndex = ((ListBox)sender).SelectedIndex;
@@ -66,14 +66,14 @@ namespace ShopList
             this.EnableEdit(true);
         }
 
-        /// 在ListBox中顯示所有商品名稱
+        // 在ListBox中顯示所有商品名稱
         public void ShowAllItemNames()
         {
             foreach (Product product in _productManagement.GetAllProducts())
                 _itemsListBox.Items.Add(product.ProductName);
         }
 
-        /// 顯示所有詳細資訊
+        // 顯示所有詳細資訊
         private void ShowAllDetails(int index)
         {
             _itemNameTextBox.Text = _itemsListBox.SelectedItem.ToString();
@@ -83,43 +83,43 @@ namespace ShopList
             _itemCategoryComboBox.Text = _productManagement.GetAllProducts()[index].ProductCategory;
         }
 
-        /// 編輯名稱
+        // 編輯名稱
         private void EditName(object sender, KeyEventArgs e)
         {
             this.CheckAllInput();
         }
 
-        /// 限制輸入只能數字
+        // 限制輸入只能數字
         private void InputOnlyNumber(object sender, KeyPressEventArgs e)
         {
             e.Handled = _productManagementSystemPresentationModel.InputOnlyNumber(e.KeyChar);
         }
 
-        /// 編輯價錢
+        // 編輯價錢
         private void EditPrice(object sender, KeyEventArgs e)
         {
             this.CheckAllInput();
         }
 
-        /// 編輯型態
+        // 編輯型態
         private void EditType(object sender, EventArgs e)
         {
             this.CheckAllInput();
         }
 
-        /// 編輯圖片路徑(手動輸入)
+        // 編輯圖片路徑(手動輸入)
         private void EditPath(object sender, KeyEventArgs e)
         {
             this.CheckAllInput();
         }
 
-        /// 編輯詳細資料
+        // 編輯詳細資料
         private void EditDetail(object sender, KeyEventArgs e)
         {
             this.CheckAllInput();
         }
 
-        /// 開啟編輯
+        // 開啟編輯
         private void EnableEdit(bool flag)
         {
             _itemNameTextBox.Enabled = flag;
@@ -130,7 +130,7 @@ namespace ShopList
             _searchButton.Enabled = flag;
         }
 
-        /// 檢查所有欄位
+        // 檢查所有欄位
         private void CheckAllInput()
         {
             if (_editMode && _saveButton.Enabled == false)
@@ -145,7 +145,7 @@ namespace ShopList
             }
         }
 
-        /// 設定狀態
+        // 設定狀態
         private void SetEditAndAddMode(bool flag1, bool flag2)
         {
             _editMode = flag1;
@@ -162,13 +162,13 @@ namespace ShopList
             }
         }
 
-        /// 按下瀏覽按鈕
+        // 按下瀏覽按鈕
         private void ClickSearchButton(object sender, EventArgs e)
         {
             this.ShowPicturePathDialog();
         }
 
-        /// 顯示選取圖片dialog
+        // 顯示選取圖片dialog
         private void ShowPicturePathDialog()
         {
             _openFileDialog.Title = OPEN;
@@ -180,7 +180,7 @@ namespace ShopList
             }
         }
 
-        /// 新增商品
+        // 新增商品
         private void ClickAddNewItemButton(object sender, EventArgs e)
         {
             this.SetEditAndAddMode(false, true);
@@ -190,7 +190,7 @@ namespace ShopList
             _addNewItemButton.Enabled = false;
         }
 
-        /// 清除所有欄位
+        // 清除所有欄位
         private void CleanAllDetail()
         {
             _itemNameTextBox.Text = "";
@@ -200,7 +200,7 @@ namespace ShopList
             _itemCategoryComboBox.SelectedIndex = -1;
         }
 
-        /// 按下新增或修改按鈕
+        // 按下新增或修改按鈕
         private void ClickSaveButton(object sender, EventArgs e)
         {
             _saveButton.Enabled = false;
@@ -210,14 +210,14 @@ namespace ShopList
                 _productManagementSystemPresentationModel.AddNewProduct(this.GetAllInput());
         }
 
-        /// 取得所有修改或新增的資料
+        // 取得所有修改或新增的資料
         private String[] GetAllInput()
         {
             String[] content = new String[] { _itemNameTextBox.Text, _itemPriceTextBox.Text, _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
             return content;
         }
 
-        /// 更新儲存完的ListBox
+        // 更新儲存完的ListBox
         private void UpdateListBox()
         {
             if (_editMode) // 修改
@@ -227,7 +227,7 @@ namespace ShopList
             this.SetEditAndAddMode(true, false);
         }
 
-        /// 解除event
+        // 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
             _productManagement._writeNewData -= UpdateListBox;

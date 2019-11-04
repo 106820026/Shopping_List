@@ -28,7 +28,7 @@ namespace ShopList
             this.ShowDialogInformation();
         }
 
-        /// 顯示視窗資訊
+        // 顯示視窗資訊
         void ShowDialogInformation()
         {
             _itemNameLabel.Text = _productManagement.GetAllProducts()[_rowIndex].ProductName;
@@ -37,13 +37,13 @@ namespace ShopList
             _itemStockLabel.Text = _productManagement.GetAllProducts()[_rowIndex].ProductQuantity;
         }
 
-        /// 關閉視窗
+        // 關閉視窗
         private void ClickCancelButton(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        /// 確認確認按鈕
+        // 確認確認按鈕
         private void ConfirmConfirmButton(object sender, EventArgs e)
         {
             TextBox textBox;
@@ -52,13 +52,13 @@ namespace ShopList
             _replenishmentControl.GetReplenishmentNumber(_replenishmentTextBox.Text);
         }
 
-        /// 只能輸入數字
+        // 只能輸入數字
         private void InputOnlyNumber(object sender, KeyPressEventArgs e)
         {
             e.Handled = _replenishmentControl.InputOnlyNumber(e.KeyChar);
         }
 
-        /// 按下確認按鈕
+        // 按下確認按鈕
         private void ClickConfirmButton(object sender, EventArgs e)
         {
             _replenishmentControl.UpdateQuantity(_rowIndex);

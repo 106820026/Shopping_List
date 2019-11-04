@@ -33,7 +33,7 @@ namespace ShopList
             _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(0);
         }
 
-        /// 加入補貨icon
+        // 加入補貨icon
         private void PaintDataGridViewCell(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
@@ -50,7 +50,7 @@ namespace ShopList
             }
         }
 
-        /// click表格
+        // click表格
         private void ClickItem(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == -1 || e.RowIndex == -1)
@@ -65,14 +65,14 @@ namespace ShopList
             }
         }
 
-        /// 讀取DaraGridView資料 並顯示
+        // 讀取DaraGridView資料 並顯示
         private void LoadAndShowDataGridView()
         {
             foreach (String[] item in _inventorySystemPresentationModel.GetAllItemDetail()) // 把所有商品資訊放入DataGridView
                 _itemDataGridView.Rows.Add(item);
         }
 
-        /// 更新庫存數量
+        // 更新庫存數量
         public void UpdateProductData()
         {
             int rowIndex = _productManagement.GetEditProductIndexOfAllProducts();
@@ -91,7 +91,7 @@ namespace ShopList
             }
         }
 
-        /// 解除event
+        // 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
             _productManagement._writeNewData -= UpdateProductData;

@@ -31,13 +31,13 @@ namespace ShopList
             _productManagement = productManagement;
         }
 
-        /// 名字是否為空
+        // 名字是否為空
         public void ConfirmName(String text)
         {
             _nameValid = text == "" ? false : true;
         }
 
-        /// 限制輸入只能數字
+        // 限制輸入只能數字
         public bool InputOnlyNumber(char inputChar)
         {
             if ((!char.IsDigit(inputChar) && inputChar != DELETE_BUTTON)) //輸入非數字
@@ -45,7 +45,7 @@ namespace ShopList
             return false;
         }
 
-        /// 價錢是否正確
+        // 價錢是否正確
         public void ConfirmPrice(String text)
         {
             if (text == "" || int.Parse(text) == 0)
@@ -54,19 +54,19 @@ namespace ShopList
                 _priceValid = true;
         }
 
-        /// 是否有選擇類別
+        // 是否有選擇類別
         public void ConfirmType(int index)
         {
             _typeValid = index == -1 ? false : true;
         }
 
-        /// 是否有圖片路徑
+        // 是否有圖片路徑
         public void ConfirmPath(String text)
         {
             _pathValid = text == "" ? false : true;
         }
 
-        /// 是否可按下儲存
+        // 是否可按下儲存
         public bool ConfirmSaveButton()
         {
             if (_nameValid == true && _priceValid == true && _typeValid == true && _pathValid == true)
@@ -74,7 +74,7 @@ namespace ShopList
             return false;
         }
 
-        /// 修改商品
+        // 修改商品
         public void ModifyProduct(int rowIndex, String[] content)
         {
             List<Product> products = _productManagement.GetAllProducts();
@@ -86,7 +86,7 @@ namespace ShopList
             _productManagement.EditProductDetail(products[rowIndex], content[DETAIL_INDEX]);
         }
 
-        /// 把選取的相片存到內部資料夾
+        // 把選取的相片存到內部資料夾
         public String CopyFileToResources(String filePath)
         {
             System.IO.FileInfo file = new System.IO.FileInfo(filePath);
@@ -101,7 +101,7 @@ namespace ShopList
             return DESTINATION + file.Name;
         }
 
-        /// 新增商品
+        // 新增商品
         public void AddNewProduct(String[] content)
         {
             _productManagement.AddNewProduct(content);

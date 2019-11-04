@@ -8,6 +8,7 @@ namespace ShopList
 {
     public class ProductManagement
     {
+        #region Member Data
         public event WriteNewDataEventHandler _writeNewData;// 自訂事件
         public delegate void WriteNewDataEventHandler();
         ReadFile _initial = new ReadFile(FILE_PATH);
@@ -19,6 +20,7 @@ namespace ShopList
         const int CATEGORY_INDEX = 2;
         const int PATH_INDEX = 3;
         const int DETAIL_INDEX = 4;
+        #endregion
 
         public ProductManagement()
         {
@@ -26,7 +28,7 @@ namespace ShopList
             this.InitialProduct();
         }
 
-        /// 初始化所有商品
+        //初始化所有商品
         public void InitialProduct()
         {
             foreach (String section in _initial.GetAllSections())
@@ -41,13 +43,13 @@ namespace ShopList
             }
         }
 
-        /// 取得所有商品
+        //取得所有商品
         public List<Product> GetAllProducts()
         {
             return _products;
         }
 
-        /// 取得category的所有商品
+        //取得category的所有商品
         public List<Product> GetProducts(String category)
         {
             List<Product> products = new List<Product>();
@@ -57,25 +59,25 @@ namespace ShopList
             return products;
         }
 
-        /// 取得修改商品在所有商品中的index
+        //取得修改商品在所有商品中的index
         public int GetEditProductIndexOfAllProducts()
         {
             return _products.IndexOf(_editProduct);
         }
 
-        /// 取得修改商品在分類商品中的index
+        //取得修改商品在分類商品中的index
         public int GetEditProductIndexOfProducts(String category)
         {
             return GetProducts(category).IndexOf(_editProduct);
         }
 
-        /// 取得最後一筆加入的資料
+        //取得最後一筆加入的資料
         public Product GetLastestProduct()
         {
             return _products[_products.Count - 1];
         }
 
-        /// 修改商品名稱
+        //修改商品名稱
         public void EditProductName(Product product, String newName)
         {
             _editProduct = product;
@@ -84,7 +86,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 修改商品類別
+        //修改商品類別
         public void EditProductCategory(Product product, String newCategory)
         {
             _editProduct = product;
@@ -93,7 +95,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 修改商品價格
+        //修改商品價格
         public void EditProductPrice(Product product, String newPrice)
         {
             _editProduct = product;
@@ -102,7 +104,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 修改商品內容
+        //修改商品內容
         public void EditProductDetail(Product product, String newDetail)
         {
             _editProduct = product;
@@ -111,7 +113,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 修改商品數量
+        //修改商品數量
         public void EditProductQuantity(Product product, int addQuantity)
         {
             _editProduct = product;
@@ -120,7 +122,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 修改商品圖片路徑
+        //修改商品圖片路徑
         public void EditProductPicturePath(Product product, String newPath)
         {
             _editProduct = product;
@@ -129,7 +131,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 新增商品
+        //新增商品
         public void AddNewProduct(String[] content)
         {
             _products.Add(new Product());
@@ -144,7 +146,7 @@ namespace ShopList
                 this._writeNewData(); // 如果檔案有變動 發出訊號
         }
 
-        /// 取得被修改的商品
+        //取得被修改的商品
         public Product GetEditProduct()
         {
             return _editProduct;

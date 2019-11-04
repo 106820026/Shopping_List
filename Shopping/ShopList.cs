@@ -46,7 +46,7 @@ namespace ShopList
             this.InitialForm();
         }
 
-        /// 初始化視窗
+        // 初始化視窗
         private void InitialForm()
         {
             this.CheckChangePageButton();
@@ -146,14 +146,14 @@ namespace ShopList
             }
         }
 
-        /// 解除event
+        // 解除event
         private void CancelEvent(object sender, FormClosedEventArgs e)
         {
             _productManagement._writeNewData -= UpdateProductData;
             this.Dispose();
         }
 
-        /// 更新整個頁面
+        // 更新整個頁面
         public void UpdateProductData()
         {
             this.ShowCurrentAndTotalPage(); // 顯示頁數
@@ -164,10 +164,16 @@ namespace ShopList
                 this.UpdateCart();
         }
 
-        /// 修改購物車裡面的商品
+        // 取得購物車內有被修改過商品的rowIndex
+        private int GetChangedProductRowIndex()
+        {
+            return _shopListPresentationModel.GetChangedProductRowIndex();
+        }
+
+        // 修改購物車裡面的商品
         private void UpdateCart()
         {
-            int rowIndex = _shopListPresentationModel.GetChangedProductRowIndex();
+            int rowIndex = this.GetChangedProductRowIndex();
             Console.WriteLine(rowIndex);
             _orderDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _shopListPresentationModel.GetEditProductName();
             _orderDataGridView.Rows[rowIndex].Cells[CATEGORY_COLUMN_INDEX].Value = _shopListPresentationModel.GetEditProductCategory();
@@ -176,7 +182,7 @@ namespace ShopList
             _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT);
         }
 
-        /// 顯示目前頁數和總頁數
+        // 顯示目前頁數和總頁數
         private void ShowCurrentAndTotalPage()
         {
             _itemTabControlPages.UpdateTotalPage();
@@ -185,20 +191,20 @@ namespace ShopList
             _totalPageLabel.Text = _itemTabControlPages.GetTotalPage(); //顯示總頁數
         }
 
-        /// 刪除項目
+        // 刪除項目
         private void DeleteItem(DataGridViewCellEventArgs e)
         {
             _orderDataGridView.Rows.Remove(_orderDataGridView.Rows[e.RowIndex]);
             _shopListPresentationModel.DeleteCartItem(e.RowIndex);
         }
 
-        /// 顯示總價錢
+        // 顯示總價錢
         private void ShowTotalPrice()
         {
             _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); // 顯示總價錢
         }
 
-        /// 確認換頁按鈕是否可以按下
+        // 確認換頁按鈕是否可以按下
         public void CheckChangePageButton()
         {
             _nextPageButton.Enabled = _lastPageButton.Enabled = true;
@@ -206,7 +212,7 @@ namespace ShopList
             _nextPageButton.Enabled = !_shopListPresentationModel.IsLastPage();// 禁(啟)用下一頁按鈕
         }
 
-        /// 詳細資訊清除
+        // 詳細資訊清除
         private void CleanDetail()
         {
             _descriptionRichTextBox.ResetText(); // 清除詳細資訊欄位
@@ -215,11 +221,11 @@ namespace ShopList
             _addToCartButton.Enabled = false; // 尚未選擇任何商品 按鍵無效
         }
 
-        /// 設定按鈕圖片
+        // 設定按鈕圖片
         private void ShowItemPicture()
         {
             int currentTabIndex = _itemTabControl.SelectedIndex; //取得目前tab的index
-            List<Product> currentTypeItemSections = _categoryManagement.GetCurrentCategoryProduct(_categoryManagement.GetCategories()[currentTabIndex].CategoryName); //取得目前類別的所有section
+            List<Product> currentTypeItemSections = _categoryManagement.GetCurrentCategoryProduct(currentTabIndex); //取得目前類別的所有section
             TableLayoutPanel tableLayoutPanel = _itemTabControlPages.GetTableLayoutPanel(currentTabIndex); //取得目前TableLayoutPanel
             int index = BUTTON_NUMBER * (int.Parse(_currentPageLabel.Text) - 1); //取得每個button的index
             foreach (Button button in tableLayoutPanel.Controls)
@@ -237,13 +243,13 @@ namespace ShopList
             }
         }
 
-        /// 更新商品資料
+        // 更新商品資料
         private void UpdateData()
         {
             _shopListPresentationModel.UpdateProductQuantity();
         }
 
-        /// 清空購物車
+        // 清空購物車
         private void CleanOrderAndResetButton()
         {
             _orderDataGridView.Rows.Clear(); // 清空右邊欄位
@@ -252,7 +258,7 @@ namespace ShopList
             _orderButton.Enabled = _shopListPresentationModel.CheckConfirmButton(); // 訂購按鈕不能再按下
         }
 
-        /// 按下加入購物車後更新視窗
+        // 按下加入購物車後更新視窗
         private void UpdateAddToCart()
         {
             _shopListPresentationModel.AddItemToCart(); // 加入購物車
@@ -263,7 +269,7 @@ namespace ShopList
             _totalPriceLabel.Text = this.GetTotalPrice().ToString(FORMAT); // 顯示總價錢
         }
 
-        /// 選取商品後更新視窗
+        // 選取商品後更新視窗
         private void UpdateItemClick(Button button)
         {
             _shopListPresentationModel.GetCurrentProduce((int)(button.Tag), _itemTabControl.SelectedTab.Text); // 取得目前商品id
@@ -273,7 +279,7 @@ namespace ShopList
             _addToCartButton.Enabled = _shopListPresentationModel.IsAlreadyInCart(); // 如已加入購物車 就不可再次加入
         }
 
-        /// 設定商品按鈕狀態
+        // 設定商品按鈕狀態
         private void ChangeButtonStatus(Control button, bool flag, String filePath)
         {
             const String DEFAULT_PICTURE_PATH = "../../Resources/notFound.jpg";
@@ -294,7 +300,7 @@ namespace ShopList
                 ((Button)button).BackgroundImage = null;
         }
 
-        /// 取得總價錢
+        // 取得總價錢
         private int GetTotalPrice()
         {
             int totalPrice = 0;
@@ -303,7 +309,7 @@ namespace ShopList
             return totalPrice;
         }
 
-        /// 提示庫存不足並且改回最大庫存
+        // 提示庫存不足並且改回最大庫存
         private void NotifyOutOfStockAndChangeToMaximumStock(DataGridViewCellEventArgs e)
         {
             MessageBox.Show(OUT_OF_STOCK, STOCK_STATUS);
