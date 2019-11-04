@@ -223,7 +223,7 @@ namespace ShopList
             if (_editMode) // 修改
                 _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
             else if (_addMode) // 新增
-                _itemsListBox.Items.Add(_productManagement.GetLastestProduct().ProductName);
+                _itemsListBox.Items.Add(_productManagement.GetLatestProduct().ProductName);
             this.SetEditAndAddMode(true, false);
         }
 

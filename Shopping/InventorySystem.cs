@@ -72,7 +72,7 @@ namespace ShopList
                 _itemDataGridView.Rows.Add(item);
         }
 
-        // 更新庫存數量
+        // 更新商品資料
         public void UpdateProductData()
         {
             int rowIndex = _productManagement.GetEditProductIndexOfAllProducts();
@@ -87,7 +87,7 @@ namespace ShopList
             }
             catch
             {
-                _itemDataGridView.Rows.Add(_inventorySystemPresentationModel.GetLastestItemDetail());
+                _itemDataGridView.Rows.Add(_inventorySystemPresentationModel.GetLatestItemDetail());
             }
         }
 

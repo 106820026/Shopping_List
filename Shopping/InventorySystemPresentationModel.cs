@@ -13,6 +13,7 @@ namespace ShopList
         ProductManagement _productManagement;
         const String PICTURE_KEY = "picture";
         const String FORMAT = "#,0";
+        const String DEFAULT_PICTURE = "../../Resources/notFound.jpg";
 
         public InventorySystemPresentationModel(ProductManagement productManagement)
         {
@@ -31,16 +32,23 @@ namespace ShopList
         }
 
         // 取得新增商品詳細資料
-        public String[] GetLastestItemDetail()
+        public String[] GetLatestItemDetail()
         {
-            Product product = _productManagement.GetLastestProduct();
+            Product product = _productManagement.GetLatestProduct();
             return product.GetProductInventoryForm();
         }
 
         // 取得圖片
         public Image GetImageFilePath(int index)
         {
-            return Image.FromFile(_productManagement.GetAllProducts()[index].ProductPicturePath);
+            try
+            {
+                return Image.FromFile(_productManagement.GetAllProducts()[index].ProductPicturePath);
+            }
+            catch
+            {
+                return Image.FromFile(DEFAULT_PICTURE);
+            }
         }
 
         // 取得詳細資訊
@@ -77,7 +85,7 @@ namespace ShopList
         // 取得價錢
         public String GetPrice()
         {
-            return _productManagement.GetEditProduct().ProductPrice;
+            return int.Parse(_productManagement.GetEditProduct().ProductPrice).ToString(FORMAT);
         }
     }
 }

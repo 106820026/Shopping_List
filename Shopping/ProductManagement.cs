@@ -32,15 +32,7 @@ namespace ShopList
         public void InitialProduct()
         {
             foreach (String section in _initial.GetAllSections())
-            {
-                _products.Add(new Product());
-                _products[_products.Count - 1].ProductPicturePath = _initial.GetPicturePath(section);
-                _products[_products.Count - 1].ProductName = _initial.GetName(section);
-                _products[_products.Count - 1].ProductCategory = _initial.GetType(section);
-                _products[_products.Count - 1].ProductDetail = _initial.GetDetail(section);
-                _products[_products.Count - 1].ProductPrice = _initial.GetPrice(section);
-                _products[_products.Count - 1].ProductQuantity = _initial.GetStock(section);
-            }
+                _products.Add(new Product(section));
         }
 
         //取得所有商品
@@ -72,7 +64,7 @@ namespace ShopList
         }
 
         //取得最後一筆加入的資料
-        public Product GetLastestProduct()
+        public Product GetLatestProduct()
         {
             return _products[_products.Count - 1];
         }

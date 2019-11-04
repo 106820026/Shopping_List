@@ -10,10 +10,23 @@ namespace ShopList
     {
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 分隔線
         const String FORMAT = "#, 0";
+        ReadFile _initial = new ReadFile(FILE_PATH);
+        const String FILE_PATH = "../../Data Info.ini";
 
         public Product()
         {
 
+        }
+
+        public Product(String section)
+        {
+
+            this.ProductPicturePath = _initial.GetPicturePath(section);
+            this.ProductName = _initial.GetName(section);
+            this.ProductCategory = _initial.GetType(section);
+            this.ProductDetail = _initial.GetDetail(section);
+            this.ProductPrice = _initial.GetPrice(section);
+            this.ProductQuantity = _initial.GetStock(section);
         }
 
         public String ProductName
