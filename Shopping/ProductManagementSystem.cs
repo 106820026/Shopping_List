@@ -27,6 +27,7 @@ namespace ShopList
         const String ADD_ITEM = "新增商品";
         const String SAVE = "儲存";
         const String ADD_NEW = "新增";
+        const String FORMAT = "#,0";
         #endregion
 
         public ProductManagementSystem(ReadFile initial, CategoryManagement categoryManagement, ProductManagement productManagement)
@@ -226,7 +227,7 @@ namespace ShopList
         // 取得所有修改或新增的資料
         private String[] GetAllInput()
         {
-            String[] content = new String[] { _itemNameTextBox.Text, _itemPriceTextBox.Text, _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
+            String[] content = new String[] { _itemNameTextBox.Text, int.Parse(_itemPriceTextBox.Text).ToString(FORMAT), _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
             return content;
         }
 
