@@ -22,7 +22,7 @@ namespace ShopList
         bool _editMode = false;
         bool _addMode = false;
         const String OPEN = "開啟";
-        const String FILE_FORMAT = "圖片格式(*.jpg,*.gif,*.bmp)|*.jpg;*.gif;*.bmp";
+        const String FILE_FORMAT = "圖片格式(*.jpg,*.png,*.bmp)|*.jpg;*.png;*.bmp";
         const String EDIT_ITEM = "編輯商品";
         const String ADD_ITEM = "新增商品";
         const String SAVE = "儲存";
@@ -207,7 +207,20 @@ namespace ShopList
             if (_editMode) // 修改
                 _productManagementSystemPresentationModel.ModifyProduct(_currentItemIndex, this.GetAllInput());
             if (_addMode) // 新增
+            {
                 _productManagementSystemPresentationModel.AddNewProduct(this.GetAllInput());
+                ClearAll();
+            }
+        }
+
+        // 清除所有可輸入欄位
+        private void ClearAll()
+        {
+            _itemNameTextBox.ResetText();
+            _itemPriceTextBox.ResetText();
+            _itemPicturePathTextBox.ResetText();
+            _itemDescriptionTextBox.ResetText();
+            _itemCategoryComboBox.SelectedIndex = -1;
         }
 
         // 取得所有修改或新增的資料
@@ -224,7 +237,6 @@ namespace ShopList
                 _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
             else if (_addMode) // 新增
                 _itemsListBox.Items.Add(_productManagement.GetLatestProduct().ProductName);
-            this.SetEditAndAddMode(true, false);
         }
 
         // 解除event

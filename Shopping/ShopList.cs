@@ -19,7 +19,7 @@ namespace ShopList
         const String ATTACHMENT_NAME = ".jpg";
         const String DELETE_COLUMN = "_delete";
         const String NUMBER_COLUMN = "_number";
-        const String FORMAT = "#, 0";
+        const String FORMAT = "#,0";
         const String OUT_OF_STOCK = "庫存不足";
         const String STOCK_STATUS = "庫存狀態";
         const int NAME_COLUMN_INDEX = 1;

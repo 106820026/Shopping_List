@@ -15,7 +15,7 @@ namespace ShopList
         CategoryManagement _productTypeManagement;
         AddToCart _cart;
         ProductManagement _productManagement;
-        const String FORMAT = "#, 0";
+        const String FORMAT = "#,0";
         const String NEXT_PAGE_BUTTON = "_nextPageButton";
         const String LAST_PAGE_BUTTON = "_lastPageButton";
         const int BUTTON_NUMBER = 6;

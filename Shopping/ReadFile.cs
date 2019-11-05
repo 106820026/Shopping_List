@@ -23,7 +23,7 @@ namespace ShopList
         const String PRICE_KEY = "price";
         const String STOCK_KEY = "stock";
         const String PICTURE_KEY = "picture";
-        const String FORMAT = "#, 0";
+        const String FORMAT = "#,0";
         const String ONE = "1";
         const int SIZE = 65535;
         const int CAPACITY = 255;

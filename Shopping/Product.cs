@@ -9,7 +9,7 @@ namespace ShopList
     public class Product
     {
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 分隔線
-        const String FORMAT = "#, 0";
+        const String FORMAT = "#,0";
         ReadFile _initial = new ReadFile(FILE_PATH);
         const String FILE_PATH = "../../Data Info.ini";
 

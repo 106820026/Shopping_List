@@ -28,16 +28,16 @@
         
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ShopList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this._bottomTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._myOrderTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._orderTitleTextLabel = new System.Windows.Forms.Label();
@@ -46,12 +46,6 @@
             this._totalPriceLabel = new System.Windows.Forms.Label();
             this._orderButton = new System.Windows.Forms.Button();
             this._orderDataGridView = new System.Windows.Forms.DataGridView();
-            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._number = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
-            this._totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._merchandiseGroupBox = new System.Windows.Forms.GroupBox();
             this._itemControlTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nextPageButton = new System.Windows.Forms.Button();
@@ -73,11 +67,11 @@
             this._stockTextLabel = new System.Windows.Forms.Label();
             this._stockLabel = new System.Windows.Forms.Label();
             this._itemTabControl = new System.Windows.Forms.TabControl();
-            this._dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._dataGridViewNumericUpDownColumn1 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
-            this._dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewNumericUpDownColumn1 = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._computerItem6 = new System.Windows.Forms.Button();
             this._computerItem5 = new System.Windows.Forms.Button();
             this._computerItem4 = new System.Windows.Forms.Button();
@@ -114,6 +108,12 @@
             this._motherBoardItem4 = new System.Windows.Forms.Button();
             this._motherBoardItem3 = new System.Windows.Forms.Button();
             this._motherBoardItem2 = new System.Windows.Forms.Button();
+            this._delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this._itemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._number = new DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn();
+            this._totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._bottomTableLayoutPanel.SuspendLayout();
             this._myOrderTableLayoutPanel.SuspendLayout();
             this._totalPriceTableLayoutPanel.SuspendLayout();
@@ -244,69 +244,6 @@
             this._orderDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClickDataGridViewCell);
             this._orderDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.PaintDataGridViewCell);
             this._orderDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.UpdateSubtotal);
-            // 
-            // _delete
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
-            this._delete.FillWeight = 25F;
-            this._delete.HeaderText = "刪除";
-            this._delete.Name = "_delete";
-            this._delete.ReadOnly = true;
-            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // _itemName
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
-            this._itemName.FillWeight = 55F;
-            this._itemName.HeaderText = "商品名稱";
-            this._itemName.Name = "_itemName";
-            this._itemName.ReadOnly = true;
-            // 
-            // _itemType
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
-            this._itemType.FillWeight = 45F;
-            this._itemType.HeaderText = "商品分類";
-            this._itemType.Name = "_itemType";
-            this._itemType.ReadOnly = true;
-            // 
-            // _itemPrice
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            dataGridViewCellStyle4.NullValue = null;
-            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
-            this._itemPrice.FillWeight = 30F;
-            this._itemPrice.HeaderText = "單價";
-            this._itemPrice.Name = "_itemPrice";
-            this._itemPrice.ReadOnly = true;
-            // 
-            // _number
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._number.DefaultCellStyle = dataGridViewCellStyle5;
-            this._number.FillWeight = 25F;
-            this._number.HeaderText = "數量";
-            this._number.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this._number.Name = "_number";
-            this._number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // _totalPrice
-            // 
-            dataGridViewCellStyle6.NullValue = null;
-            this._totalPrice.DefaultCellStyle = dataGridViewCellStyle6;
-            this._totalPrice.FillWeight = 30F;
-            this._totalPrice.HeaderText = "總價";
-            this._totalPrice.Name = "_totalPrice";
             // 
             // _merchandiseGroupBox
             // 
@@ -578,48 +515,48 @@
             // dataGridViewTextBoxColumn1
             // 
             dataGridViewCellStyle7.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this._dataGridViewTextBoxColumn1.FillWeight = 55F;
-            this._dataGridViewTextBoxColumn1.HeaderText = "商品名稱";
-            this._dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this._dataGridViewTextBoxColumn1.ReadOnly = true;
-            this._dataGridViewTextBoxColumn1.Width = 151;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn1.FillWeight = 55F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "商品名稱";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 151;
             // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewCellStyle8.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
-            this._dataGridViewTextBoxColumn2.FillWeight = 45F;
-            this._dataGridViewTextBoxColumn2.HeaderText = "商品分類";
-            this._dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this._dataGridViewTextBoxColumn2.ReadOnly = true;
-            this._dataGridViewTextBoxColumn2.Width = 124;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn2.FillWeight = 45F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "商品分類";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 124;
             // 
             // dataGridViewTextBoxColumn3
             // 
             dataGridViewCellStyle9.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this._dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
-            this._dataGridViewTextBoxColumn3.FillWeight = 30F;
-            this._dataGridViewTextBoxColumn3.HeaderText = "單價";
-            this._dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this._dataGridViewTextBoxColumn3.ReadOnly = true;
-            this._dataGridViewTextBoxColumn3.Width = 83;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn3.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "單價";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 83;
             // 
             // dataGridViewNumericUpDownColumn1
             // 
-            this._dataGridViewNumericUpDownColumn1.FillWeight = 25F;
-            this._dataGridViewNumericUpDownColumn1.HeaderText = "數量";
-            this._dataGridViewNumericUpDownColumn1.Name = "dataGridViewNumericUpDownColumn1";
-            this._dataGridViewNumericUpDownColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this._dataGridViewNumericUpDownColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this._dataGridViewNumericUpDownColumn1.Width = 68;
+            this.dataGridViewNumericUpDownColumn1.FillWeight = 25F;
+            this.dataGridViewNumericUpDownColumn1.HeaderText = "數量";
+            this.dataGridViewNumericUpDownColumn1.Name = "dataGridViewNumericUpDownColumn1";
+            this.dataGridViewNumericUpDownColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewNumericUpDownColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewNumericUpDownColumn1.Width = 68;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this._dataGridViewTextBoxColumn4.FillWeight = 30F;
-            this._dataGridViewTextBoxColumn4.HeaderText = "總價";
-            this._dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this._dataGridViewTextBoxColumn4.Width = 83;
+            this.dataGridViewTextBoxColumn4.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "總價";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 83;
             // 
             // _computerItem6
             // 
@@ -1054,6 +991,70 @@
             this._motherBoardItem2.UseVisualStyleBackColor = true;
             this._motherBoardItem2.Click += new System.EventHandler(this.ButtonClick);
             // 
+            // _delete
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._delete.DefaultCellStyle = dataGridViewCellStyle1;
+            this._delete.FillWeight = 25F;
+            this._delete.HeaderText = "刪除";
+            this._delete.Name = "_delete";
+            this._delete.ReadOnly = true;
+            this._delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // _itemName
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemName.DefaultCellStyle = dataGridViewCellStyle2;
+            this._itemName.FillWeight = 55F;
+            this._itemName.HeaderText = "商品名稱";
+            this._itemName.Name = "_itemName";
+            this._itemName.ReadOnly = true;
+            // 
+            // _itemType
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._itemType.DefaultCellStyle = dataGridViewCellStyle3;
+            this._itemType.FillWeight = 45F;
+            this._itemType.HeaderText = "商品分類";
+            this._itemType.Name = "_itemType";
+            this._itemType.ReadOnly = true;
+            // 
+            // _itemPrice
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle4.NullValue = null;
+            this._itemPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            this._itemPrice.FillWeight = 30F;
+            this._itemPrice.HeaderText = "單價";
+            this._itemPrice.Name = "_itemPrice";
+            this._itemPrice.ReadOnly = true;
+            // 
+            // _number
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this._number.DefaultCellStyle = dataGridViewCellStyle5;
+            this._number.FillWeight = 25F;
+            this._number.HeaderText = "數量";
+            this._number.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this._number.Name = "_number";
+            this._number.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this._number.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // _totalPrice
+            // 
+            dataGridViewCellStyle6.NullValue = null;
+            this._totalPrice.DefaultCellStyle = dataGridViewCellStyle6;
+            this._totalPrice.FillWeight = 30F;
+            this._totalPrice.HeaderText = "總價";
+            this._totalPrice.Name = "_totalPrice";
+            this._totalPrice.ReadOnly = true;
+            // 
             // ShopList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1151,17 +1152,22 @@
         private System.Windows.Forms.Button _motherBoardItem4;
         private System.Windows.Forms.Button _motherBoardItem3;
         private System.Windows.Forms.Button _motherBoardItem2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn3;
+        private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn _dataGridViewNumericUpDownColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewButtonColumn _delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemType;
         private System.Windows.Forms.DataGridViewTextBoxColumn _itemPrice;
         private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn _number;
         private System.Windows.Forms.DataGridViewTextBoxColumn _totalPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn3;
-        private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn _dataGridViewNumericUpDownColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewNumericUpDownElements.DataGridViewNumericUpDownColumn dataGridViewNumericUpDownColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
 
