@@ -41,6 +41,7 @@ namespace ShopList
             _categoryManagement = categoryManagement;
             _productManagement = productManagement;
             _productManagement._writeNewData += UpdateListBox;
+            _categoryManagement._addNewCategory += UpdateComboBoxSelection;
             _productManagementSystemPresentationModel = new ProductManagementSystemPresentationModel(_categoryManagement, _productManagement);
             this.InitialForm();
             this.InitialListBox();
@@ -56,8 +57,7 @@ namespace ShopList
         // 初始化ComboBox選項
         private void InitialComboBox()
         {
-            List<String> types = _categoryManagement.GetCategoryName();
-            _itemCategoryComboBox.DataSource = types;
+            _itemCategoryComboBox.DataSource = _categoryManagement.GetCategoryName();
             _itemCategoryComboBox.SelectedIndex = -1;
         }
 
@@ -274,9 +274,9 @@ namespace ShopList
         {
             this.EnableEditCategory(false);
             _categoryGroupBox.Text = CATEGORY;
-            int _currentCategoryIndex = ((ListBox)sender).SelectedIndex;
-            _categoryNameTextBox.Text = _itemCategoryComboBox.Items[_currentCategoryIndex].ToString();
-            _productOfCategoryListBox.DataSource = _productManagementSystemPresentationModel.GetProductOfCategory(_currentCategoryIndex);
+            int currentCategoryIndex = ((ListBox)sender).SelectedIndex;
+            _categoryNameTextBox.Text = _itemCategoryComboBox.Items[currentCategoryIndex].ToString();
+            _productOfCategoryListBox.DataSource = _productManagementSystemPresentationModel.GetProductOfCategory(currentCategoryIndex);
         }
 
         // 可以編輯類別
@@ -298,16 +298,26 @@ namespace ShopList
         }
 
         // 名稱不能輸入數字
-        private void NoNumberInput(object sender, KeyPressEventArgs e)
+        private void InputNoNumber(object sender, KeyPressEventArgs e)
         {
-            e.Handled = _productManagementSystemPresentationModel.NoNumberInput(e.KeyChar);
+            e.Handled = _productManagementSystemPresentationModel.InputNoNumber(e.KeyChar);
         }
 
         // 按下新增種類按鈕
         private void ClickSaveCategoryButton(object sender, EventArgs e)
         {
             _productManagementSystemPresentationModel.AddNewCategory(_categoryNameTextBox.Text);
+            _categoryListBox.Items.Add(_categoryNameTextBox.Text);
             _saveCategoryButton.Enabled = false;
+            _categoryNameTextBox.Text = "";
+        }
+
+        // 更新ComboBox的選項
+        private void UpdateComboBoxSelection()
+        {
+            int index = _itemCategoryComboBox.SelectedIndex;
+            _itemCategoryComboBox.DataSource = _categoryManagement.GetCategoryName();
+            _itemCategoryComboBox.SelectedIndex = index;
         }
     }
 }

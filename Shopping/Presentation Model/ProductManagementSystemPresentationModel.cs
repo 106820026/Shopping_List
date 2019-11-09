@@ -114,7 +114,7 @@ namespace ShopList
         }
 
         // 確認類別名稱
-        public bool NoNumberInput(char inputChar)
+        public bool InputNoNumber(char inputChar)
         {
             if ((!char.IsDigit(inputChar) || inputChar == DELETE_BUTTON)) //輸入非數字
                 return false;

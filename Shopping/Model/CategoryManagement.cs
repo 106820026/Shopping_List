@@ -92,7 +92,7 @@ namespace ShopList
         // 取得最新的類別
         public Category GetLatestCategory()
         {
-            return _categories[_categories.Count-1];
+            return _categories[_categories.Count - 1];
         }
     }
 }

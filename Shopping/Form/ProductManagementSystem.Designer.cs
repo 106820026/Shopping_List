@@ -296,7 +296,7 @@
             "硬碟",
             "顯卡",
             "套裝電腦"});
-            this._itemCategoryComboBox.Location = new System.Drawing.Point(398, 10);
+            this._itemCategoryComboBox.Location = new System.Drawing.Point(398, 8);
             this._itemCategoryComboBox.Name = "_itemCategoryComboBox";
             this._itemCategoryComboBox.Size = new System.Drawing.Size(167, 27);
             this._itemCategoryComboBox.TabIndex = 4;
@@ -492,11 +492,12 @@
             // 
             // _categoryNameTextBox
             // 
+            this._categoryNameTextBox.Enabled = false;
             this._categoryNameTextBox.Location = new System.Drawing.Point(112, 56);
             this._categoryNameTextBox.Name = "_categoryNameTextBox";
             this._categoryNameTextBox.Size = new System.Drawing.Size(459, 27);
             this._categoryNameTextBox.TabIndex = 1;
-            this._categoryNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NoNumberInput);
+            this._categoryNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.InputNoNumber);
             this._categoryNameTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.EditCategoryName);
             // 
             // _categoryNameTextLabel
