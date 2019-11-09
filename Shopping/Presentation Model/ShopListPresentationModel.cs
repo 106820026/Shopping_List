@@ -87,6 +87,7 @@ namespace ShopList
         // 顯示商品價錢
         public String GetPrice()
         {
+            Console.WriteLine(_product.ProductPrice);
             if (_product != null)
                 return int.Parse(_product.ProductPrice).ToString(FORMAT);
             return string.Empty;

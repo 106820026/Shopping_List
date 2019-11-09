@@ -235,7 +235,7 @@ namespace ShopList
         // 取得所有修改或新增的資料
         private String[] GetAllInput()
         {
-            String[] content = new String[] { _itemNameTextBox.Text, int.Parse(_itemPriceTextBox.Text).ToString(FORMAT), _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
+            String[] content = new String[] { _itemNameTextBox.Text, int.Parse(_itemPriceTextBox.Text).ToString(), _itemCategoryComboBox.Text, _itemPicturePathTextBox.Text, _itemDescriptionTextBox.Text }; //儲存所有輸入的資料
             return content;
         }
 
@@ -243,9 +243,15 @@ namespace ShopList
         private void UpdateListBox()
         {
             if (_editItemMode) // 修改
+            {
                 _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
+                _productOfCategoryListBox.Items[_productManagement.GetEditProductIndexOfProducts(this.GetAllInput()[2])] = _itemNameTextBox.Text;
+            }  
             else if (_addItemMode) // 新增
+            {
                 _itemsListBox.Items.Add(_productManagement.GetLatestProduct().ProductName);
+                _productOfCategoryListBox.DataSource = _productManagementSystemPresentationModel.GetProductOfCategory(_currentCategoryIndex);
+            }
         }
 
         // 解除event
@@ -265,8 +271,7 @@ namespace ShopList
         // 清除類別頁面
         private void CleanCategoryDetail()
         {
-            _categoryNameTextBox.Text = "";
-            _productOfCategoryListBox.DataSource = _emptyList;
+            _productOfCategoryListBox.Items.Clear();
         }
 
         // 顯示該類別詳細資訊
@@ -274,9 +279,9 @@ namespace ShopList
         {
             this.EnableEditCategory(false);
             _categoryGroupBox.Text = CATEGORY;
-            int currentCategoryIndex = ((ListBox)sender).SelectedIndex;
-            _categoryNameTextBox.Text = _itemCategoryComboBox.Items[currentCategoryIndex].ToString();
-            _productOfCategoryListBox.DataSource = _productManagementSystemPresentationModel.GetProductOfCategory(currentCategoryIndex);
+            _currentCategoryIndex = ((ListBox)sender).SelectedIndex;
+            _categoryNameTextBox.Text = _itemCategoryComboBox.Items[_currentCategoryIndex].ToString();
+            _productOfCategoryListBox.DataSource = _productManagementSystemPresentationModel.GetProductOfCategory(_currentCategoryIndex);
         }
 
         // 可以編輯類別
