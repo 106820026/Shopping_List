@@ -23,7 +23,7 @@ namespace ShopList
         public MenuForm()
         {
             InitializeComponent();
-            _productManagement = new ProductManagement();
+            _productManagement = new ProductManagement(_initial);
             _categoryManagement = new CategoryManagement(_productManagement);
         }
 

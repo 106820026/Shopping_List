@@ -11,11 +11,12 @@ namespace ShopList
 {
     public class ReadFile
     {
-        public event WriteNewDataEventHandler _writeNewData;// 自訂事件
-        public delegate void WriteNewDataEventHandler();
+        #region Member Data
+        //public event WriteNewDataEventHandler _writeNewData;// 自訂事件
+        //public delegate void WriteNewDataEventHandler();
         private string _filePath;
         StringCollection _sectionList = new StringCollection();
-        String _changedSection;
+        //String _changedSection;
         const String SEPARATE_LINE = "\n-----------------------------------\n"; // 我是分隔線
         const String NAME_KEY = "name";
         const String DETAIL_KEY = "detail";
@@ -42,21 +43,22 @@ namespace ShopList
         [DllImport("kernel32")]
 
         private static extern int GetPrivateProfileString(string section, string key, string definition, byte[] returnValue, int size, string filePath);
-        
+        #endregion
+
         // 讀取檔案位置
         public ReadFile(string filePath)
         {
             this._filePath = filePath;
         }
 
-        // 寫入檔案
-        public void Write(string section, string key, string value)
-        {
-            WritePrivateProfileString(section, key, value, this._filePath);
-            _changedSection = section;
-            if (_writeNewData != null)
-                this._writeNewData(); // 如果ini檔有變動 發出訊號
-        }
+        //// 寫入檔案
+        //public void Write(string section, string key, string value)
+        //{
+        //    WritePrivateProfileString(section, key, value, this._filePath);
+        //    _changedSection = section;
+        //    if (_writeNewData != null)
+        //        this._writeNewData(); // 如果ini檔有變動 發出訊號
+        //}
 
         // 讀取檔案
         public string Read(string section, string key)
@@ -68,7 +70,7 @@ namespace ShopList
 
         #region 讀所有Section的function
         // 從Ini文件中，讀取所有的Sections的名稱
-        public void ReadSections(StringCollection sectionList)
+        private void ReadSections(StringCollection sectionList)
         {
             byte[] buffer = new byte[SIZE];
             int bufferLength = 0;
@@ -103,18 +105,18 @@ namespace ShopList
             return _sectionList;
         }
 
-        // 檔案位置
-        public string FilePath
-        {
-            get
-            {
-                return this._filePath;
-            }
-            set
-            {
-                this._filePath = value;
-            }
-        }
+        //檔案位置
+        //public string FilePath
+        //{
+        //    get
+        //    {
+        //        return this._filePath;
+        //    }
+        //    set
+        //    {
+        //        this._filePath = value;
+        //    }
+        //}
 
         // 取得名稱(用section來取)
         public String GetName(String currentItemName)
@@ -129,7 +131,7 @@ namespace ShopList
         }
 
         // 取得類別(用section來取)
-        public String GetType(String currentItemName)
+        public String GetCategory(String currentItemName)
         {
             return this.Read(currentItemName, TYPE_KEY);
         }
@@ -152,10 +154,10 @@ namespace ShopList
             return this.Read(currentItemName, PICTURE_KEY);
         }
 
-        // 取得被更改的item的Section
-        public String GetChangeSection()
-        {
-            return _changedSection;
-        }
+        //// 取得被更改的item的Section
+        //public String GetChangeSection()
+        //{
+        //    return _changedSection;
+        //}
     }
 }

@@ -296,7 +296,7 @@
             "硬碟",
             "顯卡",
             "套裝電腦"});
-            this._itemCategoryComboBox.Location = new System.Drawing.Point(398, 8);
+            this._itemCategoryComboBox.Location = new System.Drawing.Point(398, 10);
             this._itemCategoryComboBox.Name = "_itemCategoryComboBox";
             this._itemCategoryComboBox.Size = new System.Drawing.Size(167, 27);
             this._itemCategoryComboBox.TabIndex = 4;

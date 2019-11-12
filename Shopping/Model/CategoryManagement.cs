@@ -23,15 +23,19 @@ namespace ShopList
         public void InitialCategories()
         {
             _categories.Clear();
-            foreach (Product product in _productManagement.GetAllProducts())
+            foreach (Product product in _productManagement.AllProducts)
                 if (!this.GetCategoryName().Contains(product.ProductCategory))
                     _categories.Add(new Category(product.ProductCategory));
         }
 
         // 取得所有類別
-        public List<Category> GetCategories()
+        public List<Category> Categories
         {
-            return _categories;
+            get
+            {
+                return _categories;
+            }
+            
         }
 
         // 新增類別
@@ -46,7 +50,7 @@ namespace ShopList
         public List<String> GetCategoryName()
         {
             List<String> category = new List<string>();
-            foreach (Category c in this.GetCategories())
+            foreach (Category c in Categories)
                 if (!category.Contains(c.CategoryName))
                     category.Add(c.CategoryName);
             return category;
@@ -64,8 +68,8 @@ namespace ShopList
         public List<Product> GetCurrentCategoryProduct(int categoryIndex)
         {
             List<Product> currentCategoryProduct = new List<Product>();
-            foreach (Product product in _productManagement.GetAllProducts())
-                if (product.ProductCategory == this.GetCategories()[categoryIndex].CategoryName)
+            foreach (Product product in _productManagement.AllProducts)
+                if (product.ProductCategory == Categories[categoryIndex].CategoryName)
                     currentCategoryProduct.Add(product);
             return currentCategoryProduct;
         }
@@ -74,8 +78,8 @@ namespace ShopList
         public List<String> GetCurrentCategoryProductName(int categoryIndex)
         {
             List<String> currentCategoryProductName = new List<String>();
-            foreach (Product product in _productManagement.GetAllProducts())
-                if (product.ProductCategory == this.GetCategories()[categoryIndex].CategoryName)
+            foreach (Product product in _productManagement.AllProducts)
+                if (product.ProductCategory == Categories[categoryIndex].CategoryName)
                     currentCategoryProductName.Add(product.ProductName);
             return currentCategoryProductName;
         }

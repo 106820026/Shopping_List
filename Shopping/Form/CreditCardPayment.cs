@@ -89,7 +89,7 @@ namespace ShopList
         // 按下確認按鈕
         private void ClickConfirmButton(object sender, EventArgs e)
         {
-            _backNumberTextBox.Text = _creditCardPaymentControl.CleanBackNumber(); // 清除後3碼
+            _backNumberTextBox.Text = String.Empty; // 清除後3碼
             _confirmButton.Enabled = _creditCardPaymentControl.ConfirmAll(); // 重新確認按鈕狀態
             this.DialogResult = DialogResult.OK;
             MessageBox.Show(SUCCESS);

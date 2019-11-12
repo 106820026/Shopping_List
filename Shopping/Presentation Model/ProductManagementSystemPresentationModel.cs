@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class ProductManagementSystemPresentationModel
+    public class ProductManagementSystemPresentationModel
     {
         #region Member Data
         CategoryManagement _categoryManagement;
@@ -77,7 +77,7 @@ namespace ShopList
         // 修改商品
         public void ModifyProduct(int rowIndex, String[] content)
         {
-            List<Product> products = _productManagement.GetAllProducts();
+            List<Product> products = _productManagement.AllProducts;
             content[PATH_INDEX] = this.CopyFileToResources(content[PATH_INDEX]);
             _productManagement.EditProductName(products[rowIndex], content[NAME_INDEX]);
             _productManagement.EditProductPrice(products[rowIndex], content[PRICE_INDEX]);
@@ -89,14 +89,14 @@ namespace ShopList
         // 把選取的相片存到內部資料夾
         public String CopyFileToResources(String filePath)
         {
-            System.IO.FileInfo file = new System.IO.FileInfo(filePath);
+            FileInfo file = new FileInfo(filePath);
             try
             {
-                file.CopyTo(DESTINATION + file.Name);
+                file.CopyTo(DESTINATION + file.Name, true);
             }
-            catch (IOException ex)
+            catch
             {
-                ex.GetType();
+            
             }
             return DESTINATION + file.Name;
         }

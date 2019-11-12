@@ -33,6 +33,7 @@ namespace ShopList
         const String CATEGORY = "類別";
         const String ADD_NEW_CATEGORY = "新增類別";
         const String FORMAT = "#,0";
+        const int CATEGORY_INDEX = 2;
         #endregion
 
         public ProductManagementSystem(ReadFile initial, CategoryManagement categoryManagement, ProductManagement productManagement)
@@ -76,9 +77,9 @@ namespace ShopList
         // 在ListBox中顯示所有商品名稱
         public void InitialListBox()
         {
-            foreach (Product product in _productManagement.GetAllProducts())
+            foreach (Product product in _productManagement.AllProducts)
                 _itemsListBox.Items.Add(product.ProductName);
-            foreach (Category category in _categoryManagement.GetCategories())
+            foreach (Category category in _categoryManagement.Categories)
                 _categoryListBox.Items.Add(category.CategoryName);
         }
 
@@ -86,10 +87,10 @@ namespace ShopList
         private void ShowItemDetails(int index)
         {
             _itemNameTextBox.Text = _itemsListBox.SelectedItem.ToString();
-            _itemPriceTextBox.Text = _productManagement.GetAllProducts()[index].ProductPrice;
-            _itemPicturePathTextBox.Text = _productManagement.GetAllProducts()[index].ProductPicturePath;
-            _itemDescriptionTextBox.Text = _productManagement.GetAllProducts()[index].ProductDetail;
-            _itemCategoryComboBox.Text = _productManagement.GetAllProducts()[index].ProductCategory;
+            _itemPriceTextBox.Text = _productManagement.AllProducts[index].ProductPrice;
+            _itemPicturePathTextBox.Text = _productManagement.AllProducts[index].ProductPicturePath;
+            _itemDescriptionTextBox.Text = _productManagement.AllProducts[index].ProductDetail;
+            _itemCategoryComboBox.Text = _productManagement.AllProducts[index].ProductCategory;
         }
 
         // 編輯名稱
@@ -245,7 +246,7 @@ namespace ShopList
             if (_editItemMode) // 修改
             {
                 _itemsListBox.Items[_currentItemIndex] = _itemNameTextBox.Text;
-                _productOfCategoryListBox.Items[_productManagement.GetEditProductIndexOfProducts(this.GetAllInput()[2])] = _itemNameTextBox.Text;
+                _productOfCategoryListBox.DataSource = _productManagementSystemPresentationModel.GetProductOfCategory(_currentCategoryIndex);
             }  
             else if (_addItemMode) // 新增
             {

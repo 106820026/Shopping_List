@@ -1,0 +1,72 @@
+<stylecopresultscache>
+  <version>12</version>
+  <project key="-402694325">
+    <configuration>DEBUG;TRACE</configuration>
+  </project>
+  <sourcecode name="AddToCartTests.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/11/11 13:19:18.061</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="CategoryManagementTests.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/11/11 17:49:26.102</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ProductManagementTests.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/11/11 18:13:40.112</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="ReadFileTests.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/11/11 18:12:07.329</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="CreditCardPaymentPresentationModelTests.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/11/11 20:03:33.210</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+  <sourcecode name="AssemblyInfo.cs" parser="StyleCop.CSharp.CsParser">
+    <timestamps>
+      <styleCop>2019/09/10 22:51:54.372</styleCop>
+      <settingsFile>0001/01/01 00:00:00.000</settingsFile>
+      <sourceFile>2019/11/11 11:36:22.067</sourceFile>
+      <parser>2019/09/10 22:51:54.372</parser>
+      <KellyPalRules.KellyPalAnalyzer>2019/09/10 22:51:54.372</KellyPalRules.KellyPalAnalyzer>
+      <KellyPalRules.KellyPalAnalyzer.FilesHashCode>0</KellyPalRules.KellyPalAnalyzer.FilesHashCode>
+    </timestamps>
+    <violations />
+  </sourcecode>
+</stylecopresultscache>

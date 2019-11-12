@@ -23,7 +23,7 @@ namespace ShopList
 
             this.ProductPicturePath = _initial.GetPicturePath(section);
             this.ProductName = _initial.GetName(section);
-            this.ProductCategory = _initial.GetType(section);
+            this.ProductCategory = _initial.GetCategory(section);
             this.ProductDetail = _initial.GetDetail(section);
             this.ProductPrice = _initial.GetPrice(section);
             this.ProductQuantity = _initial.GetStock(section);

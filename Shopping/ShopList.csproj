@@ -79,7 +79,7 @@
       <DependentUpon>InventorySystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Model\InventorySystemPresentationModel.cs" />
-    <Compile Include="Model\ItemTabControlPages.cs" />
+    <Compile Include="Form\ItemTabControlPages.cs" />
     <Compile Include="Form\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>

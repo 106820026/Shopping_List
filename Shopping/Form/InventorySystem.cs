@@ -61,7 +61,10 @@ namespace ShopList
                 _itemPictureBox.Image = _inventorySystemPresentationModel.GetImageFilePath(((DataGridView)sender).Rows[e.RowIndex].Index);
                 _itemDetailTextBox.Text = _inventorySystemPresentationModel.GetItemDetail(((DataGridView)sender).Rows[e.RowIndex].Index);
                 if (e.ColumnIndex == REPLENISHMENT_COLUMN_INDEX) // 如果按補貨按鈕
-                    _inventorySystemPresentationModel.OpenReplenishmentPage(((DataGridView)sender).Rows[e.RowIndex].Index);
+                {
+                    Replenishment replenishment = new Replenishment(((DataGridView)sender).Rows[e.RowIndex].Index, _productManagement);
+                    replenishment.ShowDialog();
+                }
             }
         }
 

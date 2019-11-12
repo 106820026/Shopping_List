@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class CreditCardPaymentPresentationModel
+    public class CreditCardPaymentPresentationModel
     {
         #region Member Data
         bool[] _allValid;
@@ -56,6 +56,15 @@ namespace ShopList
         public CreditCardPaymentPresentationModel()
         {
             _allValid = new bool[] { _firstNameValid, _lastNameValid, _cardNumber1Valid, _cardNumber2Valid, _cardNumber3Valid, _cardNumber4Valid, _backNumberValid, _mailValid, _addressValid };
+        }
+
+        // 取得目前輸入的合法狀態
+        public bool[] AllValid
+        {
+            get
+            {
+                return _allValid;
+            }
         }
 
         // 確認姓名輸入
@@ -151,10 +160,8 @@ namespace ShopList
         public bool ConfirmAll()
         {
             for (int i = 0; i < TEXT_BOX_NUMBER; i++) // 如果有false的話就直接return false
-            {
                 if (_allValid[i] != true)
                     return false;
-            }
             return true;
         }
 
@@ -162,13 +169,6 @@ namespace ShopList
         public String GetErrorMessage()
         {
             return _errorMessage;
-        }
-
-        // 清除末3碼
-        public String CleanBackNumber()
-        {
-            _allValid[BACK_NUMBER_TAG] = false;
-            return String.Empty;
         }
 
         // 輸入框狀態改變

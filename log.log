@@ -1,0 +1,258 @@
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests1\ShopListTests1.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 1 個 (0:00:01.5797896) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9362754) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.1135806) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests1\ShopListTests1.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.1714132) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests1\ShopListTests1.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 1 個 (0:00:01.7187026) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9828024) ==========
+Warning: 建置失敗或其已取消。
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests1\ShopListTests1.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 1 個 (0:00:01.7035453) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9331702) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests1\ShopListTests1.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 1 個 (0:00:01.8534475) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9799634) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.8838223) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9120334) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests1\ShopListTests1.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.1674937) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.19842) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\DataGridViewNumericUpDownElements\DataGridViewNumericUpDownElements.csproj C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 1 個 (0:00:02.0362938) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7625775) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.4108844) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.8443847) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.3593182) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.9229974) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.5897261) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.7780075) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9049561) ==========
+Informational: ------ 回合測試開始 ------
+Error: 使用中的測試回合已中止。原因: 
+Informational: ========== 回合測試結束: 執行了 0 回合 (0:00:14.757104) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.7830258) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.4025363) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.7842593) ==========
+Informational: ------ 回合測試開始 ------
+Error: 使用中的測試回合已中止。原因: 
+Informational: ========== 回合測試結束: 執行了 0 回合 (0:00:15.4565921) ==========
+Informational: ------ 回合測試開始 ------
+Error: 使用中的測試回合已中止。原因: 
+Informational: ========== 回合測試結束: 執行了 0 回合 (0:00:14.5542026) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9484413) ==========
+Informational: ------ 回合測試開始 ------
+Error: 使用中的測試回合已中止。原因: 
+Informational: ========== 回合測試結束: 執行了 0 回合 (0:00:08.7899726) ==========
+Informational: ------ 回合測試開始 ------
+Error: 使用中的測試回合已中止。原因: 
+Informational: ========== 回合測試結束: 執行了 0 回合 (0:00:40.2260747) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9090745) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:07.1890451) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.737601) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9621185) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:10.2830115) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.8823044) ==========
+Informational: ------ 回合測試開始 ------
+Error: 使用中的測試回合已中止。原因: 
+Informational: ========== 回合測試結束: 執行了 0 回合 (0:00:29.987111) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7606992) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5614762) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9105892) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.6705991) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.3245038) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.718946) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.316894) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.6176741) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 2 個 (0:00:01.7799651) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 2 回合 (0:00:00.6351806) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.0591303) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9094847) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.8383593) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 4 個 (0:00:01.3881607) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 4 回合 (0:00:03.844593) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.2033308) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7548769) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6672766) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6647964) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6591552) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.8165804) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6459503) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.636873) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7532788) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6810513) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7133353) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6678038) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5973136) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7059844) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5525619) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.715823) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6868683) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6781566) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7332129) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6542006) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5264769) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5275893) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.606186) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.675385) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6290248) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.684415) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5625154) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7840003) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.532474) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5866637) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5443989) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.0300737) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7495079) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9012977) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7175476) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.8681804) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7307992) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6095691) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9655115) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.8196295) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5225944) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.6650444) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5836834) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5944051) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:00.9927011) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9762766) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.7306053) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.5684646) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.7872491) ==========
+given range is not current
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.8113005) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.0547005) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.837756) ==========
+Informational: ------ 探索測試開始 ------
+Warning: C:\Users\ASUS\source\repos\Shopping\ShopListTests2\ShopListTests.csproj C:\Users\ASUS\source\repos\Shopping\Shopping\ShopList.csproj 中沒有測試可用。請確定測試探索程式及執行程式已經註冊，且平台與架構的版本設定適當，然後再試一次。
+Informational: ========== 探索測試結束: 找到 0 個 (0:00:01.9777074) ==========
+Informational: ------ 回合測試開始 ------
+Informational: ========== 回合測試結束: 執行了 1 回合 (0:00:00.9028017) ==========

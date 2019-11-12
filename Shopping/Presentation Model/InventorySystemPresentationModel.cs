@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class InventorySystemPresentationModel
+    public class InventorySystemPresentationModel
     {
         ProductManagement _productManagement;
         const String PICTURE_KEY = "picture";
@@ -24,7 +25,7 @@ namespace ShopList
         public List<String[]> GetAllItemDetail()
         {
             List<String[]> data = new List<string[]>();
-            foreach (Product product in _productManagement.GetAllProducts())
+            foreach (Product product in _productManagement.AllProducts)
             {
                 data.Add(new string[] { product.ProductName, product.ProductCategory, int.Parse(product.ProductPrice).ToString(FORMAT), product.ProductQuantity });
             }
@@ -43,7 +44,7 @@ namespace ShopList
         {
             try
             {
-                return Image.FromFile(_productManagement.GetAllProducts()[index].ProductPicturePath);
+                return Image.FromFile(_productManagement.AllProducts[index].ProductPicturePath);
             }
             catch
             {
@@ -54,14 +55,7 @@ namespace ShopList
         // 取得詳細資訊
         public String GetItemDetail(int index)
         {
-            return _productManagement.GetAllProducts()[index].ProductDetail;
-        }
-
-        // 開啟補貨頁面
-        public void OpenReplenishmentPage(int index)
-        {
-            Replenishment replenishment = new Replenishment(index, _productManagement);
-            replenishment.ShowDialog();
+            return _productManagement.AllProducts[index].ProductDetail;
         }
 
         // 取得名稱

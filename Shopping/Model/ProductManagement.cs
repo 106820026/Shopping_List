@@ -11,8 +11,7 @@ namespace ShopList
         #region Member Data
         public event WriteNewDataEventHandler _writeNewData;// 自訂事件
         public delegate void WriteNewDataEventHandler();
-        ReadFile _initial = new ReadFile(FILE_PATH);
-        const String FILE_PATH = "../../Data Info.ini";
+        ReadFile _initial;
         List<Product> _products; // 所有商品
         Product _editProduct;
         const int NAME_INDEX = 0;
@@ -22,30 +21,34 @@ namespace ShopList
         const int DETAIL_INDEX = 4;
         #endregion
 
-        public ProductManagement()
+        public ProductManagement(ReadFile initial)
         {
             _products = new List<Product>();
+            _initial = initial;
             this.InitialProduct();
         }
 
         //初始化所有商品
-        public void InitialProduct()
+        private void InitialProduct()
         {
-            foreach (String section in _initial.GetAllSections())
+            foreach (String section in _initial.GetAllSections().Cast<String>().ToList())
                 _products.Add(new Product(section));
         }
 
         //取得所有商品
-        public List<Product> GetAllProducts()
+        public List<Product> AllProducts
         {
-            return _products;
+            get
+            {
+                return _products;
+            }
         }
 
         //取得category的所有商品
         public List<Product> GetProducts(String category)
         {
             List<Product> products = new List<Product>();
-            foreach (Product product in _products)
+            foreach (Product product in AllProducts)
                 if (product.ProductCategory == category)
                     products.Add(product);
             return products;
@@ -57,11 +60,11 @@ namespace ShopList
             return _products.IndexOf(_editProduct);
         }
 
-        //取得修改商品在分類商品中的index
-        public int GetEditProductIndexOfProducts(String category)
-        {
-            return GetProducts(category).IndexOf(_editProduct);
-        }
+        ////取得修改商品在分類商品中的index
+        //public int GetEditProductIndexOfProducts(String category)
+        //{
+        //    return GetProducts(category).IndexOf(_editProduct);
+        //}
 
         //取得最後一筆加入的資料
         public Product GetLatestProduct()

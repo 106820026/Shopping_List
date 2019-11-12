@@ -31,10 +31,10 @@ namespace ShopList
         // 顯示視窗資訊
         void ShowDialogInformation()
         {
-            _itemNameLabel.Text = _productManagement.GetAllProducts()[_rowIndex].ProductName;
-            _itemTypeLabel.Text = _productManagement.GetAllProducts()[_rowIndex].ProductCategory;
-            _itemPriceLabel.Text = _productManagement.GetAllProducts()[_rowIndex].ProductPrice;
-            _itemStockLabel.Text = _productManagement.GetAllProducts()[_rowIndex].ProductQuantity;
+            _itemNameLabel.Text = _productManagement.AllProducts[_rowIndex].ProductName;
+            _itemTypeLabel.Text = _productManagement.AllProducts[_rowIndex].ProductCategory;
+            _itemPriceLabel.Text = _productManagement.AllProducts[_rowIndex].ProductPrice;
+            _itemStockLabel.Text = _productManagement.AllProducts[_rowIndex].ProductQuantity;
         }
 
         // 關閉視窗

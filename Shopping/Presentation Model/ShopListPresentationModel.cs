@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class ShopListPresentationModel
+    public class ShopListPresentationModel
     {
         #region Member Data
         ItemTabControlPages _itemTabControlPages;
@@ -49,7 +49,7 @@ namespace ShopList
         // 修改的商品是否有加入購物車
         public bool IsInCart()
         {
-            if (_cart.GetProductList().Contains(_productManagement.GetEditProduct()))
+            if (_cart.Cart.Contains(_productManagement.GetEditProduct()))
                 return true;
             return false;
         }
@@ -87,7 +87,6 @@ namespace ShopList
         // 顯示商品價錢
         public String GetPrice()
         {
-            Console.WriteLine(_product.ProductPrice);
             if (_product != null)
                 return int.Parse(_product.ProductPrice).ToString(FORMAT);
             return string.Empty;
@@ -128,7 +127,7 @@ namespace ShopList
         // 清空購物車所有東西並取得rowCount
         public void ResetCart(int rowCount)
         {
-            _cart.GetProductList().Clear();
+            _cart.Cart.Clear();
             this.SetRowCount(rowCount);
         }
 
@@ -136,19 +135,19 @@ namespace ShopList
         public bool IsAlreadyInCart()
         {
             // 如果已經在DGV上或是庫存沒了都不可以
-            return !(_cart.GetProductList().Contains(_product) || _product.ProductQuantity == 0.ToString());
+            return !(_cart.Cart.Contains(_product) || _product.ProductQuantity == 0.ToString());
         }
 
         // 單一商品總價
         public int GetSubtotal(int number, int rowIndex)
         {
             String value = 0.ToString();
-            _itemNameAndSellNumber.TryGetValue(_cart.GetProductList()[rowIndex], out value); // 確認字典中無重複的key
+            _itemNameAndSellNumber.TryGetValue(_cart.Cart[rowIndex], out value); // 確認字典中無重複的key
             if (value == 0.ToString())
-                _itemNameAndSellNumber.Add(_cart.GetProductList()[rowIndex], number.ToString());
+                _itemNameAndSellNumber.Add(_cart.Cart[rowIndex], number.ToString());
             else
-                _itemNameAndSellNumber[_cart.GetProductList()[rowIndex]] = number.ToString(); // 存入商品名稱和購買數量
-            return number * int.Parse(_cart.GetProductList()[rowIndex].ProductPrice);
+                _itemNameAndSellNumber[_cart.Cart[rowIndex]] = number.ToString(); // 存入商品名稱和購買數量
+            return number * int.Parse(_cart.Cart[rowIndex].ProductPrice);
         }
 
         // 更新購買後庫存
@@ -165,7 +164,7 @@ namespace ShopList
         // 庫存不足
         public bool OutOfStock(int rowIndex, int orderNumber)
         {
-            if (int.Parse(_cart.GetProductList()[rowIndex].ProductQuantity) < orderNumber)
+            if (int.Parse(_cart.Cart[rowIndex].ProductQuantity) < orderNumber)
                 return true;
             return false;
         }
@@ -173,20 +172,20 @@ namespace ShopList
         // 改成庫存量
         public String ChangeToMaximumStock(int rowIndex)
         {
-            return _cart.GetProductList()[rowIndex].ProductQuantity;
+            return _cart.Cart[rowIndex].ProductQuantity;
         }
 
         // 取得已經加入購物車的所有商品
         public List<Product> GetProductList()
         {
-            return _cart.GetProductList();
+            return _cart.Cart;
         }
 
         // 如果修改的商品有放在購物車 回傳row index
         public int GetChangedProductRowIndex()
         {
             for (int i = 0; i < this.GetProductList().Count; i++)
-                if (_cart.GetProductList()[i] == _productManagement.GetEditProduct())
+                if (_cart.Cart[i] == _productManagement.GetEditProduct())
                     return i;
             return 0;
         }

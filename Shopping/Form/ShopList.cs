@@ -175,7 +175,6 @@ namespace ShopList
         private void UpdateCart()
         {
             int rowIndex = this.GetChangedProductRowIndex();
-            Console.WriteLine(rowIndex);
             _orderDataGridView.Rows[rowIndex].Cells[NAME_COLUMN_INDEX].Value = _shopListPresentationModel.GetEditProductName();
             _orderDataGridView.Rows[rowIndex].Cells[CATEGORY_COLUMN_INDEX].Value = _shopListPresentationModel.GetEditProductCategory();
             _orderDataGridView.Rows[rowIndex].Cells[PRICE_COLUMN_INDEX].Value = _shopListPresentationModel.GetEditProductPrice();

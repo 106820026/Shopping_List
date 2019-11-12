@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopList
 {
-    class ReplenishmentPresentationModel
+    public class ReplenishmentPresentationModel
     {
         const int DELETE_BUTTON = 8;
         ProductManagement _productManagement;
@@ -44,7 +44,7 @@ namespace ShopList
         // 取得被修改的商品
         public Product GetEditProduct(int rowIndex)
         {
-            return _productManagement.GetAllProducts()[rowIndex];
+            return _productManagement.AllProducts[rowIndex];
         }
 
         // 補貨完 更新庫存數量
