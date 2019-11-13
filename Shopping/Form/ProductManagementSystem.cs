@@ -272,7 +272,8 @@ namespace ShopList
         // 清除類別頁面
         private void CleanCategoryDetail()
         {
-            _productOfCategoryListBox.Items.Clear();
+            _categoryNameTextBox.ResetText();
+            _productOfCategoryListBox.DataSource = new List<String>();
         }
 
         // 顯示該類別詳細資訊

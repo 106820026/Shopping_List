@@ -11,43 +11,43 @@ namespace ShopList
     public class ShopListPresentationModel
     {
         #region Member Data
-        ItemTabControlPages _itemTabControlPages;
         CategoryManagement _productTypeManagement;
         AddToCart _cart;
         ProductManagement _productManagement;
         const String FORMAT = "#,0";
-        const String NEXT_PAGE_BUTTON = "_nextPageButton";
-        const String LAST_PAGE_BUTTON = "_lastPageButton";
         const int BUTTON_NUMBER = 6;
-        Product _product;
         Dictionary<Product, string> _itemNameAndSellNumber = new Dictionary<Product, string>();
-        int _rowCount;
         #endregion
         
-        public ShopListPresentationModel(ItemTabControlPages itemTabControlPages, CategoryManagement productTypeManagement, ProductManagement productManagement)
+        public ShopListPresentationModel(CategoryManagement productTypeManagement, ProductManagement productManagement)
         {
-            this._itemTabControlPages = itemTabControlPages;
             this._productTypeManagement = productTypeManagement;
             _productManagement = productManagement;
             _cart = new AddToCart();
-            _rowCount = 0;
+            RowCount = 0;
         }
 
         // 購物車商品數量
-        public void SetRowCount(int rowCount)
+        public int RowCount
         {
-            _rowCount = rowCount;
+            get;set;
+        }
+
+        // 目前選取的商品
+        public Product CurrentProduct
+        {
+            get;set;
         }
 
         // 取得商品
-        public void GetCurrentProduce(int tag, String category)
+        public void GetCurrentProduce(String currentPage, int tag, String category)
         {
-            int index = BUTTON_NUMBER * (int.Parse(_itemTabControlPages.GetCurrentPage()) - 1) + tag;
-            _product = _productManagement.GetProducts(category)[index];
+            int index = BUTTON_NUMBER * (int.Parse(currentPage) - 1) + tag;
+            CurrentProduct = _productManagement.GetProducts(category)[index];
         }
 
         // 修改的商品是否有加入購物車
-        public bool IsInCart()
+        public bool IsEditItemInCart()
         {
             if (_cart.Cart.Contains(_productManagement.GetEditProduct()))
                 return true;
@@ -57,96 +57,70 @@ namespace ShopList
         // 顯示商品詳細資訊
         public String GetDetail()
         {
-            return _product.GetProductCaption();
+            return CurrentProduct.GetProductCaption();
         }
 
         // 刪除購物車內容
         public void DeleteCartItem(int rowIndex)
         {
             _cart.DeleteItem(rowIndex);
+            RowCount -= 1;
         }
 
         // 加入商品至購物車
         public void AddItemToCart()
         {
-            _cart.AddItem(_product);
+            _cart.AddItem(CurrentProduct);
+            RowCount += 1;
         }
 
         // 更新購物車表格
         public String[] GetCartItem()
         {
-            return _product.GetProductCartForm();
+            return CurrentProduct.GetProductCartForm();
         }
 
         // 顯示商品庫存
-        public String GetStock()
+        public String GetQuantity()
         {
-            return _product.ProductQuantity;
+            return CurrentProduct.ProductQuantity;
         }
 
         // 顯示商品價錢
         public String GetPrice()
         {
-            if (_product != null)
-                return int.Parse(_product.ProductPrice).ToString(FORMAT);
+            if (CurrentProduct != null)
+                return int.Parse(CurrentProduct.ProductPrice).ToString(FORMAT);
             return string.Empty;
-        }
-
-        // 翻頁
-        
-        public void ChangePage(String itemName)
-        {
-            if (itemName == NEXT_PAGE_BUTTON)
-                int.Parse(_itemTabControlPages.ChangePage(1));
-            if (itemName == LAST_PAGE_BUTTON)
-                int.Parse(_itemTabControlPages.ChangePage(-1));
-
-        }
-
-        // 是否為第一頁
-        public bool IsFirstPage()
-        {
-            return int.Parse(_itemTabControlPages.GetCurrentPage()) == 1;
-        }
-
-        // 是否為最後一頁
-        public bool IsLastPage()
-        {
-            return int.Parse(_itemTabControlPages.GetCurrentPage()) == int.Parse(_itemTabControlPages.GetTotalPage());
         }
 
         // 確認訂購按鈕可以按下
         public bool CheckConfirmButton()
         {
-            if (_rowCount == 0)
+            if (RowCount == 0)
                 return false;
             else
                 return true;
         }
 
         // 清空購物車所有東西並取得rowCount
-        public void ResetCart(int rowCount)
+        public void ResetCart()
         {
             _cart.Cart.Clear();
-            this.SetRowCount(rowCount);
+            RowCount = 0;
         }
 
         // 已加入購物車
         public bool IsAlreadyInCart()
         {
             // 如果已經在DGV上或是庫存沒了都不可以
-            return !(_cart.Cart.Contains(_product) || _product.ProductQuantity == 0.ToString());
+            return !(_cart.Cart.Contains(CurrentProduct) || CurrentProduct.ProductQuantity == 0.ToString());
         }
 
         // 單一商品總價
         public int GetSubtotal(int number, int rowIndex)
         {
-            String value = 0.ToString();
-            _itemNameAndSellNumber.TryGetValue(_cart.Cart[rowIndex], out value); // 確認字典中無重複的key
-            if (value == 0.ToString())
-                _itemNameAndSellNumber.Add(_cart.Cart[rowIndex], number.ToString());
-            else
-                _itemNameAndSellNumber[_cart.Cart[rowIndex]] = number.ToString(); // 存入商品名稱和購買數量
+            _itemNameAndSellNumber[_cart.Cart[rowIndex]] = number.ToString(); // 存入商品名稱和購買數量
             return number * int.Parse(_cart.Cart[rowIndex].ProductPrice);
         }
 
