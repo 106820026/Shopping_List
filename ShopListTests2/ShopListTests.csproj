@@ -59,7 +59,9 @@
   <ItemGroup>
     <Compile Include="Model\AddToCartTests.cs" />
     <Compile Include="Model\CategoryManagementTests.cs" />
+    <Compile Include="Model\CategoryTests.cs" />
     <Compile Include="Model\ProductManagementTests.cs" />
+    <Compile Include="Model\ProductTests.cs" />
     <Compile Include="Model\ReadFileTests.cs" />
     <Compile Include="Presentation Model\CreditCardPaymentPresentationModelTests.cs" />
     <Compile Include="Presentation Model\InventorySystemPresentationModelTests.cs" />

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopList
+namespace ShopList.Model
 {
     public class Category
     {
@@ -21,10 +21,10 @@ namespace ShopList
             {
                 return _name;
             }
-            set
-            {
-                _name = value;
-            }
+            //set
+            //{
+            //    _name = value;
+            //}
         }
     }
 }

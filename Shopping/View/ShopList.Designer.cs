@@ -1,4 +1,4 @@
-﻿namespace ShopList
+﻿namespace ShopList.View
 {
     partial class ShopList
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopList
+namespace ShopList.Model
 {
     public class ProductManagement
     {

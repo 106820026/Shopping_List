@@ -1,13 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ShopList;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ShopList.Model;
 
-namespace ShopList.Tests
+namespace ShopList.PresentationModel.Tests
 {
     [TestClass()]
     public class InventorySystemPresentationModelTests

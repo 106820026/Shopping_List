@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ShopList.Model;
 
-namespace ShopList
+namespace ShopList.PresentationModel
 {
     public class ShopListPresentationModel
     {

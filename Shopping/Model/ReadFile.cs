@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopList
+namespace ShopList.Model
 {
     public class ReadFile
     {

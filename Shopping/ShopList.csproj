@@ -62,65 +62,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\AddToCart.cs" />
-    <Compile Include="Class\Category.cs" />
-    <Compile Include="Class\Product.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\CategoryManagement.cs" />
-    <Compile Include="Form\CreditCardPayment.cs">
+    <Compile Include="View\CreditCardPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\CreditCardPayment.Designer.cs">
+    <Compile Include="View\CreditCardPayment.Designer.cs">
       <DependentUpon>CreditCardPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Model\CreditCardPaymentPresentationModel.cs" />
-    <Compile Include="Form\InventorySystem.cs">
+    <Compile Include="View\InventorySystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\InventorySystem.Designer.cs">
+    <Compile Include="View\InventorySystem.Designer.cs">
       <DependentUpon>InventorySystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Model\InventorySystemPresentationModel.cs" />
-    <Compile Include="Form\ItemTabControlPages.cs" />
-    <Compile Include="Form\MenuForm.cs">
+    <Compile Include="View\ItemTabControlPages.cs" />
+    <Compile Include="View\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\MenuForm.Designer.cs">
+    <Compile Include="View\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\ReadFile.cs" />
     <Compile Include="Model\ProductManagement.cs" />
-    <Compile Include="Form\ProductManagementSystem.cs">
+    <Compile Include="View\ProductManagementSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ProductManagementSystem.Designer.cs">
+    <Compile Include="View\ProductManagementSystem.Designer.cs">
       <DependentUpon>ProductManagementSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Model\ProductManagementSystemPresentationModel.cs" />
-    <Compile Include="Form\Replenishment.cs">
+    <Compile Include="View\Replenishment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\Replenishment.Designer.cs">
+    <Compile Include="View\Replenishment.Designer.cs">
       <DependentUpon>Replenishment.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation Model\ReplenishmentPresentationModel.cs" />
-    <Compile Include="Form\ShopList.cs">
+    <Compile Include="View\ShopList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form\ShopList.Designer.cs">
+    <Compile Include="View\ShopList.Designer.cs">
       <DependentUpon>ShopList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class\Program.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Presentation Model\ShopListPresentationModel.cs" />
-    <EmbeddedResource Include="Form\CreditCardPayment.resx">
+    <EmbeddedResource Include="View\CreditCardPayment.resx">
       <DependentUpon>CreditCardPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\InventorySystem.resx">
+    <EmbeddedResource Include="View\InventorySystem.resx">
       <DependentUpon>InventorySystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MenuForm.resx">
+    <EmbeddedResource Include="View\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ProductManagementSystem.resx">
+    <EmbeddedResource Include="View\ProductManagementSystem.resx">
       <DependentUpon>ProductManagementSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -133,10 +133,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Form\Replenishment.resx">
+    <EmbeddedResource Include="View\Replenishment.resx">
       <DependentUpon>Replenishment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\ShopList.resx">
+    <EmbeddedResource Include="View\ShopList.resx">
       <DependentUpon>ShopList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
