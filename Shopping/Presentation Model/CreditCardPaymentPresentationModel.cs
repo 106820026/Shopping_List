@@ -16,7 +16,8 @@ namespace ShopList.PresentationModel
         const String CARD_NUMBER4_TEXT_BOX = "_cardNumber4textBox";
         const String BACK_CARD_TEXT_BOX = "_backNumberTextBox";
         const String MAIL_TEXT_BOX = "_mailTextBox";
-        const String PATTERN = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+        const String PATTERN = @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+
         // 錯誤訊息
         const String NO_NUMBER_INPUT = "no number input";
         const String YOU_MUST_INPUT_SOMETHING = "U must input something!";

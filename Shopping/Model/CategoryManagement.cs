@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopList.Model
 {
     public class CategoryManagement
     {
+        #region Member Data
         public event AddNewCategoryEventHandler _addNewCategory;// 自訂事件
         public delegate void AddNewCategoryEventHandler();
         ProductManagement _productManagement;
         List<Category> _categories = new List<Category>();
+        #endregion
 
         public CategoryManagement(ProductManagement productManagement)
         {

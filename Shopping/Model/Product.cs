@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShopList.Model
 {
     public class Product
     {
+        #region Member Data
         const String SEPARATE_LINE = "\n----------------------------------------------\n"; // 分隔線
         const String FORMAT = "#,0";
         ReadFile _initial = new ReadFile(FILE_PATH);
         const String FILE_PATH = "../../Data Info.ini";
+        #endregion
 
         public Product()
         {
